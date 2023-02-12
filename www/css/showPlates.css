@@ -1,0 +1,50 @@
+body{
+  background-color: #17212f;
+  color: white;
+}
+
+.inputEdit{
+  font-size:1rem;
+  background-color: none;
+  color: white;
+}
+
+.navbar-edit{
+    background-color: #1e2d40;
+    color: white!important;
+}
+
+.profileImage{
+  width: 12rem;
+  border-radius: 25px;
+}
+
+.areaProfile{
+  text-align: center;
+}
+
+.inputEdit{
+  font-size:1rem;
+}
+
+.labelProfile{
+  font-size: 1.1rem;
+}
+
+.listsPlates{
+  text-align: left;
+}
+
+.buttonReact{
+  color: white!important;
+}
+
+.bodyApp{
+  background-color: #17212f!important;
+}
+
+#buttons {
+  text-align: center;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}

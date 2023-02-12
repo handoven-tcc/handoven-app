@@ -1,0 +1,31 @@
+{
+  "name": "io.cordova.hellocordova",
+  "displayName": "Handoven",
+  "version": "2.0.1",
+  "description": "When it comes to home stock of food and products, this app helps you manage your stock and take control of your finances.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^10.1.2",
+    "cordova-browser": "^6.0.0",
+    "cordova-ios": "^6.2.0"
+  },
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android",
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.9.1"
+  }
+}

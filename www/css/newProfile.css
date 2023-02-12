@@ -1,0 +1,33 @@
+body{
+  background-color: #17212f;
+  color: white;
+}
+
+.navbar-edit{
+  background-color: #1e2d40;
+  /* color: white!important; */
+}
+
+.profileImage{
+  width: 12rem;
+  border-radius: 25px;
+}
+
+.bodyApp{
+  background-color: #17212f!important;
+}
+
+.areaProfile{
+  text-align: center;
+}
+
+.input-edit{
+  font-size:1rem;
+  background-color: #3e444a!important;
+  color: white!important;
+  border: #1e2d40!important;
+}
+
+.labelProfile{
+  font-size: 1.1rem;
+}

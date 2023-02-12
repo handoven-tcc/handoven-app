@@ -1,0 +1,44 @@
+body{
+  background-color: #17212f;
+  color: white;
+}
+
+.inputEdit{
+  font-size:1rem;
+  background-color: none;
+  color: white;
+}
+
+.navbar-edit{
+    background-color: #1e2d40;
+    color: white!important;
+}
+
+.profileImage{
+  width: 12rem;
+  border-radius: 25px;
+}
+
+.bodyApp{
+  background-color: #17212f!important;
+}
+
+.areaProfile{
+  text-align: center;
+}
+
+.inputEdit{
+  font-size:1rem;
+}
+
+.labelProfile{
+  font-size: 1.1rem;
+}
+
+.textOne {
+  font-size: 1.2rem;
+}
+
+.nameTitle{
+  font-size: 1.8rem;
+}

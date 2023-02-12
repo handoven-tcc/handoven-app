@@ -1,0 +1,47 @@
+body{
+  background-color: #17212f;
+  color: white;
+}
+
+.navbar-edit{
+    background-color: #1e2d40;
+    color: white!important;
+}
+
+.profileImage{
+  width: 12rem;
+  border-radius: 25px;
+}
+
+.areaProfile{
+  text-align: center;
+}
+
+.inputEdit{
+  font-size:1rem;
+  background-color: #17212f;;
+  color: white;
+}
+
+.labelProfile{
+  font-size: 1.1rem;
+}
+
+.bodyApp{
+  background-color: #17212f!important;
+}
+
+.areaUsers{
+  padding-top: 1rem;
+}
+
+.trash{
+  color: #ef9a9a;
+}
+
+.user{
+  background-color: #1e2d40;
+  border-radius: 0.6rem;
+  border: 1px solid #7a838f;
+  width: auto;
+}
