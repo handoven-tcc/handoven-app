@@ -16,17 +16,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.thigas.handoven.teste"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "br.com.thigas.handoven.teste"
     },
     "web": {
-      "bundler": "metro",
+      "bundler": "webpack",
       "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "202d7eed-390d-434c-ac06-f0bdbb835633"
+      }
     }
   }
 }
