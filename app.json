@@ -27,7 +27,7 @@
       "package": "br.com.thigas.handoven.teste"
     },
     "web": {
-      "bundler": "webpack",
+      "bundler": "metro",
       "favicon": "./assets/images/favicon.png"
     },
     "extra": {
