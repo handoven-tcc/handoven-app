@@ -7,22 +7,22 @@ const routes: Routes = [
     path: '',
     component: TabsPage,
     children: [
-      { path: '', redirectTo: 'tab1', pathMatch: 'full' },
+      { path: '', redirectTo: 'receitas', pathMatch: 'full' },
       {
-        path: 'tab1',
-        loadChildren: () => import('./pages/tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'receitas',
+        loadChildren: () => import('../receitas/receitas.module').then(m => m.ReceitasPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('./pages/tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'dispensa',
+        loadChildren: () => import('../dispensa/dispensa.module').then(m => m.DispensaPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('./pages/tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'favoritos',
+        loadChildren: () => import('../favoritos/favoritos.module').then(m => m.FavoritosPageModule)
       },
       {
-        path: 'tab4',
-        loadChildren: () => import('./pages/tab4/tab4.module').then(m => m.Tab4PageModule)
+        path: 'perfil',
+        loadChildren: () => import('../perfil/perfil.module').then(m => m.PerfilPageModule)
       },
     ]
   },
@@ -33,3 +33,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class TabsPageRoutingModule {}
+
+
