@@ -25,10 +25,6 @@
     "paths": {
       "temp": [
         "dist/temp",
-        "dist/temp",
-        "dist/temp",
-        "dist/temp",
-        "dist/temp"
       ]
     },
     "useDefineForClassFields": false
