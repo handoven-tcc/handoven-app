@@ -1,37 +1,45 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { TabsPage } from "./tabs.page";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: TabsPage,
     children: [
-      { path: '', redirectTo: 'receitas', pathMatch: 'full' },
+      { path: "", redirectTo: "receitas", pathMatch: "full" },
       {
-        path: 'receitas',
-        loadChildren: () => import('../receitas/receitas.module').then(m => m.ReceitasPageModule)
+        path: "receitas",
+        loadChildren: () =>
+          import("../receitas/receitas.module").then(
+            (m) => m.ReceitasPageModule
+          ),
       },
       {
-        path: 'dispensa',
-        loadChildren: () => import('../dispensa/dispensa.module').then(m => m.DispensaPageModule)
+        path: "dispensa",
+        loadChildren: () =>
+          import("../dispensa/dispensa.module").then(
+            (m) => m.DispensaPageModule
+          ),
       },
       {
-        path: 'favoritos',
-        loadChildren: () => import('../favoritos/favoritos.module').then(m => m.FavoritosPageModule)
+        path: "favoritos",
+        loadChildren: () =>
+          import("../favoritos/favoritos.module").then(
+            (m) => m.FavoritosPageModule
+          ),
       },
       {
-        path: 'perfil',
-        loadChildren: () => import('../perfil/perfil.module').then(m => m.PerfilPageModule)
+        path: "perfil",
+        loadChildren: () =>
+          import("../perfil/perfil.module").then((m) => m.PerfilPageModule),
       },
-    ]
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class TabsPageRoutingModule {}
-
-

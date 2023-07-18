@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-dispensa',
-  templateUrl: 'dispensa.page.html',
-  styleUrls: ['dispensa.page.scss']
+  selector: "app-dispensa",
+  templateUrl: "dispensa.page.html",
+  styleUrls: ["dispensa.page.scss"],
 })
 export class DispensaPage {
-
   constructor() {}
-
 }

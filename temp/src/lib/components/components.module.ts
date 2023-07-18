@@ -1,13 +1,9 @@
-import { NgModule } from '@angular/core';
-import {PrimeNGModule} from './primeng/primeng.module';
+import { NgModule } from "@angular/core";
+import { PrimeNGModule } from "./primeng/primeng.module";
 
 @NgModule({
   declarations: [],
-  imports: [
-    PrimeNGModule
-  ],
-  exports: [
-    PrimeNGModule
-  ]
+  imports: [PrimeNGModule],
+  exports: [PrimeNGModule],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}
