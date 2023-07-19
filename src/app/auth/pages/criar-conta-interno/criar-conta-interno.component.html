@@ -9,5 +9,17 @@
     <ion-toolbar>
       <ion-title size="large">Criar conta interno</ion-title>
     </ion-toolbar>
+
+    <ion-item>
+      <ion-label>Nome:</ion-label>
+      <ion-input
+        type="text"
+        [value]="inputModel"
+        (ionInput)="onInput($event)"
+        #ionInputEl></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="onClickCriarFamilia()"
+      >Enviar</ion-button
+    >
   </ion-header>
 </ion-content>

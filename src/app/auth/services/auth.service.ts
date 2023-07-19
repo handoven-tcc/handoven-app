@@ -2,32 +2,59 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../../environments/environment";
 import { Observable, map } from "rxjs";
+import {
+  FamiliaRequest,
+  FamiliaResponse,
+  LoginRequest,
+  UsuarioRequest,
+} from "../models";
+import { StorageService } from "../../../../temp/src/lib/tools/services/storage.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class AuthService {
   private get url(): string {
-    return `${environment.api}/user`;
+    return `${environment.api}`;
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private storage: StorageService) {}
 
-  login(email: string, senha: string): Observable<any> {
-    return this.http.post(`${this.url}/login`, { email, senha }).pipe(
-      map(async (res) => {
-        // TODO: Guardar info de usuario logado e manter a info viva na aplicação
-        // Se atentar com lifecycle de componentes (ngOnDestroy)
+  criarFamilia(request: FamiliaRequest): Observable<FamiliaResponse> {
+    console.log(request);
+
+    return this.http.post(`${this.url}/family`, request).pipe(
+      map((res: any) => {
+        // this.storage.set("token", "token");
+        // this.storage.set("X-HandOven-Family", res.id);
+        window.localStorage.setItem("token", "token");
+        window.localStorage.setItem("X-HandOven-Family", res.id);
         return res;
       })
     );
   }
 
-  // createUser(name: string, birthDate: string, cell: string, email: string, password: string, familyId: string): Observable<any>{
-  //   return this.http.post(`${this.url}/`, {name, birthDate, cell, email, password, familyId})
+  // login(request: LoginRequest): Observable<any> {
+  //   return this.http.post(`${this.url}/login`, request).pipe(
+  //     map(async (res) => {
+  //       console.log(res);
+  //       return res;
+  //     })
+  //   );
   // }
 
-  // createFamilyUser(name: string, birthDate: string, cell: string, email: string, password: string, familyId: string): Observable<any>{
-  //   return this.http.post(`${this.url}/addUser`, {name, birthDate, cell, email, password, familyId})
+  // criarUsuario(request: UsuarioRequest): Observable<any> {
+  //   return this.http.post(`${this.url}/adduser`, request).pipe(
+  //     map(async (res) => {
+  //       console.log(res);
+
+  //       this.storage.set("login", "logado:D");
+  //       this.storage.set("X-HandOven-Service", "true");
+  //       this.storage.set("X-HandOven-User", "sla");
+  //       this.storage.set("X-HandOven-Family", "sla2");
+
+  //       return res;
+  //     })
+  //   );
   // }
 }
