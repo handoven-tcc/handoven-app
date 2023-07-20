@@ -8,9 +8,16 @@ import { PerfilRoutingModule } from "./perfil-routing.module";
 import { AdicionarIntegranteComponent } from "./pages/adicionar-integrante/adicionar-integrante.component";
 import { EditarPerfilComponent } from "./pages/editar-perfil/editar-perfil.component";
 import { PerfilInternoComponent } from "./pages/perfil-interno/perfil-interno.component";
+import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
 
 @NgModule({
-  imports: [IonicModule, CommonModule, FormsModule, PerfilRoutingModule],
+  imports: [
+    IonicModule,
+    ComponentsModule,
+    CommonModule,
+    FormsModule,
+    PerfilRoutingModule,
+  ],
   declarations: [
     PerfilComponent,
     AdicionarIntegranteComponent,

@@ -5,9 +5,16 @@ import { FormsModule } from "@angular/forms";
 import { DispensaPage } from "./dispensa.page";
 
 import { DispensaPageRoutingModule } from "./dispensa-routing.module";
+import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
 
 @NgModule({
-  imports: [IonicModule, CommonModule, FormsModule, DispensaPageRoutingModule],
+  imports: [
+    IonicModule,
+    ComponentsModule,
+    CommonModule,
+    FormsModule,
+    DispensaPageRoutingModule,
+  ],
   declarations: [DispensaPage],
 })
 export class DispensaPageModule {}

@@ -9,4 +9,8 @@ export class ListarReceitasComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  onClickClearStorage() {
+    window.localStorage.clear();
+    window.location.reload();
+  }
 }

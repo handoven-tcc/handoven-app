@@ -5,9 +5,16 @@ import { FormsModule } from "@angular/forms";
 import { FavoritosPage } from "./favoritos.page";
 
 import { FavoritosPageRoutingModule } from "./favoritos-routing.module";
+import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
 
 @NgModule({
-  imports: [IonicModule, CommonModule, FormsModule, FavoritosPageRoutingModule],
+  imports: [
+    IonicModule,
+    ComponentsModule,
+    CommonModule,
+    FormsModule,
+    FavoritosPageRoutingModule,
+  ],
   declarations: [FavoritosPage],
 })
 export class FavoritosPageModule {}

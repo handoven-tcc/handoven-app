@@ -15,6 +15,7 @@ import { DetalhesDaReceitaComponent } from "./pages/detalhes-da-receita/detalhes
   imports: [
     ComponentsModule,
     IonicModule,
+    ComponentsModule,
     CommonModule,
     FormsModule,
     ReceitasPageRoutingModule,
