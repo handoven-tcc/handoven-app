@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { AuthService } from "../../services";
-import { FamiliaRequest } from "../../models";
+import { FamiliaRequest, UsuarioRequest } from "../../models";
 import { Subscription } from "rxjs";
 import {} from "@angular/forms";
 import { IonInput } from "@ionic/angular";
@@ -13,33 +13,48 @@ import { Router } from "@angular/router";
   styleUrls: ["./criar-conta-interno.component.scss"],
 })
 export class CriarContaInternoComponent implements OnInit {
-  inscricao: Subscription = Subscription.EMPTY;
-  inputModel = "";
-  @ViewChild("ionInputEl", { static: true }) ionInputEl!: IonInput;
+  inscricaoFamilia: Subscription = Subscription.EMPTY;
+  inscricaoUsuario: Subscription = Subscription.EMPTY;
+
+  nomeDaFamilia!: string;
+  nome!: string;
+  email!: string;
+  celular!: string;
+  dataDeNascimento!: string;
+  senha!: string;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
 
-  onInput(event: any) {
-    const value = event.target!.value;
-    const alphanumFilter = value.replace(/[^a-zA-Z0-9]+/g, "");
-    this.ionInputEl.value = this.inputModel = alphanumFilter;
+  async onClickCriarConta() {
+    const requestFamilia = new FamiliaRequest(this.nomeDaFamilia);
+    let requestUsuario = new UsuarioRequest(
+      this.nome,
+      this.dataDeNascimento,
+      this.celular,
+      this.email,
+      this.senha,
+      ""
+    );
+
+    this.inscricaoFamilia = await this.authService
+      .criarFamilia(requestFamilia)
+      .subscribe((o) => {
+        if (o) {
+          requestUsuario.familyId = o.id;
+
+          this.inscricaoUsuario = this.authService
+            .criarUsuario(requestUsuario)
+            .subscribe((i) => {
+              console.log("funcionou??", i);
+            });
+        }
+      });
   }
 
-  onClickCriarFamilia() {
-    if (!this.ionInputEl.value) {
-      return;
-    }
-    const request = new FamiliaRequest(this.ionInputEl.value.toString());
-
-    this.inscricao = this.authService.criarFamilia(request).subscribe((o) => {
-      if (o) {
-        this.router.navigate(["tabs/receitas"]);
-      }
-    });
-  }
   ngOnDestroy(): void {
-    this.inscricao.unsubscribe();
+    this.inscricaoFamilia.unsubscribe();
+    this.inscricaoUsuario.unsubscribe();
   }
 }

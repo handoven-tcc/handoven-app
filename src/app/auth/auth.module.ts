@@ -9,9 +9,17 @@ import { CriarContaInternoComponent } from "./pages/criar-conta-interno/criar-co
 import { EsqueciASenhaComponent } from "./pages/esqueci-a-senha/esqueci-a-senha.component";
 import { RedefinirSenhaComponent } from "./pages/redefinir-senha/redefinir-senha.component";
 import { SucessoComponent } from "./pages/sucesso/sucesso.component";
+import { FormsModule } from "@angular/forms";
+import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
 
 @NgModule({
-  imports: [IonicModule, CommonModule, AuthRoutingModule],
+  imports: [
+    IonicModule,
+    ComponentsModule,
+    CommonModule,
+    AuthRoutingModule,
+    FormsModule,
+  ],
   declarations: [
     AuthComponent,
     CriarContaComponent,

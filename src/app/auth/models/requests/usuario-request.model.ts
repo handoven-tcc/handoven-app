@@ -5,6 +5,7 @@ export class UsuarioRequest {
     public cell: string,
     public email: string,
     public password: string,
-    public familyId: string
+    public familyId: string,
+    public id?: string
   ) {}
 }
