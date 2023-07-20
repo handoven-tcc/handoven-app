@@ -8,13 +8,15 @@ import { CriarContaInternoComponent } from "./pages/criar-conta-interno/criar-co
 import { SucessoComponent } from "./pages/sucesso/sucesso.component";
 import { EsqueciASenhaComponent } from "./pages/esqueci-a-senha/esqueci-a-senha.component";
 import { RedefinirSenhaComponent } from "./pages/redefinir-senha/redefinir-senha.component";
+import { HomeComponent } from "./pages/home/home.component";
 
 const routes: Routes = [
   {
     path: "",
     component: AuthComponent,
     children: [
-      { path: "", redirectTo: "login", pathMatch: "full" },
+      { path: "", redirectTo: "home", pathMatch: "full" },
+      { path: "home", component: HomeComponent },
       { path: "login", component: LoginComponent },
       { path: "criar-conta", component: CriarContaComponent },
       { path: "criar-conta-interno", component: CriarContaInternoComponent },
