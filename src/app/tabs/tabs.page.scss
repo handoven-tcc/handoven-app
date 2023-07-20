@@ -1,37 +1,35 @@
-ion-tab-bar{
-    --background: #F10027;
+ion-tab-bar {
+  --background: #f10027;
 }
 
 #cenoura-icon {
-    background: no-repeat url(../../assets/icon/cenoura.png);
-    width: 29px;
-    height: 28px;
+  background: no-repeat url(../../assets/icon/cenoura.png);
+  width: 29px;
+  height: 28px;
 }
-
 
 ion-tab-button {
-    --color: var(--ion-color-medium);
-  
-    &.tab-selected {
-        #cenoura-icon {
-            background: no-repeat url(../../assets/icon/cenoura-selected.png);
-            width: 29px;
-            height: 28px;
-        }
+  --color: var(--ion-color-medium);
 
-        .icon {
-                fill: #FFC42E;
-            }
-
-        .circulo-selected{
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background-color: #FFC42E;
-            margin: 0 auto;
-            border-radius: 50%;
-            bottom: -20px;
-        }
+  &.tab-selected {
+    #cenoura-icon {
+      background: no-repeat url(../../assets/icon/cenoura-selected.png);
+      width: 29px;
+      height: 28px;
     }
-}
 
+    .icon {
+      fill: #ffc42e;
+    }
+
+    .circulo-selected {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-color: #ffc42e;
+      margin: 0 auto;
+      border-radius: 50%;
+      bottom: -20px;
+    }
+  }
+}

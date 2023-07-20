@@ -1,21 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 
-const directives: any = [
+const directives: any = [];
 
-];
-
-const pipes: any = [
-
-];
+const pipes: any = [];
 
 @NgModule({
-	declarations: [
-			...pipes
-	],
-	exports: [
-			...pipes
-	],
-  imports: [
-  ]
+  declarations: [...pipes],
+  exports: [...pipes],
+  imports: [],
 })
-export class ToolsModule { }
+export class ToolsModule {}

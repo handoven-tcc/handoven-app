@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-perfil',
-  template: '<ion-router-outlet></ion-router-outlet>',
+  selector: "app-perfil",
+  template: "<ion-router-outlet></ion-router-outlet>",
 })
 export class PerfilComponent {
-
   constructor() {}
-
 }

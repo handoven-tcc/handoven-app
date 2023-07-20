@@ -1,20 +1,20 @@
-import { IonicModule } from '@ionic/angular';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { DispensaPage } from './dispensa.page';
+import { IonicModule } from "@ionic/angular";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { DispensaPage } from "./dispensa.page";
 
-
-import { DispensaPageRoutingModule } from './dispensa-routing.module';
+import { DispensaPageRoutingModule } from "./dispensa-routing.module";
+import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
 
 @NgModule({
   imports: [
     IonicModule,
+    ComponentsModule,
     CommonModule,
     FormsModule,
-    
-    DispensaPageRoutingModule
+    DispensaPageRoutingModule,
   ],
-  declarations: [DispensaPage]
+  declarations: [DispensaPage],
 })
 export class DispensaPageModule {}

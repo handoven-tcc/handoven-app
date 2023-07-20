@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-listar-receitas',
-  templateUrl: './listar-receitas.component.html',
-  styleUrls: ['./listar-receitas.component.scss'],
+  selector: "app-listar-receitas",
+  templateUrl: "./listar-receitas.component.html",
+  styleUrls: ["./listar-receitas.component.scss"],
 })
-export class ListarReceitasComponent  implements OnInit {
-
-  constructor() { }
+export class ListarReceitasComponent implements OnInit {
+  constructor() {}
 
   ngOnInit() {}
-
+  onClickClearStorage() {
+    window.localStorage.clear();
+    window.location.reload();
+  }
 }
