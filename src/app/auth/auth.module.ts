@@ -11,6 +11,7 @@ import { RedefinirSenhaComponent } from "./pages/redefinir-senha/redefinir-senha
 import { SucessoComponent } from "./pages/sucesso/sucesso.component";
 import { FormsModule } from "@angular/forms";
 import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
+import { HomeComponent } from "./pages/home/home.component";
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { ComponentsModule } from "../../../temp/src/lib/components/components.mo
     CriarContaComponent,
     CriarContaInternoComponent,
     EsqueciASenhaComponent,
+    HomeComponent,
     LoginComponent,
     RedefinirSenhaComponent,
     SucessoComponent,
