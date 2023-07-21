@@ -17,6 +17,9 @@ import { StorageService } from "../../../../temp/src/lib/tools/services/storage.
   providedIn: "root",
 })
 export class AuthService {
+  emptyUserID: string = "111111111111111111111111";
+  emptyFamilyID: string = "111111111111111111111111";
+
   private get url(): string {
     return `${environment.api}`;
   }
@@ -44,7 +47,10 @@ export class AuthService {
 
     return this.http
       .post(`${this.url}/user/adduser`, request, {
-        headers: { "X-HandOven-Family": familyHeader },
+        headers: {
+          "X-HandOven-User": this.emptyUserID,
+          "X-HandOven-Family": familyHeader,
+        },
       })
       .pipe(
         map((res: any) => {
@@ -107,17 +113,24 @@ export class AuthService {
       return of();
     }
 
-    return this.http.post(`${this.url}/user/login`, request, {}).pipe(
-      map((res: any) => {
-        // this.storage.set("token", "token");
-        window.localStorage.setItem("token", "token");
-        // this.storage.set("X-HandOven-Family", res.familyId);
-        window.localStorage.setItem("X-HandOven-Family", res.familyId);
-        // this.storage.set("X-HandOven-User", res.id);
-        window.localStorage.setItem("X-HandOven-User", res.id);
-        return res;
+    return this.http
+      .post(`${this.url}/user/login`, request, {
+        headers: {
+          "X-HandOven-User": this.emptyUserID,
+          "X-HandOven-Family": this.emptyFamilyID,
+        },
       })
-    );
+      .pipe(
+        map((res: any) => {
+          // this.storage.set("token", "token");
+          window.localStorage.setItem("token", "token");
+          // this.storage.set("X-HandOven-Family", res.familyId);
+          window.localStorage.setItem("X-HandOven-Family", res.familyId);
+          // this.storage.set("X-HandOven-User", res.id);
+          window.localStorage.setItem("X-HandOven-User", res.id);
+          return res;
+        })
+      );
   }
 
   logout() {
