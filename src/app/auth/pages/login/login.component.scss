@@ -1,0 +1,33 @@
+.ion-color-danger {
+  --ion-color-base: #f10027 !important;
+}
+
+.center-content-fixed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform: translateY(-20%);
+}
+
+.ion-valid.sc-ion-input-md-h {
+  --highlight-color: #f10027 !important;
+}
+
+ion-input,
+ion-checkbox {
+  color: black !important;
+}
+
+ion-checkbox {
+  font-size: 0.875rem;
+}
+
+.checkbox-icon {
+  --checkbox-background: #f10027 !important;
+  color: #f10027 !important;
+}
+.crie-agora {
+  color: #f10027 !important;
+}

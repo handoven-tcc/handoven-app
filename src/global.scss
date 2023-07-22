@@ -33,3 +33,24 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+ion-content {
+  --ion-background-color: #ffffff;
+  --ion-text-color: #f10027;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

@@ -12,6 +12,7 @@ import {
   UsuarioResponse,
 } from "../models";
 import { StorageService } from "../../../../temp/src/lib/tools/services/storage.service";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root",
@@ -24,7 +25,11 @@ export class AuthService {
     return `${environment.api}`;
   }
 
-  constructor(private http: HttpClient, private storage: StorageService) {}
+  constructor(
+    private http: HttpClient,
+    private storage: StorageService,
+    private router: Router
+  ) {}
 
   getAuthToken() {
     return window.localStorage.getItem("token") ?? "";
@@ -98,10 +103,11 @@ export class AuthService {
   }
 
   login(request: LoginRequest): Observable<UsuarioResponse> {
-    const familyHeader = window.localStorage.getItem("X-HandOven-Family");
-    const userHeader = window.localStorage.getItem("X-HandOven-User");
+    const familyHeader = window.localStorage.getItem("X-HandOven-Family") ?? "";
+    const userHeader = window.localStorage.getItem("X-HandOven-User") ?? "";
 
-    if (!familyHeader || !userHeader) {
+    if (familyHeader !== "" && userHeader !== "") {
+      this.router.navigate(["/tabs/receitas"]);
       return of();
     }
 
