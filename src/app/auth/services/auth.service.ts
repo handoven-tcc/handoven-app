@@ -17,25 +17,19 @@ import { StorageService } from "../../../../temp/src/lib/tools/services/storage.
   providedIn: "root",
 })
 export class AuthService {
+  emptyUserID: string = "111111111111111111111111";
+  emptyFamilyID: string = "111111111111111111111111";
+
   private get url(): string {
     return `${environment.api}`;
   }
 
   constructor(private http: HttpClient, private storage: StorageService) {}
 
-  criarFamilia(request: FamiliaRequest): Observable<FamiliaResponse> {
-    console.log(request);
-
-    return this.http.post(`${this.url}/family`, request).pipe(
-      map((res: any) => {
-        // this.storage.set("X-HandOven-Family", res.id);
-        window.localStorage.setItem("X-HandOven-Family", res.id);
-        return res;
-      })
-    );
+  getAuthToken() {
+    return window.localStorage.getItem("token") ?? "";
   }
 
-  // TODO: testar criarUsuario
   criarUsuario(request: UsuarioRequest): Observable<UsuarioResponse> {
     const familyHeader = window.localStorage.getItem("X-HandOven-Family");
     if (!familyHeader) {
@@ -44,7 +38,10 @@ export class AuthService {
 
     return this.http
       .post(`${this.url}/user/adduser`, request, {
-        headers: { "X-HandOven-Family": familyHeader },
+        headers: {
+          "X-HandOven-User": this.emptyUserID,
+          "X-HandOven-Family": familyHeader,
+        },
       })
       .pipe(
         map((res: any) => {
@@ -57,17 +54,19 @@ export class AuthService {
       );
   }
 
-  // TODO: testar editarUsuario
   editarUsuario(request: UsuarioRequest): Observable<UsuarioResponse> {
-    if (!request.id) {
+    if (!request.id || !request.familyId) {
       return of();
     }
+
+    console.log(request);
 
     return this.http
       .put(`${this.url}/user/${request.id}`, request, {
         headers: {
           "X-HandOven-Family": request.familyId,
           "X-HandOven-User": request.id,
+          "X-handOven-Service": "false",
         },
       })
       .pipe(
@@ -81,24 +80,23 @@ export class AuthService {
       );
   }
 
-  // TODO: testar deletarUsuario
   deletarUsuario(request: DeletarUsuarioRequest): Observable<any> {
     return this.http
-      .delete(`${this.url}/user/${request.usuarioId}`, {
+      .delete(`${this.url}/user/${request.id}`, {
         headers: {
-          "X-HandOven-User": request.usuarioId,
-          "X-HandOven-Family": request.familiaId,
+          "X-HandOven-User": request.id,
+          "X-HandOven-Family": request.familyId,
           "X-handOven-Service": "false",
         },
       })
       .pipe(
         map((res: any) => {
+          this.logout();
           return res;
         })
       );
   }
 
-  // TODO: testar login
   login(request: LoginRequest): Observable<UsuarioResponse> {
     const familyHeader = window.localStorage.getItem("X-HandOven-Family");
     const userHeader = window.localStorage.getItem("X-HandOven-User");
@@ -107,35 +105,56 @@ export class AuthService {
       return of();
     }
 
-    return this.http.post(`${this.url}/user/login`, request, {}).pipe(
+    return this.http
+      .post(`${this.url}/user/login`, request, {
+        headers: {
+          "X-HandOven-User": this.emptyUserID,
+          "X-HandOven-Family": this.emptyFamilyID,
+        },
+      })
+      .pipe(
+        map((res: any) => {
+          // this.storage.set("token", "token");
+          window.localStorage.setItem("token", "token");
+          // this.storage.set("X-HandOven-Family", res.familyId);
+          window.localStorage.setItem("X-HandOven-Family", res.familyId);
+          // this.storage.set("X-HandOven-User", res.id);
+          window.localStorage.setItem("X-HandOven-User", res.id);
+          return res;
+        })
+      );
+  }
+
+  logout() {
+    // this.storage.remove("X-HandOven-Family")
+    // this.storage.remove("X-HandOven-User")
+    window.localStorage.clear();
+  }
+
+  criarFamilia(request: FamiliaRequest): Observable<FamiliaResponse> {
+    console.log(request);
+
+    return this.http.post(`${this.url}/family`, request).pipe(
       map((res: any) => {
-        // this.storage.set("token", "token");
-        window.localStorage.setItem("token", "token");
-        // this.storage.set("X-HandOven-Family", res.familyId);
-        window.localStorage.setItem("X-HandOven-Family", res.familyId);
-        // this.storage.set("X-HandOven-User", res.id);
-        window.localStorage.setItem("X-HandOven-User", res.id);
+        // this.storage.set("X-HandOven-Family", res.id);
+        window.localStorage.setItem("X-HandOven-Family", res.id);
         return res;
       })
     );
   }
 
-  logout() {
-    window.localStorage.clear();
-  }
-
-  // TODO: testar getFamiliaId
-  getFamiliaId(request: GetFamiliaIdRequest): Observable<FamiliaResponse> {
+  deleteAll(request: DeletarUsuarioRequest): Observable<any> {
     return this.http
-      .get(`${this.url}/user/familyId/${request.familiaId}`, {
+      .delete(`${this.url}/family/destroyAll/${request.familyId}`, {
         headers: {
-          "X-HandOven-User": request.usuarioId,
-          "X-HandOven-Family": request.familiaId,
-          "X-handOven-Service": "false",
+          "X-HandOven-User": request.id,
+          "X-HandOven-Family": request.familyId,
+          "X-handOven-Service": "true",
         },
       })
       .pipe(
         map((res: any) => {
+          this.logout();
           return res;
         })
       );
