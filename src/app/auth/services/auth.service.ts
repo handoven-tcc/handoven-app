@@ -26,6 +26,10 @@ export class AuthService {
 
   constructor(private http: HttpClient, private storage: StorageService) {}
 
+  getAuthToken() {
+    return window.localStorage.getItem("token") ?? "";
+  }
+
   criarUsuario(request: UsuarioRequest): Observable<UsuarioResponse> {
     const familyHeader = window.localStorage.getItem("X-HandOven-Family");
     if (!familyHeader) {
