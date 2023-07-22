@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   inscricao: Subscription = Subscription.EMPTY;
   email!: string;
   senha!: string;
+  lembrar!: string;
 
   constructor(private authService: AuthService, private router: Router) {}
 
