@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  transform: translateY(-20%);
+  transform: translateY(-15%);
 }
 
 .ion-valid.sc-ion-input-md-h {
@@ -21,13 +21,14 @@ ion-checkbox {
 }
 
 ion-checkbox {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .checkbox-icon {
   --checkbox-background: #f10027 !important;
   color: #f10027 !important;
 }
-.crie-agora {
+
+#crie-agora {
   color: #f10027 !important;
 }
