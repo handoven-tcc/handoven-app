@@ -8,6 +8,7 @@ import { IonicStorageModule } from "@ionic/storage-angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { httpInterceptorProviders } from "./auth/http-interceptor";
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -19,7 +20,10 @@ import { AppComponent } from "./app.component";
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    httpInterceptorProviders,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
