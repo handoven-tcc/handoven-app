@@ -5,7 +5,7 @@ import { Subscription } from "rxjs";
 import {} from "@angular/forms";
 import { IonInput } from "@ionic/angular";
 import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-criar-conta-interno",
@@ -23,9 +23,16 @@ export class CriarContaInternoComponent implements OnInit {
   dataDeNascimento!: string;
   senha!: string;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const result1 = this.activatedRoute.snapshot.params["nomeDaFamilia"];
+    const result11 = this.activatedRoute.snapshot.params["email"];
+  }
 
   async onClickCriarConta() {
     const requestFamilia = new FamiliaRequest(this.nomeDaFamilia);

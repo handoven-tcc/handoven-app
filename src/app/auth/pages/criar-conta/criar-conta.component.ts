@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { CriarContaInternoComponent } from "../criar-conta-interno/criar-conta-interno.component";
+import { NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-criar-conta",
@@ -6,7 +8,20 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./criar-conta.component.scss"],
 })
 export class CriarContaComponent implements OnInit {
-  constructor() {}
+  nomeDaFamilia!: string;
+  email!: string;
+
+  component = CriarContaInternoComponent;
+
+  constructor(private nav: NavController) {}
 
   ngOnInit() {}
+
+  onClickProsseguir() {
+    this.nav.navigateForward([
+      "auth/criar-conta",
+      this.nomeDaFamilia,
+      this.email,
+    ]);
+  }
 }
