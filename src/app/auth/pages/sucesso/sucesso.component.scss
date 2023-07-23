@@ -1,0 +1,25 @@
+img#green-bg {
+  position: fixed;
+}
+.center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform: translateY(-15%);
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+}
+.center-content-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}

@@ -1,13 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Sucesso</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header> </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Sucesso</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content id="ion-content" [fullscreen]="true">
+  <div class="content">
+    <img id="green-bg" src="../../../../assets/green.svg" />
+    <div class="center">
+      <img src="../../../../assets/ok.svg" />
+      <h1 class="text-900 font-semibold">Tudo pronto</h1>
+      <strong class="text-900 font-medium"
+        >A sua conta foi criada com sucesso!</strong
+      >
+    </div>
+
+    <div class="center-content-end">
+      <div class="px-4 mb-3 w-full">
+        <ion-button
+          class="w-full mt-3 text-lg"
+          color="danger"
+          fill="solid"
+          expand="block"
+          (click)="onClickComecarAgora()">
+          Começar Agora
+        </ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>
