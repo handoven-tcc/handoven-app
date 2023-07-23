@@ -24,4 +24,8 @@ export class CriarContaComponent implements OnInit {
       this.email,
     ]);
   }
+
+  onClickNavigateToLogin() {
+    this.nav.navigateForward(["auth/login"]);
+  }
 }

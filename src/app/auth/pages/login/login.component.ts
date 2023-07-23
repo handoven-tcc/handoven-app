@@ -3,6 +3,7 @@ import { LoginRequest } from "../../models";
 import { Subscription } from "rxjs";
 import { AuthService } from "../../services";
 import { Router } from "@angular/router";
+import { NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-login",
@@ -15,7 +16,11 @@ export class LoginComponent implements OnInit {
   senha!: string;
   lembrar!: string;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private nav: NavController
+  ) {}
 
   ngOnInit() {}
 
@@ -24,6 +29,10 @@ export class LoginComponent implements OnInit {
     this.inscricao = this.authService.login(request).subscribe((_) => {
       this.router.navigate(["/tabs/receitas"]);
     });
+  }
+
+  onClickNavigateToLogin() {
+    this.nav.navigateForward(["auth/criar-conta"]);
   }
 
   ngOnDestroy(): void {
