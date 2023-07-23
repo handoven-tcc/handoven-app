@@ -1,50 +1,83 @@
 <ion-header>
+  <div class="bola-header"></div>
+  <button id="btn-wrapper" (click)="onClickTirarFoto()">
+    <div class="tirar-foto">
+      <ion-icon color="light" name="camera-outline"></ion-icon>
+    </div>
+    <label id="label-tirar-foto">Tirar foto</label>
+  </button>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
+    <ion-title class="text-base text-white"
+      >Falta pouco para criar sua conta</ion-title
+    >
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-toolbar>
-    <ion-title size="large">Criar conta interno</ion-title>
-  </ion-toolbar>
+  <div class="center-content-end">
+    <div class="px-4 mb-3 w-full">
+      <span class="text-color font-bold block mb-2"
+        >Nome completo do responsável</span
+      >
+      <input
+        class="w-full"
+        type="text"
+        placeholder="Seu nome"
+        pInputText
+        [(ngModel)]="nome" />
+    </div>
 
-  <ion-item>
-    <ion-input label="Nome do familia" [(ngModel)]="nomeDaFamilia"></ion-input>
-  </ion-item>
+    <div class="px-4 mb-3 w-full">
+      <span class="text-color font-bold block mb-2"
+        >Celular do responsável</span
+      >
+      <p-inputMask
+        styleClass="w-full"
+        mask="(99) 99999-9999"
+        [(ngModel)]="celular"
+        placeholder="(99) 99999-9999"></p-inputMask>
+    </div>
 
-  <ion-item>
-    <ion-input label="Nome do usuário" [(ngModel)]="nome"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input
-      label="email"
-      type="email"
-      placeholder="email@domain.com"
-      [(ngModel)]="email"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input
-      label="celular"
-      type="tel"
-      placeholder="55555555555"
-      [(ngModel)]="celular"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>data de nascimento:</ion-label>
-    <ion-datetime-button datetime="datetime"></ion-datetime-button>
-  </ion-item>
-  <ion-item>
-    <ion-input
-      label="senha"
-      type="password"
-      value="password"
-      [(ngModel)]="senha"></ion-input>
-  </ion-item>
-  <p-button label="Enviar" (click)="onClickCriarConta()"></p-button>
+    <div class="px-4 mb-3 w-full">
+      <span class="text-color font-bold block mb-2">Data de nascimento</span>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    </div>
+    <div class="px-4 mb-3 w-full">
+      <span class="text-color font-bold block mb-2">Senha</span>
+      <p-password
+        class="mb-3 w-full"
+        styleClass="w-full"
+        inputStyleClass="w-full"
+        placeholder="Digite sua senha"
+        [feedback]="false"
+        [(ngModel)]="senha"
+        [toggleMask]="true"></p-password>
+    </div>
+    <div class="px-4 mb-3 w-full">
+      <span class="text-color font-bold block mb-2">Repetir Senha</span>
+      <p-password
+        class="mb-3 w-full"
+        styleClass="w-full"
+        inputStyleClass="w-full"
+        placeholder="Digite novamente sua senha"
+        [feedback]="false"
+        [(ngModel)]="senhaRepetida"
+        [toggleMask]="true"></p-password>
+    </div>
+    <div class="px-4 mb-3 w-full">
+      <ion-button
+        class="w-full mt-3 text-lg"
+        color="danger"
+        fill="solid"
+        expand="block"
+        (click)="onClickCriarConta()">
+        Finalizar cadastro
+      </ion-button>
+    </div>
+  </div>
 </ion-content>
 
 <ion-modal [keepContentsMounted]="true">

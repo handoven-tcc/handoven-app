@@ -22,6 +22,7 @@ export class CriarContaInternoComponent implements OnInit {
   celular!: string;
   dataDeNascimento!: string;
   senha!: string;
+  senhaRepetida!: string;
 
   constructor(
     private authService: AuthService,
@@ -30,11 +31,14 @@ export class CriarContaInternoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const result1 = this.activatedRoute.snapshot.params["nomeDaFamilia"];
-    const result11 = this.activatedRoute.snapshot.params["email"];
+    this.nomeDaFamilia = this.activatedRoute.snapshot.params["nomeDaFamilia"];
+    this.email = this.activatedRoute.snapshot.params["email"];
   }
 
-  async onClickCriarConta() {
+  onClickCriarConta() {
+    if (this.senha !== this.senhaRepetida) {
+      return;
+    }
     const requestFamilia = new FamiliaRequest(this.nomeDaFamilia);
     let requestUsuario = new UsuarioRequest(
       this.nome,
@@ -45,7 +49,7 @@ export class CriarContaInternoComponent implements OnInit {
       ""
     );
 
-    this.inscricaoFamilia = await this.authService
+    this.inscricaoFamilia = this.authService
       .criarFamilia(requestFamilia)
       .subscribe((o) => {
         if (o) {
@@ -55,9 +59,14 @@ export class CriarContaInternoComponent implements OnInit {
             .criarUsuario(requestUsuario)
             .subscribe((i) => {
               console.log("funcionou??", i);
+              this.router.navigate(["auth/sucesso"]);
             });
         }
       });
+  }
+
+  onClickTirarFoto() {
+    console.log("foto tirada!");
   }
 
   ngOnDestroy(): void {

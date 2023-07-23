@@ -1,0 +1,60 @@
+ion-datetime-button {
+  --ion-text-color: black !important;
+  display: flex;
+  justify-content: start;
+}
+
+.bola-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 134%;
+  height: 60vh;
+  background-color: #f10027;
+  border-radius: 50%;
+  z-index: -1; /* Garante que a bola fique atrás do conteúdo */
+}
+
+.tirar-foto {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 125%);
+  width: 25%;
+  height: 90px;
+  background-color: #ffc42e;
+  border-radius: 30%;
+  z-index: 1; /* Garante que a bola fique atrás do conteúdo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+#label-tirar-foto {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 155px);
+  z-index: 20; /* Garante que a bola fique atrás do conteúdo */
+}
+
+ion-toolbar {
+  --ion-toolbar-background: #f10027 !important;
+}
+
+.center-content-end {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
