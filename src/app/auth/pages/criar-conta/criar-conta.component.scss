@@ -1,0 +1,12 @@
+.center-content-fixed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform: translateY(-15%);
+}
+
+.ion-valid.sc-ion-input-md-h {
+  --highlight-color: #f10027 !important;
+}

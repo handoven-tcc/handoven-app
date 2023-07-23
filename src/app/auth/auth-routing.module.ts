@@ -19,7 +19,10 @@ const routes: Routes = [
       { path: "home", component: HomeComponent },
       { path: "login", component: LoginComponent },
       { path: "criar-conta", component: CriarContaComponent },
-      { path: "criar-conta-interno", component: CriarContaInternoComponent },
+      {
+        path: "criar-conta/:nomeDaFamilia/:email",
+        component: CriarContaInternoComponent,
+      },
       { path: "sucesso", component: SucessoComponent },
       { path: "esqueci-a-senha", component: EsqueciASenhaComponent },
       { path: "redefinir-senha", component: RedefinirSenhaComponent },
