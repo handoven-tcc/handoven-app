@@ -64,8 +64,6 @@ export class AuthService {
       return of();
     }
 
-    console.log(request);
-
     return this.http
       .put(`${this.url}/user/${request.id}`, request, {
         headers: {
@@ -138,8 +136,6 @@ export class AuthService {
   }
 
   criarFamilia(request: FamiliaRequest): Observable<FamiliaResponse> {
-    console.log(request);
-
     return this.http.post(`${this.url}/family`, request).pipe(
       map((res: any) => {
         // this.storage.set("X-HandOven-Family", res.id);
