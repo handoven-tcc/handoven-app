@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-sucesso",
@@ -6,7 +7,15 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./sucesso.component.scss"],
 })
 export class SucessoComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      this.router.navigate(["tabs/receitas"]);
+    }, 5000);
+  }
+
+  onClickComecarAgora() {
+    this.router.navigate(["tabs/receitas"]);
+  }
 }
