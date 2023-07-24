@@ -14,3 +14,16 @@
 #entre-agora {
   color: #f10027 !important;
 }
+
+.wrap-end {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}

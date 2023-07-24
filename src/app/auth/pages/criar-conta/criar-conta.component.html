@@ -23,6 +23,7 @@
     </span>
 
     <ion-button
+      id="abrir-modal"
       class="w-full grid px-4 mt-3 text-lg"
       color="danger"
       fill="solid"
@@ -37,5 +38,86 @@
         >Entre agora</a
       >
     </div>
+    <div class="wrap-end">
+      <div class="mt-3 text-xs">
+        <ion-label class="mr-2 text-color"
+          >Ao clicar em “Criar Conta” você concorda com os nossos
+          <a id="entre-agora" class="text-xs" (click)="setOpenTermosDeUso(true)"
+            >Termos de Uso e Política de Privacidade.</a
+          >
+        </ion-label>
+      </div>
+    </div>
   </div>
+
+  <ion-modal [isOpen]="isModalTermosDeUsoOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title class="text-base nowrap flex-nowrap flex-no-wrap flex"
+            >Termos de Uso</ion-title
+          >
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpenTermosDeUso(false)">Fechar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p class="text-900">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum
+          quidem recusandae ducimus quos reprehenderit. Veniam, molestias quos,
+          dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal
+    #modal
+    trigger="abrir-modal"
+    [canDismiss]="canDismiss"
+    [presentingElement]="presentingElement">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Termos de Uso</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal.dismiss()">Fechar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <p class="text-900 ion-padding-horizontal">
+          Você pode aceitar os termos de uso e as políticas de privacidade para
+          fechar esse modal.
+        </p>
+        <ion-item>
+          <ion-label class="text-900 ion-text-wrap" for="terms"
+            >Você aceita os termos de uso?</ion-label
+          >
+          <ion-checkbox
+            id="terms"
+            (ionChange)="onTermsChanged($event)"
+            [checked]="canDismiss"></ion-checkbox>
+        </ion-item>
+        <p class="text-900 text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sapiente,
+          eum aspernatur, sunt, iusto ut illum esse dolorum ad molestias quas
+          possimus provident eveniet! Facilis error doloremque voluptatum
+          suscipit sequi. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Deleniti consequuntur tenetur quo quibusdam ipsam maxime et
+          illo? Distinctio ipsum tempora aut velit. Reprehenderit natus odio
+          pariatur. Id hic error fuga?
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-alert
+    [isOpen]="isAlertOpen"
+    header="Campos Inválidos!"
+    message="Favor preencha todos os campos corretamente"
+    [buttons]="alertButtons"
+    (didDismiss)="setOpenAlert(false)"></ion-alert>
 </ion-content>
