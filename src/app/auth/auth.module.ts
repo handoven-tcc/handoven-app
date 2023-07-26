@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { IonicModule } from "@ionic/angular";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AuthRoutingModule } from "./auth-routing.module";
 import { AuthComponent } from "./auth.component";
 import { LoginComponent } from "./pages/login/login.component";
@@ -20,6 +20,7 @@ import { ComponentsModule } from "../../../temp/src/lib/components/components.mo
     CommonModule,
     AuthRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     AuthComponent,
