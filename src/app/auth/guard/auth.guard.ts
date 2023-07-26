@@ -1,16 +1,20 @@
 import { Injectable } from "@angular/core";
 import { CanActivate, Router } from "@angular/router";
-import { StorageService } from "../../../../temp/src/lib/tools/services/storage.service";
+// import { StorageService } from "../../../../temp/src/lib/tools/services/storage.service";
+import { AuthService } from "../services";
 
 @Injectable({
   providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router, private storage: StorageService) {}
+  constructor(
+    private router: Router,
+    // private storage: StorageService,
+    private authService: AuthService
+  ) {}
 
   async canActivate(): Promise<boolean> {
-    // const token = await this.storage.get("token");
-    const token = window.localStorage.getItem("token");
+    const token = this.authService.getAuthToken();
 
     if (!token) {
       this.router.navigate(["auth/home"]);

@@ -11,7 +11,7 @@ import {
   UsuarioRequest,
   UsuarioResponse,
 } from "../models";
-import { StorageService } from "../../../../temp/src/lib/tools/services/storage.service";
+// import { StorageService } from "../../../../temp/src/lib/tools/services/storage.service";
 import { Router } from "@angular/router";
 
 @Injectable({
@@ -27,7 +27,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private storage: StorageService,
+    // private storage: StorageService,
     private router: Router
   ) {}
 
@@ -36,8 +36,7 @@ export class AuthService {
   }
 
   criarUsuario(request: UsuarioRequest): Observable<UsuarioResponse> {
-    const familyHeader = window.localStorage.getItem("X-HandOven-Family");
-    if (!familyHeader) {
+    if (!request.id || !request.familyId) {
       return of();
     }
 
@@ -45,7 +44,7 @@ export class AuthService {
       .post(`${this.url}/user/adduser`, request, {
         headers: {
           "X-HandOven-User": this.emptyUserID,
-          "X-HandOven-Family": familyHeader,
+          "X-HandOven-Family": request.familyId,
         },
       })
       .pipe(
@@ -84,6 +83,10 @@ export class AuthService {
   }
 
   deletarUsuario(request: DeletarUsuarioRequest): Observable<any> {
+    if (!request.id || !request.familyId) {
+      return of();
+    }
+
     return this.http
       .delete(`${this.url}/user/${request.id}`, {
         headers: {
@@ -136,6 +139,10 @@ export class AuthService {
   }
 
   criarFamilia(request: FamiliaRequest): Observable<FamiliaResponse> {
+    if (!request.name) {
+      return of();
+    }
+
     return this.http.post(`${this.url}/family`, request).pipe(
       map((res: any) => {
         // this.storage.set("X-HandOven-Family", res.id);
@@ -146,6 +153,10 @@ export class AuthService {
   }
 
   deleteAll(request: DeletarUsuarioRequest): Observable<any> {
+    if (!request.id || !request.familyId) {
+      return of();
+    }
+
     return this.http
       .delete(`${this.url}/family/destroyAll/${request.familyId}`, {
         headers: {

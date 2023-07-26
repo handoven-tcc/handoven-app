@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../../../auth/services";
 
 @Component({
   selector: "app-listar-receitas",
@@ -6,11 +7,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./listar-receitas.component.scss"],
 })
 export class ListarReceitasComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {}
   onClickClearStorage() {
-    window.localStorage.clear();
+    this.authService.logout();
     window.location.reload();
   }
 }
