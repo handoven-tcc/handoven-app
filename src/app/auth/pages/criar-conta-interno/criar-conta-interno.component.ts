@@ -24,6 +24,8 @@ export class CriarContaInternoComponent implements OnInit {
   senha!: string;
   senhaRepetida!: string;
 
+  public alertButtons = ["OK"];
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -57,10 +59,7 @@ export class CriarContaInternoComponent implements OnInit {
 
           this.inscricaoUsuario = this.authService
             .criarUsuario(requestUsuario)
-            .subscribe((i) => {
-              console.log("funcionou??", i);
-              this.router.navigate(["auth/sucesso"]);
-            });
+            .subscribe(() => this.router.navigate(["auth/sucesso"]));
         }
       });
   }

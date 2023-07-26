@@ -12,7 +12,7 @@
 <ion-content id="ion-content" [fullscreen]="true">
   <div class="bola-header"></div>
   <div class="content">
-    <button id="btn-wrapper" (click)="onClickTirarFoto()">
+    <button id="btn-wrapper">
       <div class="tirar-foto">
         <ion-icon color="light" name="camera-outline"></ion-icon>
       </div>
@@ -93,3 +93,9 @@
       id="datetime"></ion-datetime>
   </ng-template>
 </ion-modal>
+
+<ion-alert
+  trigger="btn-wrapper"
+  header="Oops..."
+  message="Desculpe, isso ainda não foi implementado 😢"
+  [buttons]="alertButtons"></ion-alert>
