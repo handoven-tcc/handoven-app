@@ -5,6 +5,12 @@ import {
   CheckboxCustomEvent,
   NavController,
 } from "@ionic/angular";
+import {
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from "@angular/forms";
 
 @Component({
   selector: "app-criar-conta",
@@ -12,9 +18,8 @@ import {
   styleUrls: ["./criar-conta.component.scss"],
 })
 export class CriarContaComponent implements OnInit {
-  nomeDaFamilia!: string;
-  email!: string;
   component = CriarContaInternoComponent;
+  form!: FormGroup;
 
   canDismiss: boolean = false;
   presentingElement!: any;
@@ -24,6 +29,10 @@ export class CriarContaComponent implements OnInit {
 
   isAlertOpen: boolean = false;
   alertButtons: string[] = ["OK"];
+
+  public getForm(): FormGroup {
+    return this.form;
+  }
 
   public setOpenTermosDeUso(isOpen: boolean) {
     this.isModalTermosDeUsoOpen = isOpen;
@@ -37,22 +46,52 @@ export class CriarContaComponent implements OnInit {
     this.isAlertOpen = isOpen;
   }
 
-  constructor(private nav: NavController) {}
+  public get getNomeDaFamiliaRequired(): any {
+    return (
+      this.form.get("nomeDaFamilia")?.touched &&
+      this.form.get("nomeDaFamilia")?.errors?.["required"]
+    );
+  }
+
+  public get getNomeDaFamiliaInvalid(): any {
+    return (
+      this.form.get("nomeDaFamilia")?.touched &&
+      this.form.get("nomeDaFamilia")?.errors?.["minlength"]
+    );
+  }
+
+  public get getEmailRequired(): any {
+    return (
+      this.form.get("email")?.touched &&
+      this.form.get("email")?.errors?.["required"]
+    );
+  }
+
+  public get getEmailInvalid(): any {
+    return (
+      this.form.get("email")?.touched &&
+      this.form.get("email")?.errors?.["email"]
+    );
+  }
+
+  constructor(private nav: NavController, private formBuilder: FormBuilder) {}
 
   async ngOnInit() {
     this.presentingElement = document.querySelector(".ion-page");
+    this.form = this.formBuilder.group({
+      nomeDaFamilia: ["", [Validators.minLength(3), Validators.required]],
+      email: ["", [Validators.email, Validators.required]],
+    });
   }
 
-  onClickProsseguir() {
-    if (!this.nomeDaFamilia && !this.email) {
-      this.setOpenAlert(true);
-      return;
-    }
-    if (this.canDismiss == true) {
+  onClickFecharModal(modal: any) {
+    modal.dismiss();
+
+    if (this.canDismiss) {
       this.nav.navigateForward([
         "auth/criar-conta",
-        this.nomeDaFamilia,
-        this.email,
+        this.form.controls["nomeDaFamilia"].value,
+        this.form.controls["email"].value,
       ]);
     }
   }

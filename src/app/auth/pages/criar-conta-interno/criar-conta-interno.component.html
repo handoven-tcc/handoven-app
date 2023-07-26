@@ -11,7 +11,7 @@
 
 <ion-content id="ion-content" [fullscreen]="true">
   <div class="bola-header"></div>
-  <div class="content">
+  <form class="content" [formGroup]="getForm()">
     <button id="btn-wrapper">
       <div class="tirar-foto">
         <ion-icon color="light" name="camera-outline"></ion-icon>
@@ -28,7 +28,9 @@
           type="text"
           placeholder="Seu nome"
           pInputText
-          [(ngModel)]="nome" />
+          formControlName="nome" />
+        <small *ngIf="getNomeRequired">Nome é obrigatório.</small>
+        <small *ngIf="getNomeInvalid">Nome é inválido.</small>
       </div>
 
       <div class="px-4 mb-3 w-full">
@@ -38,14 +40,20 @@
         <p-inputMask
           styleClass="w-full"
           mask="(99) 99999-9999"
-          [(ngModel)]="celular"
+          formControlName="celular"
           placeholder="(99) 99999-9999"></p-inputMask>
+        <small *ngIf="getCelularRequired">Celular é obrigatório.</small>
+        <small *ngIf="getCelularInvalid">Celular é inválido.</small>
       </div>
 
       <div class="px-4 mb-3 w-full">
         <span class="text-color font-bold block mb-2">Data de nascimento</span>
         <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <small *ngIf="!getDataDeNascimentoInvalid"
+          >É preciso ter mais de 18 anos</small
+        >
       </div>
+
       <div class="px-4 mb-3 w-full">
         <span class="text-color font-bold block mb-2">Senha</span>
         <p-password
@@ -54,9 +62,14 @@
           inputStyleClass="w-full"
           placeholder="Digite sua senha"
           [feedback]="false"
-          [(ngModel)]="senha"
+          formControlName="senha"
           [toggleMask]="true"></p-password>
+        <small *ngIf="getSenhaRequired">Senha é obrigatório.</small>
+        <small *ngIf="getSenhaInvalid"
+          >Senha deve ter minimo 6 caracteres.</small
+        >
       </div>
+
       <div class="px-4 mb-3 w-full">
         <span class="text-color font-bold block mb-2">Repetir Senha</span>
         <p-password
@@ -65,24 +78,32 @@
           inputStyleClass="w-full"
           placeholder="Digite novamente sua senha"
           [feedback]="false"
-          [(ngModel)]="senhaRepetida"
+          formControlName="senhaRepetida"
           [toggleMask]="true"></p-password>
+        <small *ngIf="getSenhaRepetidaRequired"
+          >Repetir a Senha é obrigatório.</small
+        >
+        <small *ngIf="getSenhaRepetidaInvalid"
+          >Senha não é igual a anterior.</small
+        >
       </div>
+
       <div class="px-4 mb-3 w-full">
         <ion-button
           class="w-full mt-3 text-lg"
           color="danger"
           fill="solid"
+          [disabled]="!this.form.valid"
           expand="block"
           (click)="onClickCriarConta()">
           Finalizar cadastro
         </ion-button>
       </div>
     </div>
-  </div>
+  </form>
 </ion-content>
 
-<ion-modal [keepContentsMounted]="true">
+<ion-modal #modal [keepContentsMounted]="true">
   <ng-template>
     <ion-datetime
       presentation="date"
