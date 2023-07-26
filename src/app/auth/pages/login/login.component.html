@@ -25,7 +25,7 @@
       <ion-checkbox labelPlacement="end" [(ngModel)]="lembrar"
         >Lembrar de mim</ion-checkbox
       >
-      <a class="text-color text-xs"> Esqueci a senha </a>
+      <a id="nao-implementado" class="text-color text-xs"> Esqueci a senha </a>
     </div>
 
     <ion-button
@@ -44,3 +44,9 @@
     </div>
   </div>
 </ion-content>
+
+<ion-alert
+  trigger="nao-implementado"
+  header="Oops..."
+  message="Desculpe, isso ainda não foi implementado 😢"
+  [buttons]="alertButtons"></ion-alert>

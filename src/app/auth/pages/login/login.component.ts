@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   senha!: string;
   lembrar!: string;
 
+  alertButtons: string[] = ["OK"];
+
   constructor(
     private authService: AuthService,
     private router: Router,
