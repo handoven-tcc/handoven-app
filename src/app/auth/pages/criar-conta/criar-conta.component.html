@@ -44,17 +44,17 @@
         >Entre agora</a
       >
     </div>
-    <div class="wrap-end">
-      <div class="mt-3 text-xs">
-        <ion-label class="mr-2 text-color"
-          >Ao clicar em “Criar Conta” você concorda com os nossos
-          <a id="entre-agora" class="text-xs" (click)="setOpenTermosDeUso(true)"
-            >Termos de Uso e Política de Privacidade.</a
-          >
-        </ion-label>
-      </div>
-    </div>
   </form>
+  <div class="wrap-end">
+    <div class="mt-3 text-xs">
+      <ion-label class="mr-2 text-color"
+        >Ao clicar em “Criar Conta” você concorda com os nossos
+        <a id="entre-agora" class="text-xs" (click)="setOpenTermosDeUso(true)"
+          >Termos de Uso e Política de Privacidade.</a
+        >
+      </ion-label>
+    </div>
+  </div>
 
   <ion-modal [isOpen]="isModalTermosDeUsoOpen">
     <ng-template>
