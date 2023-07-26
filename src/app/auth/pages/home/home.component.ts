@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { NavController } from "@ionic/angular";
 
 @Component({
@@ -7,7 +8,11 @@ import { NavController } from "@ionic/angular";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private nav: NavController) {}
+  constructor(
+    // private storage: StorageService,
+    private nav: NavController,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
@@ -17,5 +22,11 @@ export class HomeComponent implements OnInit {
 
   onClickCriarConta() {
     this.nav.navigateForward(["auth/criar-conta"]);
+  }
+
+  onClickAcessarComoConvidado() {
+    // this.storage.set("token", "token");
+    window.localStorage.setItem("token", "token");
+    this.router.navigate(["tabs/receitas"]);
   }
 }
