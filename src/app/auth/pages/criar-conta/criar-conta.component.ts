@@ -27,7 +27,6 @@ export class CriarContaComponent implements OnInit {
   isModalTermosDeUsoOpen: boolean = false;
   isModalTermosDeUsoCriarContaOpen: boolean = false;
 
-  isAlertOpen: boolean = false;
   alertButtons: string[] = ["OK"];
 
   public getForm(): FormGroup {
@@ -40,10 +39,6 @@ export class CriarContaComponent implements OnInit {
 
   public setOpenTermosDeUsoCriarConta(isOpen: boolean) {
     this.isModalTermosDeUsoCriarContaOpen = isOpen;
-  }
-
-  public setOpenAlert(isOpen: boolean) {
-    this.isAlertOpen = isOpen;
   }
 
   public get getNomeDaFamiliaRequired(): any {
