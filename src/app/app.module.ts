@@ -9,6 +9,7 @@ import { IonicStorageModule } from "@ionic/storage-angular";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { httpInterceptorProviders } from "./auth/http-interceptor";
+import { Network } from "@awesome-cordova-plugins/network/ngx";
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,6 +24,7 @@ import { httpInterceptorProviders } from "./auth/http-interceptor";
   providers: [
     httpInterceptorProviders,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Network,
   ],
   bootstrap: [AppComponent],
 })

@@ -7,10 +7,14 @@ import {
 } from "@angular/common/http";
 import { AuthService } from "../services";
 import { catchError, throwError } from "rxjs";
+import { AlertController } from "@ionic/angular";
 
 @Injectable({ providedIn: "root" })
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    public alertController: AlertController
+  ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     const token = this.authService.getAuthToken();
@@ -27,15 +31,29 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private handleError(error: HttpErrorResponse) {
+    console.log(error);
+
     if (error.error instanceof ErrorEvent) {
-      console.error("Ocorreu um erro", error.error.message);
-    } else {
-      console.error(
-        `Código do erro ${error.status}, ` +
-          `Erro: ${JSON.stringify(error.error)}`
-      );
+      this.alertController
+        .create({
+          header: "Erro na Autentificação!",
+          message: "Favor verifique suas credenciais.",
+        })
+        .then((o) => o.present());
+
+      console.error(error.error.message);
     }
 
-    return throwError("Ocorreu um erro, tente novamente");
+    if (error.status == 401) {
+      this.alertController
+        .create({
+          header: "Sem Autentificação!",
+          message: "Para efetuar essa ação é necessário autentificação",
+        })
+        .then((o) => o.present());
+
+      console.error(error.error.message);
+    }
+    return throwError(error);
   }
 }
