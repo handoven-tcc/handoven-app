@@ -31,8 +31,6 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private handleError(error: HttpErrorResponse) {
-    console.log(error);
-
     if (error.error instanceof ErrorEvent) {
       this.alertController
         .create({

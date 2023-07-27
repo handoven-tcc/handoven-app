@@ -20,7 +20,6 @@ export class ServerInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        console.log(error);
         if (error.status == 500) {
           this.alertController
             .create({
