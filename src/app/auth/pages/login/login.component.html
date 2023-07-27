@@ -32,6 +32,7 @@
       class="w-full grid px-4 mt-3 text-lg"
       color="danger"
       fill="solid"
+      [disabled]="!getDisableLogin()"
       expand="block"
       (click)="onClickLogIn()">
       Fazer login

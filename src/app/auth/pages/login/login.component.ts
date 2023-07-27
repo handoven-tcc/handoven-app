@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { LoginRequest } from "../../models";
+import { LoginRequest, UsuarioResponse } from "../../models";
 import { Subscription } from "rxjs";
 import { AuthService } from "../../services";
 import { Router } from "@angular/router";
@@ -18,6 +18,10 @@ export class LoginComponent implements OnInit {
 
   alertButtons: string[] = ["OK"];
 
+  public getDisableLogin() {
+    return this.email && this.senha ? true : false;
+  }
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -28,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   onClickLogIn() {
     const request = new LoginRequest(this.email, this.senha);
-    this.inscricao = this.authService.login(request).subscribe((_) => {
+    this.inscricao = this.authService.login(request).subscribe(() => {
       this.router.navigate(["/tabs/receitas"]);
     });
   }
