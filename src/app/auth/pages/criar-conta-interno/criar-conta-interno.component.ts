@@ -76,12 +76,6 @@ export class CriarContaInternoComponent implements OnInit {
     );
   }
 
-  public get getSenhaRepetidaRequired(): any {
-    return (
-      this.form.get("senhaRepetida")?.touched &&
-      this.form.get("senhaRepetida")?.errors?.["required"]
-    );
-  }
   public get getSenhaRepetidaInvalid(): any {
     return (
       this.form.get("senhaRepetida")?.touched &&
