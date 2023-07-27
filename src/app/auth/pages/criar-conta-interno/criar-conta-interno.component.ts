@@ -100,7 +100,7 @@ export class CriarContaInternoComponent implements OnInit {
   setupForm() {
     this.form = this.formBuilder.group({
       nome: ["", [Validators.minLength(3), Validators.required]],
-      celular: ["", [Validators.maxLength(14), Validators.required]],
+      celular: ["", [Validators.maxLength(15), Validators.required]],
       senha: ["", [Validators.minLength(6), Validators.required]],
       senhaRepetida: ["", [Validators.minLength(6), Validators.required]],
     });
@@ -118,7 +118,8 @@ export class CriarContaInternoComponent implements OnInit {
       this.form.controls["celular"].value,
       this.email,
       this.form.controls["senha"].value,
-      ""
+      "",
+      "111111111111111111111111"
     );
 
     this.inscricaoFamilia = this.authService
@@ -127,15 +128,13 @@ export class CriarContaInternoComponent implements OnInit {
         if (o) {
           requestUsuario.familyId = o.id;
 
+          console.log(requestUsuario);
+
           this.inscricaoUsuario = this.authService
             .criarUsuario(requestUsuario)
             .subscribe(() => this.router.navigate(["auth/sucesso"]));
         }
       });
-  }
-
-  onClickTirarFoto() {
-    console.log("foto tirada!");
   }
 
   senhaValidator(form: FormGroup): ValidatorFn {
