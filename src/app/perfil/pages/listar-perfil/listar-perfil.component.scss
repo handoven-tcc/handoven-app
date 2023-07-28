@@ -1,0 +1,36 @@
+header {
+  width: 100vw;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  #editar {
+    color: #f10027;
+    width: 100%;
+  }
+
+  #email-atual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25rem;
+    color: #f10027;
+  }
+}

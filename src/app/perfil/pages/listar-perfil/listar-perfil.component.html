@@ -1,0 +1,62 @@
+<ion-header [translucent]="true"></ion-header>
+
+<ion-content [fullscreen]="true">
+  <header>
+    <div class="grid">
+      <div class="col-9">
+        <div class="grid">
+          <div class="col-2">
+            <!-- <img id="Foto do usuario" src="" alt="." /> -->
+            <ion-icon class="w-full text-6xl text-900" name="person"></ion-icon>
+          </div>
+          <div class="col-10">
+            <strong
+              class="text-900 block w-full white-space-nowrap overflow-hidden text-overflow-ellipsis"
+              >Nome muito grande de usuario oq vai acontecer em?</strong
+            >
+            <ion-label class="text-sm text-500">(15) 99222-1227</ion-label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3 flex justify-content-center align-items-center">
+        <a id="editar" class="text-sm text-right">Editar</a>
+      </div>
+    </div>
+    <div id="email-atual">
+      <ion-icon name="logo-email"></ion-icon>
+      <label>email@email.com</label>
+      <ion-button color="danger" fill="solid" expand="block">
+        Verificar
+      </ion-button>
+    </div>
+  </header>
+
+  <div class="grid">
+    <h1 class="col-12">
+      <ion-icon name="log-in-outline"></ion-icon>
+      Família (nome da familia)
+    </h1>
+
+    <ng-container *ngFor="let item of [1, 2, 3]">
+      <button class="col-12 px-4">
+        <img id="Foto do Integrante" src="" alt="" />
+        <ion-label>Nome do integrante</ion-label>
+        <ion-icon slot="end" name="checkmark-circle"></ion-icon>
+        <!-- <ion-icon name="close-circle"></ion-icon> -->
+        <!-- <ion-icon name="alert-circle"></ion-icon> -->
+      </button>
+    </ng-container>
+  </div>
+
+  <footer>
+    <a id="sair">
+      <ion-icon class="text-2xl" name="log-out-outline"></ion-icon>
+      <ion-label class="text-sm">Sair</ion-label>
+    </a>
+    <a id="excluir-conta">
+      <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
+      <ion-label class="text-sm">Excluir conta</ion-label>
+    </a>
+  </footer>
+</ion-content>
