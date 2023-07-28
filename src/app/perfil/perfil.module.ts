@@ -7,8 +7,8 @@ import { PerfilComponent } from "./perfil.component";
 import { PerfilRoutingModule } from "./perfil-routing.module";
 import { AdicionarIntegranteComponent } from "./pages/adicionar-integrante/adicionar-integrante.component";
 import { EditarPerfilComponent } from "./pages/editar-perfil/editar-perfil.component";
-import { PerfilInternoComponent } from "./pages/perfil-interno/perfil-interno.component";
 import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
+import { ListarPerfilComponent } from "./pages/listar-perfil/listar-perfil.component";
 
 @NgModule({
   imports: [
@@ -22,7 +22,7 @@ import { ComponentsModule } from "../../../temp/src/lib/components/components.mo
     PerfilComponent,
     AdicionarIntegranteComponent,
     EditarPerfilComponent,
-    PerfilInternoComponent,
+    ListarPerfilComponent,
   ],
 })
 export class PerfilPageModule {}
