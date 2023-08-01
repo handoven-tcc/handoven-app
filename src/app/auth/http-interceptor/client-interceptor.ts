@@ -27,18 +27,13 @@ export class ClientInterceptor implements HttpInterceptor {
               message: "Envio de dados errados.",
             })
             .then((o) => o.present());
-        } else if (error.status == 404) {
+        }
+        if (error.status == 404) {
           this.alertController
             .create({
-              header: "Not Found!",
-              message: "Endpoint não encontrado.",
-            })
-            .then((o) => o.present());
-        } else {
-          this.alertController
-            .create({
-              header: "Error: ",
-              message: error.message,
+              header: "Usuário não encontrado!",
+              message:
+                "Favor verifique suas credênciais novamente ou crie sua conta",
             })
             .then((o) => o.present());
         }
