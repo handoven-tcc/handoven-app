@@ -172,4 +172,19 @@ export class AuthService {
         })
       );
   }
+
+  getNomeFamilia(request: GetFamiliaIdRequest): Observable<FamiliaResponse> {
+    if (request.familiaId == "") {
+      return of({} as FamiliaResponse);
+    }
+
+    return this.http
+      .get(`${this.url}/family/${request.familiaId}`, {
+        headers: {
+          "X-HandOven-User": request.usuarioId,
+          "X-HandOven-Family": request.familiaId,
+        },
+      })
+      .pipe(map((res: any) => res));
+  }
 }
