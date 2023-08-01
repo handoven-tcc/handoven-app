@@ -20,22 +20,34 @@
       </div>
 
       <div class="col-3 flex justify-content-center align-items-center">
-        <a id="editar" class="text-sm text-right">Editar</a>
+        <a id="editar-nao-implementado" class="text-sm text-right">Editar</a>
       </div>
     </div>
-    <div id="email-atual">
-      <ion-icon name="logo-email"></ion-icon>
-      <label>email@email.com</label>
-      <ion-button color="danger" fill="solid" expand="block">
-        Verificar
-      </ion-button>
+    <div class="grid border-y-1 border-200 surface-overlay">
+      <div class="col-7 flex justify-content-start align-items-center gap-2">
+        <ion-icon class="text-xl text-900" name="mail-outline"></ion-icon>
+        <ion-label
+          class="text-sm text-900 white-space-nowrap overflow-hidden text-overflow-ellipsis"
+          >email@email.com</ion-label
+        >
+      </div>
+      <div class="col-5">
+        <ion-button
+          id="verificar-nao-implementado"
+          color="danger"
+          fill="solid"
+          shape="round"
+          expand="block">
+          <ion-label class="text-xs">Verificar</ion-label>
+        </ion-button>
+      </div>
     </div>
   </header>
 
   <div class="grid">
     <h1 class="col-12">
-      <ion-icon name="log-in-outline"></ion-icon>
-      Família (nome da familia)
+      <ion-icon name="people-outline"></ion-icon>
+      Família {{ nomeFamilia }}
     </h1>
 
     <ng-container *ngFor="let item of [1, 2, 3]">
@@ -47,16 +59,56 @@
         <!-- <ion-icon name="alert-circle"></ion-icon> -->
       </button>
     </ng-container>
+    <a id="adicionar-integrante-nao-implementado"> Adicionar Integrante </a>
   </div>
 
   <footer>
-    <a id="sair">
+    <a id="sair-certeza">
       <ion-icon class="text-2xl" name="log-out-outline"></ion-icon>
       <ion-label class="text-sm">Sair</ion-label>
     </a>
-    <a id="excluir-conta">
+    <a *ngIf="podeExcluir && !pessoaResponsavel" id="excluir-perfil-certeza">
       <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
-      <ion-label class="text-sm">Excluir conta</ion-label>
+      <ion-label class="text-sm">Excluir Perfil</ion-label>
+    </a>
+    <a
+      *ngIf="podeExcluir && pessoaResponsavel === true"
+      id="excluir-familia-certeza">
+      <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
+      <ion-label class="text-sm">Excluir Familia</ion-label>
     </a>
   </footer>
 </ion-content>
+
+<ion-alert
+  trigger="sair-certeza"
+  header="Tem certeza?"
+  message="Esta ação pode te fazer sair deslogar da sua conta atual"
+  [buttons]="alertButtonsSair"></ion-alert>
+<ion-alert
+  trigger="excluir-perfil-certeza"
+  header="Tem certeza?"
+  message="Esta te fará excluir seu perfil permanentemente, você tem certeza disso?"
+  [buttons]="alertButtonsExcluirPerfil"></ion-alert>
+<ion-alert
+  trigger="excluir-familia-certeza"
+  header="Tem certeza?"
+  message="Esta te fará excluir sua familia e TODOS os integrantes dela permanentemente, você tem certeza disso?"
+  [buttons]="alertButtonsExcluirFamilia"></ion-alert>
+
+<!-- TODO: remover alerts de não implmentados assim que feature for implementada!-->
+<ion-alert
+  trigger="verificar-nao-implementado"
+  header="Oops..."
+  message="Desculpe, isso ainda não foi implementado 😢"
+  [buttons]="alertButtons"></ion-alert>
+<ion-alert
+  trigger="adicionar-integrante-nao-implementado"
+  header="Oops..."
+  message="Desculpe, isso ainda não foi implementado 😢"
+  [buttons]="alertButtons"></ion-alert>
+<ion-alert
+  trigger="editar-nao-implementado"
+  header="Oops..."
+  message="Desculpe, isso ainda não foi implementado 😢"
+  [buttons]="alertButtons"></ion-alert>
