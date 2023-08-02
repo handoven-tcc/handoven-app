@@ -128,8 +128,6 @@ export class CriarContaInternoComponent implements OnInit {
         if (o) {
           requestUsuario.familyId = o.id;
 
-          console.log(requestUsuario);
-
           this.inscricaoUsuario = this.authService
             .criarUsuario(requestUsuario)
             .subscribe(() => this.router.navigate(["auth/sucesso"]));
