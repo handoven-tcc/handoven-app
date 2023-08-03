@@ -2,7 +2,7 @@
 
 <ion-content [fullscreen]="true">
   <form class="center-content-fixed" [formGroup]="getForm()">
-    <h1 class="center font-semibold text-3xl mb-6">Criar Conta</h1>
+    <h1 class="center font-semibold text-3xl mb-6 select-none">Criar Conta</h1>
     <span class="px-4 mb-3 w-full">
       <input
         class="w-full"
@@ -39,17 +39,25 @@
     </ion-button>
 
     <div class="mt-3 text-xs">
-      <ion-label class="mr-2 text-color">Já tem uma conta?</ion-label>
-      <a id="entre-agora" class="text-xs" (click)="onClickNavigateToLogin()"
+      <ion-label class="mr-2 text-color select-none"
+        >Já tem uma conta?</ion-label
+      >
+      <a
+        id="entre-agora"
+        class="text-xs select-none"
+        (click)="onClickNavigateToLogin()"
         >Entre agora</a
       >
     </div>
   </form>
   <div class="wrap-end">
     <div class="mt-3 text-xs">
-      <ion-label class="mr-2 text-color"
+      <ion-label class="mr-2 text-color select-none"
         >Ao clicar em “Criar Conta” você concorda com os nossos
-        <a id="entre-agora" class="text-xs" (click)="setOpenTermosDeUso(true)"
+        <a
+          id="entre-agora"
+          class="text-xs select-none"
+          (click)="setOpenTermosDeUso(true)"
           >Termos de Uso e Política de Privacidade.</a
         >
       </ion-label>
@@ -60,7 +68,8 @@
     <ng-template>
       <ion-header>
         <ion-toolbar>
-          <ion-title class="text-base nowrap flex-nowrap flex-no-wrap flex">
+          <ion-title
+            class="text-base nowrap flex-nowrap flex-no-wrap flex select-none">
             Termos de Uso
           </ion-title>
           <ion-buttons slot="end">
@@ -90,7 +99,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Termos de Uso</ion-title>
+        <ion-title class="select-none">Termos de Uso</ion-title>
         <ion-buttons slot="end">
           <ion-button (click)="onClickFecharModal(modal)">Fechar</ion-button>
         </ion-buttons>
@@ -98,7 +107,7 @@
     </ion-header>
 
     <ion-content>
-      <p class="text-900 ion-padding-horizontal">
+      <p class="text-900 ion-padding-horizontal select-none">
         Você deve aceitar os termos de uso e as políticas de privacidade para
         fechar esse modal.
       </p>
@@ -106,7 +115,7 @@
       <ion-item>
         <ion-checkbox
           id="terms"
-          class="text-900"
+          class="text-900 select-none"
           labelPlacement="start"
           (ionChange)="onTermsChanged($event)"
           [checked]="canDismiss"

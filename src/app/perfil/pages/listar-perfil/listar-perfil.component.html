@@ -22,7 +22,7 @@
       <div class="col-3 flex justify-content-center align-items-center">
         <a
           id="editar-nao-implementado"
-          class="text-sm text-right"
+          class="text-sm text-right select-none"
           (click)="onClickEditarPerfil()"
           >Editar</a
         >
@@ -152,7 +152,7 @@
       <a
         id="adicionar-integrante-nao-implementado"
         (click)="onClickAdicionarUsuario()"
-        class="text-sm mt-3 adicionar-integrante">
+        class="text-sm mt-3 adicionar-integrante select-none">
         Adicionar Integrante
       </a>
     </ng-container>
@@ -161,17 +161,17 @@
   <footer>
     <a id="sair-certeza">
       <ion-icon class="text-2xl" name="log-out-outline"></ion-icon>
-      <ion-label class="text-sm">Sair</ion-label>
+      <ion-label class="text-sm select-none">Sair</ion-label>
     </a>
     <a *ngIf="podeExcluir && !pessoaResponsavel" id="excluir-perfil-certeza">
       <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
-      <ion-label class="text-sm">Excluir Perfil</ion-label>
+      <ion-label class="text-sm select-none">Excluir Perfil</ion-label>
     </a>
     <a
       *ngIf="podeExcluir && pessoaResponsavel === true"
       id="excluir-familia-certeza">
       <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
-      <ion-label class="text-sm">Excluir Familia</ion-label>
+      <ion-label class="text-sm select-none">Excluir Familia</ion-label>
     </a>
   </footer>
 </ion-content>
