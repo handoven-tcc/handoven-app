@@ -20,7 +20,12 @@
       </div>
 
       <div class="col-3 flex justify-content-center align-items-center">
-        <a id="editar-nao-implementado" class="text-sm text-right">Editar</a>
+        <a
+          id="editar-nao-implementado"
+          class="text-sm text-right"
+          (click)="onClickEditarPerfil()"
+          >Editar</a
+        >
       </div>
     </div>
     <div class="grid border-y-1 border-200 surface-overlay">
@@ -37,30 +42,121 @@
           color="danger"
           fill="solid"
           shape="round"
-          expand="block">
+          expand="block"
+          (click)="onClickVerificarEmail()">
           <ion-label class="text-xs">Verificar</ion-label>
         </ion-button>
       </div>
     </div>
   </header>
 
-  <div class="grid">
-    <h1 class="col-12">
-      <ion-icon name="people-outline"></ion-icon>
-      Família {{ nomeFamilia }}
+  <section class="grid">
+    <h1 class="col-12 flex justify-content-between align-items-center text-900">
+      <div class="flex justify-content-start align-items-center gap-3">
+        <ion-icon name="people-outline"></ion-icon>
+        <ion-label class="text-xl">Família {{ nomeFamilia }}</ion-label>
+      </div>
+      <a class="text-900 text-2xl text-right" (click)="onClickReload()">
+        <ion-icon name="refresh"></ion-icon>
+      </a>
     </h1>
 
-    <ng-container *ngFor="let item of [1, 2, 3]">
-      <button class="col-12 px-4">
-        <img id="Foto do Integrante" src="" alt="" />
-        <ion-label>Nome do integrante</ion-label>
-        <ion-icon slot="end" name="checkmark-circle"></ion-icon>
-        <!-- <ion-icon name="close-circle"></ion-icon> -->
-        <!-- <ion-icon name="alert-circle"></ion-icon> -->
-      </button>
+    <ng-container *ngIf="loading">
+      <div
+        class="col-12 flex align-items-center justify-content-center text-900 flex-column">
+        <ion-infinite-scroll class="w-1">
+          <div class="infinite-scroll-content">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 100 100"
+              enable-background="new 0 0 100 100"
+              xml:space="preserve">
+              <circle
+                fill="none"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                cx="50"
+                cy="50"
+                r="48" />
+              <line
+                fill="none"
+                stroke-linecap="round"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                x1="50"
+                y1="50"
+                x2="85"
+                y2="50.5">
+                <animateTransform
+                  attributeName="transform"
+                  dur="2s"
+                  type="rotate"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite" />
+              </line>
+              <line
+                fill="none"
+                stroke-linecap="round"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                x1="50"
+                y1="50"
+                x2="49.5"
+                y2="74">
+                <animateTransform
+                  attributeName="transform"
+                  dur="15s"
+                  type="rotate"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite" />
+              </line>
+            </svg>
+          </div>
+        </ion-infinite-scroll>
+        Carregando...
+      </div>
     </ng-container>
-    <a id="adicionar-integrante-nao-implementado"> Adicionar Integrante </a>
-  </div>
+
+    <ng-container *ngIf="!loading">
+      <ng-container *ngFor="let item of emails">
+        <ion-button class="w-full col-12 py-0 text-sm">
+          <ion-label
+            slot="start"
+            class="w-full text-900 text-left flex justify-content-start align-items-center gap-2">
+            <img
+              id="Foto do Integrante"
+              src="../../../../assets/woman-user-example.svg"
+              width="30px"
+              alt="" />
+            <span
+              class="text-400 lowercase white-space-nowrap overflow-hidden text-overflow-ellipsis"
+              >{{ item }}</span
+            >
+          </ion-label>
+          <div class="grid mt-0 justify-content-end text-xl">
+            <ion-icon slot="end" name="checkmark-circle"></ion-icon>
+          </div>
+          <!-- <ion-icon name="close-circle"></ion-icon> -->
+          <!-- <ion-icon name="alert-circle"></ion-icon> -->
+        </ion-button>
+      </ng-container>
+      <a
+        id="adicionar-integrante-nao-implementado"
+        (click)="onClickAdicionarUsuario()"
+        class="text-sm mt-3 adicionar-integrante">
+        Adicionar Integrante
+      </a>
+    </ng-container>
+  </section>
 
   <footer>
     <a id="sair-certeza">
@@ -95,20 +191,3 @@
   header="Tem certeza?"
   message="Esta te fará excluir sua familia e TODOS os integrantes dela permanentemente, você tem certeza disso?"
   [buttons]="alertButtonsExcluirFamilia"></ion-alert>
-
-<!-- TODO: remover alerts de não implmentados assim que feature for implementada!-->
-<ion-alert
-  trigger="verificar-nao-implementado"
-  header="Oops..."
-  message="Desculpe, isso ainda não foi implementado 😢"
-  [buttons]="alertButtons"></ion-alert>
-<ion-alert
-  trigger="adicionar-integrante-nao-implementado"
-  header="Oops..."
-  message="Desculpe, isso ainda não foi implementado 😢"
-  [buttons]="alertButtons"></ion-alert>
-<ion-alert
-  trigger="editar-nao-implementado"
-  header="Oops..."
-  message="Desculpe, isso ainda não foi implementado 😢"
-  [buttons]="alertButtons"></ion-alert>
