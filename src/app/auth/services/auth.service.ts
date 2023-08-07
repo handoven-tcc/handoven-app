@@ -4,6 +4,7 @@ import { environment } from "../../../environments/environment";
 import { Observable, map, of } from "rxjs";
 import {
   DeletarUsuarioRequest,
+  EditarFamiliaRequest,
   FamiliaRequest,
   FamiliaResponse,
   GetFamiliaIdRequest,
@@ -153,22 +154,23 @@ export class AuthService {
     );
   }
 
-  deleteAll(request: DeletarUsuarioRequest): Observable<any> {
-    if (!request.id || !request.familyId) {
+  editarFamilia(request: EditarFamiliaRequest): Observable<FamiliaResponse> {
+    if (!request.name) {
       return of();
     }
 
     return this.http
-      .delete(`${this.url}/family/destroyAll/${request.familyId}`, {
+      .put(`${this.url}/family/${request.id}`, request, {
         headers: {
-          "X-HandOven-User": request.id,
-          "X-HandOven-Family": request.familyId,
-          "X-handOven-Service": "true",
+          "X-HandOven-User": this.emptyUserID,
+          "X-HandOven-Family": request.id,
+          "X-handOven-Service": "false",
         },
       })
       .pipe(
         map((res: any) => {
-          this.logout();
+          // this.storage.set("X-HandOven-Family", res.id);
+          window.localStorage.setItem("X-HandOven-Family", res.id);
           return res;
         })
       );
@@ -204,5 +206,26 @@ export class AuthService {
         },
       })
       .pipe(map((res: any) => res));
+  }
+
+  deleteAll(request: DeletarUsuarioRequest): Observable<any> {
+    if (!request.id || !request.familyId) {
+      return of();
+    }
+
+    return this.http
+      .delete(`${this.url}/family/destroyAll/${request.familyId}`, {
+        headers: {
+          "X-HandOven-User": request.id,
+          "X-HandOven-Family": request.familyId,
+          "X-handOven-Service": "true",
+        },
+      })
+      .pipe(
+        map((res: any) => {
+          this.logout();
+          return res;
+        })
+      );
   }
 }

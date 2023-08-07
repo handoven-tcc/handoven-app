@@ -34,9 +34,9 @@
             <div class="col-10">
               <strong
                 class="text-900 block w-full white-space-nowrap overflow-hidden text-overflow-ellipsis"
-                >Nome muito grande de usuario oq vai acontecer em?</strong
+                >{{ perfil.name }}</strong
               >
-              <ion-label class="text-sm text-500">(15) 99222-1227</ion-label>
+              <ion-label class="text-sm text-500">{{ perfil.cell }}</ion-label>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
           <ion-icon class="text-xl text-900 w-4" name="mail-outline"></ion-icon>
           <ion-label
             class="text-sm text-900 white-space-nowrap overflow-hidden text-overflow-ellipsis"
-            >email_muito_grande_que_ocupa_espaco@email.com</ion-label
+            >{{ perfil.email }}</ion-label
           >
         </div>
         <div class="col-5">
@@ -90,6 +90,12 @@
         <ion-icon name="people-outline"></ion-icon>
         <ion-label class="text-xl">Família {{ nomeFamilia }}</ion-label>
       </div>
+      <a
+        *ngIf="usuarioLogado && perfilResponsavel === true"
+        (click)="onClickModalEditarFamilia()"
+        class="text-900 text-2xl text-right">
+        <ion-icon color="warning" name="pencil-sharp"></ion-icon>
+      </a>
       <a
         *ngIf="usuarioLogado"
         class="text-900 text-2xl text-right"
@@ -201,12 +207,12 @@
       <ion-icon class="text-2xl" name="log-out-outline"></ion-icon>
       <ion-label class="text-sm select-none">Sair</ion-label>
     </a>
-    <a *ngIf="usuarioLogado && !pessoaResponsavel" id="excluir-perfil-certeza">
+    <a *ngIf="usuarioLogado && !perfilResponsavel" id="excluir-perfil-certeza">
       <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
       <ion-label class="text-sm select-none">Excluir Perfil</ion-label>
     </a>
     <a
-      *ngIf="usuarioLogado && pessoaResponsavel === true"
+      *ngIf="usuarioLogado && perfilResponsavel === true"
       id="excluir-familia-certeza">
       <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
       <ion-label class="text-sm select-none">Excluir Familia</ion-label>

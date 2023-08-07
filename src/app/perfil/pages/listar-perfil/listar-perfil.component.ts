@@ -3,9 +3,12 @@ import { AuthService } from "../../../auth/services";
 import { Subscription } from "rxjs";
 import {
   DeletarUsuarioRequest,
+  EditarFamiliaRequest,
+  FamiliaRequest,
   GetFamiliaIdRequest,
+  UsuarioResponse,
 } from "../../../auth/models";
-import { AlertController, NavController } from "@ionic/angular";
+import { AlertController, AlertInput, NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-listar-perfil",
@@ -13,17 +16,20 @@ import { AlertController, NavController } from "@ionic/angular";
   styleUrls: ["./listar-perfil.component.scss"],
 })
 export class ListarPerfilComponent implements OnInit {
-  inscricaoNomeFamilia!: Subscription;
-  inscricaoTodosUsuariosDaFamilia!: Subscription;
-  inscricaoDeletarUsuario!: Subscription;
-  inscricaoDeleteAll!: Subscription;
+  inscricaoNomeFamilia: Subscription = Subscription.EMPTY;
+  inscricaoEditarFamilia: Subscription = Subscription.EMPTY;
+  inscricaoTodosUsuariosDaFamilia: Subscription = Subscription.EMPTY;
+  inscricaoDeletarUsuario: Subscription = Subscription.EMPTY;
+  inscricaoDeleteAll: Subscription = Subscription.EMPTY;
+
   loading: boolean = false;
   nomeFamilia: string = "Anônima";
   familyId!: string;
   userId!: string;
   // TODO: fazer verificação pessoa responsável da familia
-  pessoaResponsavel: boolean = false;
-  emails!: string[];
+  perfilResponsavel: boolean = true;
+  emails: string[] = ["Você"];
+  perfil!: UsuarioResponse;
 
   public alertButtons = ["OK"];
 
@@ -66,6 +72,11 @@ export class ListarPerfilComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    const user = window.localStorage.getItem("user");
+    if (user) {
+      this.perfil = JSON.parse(user);
+    }
+
     this.familyId = window.localStorage.getItem("X-HandOven-Family") ?? "";
     this.userId = window.localStorage.getItem("X-HandOven-User") ?? "";
 
@@ -90,8 +101,10 @@ export class ListarPerfilComponent implements OnInit {
     this.inscricaoTodosUsuariosDaFamilia = this.authService
       .getTodosUsuariosDaFamilia(request)
       .subscribe((res) => {
-        // TODO: ordenar, seu email primeiro dps os outros
-        this.emails = res.map((i) => i.email);
+        if (res[0].email) {
+          // TODO: ordenar, seu email primeiro dps os outros
+          this.emails = res.map((i) => i.email);
+        }
         this.loading = false;
       });
   }
@@ -147,17 +160,19 @@ export class ListarPerfilComponent implements OnInit {
   }
 
   onClickExcluirFamilia() {
-    const request: DeletarUsuarioRequest = new DeletarUsuarioRequest(
-      this.userId,
-      this.familyId
-    );
+    console.log("opa");
 
-    this.inscricaoDeleteAll = this.authService
-      .deleteAll(request)
-      .subscribe((o) => o);
+    // const request: DeletarUsuarioRequest = new DeletarUsuarioRequest(
+    //   this.userId,
+    //   this.familyId
+    // );
 
-    this.authService.logout();
-    window.location.reload();
+    // this.inscricaoDeleteAll = this.authService
+    //   .deleteAll(request)
+    //   .subscribe((o) => o);
+
+    // this.authService.logout();
+    // window.location.reload();
   }
 
   alertNaoImplementado() {
@@ -179,11 +194,58 @@ export class ListarPerfilComponent implements OnInit {
   }
 
   onClickEditarPerfil() {
-    this.nav.navigateForward(["tabs/perfil/editar-perfil", 1]);
+    this.nav.navigateForward(["tabs/perfil/editar-perfil"]);
+  }
+
+  onClickModalEditarFamilia() {
+    this.alertController
+      .create({
+        header: "Favor, insira o nome da familia",
+        inputs: [
+          {
+            name: "nomeFamilia",
+            placeholder: "Nome da familia",
+            type: "text",
+            attributes: {
+              minlength: 3,
+            },
+          },
+        ],
+        buttons: [
+          {
+            text: "Cancelar",
+            role: "cancel",
+            handler: () => {},
+          },
+          {
+            text: "Ok",
+            handler: (alertData) =>
+              this.onClickEditarFamilia(alertData.nomeFamilia),
+          },
+        ],
+      })
+      .then((o) => o.present());
+  }
+
+  onClickEditarFamilia(nomeFamilia: string) {
+    const request: EditarFamiliaRequest = new EditarFamiliaRequest(
+      this.familyId,
+      nomeFamilia
+    );
+
+    this.inscricaoEditarFamilia = this.authService
+      .editarFamilia(request)
+      .subscribe((o) => {
+        console.log(o);
+        this.perfil.familyId = o.id;
+        window.localStorage.setItem("user", JSON.stringify(this.perfil));
+        this.nomeFamilia = o.name;
+      });
   }
 
   ngOnDestroy(): void {
     this.inscricaoTodosUsuariosDaFamilia.unsubscribe();
+    this.inscricaoEditarFamilia.unsubscribe();
     this.inscricaoNomeFamilia.unsubscribe();
     this.inscricaoDeletarUsuario.unsubscribe();
     this.inscricaoDeleteAll.unsubscribe();
