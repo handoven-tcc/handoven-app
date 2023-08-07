@@ -8,6 +8,7 @@ import {
   FamiliaResponse,
   GetFamiliaIdRequest,
   LoginRequest,
+  LoginResponse,
   UsuarioRequest,
   UsuarioResponse,
 } from "../models";
@@ -103,7 +104,7 @@ export class AuthService {
       );
   }
 
-  login(request: LoginRequest): Observable<UsuarioResponse> {
+  login(request: LoginRequest): Observable<LoginResponse> {
     const familyHeader = window.localStorage.getItem("X-HandOven-Family") ?? "";
     const userHeader = window.localStorage.getItem("X-HandOven-User") ?? "";
 
@@ -180,6 +181,23 @@ export class AuthService {
 
     return this.http
       .get(`${this.url}/family/${request.familiaId}`, {
+        headers: {
+          "X-HandOven-User": request.usuarioId,
+          "X-HandOven-Family": request.familiaId,
+        },
+      })
+      .pipe(map((res: any) => res));
+  }
+
+  getTodosUsuariosDaFamilia(
+    request: GetFamiliaIdRequest
+  ): Observable<UsuarioResponse[]> {
+    if (request.familiaId == "") {
+      return of([{}] as UsuarioResponse[]);
+    }
+
+    return this.http
+      .get(`${this.url}/user/familyId/${request.familiaId}`, {
         headers: {
           "X-HandOven-User": request.usuarioId,
           "X-HandOven-Family": request.familiaId,

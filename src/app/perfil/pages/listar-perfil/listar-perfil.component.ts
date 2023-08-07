@@ -5,7 +5,7 @@ import {
   DeletarUsuarioRequest,
   GetFamiliaIdRequest,
 } from "../../../auth/models";
-import { AlertController } from "@ionic/angular";
+import { AlertController, NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-listar-perfil",
@@ -13,7 +13,10 @@ import { AlertController } from "@ionic/angular";
   styleUrls: ["./listar-perfil.component.scss"],
 })
 export class ListarPerfilComponent implements OnInit {
-  inscricao!: Subscription;
+  inscricaoNomeFamilia!: Subscription;
+  inscricaoTodosUsuariosDaFamilia!: Subscription;
+  inscricaoDeletarUsuario!: Subscription;
+  inscricaoDeleteAll!: Subscription;
   loading: boolean = false;
   nomeFamilia: string = "Anônima";
   familyId!: string;
@@ -58,7 +61,8 @@ export class ListarPerfilComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private nav: NavController
   ) {}
 
   ngOnInit() {
@@ -71,7 +75,7 @@ export class ListarPerfilComponent implements OnInit {
     );
 
     this.loading = true;
-    this.inscricao = this.authService
+    this.inscricaoNomeFamilia = this.authService
       .getNomeFamilia(request)
       .subscribe((res) => {
         if (res.name) {
@@ -82,23 +86,14 @@ export class ListarPerfilComponent implements OnInit {
         this.loading = false;
       });
 
-    this.emails = [
-      "Você",
-      "outro@email.com",
-      "segundo@email.com",
-      "terceito@email.com",
-      "quarto@email.com",
-      "quinto@email.com",
-      "sexto@email.com",
-      "sabado?@email.com",
-      "domingao👀@email.com",
-      "grande_email_pra_mostrar_os_3pontinhos@email.com",
-      "grandeemailpramostraro1pontinhos@email.com",
-      "grandeemailpramostraro2pontinhos@email.com",
-      "grandeemailpramostraro3pontinhos@email.com",
-      "grandeemailpramostraro4pontinhos@email.com",
-      "grandeemailpramostraro5pontinhos@email.com",
-    ];
+    this.loading = true;
+    this.inscricaoTodosUsuariosDaFamilia = this.authService
+      .getTodosUsuariosDaFamilia(request)
+      .subscribe((res) => {
+        // TODO: ordenar, seu email primeiro dps os outros
+        this.emails = res.map((i) => i.email);
+        this.loading = false;
+      });
   }
 
   onClickReload() {
@@ -108,14 +103,11 @@ export class ListarPerfilComponent implements OnInit {
     );
 
     this.loading = true;
-    this.inscricao = this.authService
-      .getNomeFamilia(request)
+    this.inscricaoTodosUsuariosDaFamilia = this.authService
+      .getTodosUsuariosDaFamilia(request)
       .subscribe((res) => {
-        if (res.name) {
-          this.nomeFamilia = res.name;
-          // this.pessoaResponsavel = res.emails.filter(o => o.responsavel == true);
-          // this.emails = res.emailsIntegrantes;
-        }
+        // TODO: ordenar, seu email primeiro dps os outros
+        this.emails = res.map((i) => i.email);
         this.loading = false;
       });
   }
@@ -146,7 +138,7 @@ export class ListarPerfilComponent implements OnInit {
       this.familyId
     );
 
-    this.inscricao = this.authService
+    this.inscricaoDeletarUsuario = this.authService
       .deletarUsuario(request)
       .subscribe((o) => o);
 
@@ -160,7 +152,9 @@ export class ListarPerfilComponent implements OnInit {
       this.familyId
     );
 
-    this.inscricao = this.authService.deleteAll(request).subscribe((o) => o);
+    this.inscricaoDeleteAll = this.authService
+      .deleteAll(request)
+      .subscribe((o) => o);
 
     this.authService.logout();
     window.location.reload();
@@ -185,10 +179,13 @@ export class ListarPerfilComponent implements OnInit {
   }
 
   onClickEditarPerfil() {
-    this.alertNaoImplementado();
+    this.nav.navigateForward(["tabs/perfil/editar-perfil", 1]);
   }
 
   ngOnDestroy(): void {
-    this.inscricao.unsubscribe();
+    this.inscricaoTodosUsuariosDaFamilia.unsubscribe();
+    this.inscricaoNomeFamilia.unsubscribe();
+    this.inscricaoDeletarUsuario.unsubscribe();
+    this.inscricaoDeleteAll.unsubscribe();
   }
 }
