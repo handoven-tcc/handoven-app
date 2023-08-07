@@ -27,7 +27,7 @@ export class ListarPerfilComponent implements OnInit {
   familyId!: string;
   userId!: string;
   // TODO: fazer verificação pessoa responsável da familia
-  perfilResponsavel: boolean = true;
+  perfilResponsavel: boolean = false;
   emails: string[] = ["Você"];
   perfil!: UsuarioResponse;
 
