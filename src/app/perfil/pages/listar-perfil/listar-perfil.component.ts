@@ -186,7 +186,7 @@ export class ListarPerfilComponent implements OnInit {
   }
 
   onClickAdicionarUsuario() {
-    this.alertNaoImplementado();
+    this.nav.navigateForward(["tabs/perfil/adicionar-integrante"]);
   }
 
   onClickVerificarEmail() {
