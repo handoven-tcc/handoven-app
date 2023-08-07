@@ -32,7 +32,8 @@ export class LoginComponent implements OnInit {
 
   onClickLogIn() {
     const request = new LoginRequest(this.email, this.senha);
-    this.inscricao = this.authService.login(request).subscribe(() => {
+    this.inscricao = this.authService.login(request).subscribe((o) => {
+      window.localStorage.setItem("user", JSON.stringify(o));
       this.router.navigate(["/tabs/receitas"]);
     });
   }

@@ -11,6 +11,7 @@ import {
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
+import { NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-criar-conta-interno",
@@ -86,7 +87,7 @@ export class CriarContaInternoComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    private router: Router,
+    private nav: NavController,
     private activatedRoute: ActivatedRoute
   ) {}
 
@@ -127,12 +128,15 @@ export class CriarContaInternoComponent implements OnInit {
       .subscribe((o) => {
         if (o) {
           requestUsuario.familyId = o.id;
-
-          console.log(requestUsuario);
+          console.log(o.id);
+          console.log(requestUsuario.familyId);
 
           this.inscricaoUsuario = this.authService
             .criarUsuario(requestUsuario)
-            .subscribe(() => this.router.navigate(["auth/sucesso"]));
+            .subscribe((o) => {
+              window.localStorage.setItem("user", JSON.stringify(o));
+              this.nav.navigateForward(["auth/sucesso", "criada"]);
+            });
         }
       });
   }

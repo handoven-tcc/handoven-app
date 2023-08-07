@@ -10,8 +10,4 @@ export class ListarReceitasComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {}
-  onClickClearStorage() {
-    this.authService.logout();
-    window.location.reload();
-  }
 }

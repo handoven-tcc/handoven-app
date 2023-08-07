@@ -32,8 +32,9 @@ export class ServerInterceptor implements HttpInterceptor {
         if (!error.status) {
           this.alertController
             .create({
-              header: "Error: Network Error!",
-              message: "Conexão recusada, tente novamente mais tarde.",
+              header: "Network Error!",
+              message:
+                "Conexão com o servidor foi recusada, tente novamente mais tarde.",
             })
             .then((o) => o.present());
         }

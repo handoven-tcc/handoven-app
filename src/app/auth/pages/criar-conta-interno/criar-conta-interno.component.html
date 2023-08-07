@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button color="light"></ion-back-button>
     </ion-buttons>
-    <ion-title class="text-base text-white"
+    <ion-title class="text-base text-white select-none"
       >Falta pouco para criar sua conta</ion-title
     >
   </ion-toolbar>
@@ -16,11 +16,13 @@
       <div class="tirar-foto">
         <ion-icon color="light" name="camera-outline"></ion-icon>
       </div>
-      <label id="label-tirar-foto">Tirar foto</label>
+      <ion-label id="label-tirar-foto" class="select-none text-0 mt-1"
+        >Tirar foto</ion-label
+      >
     </button>
     <div class="center-content-end">
       <div class="px-4 mb-3 w-full">
-        <span class="text-color font-bold block mb-2"
+        <span class="select-none text-color font-bold block mb-2"
           >Nome completo do responsável</span
         >
         <input
@@ -29,12 +31,16 @@
           placeholder="Seu nome"
           pInputText
           formControlName="nome" />
-        <small *ngIf="getNomeRequired">Nome é obrigatório.</small>
-        <small *ngIf="getNomeInvalid">Nome é inválido.</small>
+        <small class="select-none" *ngIf="getNomeRequired"
+          >Nome é obrigatório.</small
+        >
+        <small class="select-none" *ngIf="getNomeInvalid"
+          >Nome é inválido.</small
+        >
       </div>
 
       <div class="px-4 mb-3 w-full">
-        <span class="text-color font-bold block mb-2"
+        <span class="select-none text-color font-bold block mb-2"
           >Celular do responsável</span
         >
         <p-inputMask
@@ -42,20 +48,26 @@
           mask="(99) 99999-9999"
           formControlName="celular"
           placeholder="(99) 99999-9999"></p-inputMask>
-        <small *ngIf="getCelularRequired">Celular é obrigatório.</small>
-        <small *ngIf="getCelularInvalid">Celular é inválido.</small>
+        <small class="select-none" *ngIf="getCelularRequired"
+          >Celular é obrigatório.</small
+        >
+        <small class="select-none" *ngIf="getCelularInvalid"
+          >Celular é inválido.</small
+        >
       </div>
 
       <div class="px-4 mb-3 w-full">
-        <span class="text-color font-bold block mb-2">Data de nascimento</span>
+        <span class="select-none text-color font-bold block mb-2"
+          >Data de nascimento</span
+        >
         <ion-datetime-button datetime="datetime"></ion-datetime-button>
-        <small *ngIf="!getDataDeNascimentoInvalid"
+        <small class="select-none" *ngIf="!getDataDeNascimentoInvalid"
           >É preciso ter mais de 18 anos</small
         >
       </div>
 
       <div class="px-4 mb-3 w-full">
-        <span class="text-color font-bold block mb-2">Senha</span>
+        <span class="select-none text-color font-bold block mb-2">Senha</span>
         <p-password
           class="mb-3 w-full"
           styleClass="w-full"
@@ -64,14 +76,18 @@
           [feedback]="false"
           formControlName="senha"
           [toggleMask]="true"></p-password>
-        <small *ngIf="getSenhaRequired">Senha é obrigatório.</small>
-        <small *ngIf="getSenhaInvalid"
+        <small class="select-none" *ngIf="getSenhaRequired"
+          >Senha é obrigatório.</small
+        >
+        <small class="select-none" *ngIf="getSenhaInvalid"
           >Senha deve ter minimo 6 caracteres.</small
         >
       </div>
 
       <div class="px-4 mb-3 w-full">
-        <span class="text-color font-bold block mb-2">Repetir Senha</span>
+        <span class="select-none text-color font-bold block mb-2"
+          >Repetir Senha</span
+        >
         <p-password
           class="mb-3 w-full"
           styleClass="w-full"
@@ -80,7 +96,7 @@
           [feedback]="false"
           formControlName="senhaRepetida"
           [toggleMask]="true"></p-password>
-        <small *ngIf="getSenhaRepetidaInvalid"
+        <small class="select-none" *ngIf="getSenhaRepetidaInvalid"
           >Senha não é igual a anterior.</small
         >
       </div>

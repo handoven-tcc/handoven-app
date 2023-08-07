@@ -23,7 +23,7 @@ const routes: Routes = [
         path: "criar-conta/:nomeDaFamilia/:email",
         component: CriarContaInternoComponent,
       },
-      { path: "sucesso", component: SucessoComponent },
+      { path: "sucesso/:acao", component: SucessoComponent },
       { path: "esqueci-a-senha", component: EsqueciASenhaComponent },
       { path: "redefinir-senha", component: RedefinirSenhaComponent },
     ],

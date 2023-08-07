@@ -4,10 +4,12 @@ import { environment } from "../../../environments/environment";
 import { Observable, map, of } from "rxjs";
 import {
   DeletarUsuarioRequest,
+  EditarFamiliaRequest,
   FamiliaRequest,
   FamiliaResponse,
   GetFamiliaIdRequest,
   LoginRequest,
+  LoginResponse,
   UsuarioRequest,
   UsuarioResponse,
 } from "../models";
@@ -103,7 +105,7 @@ export class AuthService {
       );
   }
 
-  login(request: LoginRequest): Observable<UsuarioResponse> {
+  login(request: LoginRequest): Observable<LoginResponse> {
     const familyHeader = window.localStorage.getItem("X-HandOven-Family") ?? "";
     const userHeader = window.localStorage.getItem("X-HandOven-User") ?? "";
 
@@ -150,6 +152,60 @@ export class AuthService {
         return res;
       })
     );
+  }
+
+  editarFamilia(request: EditarFamiliaRequest): Observable<FamiliaResponse> {
+    if (!request.name) {
+      return of();
+    }
+
+    return this.http
+      .put(`${this.url}/family/${request.id}`, request, {
+        headers: {
+          "X-HandOven-User": this.emptyUserID,
+          "X-HandOven-Family": request.id,
+          "X-handOven-Service": "false",
+        },
+      })
+      .pipe(
+        map((res: any) => {
+          // this.storage.set("X-HandOven-Family", res.id);
+          window.localStorage.setItem("X-HandOven-Family", res.id);
+          return res;
+        })
+      );
+  }
+
+  getNomeFamilia(request: GetFamiliaIdRequest): Observable<FamiliaResponse> {
+    if (request.familiaId == "") {
+      return of({} as FamiliaResponse);
+    }
+
+    return this.http
+      .get(`${this.url}/family/${request.familiaId}`, {
+        headers: {
+          "X-HandOven-User": request.usuarioId,
+          "X-HandOven-Family": request.familiaId,
+        },
+      })
+      .pipe(map((res: any) => res));
+  }
+
+  getTodosUsuariosDaFamilia(
+    request: GetFamiliaIdRequest
+  ): Observable<UsuarioResponse[]> {
+    if (request.familiaId == "") {
+      return of([{}] as UsuarioResponse[]);
+    }
+
+    return this.http
+      .get(`${this.url}/user/familyId/${request.familiaId}`, {
+        headers: {
+          "X-HandOven-User": request.usuarioId,
+          "X-HandOven-Family": request.familiaId,
+        },
+      })
+      .pipe(map((res: any) => res));
   }
 
   deleteAll(request: DeletarUsuarioRequest): Observable<any> {

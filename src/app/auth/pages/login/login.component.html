@@ -2,7 +2,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="center-content-fixed">
-    <h1 class="center font-semibold text-3xl mb-6">Fazer Login</h1>
+    <h1 class="center font-semibold text-3xl mb-6 select-none">Fazer Login</h1>
     <span class="px-4 mb-3 w-full">
       <input
         class="w-full"
@@ -25,7 +25,9 @@
       <ion-checkbox labelPlacement="end" [(ngModel)]="lembrar"
         >Lembrar de mim</ion-checkbox
       >
-      <a id="nao-implementado" class="text-color text-xs"> Esqueci a senha </a>
+      <a id="nao-implementado" class="text-color text-xs select-none">
+        Esqueci a senha
+      </a>
     </div>
 
     <ion-button
@@ -38,8 +40,13 @@
       Fazer login
     </ion-button>
     <div class="mt-3 text-xs">
-      <ion-label class="mr-2 text-color">Não tem uma conta?</ion-label>
-      <a id="crie-agora" class="text-xs" (click)="onClickNavigateToLogin()"
+      <ion-label class="mr-2 text-color select-none"
+        >Não tem uma conta?</ion-label
+      >
+      <a
+        id="crie-agora"
+        class="text-xs select-none"
+        (click)="onClickNavigateToLogin()"
         >Crie agora</a
       >
     </div>

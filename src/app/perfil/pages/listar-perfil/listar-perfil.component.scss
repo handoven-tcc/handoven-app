@@ -1,0 +1,66 @@
+header {
+  padding-top: 1rem;
+}
+
+header,
+section {
+  width: 100vw;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+section {
+  padding-bottom: 5rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid white;
+  background-color: white;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25rem;
+    color: #f10027;
+  }
+}
+
+ion-button {
+  --background: #f0f0f0 !important;
+  --box-shadow: none !important;
+  --background-activated: #f10027 !important;
+  --color-activated: white !important;
+}
+
+ion-icon[name="checkmark-circle"] {
+  color: #32cd70;
+}
+
+ion-icon[name="close-circle"] {
+  color: #f10027;
+}
+
+ion-icon[name="alert-circle"] {
+  color: #ff9012;
+}
+
+.editar-perfil {
+  color: #f10027;
+  width: 100%;
+}
+
+.adicionar-integrante {
+  color: #f10027;
+  margin: 0 auto;
+}
