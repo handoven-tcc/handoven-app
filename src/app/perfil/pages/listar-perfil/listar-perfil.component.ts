@@ -29,7 +29,7 @@ export class ListarPerfilComponent implements OnInit {
     {
       text: "OK",
       role: "confirm",
-      handler: () => this.onClickSair(),
+      handler: () => this.sair(),
     },
   ];
   public alertButtonsExcluirPerfil = [
@@ -49,7 +49,7 @@ export class ListarPerfilComponent implements OnInit {
     },
   ];
 
-  public get podeExcluir(): boolean {
+  public get usuarioLogado(): boolean {
     if (this.familyId && this.userId) {
       return true;
     }
@@ -120,7 +120,22 @@ export class ListarPerfilComponent implements OnInit {
       });
   }
 
-  onClickSair() {
+  onClickModalSair() {
+    if (!this.usuarioLogado) {
+      this.sair();
+      return;
+    }
+
+    this.alertController
+      .create({
+        header: "Tem certeza?",
+        message: "Esta ação pode te fazer sair do seu perfil atual",
+        buttons: this.alertButtonsSair,
+      })
+      .then((o) => o.present());
+  }
+
+  sair() {
     this.authService.logout();
     window.location.reload();
   }

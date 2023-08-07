@@ -3,50 +3,85 @@
 <ion-content [fullscreen]="true">
   <header>
     <div class="grid">
-      <div class="col-9">
-        <div class="grid">
-          <div class="col-2">
-            <!-- <img id="Foto do usuario" src="" alt="." /> -->
-            <ion-icon class="w-full text-6xl text-900" name="person"></ion-icon>
-          </div>
-          <div class="col-10">
-            <strong
-              class="text-900 block w-full white-space-nowrap overflow-hidden text-overflow-ellipsis"
-              >Nome muito grande de usuario oq vai acontecer em?</strong
-            >
-            <ion-label class="text-sm text-500">(15) 99222-1227</ion-label>
+      <ng-container *ngIf="!usuarioLogado">
+        <div class="col-12">
+          <div class="grid">
+            <div class="col-2">
+              <ion-icon
+                class="w-full text-6xl text-900"
+                name="person"></ion-icon>
+            </div>
+            <div class="col-10">
+              <strong
+                class="text-900 block w-full white-space-nowrap overflow-hidden text-overflow-ellipsis"
+                >Perfil Anônimo</strong
+              >
+              <ion-label class="text-sm text-500">(99) 99999-9999</ion-label>
+            </div>
           </div>
         </div>
-      </div>
+      </ng-container>
 
-      <div class="col-3 flex justify-content-center align-items-center">
-        <a
-          id="editar-nao-implementado"
-          class="text-sm text-right select-none"
-          (click)="onClickEditarPerfil()"
-          >Editar</a
-        >
-      </div>
+      <ng-container *ngIf="usuarioLogado">
+        <div class="col-9">
+          <div class="grid">
+            <div class="col-2">
+              <!-- <img id="Foto do usuario" src="" alt="." /> -->
+              <ion-icon
+                class="w-full text-6xl text-900"
+                name="person"></ion-icon>
+            </div>
+            <div class="col-10">
+              <strong
+                class="text-900 block w-full white-space-nowrap overflow-hidden text-overflow-ellipsis"
+                >Nome muito grande de usuario oq vai acontecer em?</strong
+              >
+              <ion-label class="text-sm text-500">(15) 99222-1227</ion-label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 flex justify-content-center align-items-center">
+          <a
+            id="editar-nao-implementado"
+            class="text-sm text-right select-none"
+            (click)="onClickEditarPerfil()"
+            >Editar</a
+          >
+        </div>
+      </ng-container>
     </div>
     <div class="grid border-y-1 border-200 surface-overlay">
-      <div class="col-7 flex justify-content-start align-items-center gap-2">
-        <ion-icon class="text-xl text-900" name="mail-outline"></ion-icon>
-        <ion-label
-          class="text-sm text-900 white-space-nowrap overflow-hidden text-overflow-ellipsis"
-          >email@email.com</ion-label
-        >
-      </div>
-      <div class="col-5">
-        <ion-button
-          id="verificar-nao-implementado"
-          color="danger"
-          fill="solid"
-          shape="round"
-          expand="block"
-          (click)="onClickVerificarEmail()">
-          <ion-label class="text-xs">Verificar</ion-label>
-        </ion-button>
-      </div>
+      <ng-container *ngIf="!usuarioLogado">
+        <div class="col-12 flex justify-content-start align-items-center gap-2">
+          <ion-icon class="text-xl text-900 w-1" name="mail-outline"></ion-icon>
+          <ion-label
+            class="text-sm text-900 white-space-nowrap overflow-hidden text-overflow-ellipsis"
+            >email@email.com</ion-label
+          >
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="usuarioLogado">
+        <div class="col-7 flex justify-content-start align-items-center gap-2">
+          <ion-icon class="text-xl text-900 w-4" name="mail-outline"></ion-icon>
+          <ion-label
+            class="text-sm text-900 white-space-nowrap overflow-hidden text-overflow-ellipsis"
+            >email_muito_grande_que_ocupa_espaco@email.com</ion-label
+          >
+        </div>
+        <div class="col-5">
+          <ion-button
+            id="verificar-nao-implementado"
+            color="danger"
+            fill="solid"
+            shape="round"
+            expand="block"
+            (click)="onClickVerificarEmail()">
+            <ion-label class="text-xs">Verificar</ion-label>
+          </ion-button>
+        </div>
+      </ng-container>
     </div>
   </header>
 
@@ -56,7 +91,10 @@
         <ion-icon name="people-outline"></ion-icon>
         <ion-label class="text-xl">Família {{ nomeFamilia }}</ion-label>
       </div>
-      <a class="text-900 text-2xl text-right" (click)="onClickReload()">
+      <a
+        *ngIf="usuarioLogado"
+        class="text-900 text-2xl text-right"
+        (click)="onClickReload()">
         <ion-icon name="refresh"></ion-icon>
       </a>
     </h1>
@@ -150,6 +188,7 @@
         </ion-button>
       </ng-container>
       <a
+        *ngIf="usuarioLogado"
         id="adicionar-integrante-nao-implementado"
         (click)="onClickAdicionarUsuario()"
         class="text-sm mt-3 adicionar-integrante select-none">
@@ -159,16 +198,16 @@
   </section>
 
   <footer>
-    <a id="sair-certeza">
+    <a (click)="onClickModalSair()">
       <ion-icon class="text-2xl" name="log-out-outline"></ion-icon>
       <ion-label class="text-sm select-none">Sair</ion-label>
     </a>
-    <a *ngIf="podeExcluir && !pessoaResponsavel" id="excluir-perfil-certeza">
+    <a *ngIf="usuarioLogado && !pessoaResponsavel" id="excluir-perfil-certeza">
       <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
       <ion-label class="text-sm select-none">Excluir Perfil</ion-label>
     </a>
     <a
-      *ngIf="podeExcluir && pessoaResponsavel === true"
+      *ngIf="usuarioLogado && pessoaResponsavel === true"
       id="excluir-familia-certeza">
       <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
       <ion-label class="text-sm select-none">Excluir Familia</ion-label>
@@ -176,11 +215,6 @@
   </footer>
 </ion-content>
 
-<ion-alert
-  trigger="sair-certeza"
-  header="Tem certeza?"
-  message="Esta ação pode te fazer sair deslogar da sua conta atual"
-  [buttons]="alertButtonsSair"></ion-alert>
 <ion-alert
   trigger="excluir-perfil-certeza"
   header="Tem certeza?"
