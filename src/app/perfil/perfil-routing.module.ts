@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       { path: "", component: ListarPerfilComponent },
       { path: "adicionar-integrante", component: AdicionarIntegranteComponent },
-      { path: "editar-perfil/:perfilId", component: EditarPerfilComponent },
+      { path: "editar-perfil", component: EditarPerfilComponent },
     ],
     canActivate: [AuthGuard],
   },

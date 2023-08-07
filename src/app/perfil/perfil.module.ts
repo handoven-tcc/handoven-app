@@ -1,7 +1,7 @@
 import { IonicModule } from "@ionic/angular";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { PerfilComponent } from "./perfil.component";
 
 import { PerfilRoutingModule } from "./perfil-routing.module";
@@ -16,6 +16,7 @@ import { ListarPerfilComponent } from "./pages/listar-perfil/listar-perfil.compo
     ComponentsModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     PerfilRoutingModule,
   ],
   declarations: [

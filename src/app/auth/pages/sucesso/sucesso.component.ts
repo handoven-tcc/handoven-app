@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-sucesso",
@@ -7,9 +7,13 @@ import { Router } from "@angular/router";
   styleUrls: ["./sucesso.component.scss"],
 })
 export class SucessoComponent implements OnInit {
-  constructor(private router: Router) {}
+  acao: string = "";
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    this.acao = this.activatedRoute.snapshot.params["acao"];
+
     setTimeout(() => {
       this.router.navigate(["tabs/receitas"]);
     }, 5000);
