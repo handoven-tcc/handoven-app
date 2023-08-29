@@ -2,9 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-dispensa",
-  templateUrl: "dispensa.page.html",
-  styleUrls: ["dispensa.page.scss"],
+  template: "<ion-router-outlet></ion-router-outlet>",
 })
-export class DispensaPage {
+export class DispensaComponent {
   constructor() {}
 }

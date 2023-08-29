@@ -1,0 +1,146 @@
+<ion-header>
+  <ion-toolbar id="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-base text-white select-none"
+      >Adicione um integrante</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="ion-content" [fullscreen]="true">
+  <div class="bola-header"></div>
+  <form class="content" [formGroup]="getForm()">
+    <button id="btn-wrapper">
+      <div class="tirar-foto">
+        <ion-icon color="light" name="camera-outline"></ion-icon>
+      </div>
+      <ion-label id="label-tirar-foto" class="select-none text-0 mt-1"
+        >Tirar foto</ion-label
+      >
+    </button>
+    <div class="center-content-end">
+      <div class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2"
+          >Nome completo</span
+        >
+        <input
+          class="w-full"
+          type="text"
+          placeholder="Seu nome"
+          pInputText
+          formControlName="nome" />
+        <small class="select-none" *ngIf="getNomeRequired"
+          >Nome é obrigatório.</small
+        >
+        <small class="select-none" *ngIf="getNomeInvalid"
+          >Nome é inválido.</small
+        >
+      </div>
+
+      <span class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2">Email</span>
+        <input
+          class="w-full"
+          type="email"
+          placeholder="E-mail"
+          pInputText
+          email
+          formControlName="email" />
+        <small *ngIf="getEmailRequired">Email é obrigatório.</small>
+        <small *ngIf="getEmailInvalid">Email é inválido.</small>
+      </span>
+
+      <div class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2">Celular</span>
+        <p-inputMask
+          styleClass="w-full"
+          mask="(99) 99999-9999"
+          formControlName="celular"
+          placeholder="(99) 99999-9999"></p-inputMask>
+        <small class="select-none" *ngIf="getCelularRequired"
+          >Celular é obrigatório.</small
+        >
+        <small class="select-none" *ngIf="getCelularInvalid"
+          >Celular é inválido.</small
+        >
+      </div>
+
+      <div class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2"
+          >Data de nascimento</span
+        >
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <small class="select-none" *ngIf="!getDataDeNascimentoInvalid"
+          >É preciso ter mais de 18 anos</small
+        >
+      </div>
+
+      <div class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2">Senha</span>
+        <p-password
+          class="mb-3 w-full"
+          styleClass="w-full"
+          inputStyleClass="w-full"
+          placeholder="Digite sua senha"
+          [feedback]="false"
+          formControlName="senha"
+          [toggleMask]="true"></p-password>
+        <small class="select-none" *ngIf="getSenhaRequired"
+          >Senha é obrigatório.</small
+        >
+        <small class="select-none" *ngIf="getSenhaInvalid"
+          >Senha deve ter minimo 6 caracteres.</small
+        >
+      </div>
+
+      <div class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2"
+          >Repetir Senha</span
+        >
+        <p-password
+          class="mb-3 w-full"
+          styleClass="w-full"
+          inputStyleClass="w-full"
+          placeholder="Digite novamente sua senha"
+          [feedback]="false"
+          formControlName="senhaRepetida"
+          [toggleMask]="true"></p-password>
+        <small class="select-none" *ngIf="getSenhaRepetidaInvalid"
+          >Senha não é igual a anterior.</small
+        >
+      </div>
+
+      <div class="px-4 mb-3 w-full">
+        <ion-button
+          class="w-full mt-3 text-lg"
+          color="danger"
+          fill="solid"
+          [disabled]="!this.form.valid"
+          expand="block"
+          (click)="onClickCriarPerfil()">
+          Adicionar Integrante
+        </ion-button>
+      </div>
+    </div>
+  </form>
+</ion-content>
+
+<ion-modal #modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime
+      presentation="date"
+      display-format="DD.MM.YYYY"
+      locale="pt-BR"
+      [showDefaultButtons]="true"
+      [(ngModel)]="dataDeNascimento"
+      id="datetime"></ion-datetime>
+  </ng-template>
+</ion-modal>
+
+<ion-alert
+  trigger="btn-wrapper"
+  header="Oops..."
+  message="Desculpe, isso ainda não foi implementado 😢"
+  [buttons]="alertButtons"></ion-alert>
