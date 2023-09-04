@@ -37,6 +37,14 @@ export class AuthService {
     return window.localStorage.getItem("token") ?? "";
   }
 
+  getFamiliaId() {
+    return window.localStorage.getItem("X-HandOven-Family") ?? "";
+  }
+
+  getUsuarioId() {
+    return window.localStorage.getItem("X-HandOven-User") ?? "";
+  }
+
   criarUsuario(request: UsuarioRequest): Observable<UsuarioResponse> {
     if (!request.id || !request.familyId) {
       return of();
