@@ -1,9 +1,5 @@
-import { Headers } from "../headers.model";
-
-class DeleteProductRequest extends Headers {
-  constructor(public id: string) {
-    super();
-  }
+class DeleteProductRequest {
+  constructor(public id: string) {}
 }
 
 export { DeleteProductRequest };

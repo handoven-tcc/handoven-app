@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../../../auth/services";
+import { Subscription } from "rxjs";
+import { ProductsResponse } from "../../models";
+import { DispensaService } from "../../services";
 
 @Component({
   selector: "app-listar-dispensa",
@@ -7,7 +9,19 @@ import { AuthService } from "../../../auth/services";
   styleUrls: ["./listar-dispensa.component.scss"],
 })
 export class ListarDispensaComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  listaDeProdutos: ProductsResponse[] = [];
+  inscricao: Subscription = Subscription.EMPTY;
 
-  ngOnInit() {}
+  constructor(private dispensaService: DispensaService) {}
+
+  ngOnInit() {
+    this.inscricao = this.dispensaService.getAllProducts().subscribe((o) => {
+      console.log(o);
+      this.listaDeProdutos = o;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.inscricao.unsubscribe();
+  }
 }

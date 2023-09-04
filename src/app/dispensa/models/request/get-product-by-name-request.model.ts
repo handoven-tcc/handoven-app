@@ -1,9 +1,5 @@
-import { Headers } from "../headers.model";
-
-class GetProductByNameRequest extends Headers {
-  constructor(public name: string) {
-    super();
-  }
+class GetProductByNameRequest {
+  constructor(public name: string) {}
 }
 
 export { GetProductByNameRequest };

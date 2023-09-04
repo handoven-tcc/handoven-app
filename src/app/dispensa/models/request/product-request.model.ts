@@ -1,6 +1,4 @@
-import { Headers } from "../headers.model";
-
-class ProductRequest extends Headers {
+class ProductRequest {
   constructor(
     public name: string,
     public type: string,
@@ -9,9 +7,7 @@ class ProductRequest extends Headers {
     public cost: string,
     public amount: number,
     public id?: string
-  ) {
-    super();
-  }
+  ) {}
 }
 
 export { ProductRequest };
