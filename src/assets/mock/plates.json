@@ -1,0 +1,767 @@
+[
+  {
+    "nome": "Bolo de Chocolate",
+    "secao": [
+      [
+        {
+          "name": "Farinha de Trigo",
+          "quantity": "2 xícaras",
+          "notes": "peneirada"
+        },
+        {
+          "name": "Açúcar",
+          "quantity": "1 ½ xícara"
+        },
+        {
+          "name": "Cacau em Pó",
+          "quantity": "½ xícara"
+        },
+        {
+          "name": "Ovos",
+          "quantity": "4 unidades",
+          "notes": "grandes"
+        },
+        {
+          "name": "Leite",
+          "quantity": "1 xícara"
+        }
+      ],
+      [
+        "1. Pré-aqueça o forno a 180°C.",
+        "2. Misture a farinha de trigo, o cacau em pó e o açúcar em uma tigela.",
+        "3. Adicione os ovos e o leite à mistura seca e misture bem.",
+        "4. Despeje a massa em uma forma untada e asse por 30-35 minutos.",
+        "5. Deixe esfriar e sirva."
+      ],
+      ["Tempo de Preparo: 20 minutos", "Rendimento: 8 porções"]
+    ]
+  },
+  {
+    "nome": "Salada de Frutas",
+    "secao": [
+      [
+        {
+          "name": "Morango",
+          "quantity": "1 xícara",
+          "notes": "cortado"
+        },
+        {
+          "name": "Banana",
+          "quantity": "2 unidades",
+          "notes": "cortadas"
+        },
+        {
+          "name": "Maçã",
+          "quantity": "1 unidade",
+          "notes": "cortada"
+        },
+        {
+          "name": "Abacaxi",
+          "quantity": "1 xícara",
+          "notes": "cubos"
+        }
+      ],
+      [
+        "1. Lave e corte todas as frutas em pedaços.",
+        "2. Misture as frutas em uma tigela grande.",
+        "3. Sirva a salada de frutas gelada."
+      ],
+      ["Tempo de Preparo: 15 minutos", "Rendimento: 4 porções"]
+    ]
+  },
+  {
+    "nome": "Sopa de Legumes",
+    "secao": [
+      [
+        {
+          "name": "Cenoura",
+          "quantity": "2 unidades",
+          "notes": "cortadas em rodelas"
+        },
+        {
+          "name": "Batata",
+          "quantity": "2 unidades",
+          "notes": "cortadas em cubos"
+        },
+        {
+          "name": "Abobrinha",
+          "quantity": "1 unidade",
+          "notes": "cortada em pedaços"
+        },
+        {
+          "name": "Cebola",
+          "quantity": "1 unidade",
+          "notes": "picada"
+        },
+        {
+          "name": "Alho",
+          "quantity": "2 dentes",
+          "notes": "picados"
+        }
+      ],
+      [
+        "1. Em uma panela grande, refogue a cebola e o alho no azeite até dourar.",
+        "2. Adicione os legumes cortados e refogue por mais 5 minutos.",
+        "3. Cubra com água, tempere com sal e pimenta a gosto.",
+        "4. Cozinhe em fogo médio até que os legumes estejam macios.",
+        "5. Sirva quente."
+      ],
+      ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
+    ]
+  },
+  {
+    "nome": "Omelete de Queijo",
+    "secao": [
+      [
+        {
+          "name": "Ovos",
+          "quantity": "3 unidades",
+          "notes": "grandes"
+        },
+        {
+          "name": "Queijo",
+          "quantity": "1/2 xícara",
+          "notes": "ralado"
+        },
+        {
+          "name": "Sal",
+          "quantity": "1/4 colher de chá"
+        },
+        {
+          "name": "Pimenta",
+          "quantity": "a gosto"
+        }
+      ],
+      [
+        "1. Quebre os ovos em uma tigela e bata-os bem com um garfo.",
+        "2. Aqueça uma frigideira antiaderente e despeje os ovos batidos.",
+        "3. Cozinhe em fogo médio até que as bordas comecem a endurecer.",
+        "4. Adicione o queijo ralado sobre metade do omelete.",
+        "5. Dobre a outra metade sobre o queijo.",
+        "6. Cozinhe por mais alguns minutos até o queijo derreter.",
+        "7. Tempere com sal e pimenta a gosto e sirva."
+      ],
+      ["Tempo de Preparo: 10 minutos", "Rendimento: 1 porção"]
+    ]
+  },
+  {
+    "nome": "Yakisoba",
+    "secao": [
+      [
+        {
+          "name": "Macarrão para Yakisoba",
+          "quantity": "200g"
+        },
+        {
+          "name": "Peito de Frango",
+          "quantity": "200g",
+          "notes": "cortado em tiras"
+        },
+        {
+          "name": "Brócolis",
+          "quantity": "100g",
+          "notes": "cortado em floretes"
+        },
+        {
+          "name": "Cenoura",
+          "quantity": "1 unidade",
+          "notes": "cortada em tiras finas"
+        },
+        {
+          "name": "Pimentão Vermelho",
+          "quantity": "1 unidade",
+          "notes": "cortado em tiras"
+        }
+      ],
+      [
+        "1. Cozinhe o macarrão de acordo com as instruções da embalagem, escorra e reserve.",
+        "2. Em uma frigideira grande, aqueça um pouco de óleo e cozinhe o frango até dourar.",
+        "3. Adicione os legumes (brócolis, cenoura e pimentão) e refogue até que fiquem macios.",
+        "4. Adicione o macarrão cozido à frigideira e misture bem.",
+        "5. Tempere com molho de soja a gosto e cozinhe por mais alguns minutos.",
+        "6. Sirva quente."
+      ],
+      ["Tempo de Preparo: 30 minutos", "Rendimento: 2 porções"]
+    ]
+  },
+  {
+    "nome": "Feijoada",
+    "secao": [
+      [
+        {
+          "name": "Feijão Preto",
+          "quantity": "500g"
+        },
+        {
+          "name": "Carne de Porco",
+          "quantity": "300g",
+          "notes": "cortada em pedaços"
+        },
+        {
+          "name": "Linguiça Calabresa",
+          "quantity": "200g",
+          "notes": "cortada em rodelas"
+        },
+        {
+          "name": "Cebola",
+          "quantity": "1 unidade",
+          "notes": "picada"
+        },
+        {
+          "name": "Alho",
+          "quantity": "4 dentes",
+          "notes": "picados"
+        }
+      ],
+      [
+        "1. Cozinhe o feijão preto em água até ficar macio. Escorra e reserve.",
+        "2. Em uma panela grande, frite a carne de porco até dourar.",
+        "3. Adicione a linguiça calabresa e frite até que fique levemente dourada.",
+        "4. Acrescente a cebola e o alho e refogue até que fiquem dourados.",
+        "5. Adicione o feijão cozido e cozinhe por mais alguns minutos.",
+        "6. Tempere com sal e pimenta a gosto.",
+        "7. Sirva com arroz branco e couve refogada."
+      ],
+      ["Tempo de Preparo: 2 horas", "Rendimento: 6 porções"]
+    ]
+  },
+  {
+    "nome": "Risoto de Cogumelos",
+    "secao": [
+      [
+        {
+          "name": "Arroz Arborio",
+          "quantity": "1 xícara"
+        },
+        {
+          "name": "Cogumelos Mistos",
+          "quantity": "200g",
+          "notes": "cortados em fatias"
+        },
+        {
+          "name": "Cebola",
+          "quantity": "1 unidade",
+          "notes": "picada"
+        },
+        {
+          "name": "Alho",
+          "quantity": "2 dentes",
+          "notes": "picados"
+        },
+        {
+          "name": "Caldo de Galinha",
+          "quantity": "1 litro",
+          "notes": "quente"
+        }
+      ],
+      [
+        "1. Em uma panela grande, refogue a cebola e o alho em um pouco de azeite até dourarem.",
+        "2. Adicione os cogumelos e refogue até que fiquem macios.",
+        "3. Acrescente o arroz Arborio e mexa por alguns minutos.",
+        "4. Adicione uma concha de caldo de galinha quente e mexa até que seja absorvido pelo arroz.",
+        "5. Continue adicionando o caldo, uma concha de cada vez, mexendo sempre até que o arroz esteja cremoso e cozido.",
+        "6. Tempere com sal e pimenta a gosto.",
+        "7. Sirva quente, polvilhado com queijo parmesão ralado."
+      ],
+      [
+        "Tempo de Preparo: 40 minutos",
+        "Rendimento: 4 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Frango Assado com Ervas",
+    "secao": [
+      [
+        {
+          "name": "Peito de Frango",
+          "quantity": "4 unidades"
+        },
+        {
+          "name": "Ervas Frescas (alecrim, tomilho, salsa)",
+          "quantity": "2 colheres de sopa",
+          "notes": "picadas"
+        },
+        {
+          "name": "Limão",
+          "quantity": "1 unidade",
+          "notes": "suco e raspas"
+        },
+        {
+          "name": "Alho",
+          "quantity": "4 dentes",
+          "notes": "picados"
+        },
+        {
+          "name": "Azeite de Oliva",
+          "quantity": "2 colheres de sopa"
+        }
+      ],
+      [
+        "1. Em uma tigela, misture as ervas picadas, o suco e as raspas de limão, o alho picado e o azeite de oliva.",
+        "2. Tempere os peitos de frango com a mistura de ervas e deixe marinar por 30 minutos.",
+        "3. Pré-aqueça o forno a 200°C.",
+        "4. Coloque os peitos de frango em uma assadeira e asse por 25-30 minutos ou até que estejam dourados e cozidos por completo.",
+        "5. Sirva quente com acompanhamentos de sua escolha."
+      ],
+      [
+        "Tempo de Preparo: 1 hora",
+        "Rendimento: 4 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Espaguete à Carbonara",
+    "secao": [
+      [
+        {
+          "name": "Espaguete",
+          "quantity": "200g"
+        },
+        {
+          "name": "Bacon",
+          "quantity": "100g",
+          "notes": "cortado em pedaços"
+        },
+        {
+          "name": "Queijo Parmesão",
+          "quantity": "1/2 xícara",
+          "notes": "ralado"
+        },
+        {
+          "name": "Ovos",
+          "quantity": "2 unidades"
+        },
+        {
+          "name": "Pimenta Preta",
+          "quantity": "a gosto"
+        }
+      ],
+      [
+        "1. Cozinhe o espaguete em água salgada de acordo com as instruções da embalagem. Escorra e reserve.",
+        "2. Em uma frigideira, frite o bacon até que fique crocante. Escorra o excesso de gordura.",
+        "3. Em uma tigela, misture os ovos, o queijo parmesão ralado e a pimenta preta.",
+        "4. Adicione o espaguete cozido à frigideira com o bacon e mexa bem.",
+        "5. Retire do fogo e misture a mistura de ovos e queijo, mexendo rapidamente para que os ovos cozinhem com o calor residual.",
+        "6. Sirva imediatamente, polvilhado com mais queijo parmesão e pimenta preta a gosto."
+      ],
+      [
+        "Tempo de Preparo: 20 minutos",
+        "Rendimento: 2 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Guacamole",
+    "secao": [
+      [
+        {
+          "name": "Abacate",
+          "quantity": "2 unidades",
+          "notes": "maduros"
+        },
+        {
+          "name": "Tomate",
+          "quantity": "1 unidade",
+          "notes": "picado em cubos"
+        },
+        {
+          "name": "Cebola Vermelha",
+          "quantity": "1/2 unidade",
+          "notes": "picada finamente"
+        },
+        {
+          "name": "Coentro",
+          "quantity": "2 colheres de sopa",
+          "notes": "picado"
+        },
+        {
+          "name": "Suco de Limão",
+          "quantity": "1 limão"
+        }
+      ],
+      [
+        "1. Corte os abacates ao meio, remova o caroço e retire a polpa.",
+        "2. Em uma tigela, amasse a polpa dos abacates com um garfo.",
+        "3. Adicione o tomate, a cebola vermelha, o coentro e o suco de limão.",
+        "4. Misture bem e tempere com sal a gosto.",
+        "5. Sirva com nachos, tacos ou como acompanhamento."
+      ],
+      [
+        "Tempo de Preparo: 15 minutos",
+        "Rendimento: 4 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Lasanha de Carne",
+    "secao": [
+      [
+        {
+          "name": "Massa para Lasanha",
+          "quantity": "200g"
+        },
+        {
+          "name": "Carne Moída",
+          "quantity": "300g"
+        },
+        {
+          "name": "Cebola",
+          "quantity": "1 unidade",
+          "notes": "picada"
+        },
+        {
+          "name": "Alho",
+          "quantity": "3 dentes",
+          "notes": "picados"
+        },
+        {
+          "name": "Molho de Tomate",
+          "quantity": "500ml"
+        }
+      ],
+      [
+        "1. Cozinhe a massa para lasanha de acordo com as instruções da embalagem. Escorra e reserve.",
+        "2. Em uma panela, refogue a cebola e o alho em um pouco de azeite até dourarem.",
+        "3. Adicione a carne moída e cozinhe até que esteja totalmente cozida e dourada.",
+        "4. Adicione o molho de tomate à carne moída e deixe ferver.",
+        "5. Em uma forma, monte camadas alternadas de massa para lasanha, carne moída e molho de tomate.",
+        "6. Repita as camadas até que todos os ingredientes estejam usados.",
+        "7. Cubra com queijo parmesão ralado.",
+        "8. Asse no forno a 180°C por 30 minutos ou até que esteja borbulhante e dourado.",
+        "9. Deixe repousar por alguns minutos antes de servir."
+      ],
+      [
+        "Tempo de Preparo: 1 hora",
+        "Rendimento: 6 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Salmão Grelhado com Molho de Limão",
+    "secao": [
+      [
+        {
+          "name": "Filé de Salmão",
+          "quantity": "4 unidades"
+        },
+        {
+          "name": "Suco de Limão",
+          "quantity": "2 limões"
+        },
+        {
+          "name": "Alho",
+          "quantity": "3 dentes",
+          "notes": "picados"
+        },
+        {
+          "name": "Azeite de Oliva",
+          "quantity": "2 colheres de sopa"
+        },
+        {
+          "name": "Salsa",
+          "quantity": "2 colheres de sopa",
+          "notes": "picada"
+        }
+      ],
+      [
+        "1. Tempere os filés de salmão com suco de limão, alho picado, azeite de oliva, sal e pimenta.",
+        "2. Pré-aqueça uma grelha ou frigideira antiaderente.",
+        "3. Grelhe os filés de salmão por 3-4 minutos de cada lado ou até que estejam cozidos e dourados.",
+        "4. Enquanto o salmão grelha, faça o molho de limão misturando o suco de limão e a salsa picada.",
+        "5. Sirva os filés de salmão com o molho de limão por cima."
+      ],
+      [
+        "Tempo de Preparo: 20 minutos",
+        "Rendimento: 4 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Pizza Margherita",
+    "secao": [
+      [
+        {
+          "name": "Massa de Pizza",
+          "quantity": "1 unidade",
+          "notes": "pronta ou caseira"
+        },
+        {
+          "name": "Molho de Tomate",
+          "quantity": "1/2 xícara"
+        },
+        {
+          "name": "Queijo Muçarela",
+          "quantity": "200g",
+          "notes": "ralado"
+        },
+        {
+          "name": "Tomate",
+          "quantity": "2 unidades",
+          "notes": "cortados em rodelas"
+        },
+        {
+          "name": "Manjericão Fresco",
+          "quantity": "folhas a gosto"
+        }
+      ],
+      [
+        "1. Pré-aqueça o forno conforme as instruções da massa de pizza.",
+        "2. Abra a massa em uma superfície enfarinhada para formar uma pizza redonda.",
+        "3. Espalhe o molho de tomate sobre a massa.",
+        "4. Cubra com queijo muçarela ralado e distribua as rodelas de tomate por cima.",
+        "5. Asse no forno até que a massa esteja dourada e o queijo derretido.",
+        "6. Retire do forno, cubra com folhas de manjericão fresco e sirva quente."
+      ],
+      [
+        "Tempo de Preparo: 30 minutos",
+        "Rendimento: 1 pizza"
+      ]
+    ]
+  },
+  {
+    "nome": "Smoothie de Banana e Morango",
+    "secao": [
+      [
+        {
+          "name": "Banana",
+          "quantity": "2 unidades",
+          "notes": "maduras"
+        },
+        {
+          "name": "Morangos",
+          "quantity": "1 xícara",
+          "notes": "frescos ou congelados"
+        },
+        {
+          "name": "Iogurte Natural",
+          "quantity": "1 xícara"
+        },
+        {
+          "name": "Mel",
+          "quantity": "2 colheres de sopa",
+          "notes": "opcional"
+        }
+      ],
+      [
+        "1. Descasque as bananas e lave os morangos, removendo os talos.",
+        "2. Coloque as bananas, os morangos, o iogurte e o mel (se desejar um toque doce) em um liquidificador.",
+        "3. Misture até obter uma consistência suave e cremosa.",
+        "4. Sirva imediatamente em copos gelados."
+      ],
+      [
+        "Tempo de Preparo: 10 minutos",
+        "Rendimento: 2 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Torta de Maçã",
+    "secao": [
+      [
+        {
+          "name": "Massa para Torta",
+          "quantity": "1 unidade",
+          "notes": "pronta ou caseira"
+        },
+        {
+          "name": "Maçãs",
+          "quantity": "4 unidades",
+          "notes": "descascadas e fatiadas"
+        },
+        {
+          "name": "Açúcar",
+          "quantity": "1/2 xícara"
+        },
+        {
+          "name": "Canela em Pó",
+          "quantity": "1 colher de chá"
+        },
+        {
+          "name": "Suco de Limão",
+          "quantity": "1 limão"
+        }
+      ],
+      [
+        "1. Pré-aqueça o forno conforme as instruções da massa para torta.",
+        "2. Em uma tigela, misture as maçãs fatiadas com o suco de limão, o açúcar e a canela.",
+        "3. Abra a massa para torta em uma forma e coloque as maçãs por cima.",
+        "4. Dobre as bordas da massa sobre as maçãs para formar a borda da torta.",
+        "5. Asse no forno preaquecido a 180°C por 30-35 minutos ou até que a massa esteja dourada e as maçãs estejam macias.",
+        "6. Deixe esfriar antes de servir."
+      ],
+      [
+        "Tempo de Preparo: 1 hora",
+        "Rendimento: 8 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Coxinha de Frango",
+    "secao": [
+      [
+        {
+          "name": "Peito de Frango",
+          "quantity": "300g",
+          "notes": "cozido e desfiado"
+        },
+        {
+          "name": "Massa para Coxinha",
+          "quantity": "500g",
+          "notes": "pronta ou caseira"
+        },
+        {
+          "name": "Caldo de Galinha",
+          "quantity": "1 tablete"
+        },
+        {
+          "name": "Cebola",
+          "quantity": "1 unidade",
+          "notes": "picada"
+        },
+        {
+          "name": "Alho",
+          "quantity": "2 dentes",
+          "notes": "picados"
+        }
+      ],
+      [
+        "1. Em uma panela, refogue a cebola e o alho em um pouco de azeite até dourarem.",
+        "2. Adicione o peito de frango desfiado e o caldo de galinha.",
+        "3. Cozinhe por alguns minutos até que o caldo de galinha se dissolva e o frango esteja bem temperado.",
+        "4. Abra pequenas porções da massa para coxinha na palma da mão, recheie com o frango temperado e modele em formato de coxinha.",
+        "5. Em uma panela com óleo quente, frite as coxinhas até que fiquem douradas.",
+        "6. Escorra em papel toalha e sirva quente."
+      ],
+      [
+        "Tempo de Preparo: 1 hora",
+        "Rendimento: Aproximadamente 20 coxinhas"
+      ]
+    ]
+  },
+  {
+    "nome": "Empadão de Frango",
+    "secao": [
+      [
+        {
+          "name": "Peito de Frango",
+          "quantity": "400g",
+          "notes": "cozido e desfiado"
+        },
+        {
+          "name": "Massa de Empadão",
+          "quantity": "1 unidade",
+          "notes": "pronta ou caseira"
+        },
+        {
+          "name": "Cenoura",
+          "quantity": "1 unidade",
+          "notes": "ralada"
+        },
+        {
+          "name": "Ervilha",
+          "quantity": "1/2 xícara",
+          "notes": "cozida"
+        },
+        {
+          "name": "Creme de Leite",
+          "quantity": "1/2 xícara"
+        }
+      ],
+      [
+        "1. Em uma panela, misture o frango desfiado, a cenoura ralada, a ervilha e o creme de leite.",
+        "2. Abra metade da massa de empadão em uma forma e coloque o recheio por cima.",
+        "3. Cubra com a outra metade da massa e faça pequenos cortes na superfície para ventilar.",
+        "4. Asse no forno preaquecido a 180°C por 30-35 minutos ou até que a massa esteja dourada.",
+        "5. Deixe esfriar um pouco antes de cortar e servir."
+      ],
+      [
+        "Tempo de Preparo: 1 hora",
+        "Rendimento: 6 porções"
+      ]
+    ]
+  },
+  {
+    "nome": "Sanduíche de Frango Grelhado",
+    "secao": [
+      [
+        {
+          "name": "Peito de Frango",
+          "quantity": "2 unidades",
+          "notes": "peitos de frango desossados"
+        },
+        {
+          "name": "Pão de Hambúrguer",
+          "quantity": "4 unidades"
+        },
+        {
+          "name": "Alface",
+          "quantity": "4 folhas"
+        },
+        {
+          "name": "Tomate",
+          "quantity": "2 unidades",
+          "notes": "rodelas"
+        },
+        {
+          "name": "Cebola Roxa",
+          "quantity": "1/2 unidade",
+          "notes": "fatias finas"
+        }
+      ],
+      [
+        "1. Tempere os peitos de frango com sal, pimenta, alho picado e azeite de oliva.",
+        "2. Grelhe o frango em uma grelha quente até que esteja cozido por completo e com marcas de grelhado.",
+        "3. Corte os peitos de frango em fatias finas.",
+        "4. Abra os pães de hambúrguer e coloque as folhas de alface, as rodelas de tomate e as fatias de cebola.",
+        "5. Adicione as fatias de frango grelhado.",
+        "6. Feche os sanduíches e sirva quente."
+      ],
+      [
+        "Tempo de Preparo: 30 minutos",
+        "Rendimento: 4 sanduíches"
+      ]
+    ]
+  },
+  {
+    "nome": "Wrap de Vegetais com Hummus",
+    "secao": [
+      [
+        {
+          "name": "Tortilhas de Trigo",
+          "quantity": "4 unidades"
+        },
+        {
+          "name": "Hummus",
+          "quantity": "1 xícara"
+        },
+        {
+          "name": "Pepino",
+          "quantity": "1 unidade",
+          "notes": "fatias finas"
+        },
+        {
+          "name": "Tomate",
+          "quantity": "2 unidades",
+          "notes": "rodelas"
+        },
+        {
+          "name": "Pimentão Vermelho",
+          "quantity": "1 unidade",
+          "notes": "tiras finas"
+        }
+      ],
+      [
+        "1. Aqueça as tortilhas de trigo em uma frigideira ou no micro-ondas até ficarem levemente aquecidas.",
+        "2. Espalhe uma generosa camada de hummus sobre cada tortilha.",
+        "3. Coloque fatias de pepino, rodelas de tomate e tiras de pimentão vermelho sobre o hummus.",
+        "4. Dobre as laterais das tortilhas e enrole-as como wraps.",
+        "5. Corte cada wrap ao meio diagonalmente e sirva."
+      ],
+      [
+        "Tempo de Preparo: 15 minutos",
+        "Rendimento: 4 wraps"
+      ]
+    ]
+  }
+]
