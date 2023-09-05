@@ -1,1 +1,1 @@
-export * from "./products-response.model";
+export * from "./produtos-response.model";
