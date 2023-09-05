@@ -67,12 +67,18 @@ export class ListarDispensaComponent implements OnInit {
   }
 
   excluirProduto(id: string) {
-    const request = new DeletarProdutoRequest(id);
-    this.inscricao = this.dispensaService
-      .deletarProdutoById(request)
-      .subscribe((o) => {
-        console.log(o);
-      });
+    this.alertController
+      .create({
+        header: "Oops...",
+        message: "Desculpe, isso ainda não foi implementado 😢",
+      })
+      .then((o) => o.present());
+    // const request = new DeletarProdutoRequest(id);
+    // this.inscricao = this.dispensaService
+    //   .deletarProdutoById(request)
+    //   .subscribe((o) => {
+    //     console.log(o);
+    //   });
   }
 
   ngOnDestroy(): void {
