@@ -1,11 +1,15 @@
 import { IonicModule } from "@ionic/angular";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-import { DispensaPage } from "./dispensa.page";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { DispensaComponent } from "./dispensa.component";
 
 import { DispensaPageRoutingModule } from "./dispensa-routing.module";
 import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
+import { ListarDispensaComponent } from "./pages/listar-dispensa/listar-dispensa.component";
+import { AdicionarDispensaComponent } from "./pages/adicionar-dispensa/adicionar-dispensa.component";
+import { EditarDispensaComponent } from "./pages/editar-dispensa/editar-dispensa.component";
+import { DetalhesItemDispensaComponent } from "./pages/detalhes-item-dispensa/detalhes-item-dispensa.component";
 
 @NgModule({
   imports: [
@@ -13,8 +17,15 @@ import { ComponentsModule } from "../../../temp/src/lib/components/components.mo
     ComponentsModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     DispensaPageRoutingModule,
   ],
-  declarations: [DispensaPage],
+  declarations: [
+    DispensaComponent,
+    ListarDispensaComponent,
+    AdicionarDispensaComponent,
+    EditarDispensaComponent,
+    DetalhesItemDispensaComponent,
+  ],
 })
 export class DispensaPageModule {}

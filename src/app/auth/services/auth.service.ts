@@ -33,8 +33,24 @@ export class AuthService {
     private router: Router
   ) {}
 
+  hasUsuario(): boolean {
+    if (!this.getFamiliaId() && !this.getUsuarioId()) {
+      return false;
+    }
+
+    return true;
+  }
+
   getAuthToken() {
     return window.localStorage.getItem("token") ?? "";
+  }
+
+  getFamiliaId() {
+    return window.localStorage.getItem("X-HandOven-Family") ?? "";
+  }
+
+  getUsuarioId() {
+    return window.localStorage.getItem("X-HandOven-User") ?? "";
   }
 
   criarUsuario(request: UsuarioRequest): Observable<UsuarioResponse> {
@@ -106,10 +122,7 @@ export class AuthService {
   }
 
   login(request: LoginRequest): Observable<LoginResponse> {
-    const familyHeader = window.localStorage.getItem("X-HandOven-Family") ?? "";
-    const userHeader = window.localStorage.getItem("X-HandOven-User") ?? "";
-
-    if (familyHeader !== "" && userHeader !== "") {
+    if (this.hasUsuario()) {
       this.router.navigate(["/tabs/receitas"]);
       return of();
     }

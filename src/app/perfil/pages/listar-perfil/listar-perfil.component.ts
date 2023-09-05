@@ -8,7 +8,7 @@ import {
   GetFamiliaIdRequest,
   UsuarioResponse,
 } from "../../../auth/models";
-import { AlertController, AlertInput, NavController } from "@ionic/angular";
+import { AlertController, NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-listar-perfil",
@@ -33,14 +33,6 @@ export class ListarPerfilComponent implements OnInit {
 
   public alertButtons = ["OK"];
 
-  public alertButtonsSair = [
-    { text: "Cancel", role: "cancel", handler: () => null },
-    {
-      text: "OK",
-      role: "confirm",
-      handler: () => this.sair(),
-    },
-  ];
   public alertButtonsExcluirPerfil = [
     { text: "Cancel", role: "cancel", handler: () => null },
     {
@@ -135,7 +127,14 @@ export class ListarPerfilComponent implements OnInit {
       .create({
         header: "Tem certeza?",
         message: "Esta ação pode te fazer sair do seu perfil atual",
-        buttons: this.alertButtonsSair,
+        buttons: [
+          { text: "Cancel", role: "cancel", handler: () => null },
+          {
+            text: "OK",
+            role: "confirm",
+            handler: () => this.sair(),
+          },
+        ],
       })
       .then((o) => o.present());
   }
@@ -219,15 +218,14 @@ export class ListarPerfilComponent implements OnInit {
           },
           {
             text: "Ok",
-            handler: (alertData) =>
-              this.onClickEditarFamilia(alertData.nomeFamilia),
+            handler: (alertData) => this.editarFamilia(alertData.nomeFamilia),
           },
         ],
       })
       .then((o) => o.present());
   }
 
-  onClickEditarFamilia(nomeFamilia: string) {
+  editarFamilia(nomeFamilia: string) {
     const request: EditarFamiliaRequest = new EditarFamiliaRequest(
       this.familyId,
       nomeFamilia

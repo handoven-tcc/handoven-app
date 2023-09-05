@@ -192,6 +192,7 @@
           <!-- <ion-icon name="alert-circle"></ion-icon> -->
         </ion-button>
       </ng-container>
+
       <a
         *ngIf="usuarioLogado"
         id="adicionar-integrante-nao-implementado"
@@ -223,10 +224,10 @@
 <ion-alert
   trigger="excluir-perfil-certeza"
   header="Tem certeza?"
-  message="Esta te fará excluir seu perfil permanentemente, você tem certeza disso?"
+  message="Esta ação te fará excluir seu perfil permanentemente, você tem certeza disso?"
   [buttons]="alertButtonsExcluirPerfil"></ion-alert>
 <ion-alert
   trigger="excluir-familia-certeza"
   header="Tem certeza?"
-  message="Esta te fará excluir sua familia e TODOS os integrantes dela permanentemente, você tem certeza disso?"
+  message="Esta ação te fará excluir sua familia e TODOS os integrantes dela permanentemente, você tem certeza disso?"
   [buttons]="alertButtonsExcluirFamilia"></ion-alert>
