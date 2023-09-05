@@ -4,12 +4,13 @@ import { environment } from "../../../environments/environment";
 import { Observable, map, of } from "rxjs";
 import {
   ProductRequest,
-  DeleteProductRequest,
-  GetProductByNameRequest,
-  GetProductByIdRequest,
-  ProductsResponse,
+  DeletarProdutoRequest,
+  GetProdutoNomeRequest,
+  GetProdutoIdRequest,
+  ProdutosResponse,
 } from "../models";
 import { AuthService } from "../../auth/services";
+import Products from "../../../assets/mock/products.json";
 
 @Injectable({
   providedIn: "root",
@@ -30,24 +31,26 @@ export class DispensaService {
     this.usuarioId = this.authService.getUsuarioId();
   }
 
-  getAllProducts(): Observable<ProductsResponse[]> {
+  getAllProducts(): Observable<ProdutosResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProductsResponse[]);
+      return of([] as ProdutosResponse[]);
     }
 
-    return this.http
-      .get(this.url, {
-        headers: {
-          "X-HandOven-User": this.usuarioId,
-          "X-HandOven-Family": this.familiaId,
-        },
-      })
-      .pipe(map((res: any) => res));
+    return of(Products as ProdutosResponse[]);
+
+    // return this.http
+    //   .get(this.url, {
+    //     headers: {
+    //       "X-HandOven-User": this.usuarioId,
+    //       "X-HandOven-Family": this.familiaId,
+    //     },
+    //   })
+    //   .pipe(map((res: any) => res));
   }
 
-  getProductById(request: GetProductByIdRequest): Observable<ProductsResponse> {
+  getProductById(request: GetProdutoIdRequest): Observable<ProdutosResponse> {
     if (!this.authService.hasUsuario()) {
-      return of({} as ProductsResponse);
+      return of({} as ProdutosResponse);
     }
 
     return this.http
@@ -61,10 +64,10 @@ export class DispensaService {
   }
 
   getProductsByName(
-    request: GetProductByNameRequest
-  ): Observable<ProductsResponse[]> {
+    request: GetProdutoNomeRequest
+  ): Observable<ProdutosResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProductsResponse[]);
+      return of([] as ProdutosResponse[]);
     }
 
     return this.http
@@ -77,9 +80,9 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  postProduct(request: ProductRequest): Observable<ProductsResponse[]> {
+  postProduct(request: ProductRequest): Observable<ProdutosResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProductsResponse[]);
+      return of([] as ProdutosResponse[]);
     }
 
     return this.http
@@ -93,9 +96,9 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  putProductById(request: ProductRequest): Observable<ProductsResponse[]> {
+  putProductById(request: ProductRequest): Observable<ProdutosResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProductsResponse[]);
+      return of([] as ProdutosResponse[]);
     }
 
     return this.http
@@ -108,9 +111,9 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  deleteProductById(request: DeleteProductRequest): Observable<any> {
+  deletarProdutoById(request: DeletarProdutoRequest): Observable<any> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProductsResponse[]);
+      return of([] as ProdutosResponse[]);
     }
 
     return this.http
