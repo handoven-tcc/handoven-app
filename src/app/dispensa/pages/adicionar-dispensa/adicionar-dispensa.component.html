@@ -112,15 +112,24 @@
         >
       </div>
 
-      <div class="px-4 mb-3 w-full">
+      <div class="px-4 mb-3 grid justify-content-betweenflex-row">
         <ion-button
-          class="w-full mt-3 text-lg"
+          class="col-5 mx-0 mt-3 text-lg"
+          color="light"
+          fill="solid"
+          expand="block"
+          (click)="onClickCancelar()">
+          Cancelar
+        </ion-button>
+
+        <ion-button
+          class="col-7 mx-0 mt-3 text-lg"
           color="danger"
           fill="solid"
           [disabled]="!this.form.valid"
           expand="block"
           (click)="onClickCriarPerfil()">
-          Adicionar Integrante
+          Adicionar Produto
         </ion-button>
       </div>
     </div>
@@ -139,8 +148,8 @@
   </ng-template>
 </ion-modal>
 
-<ion-alert
+<!-- <ion-alert
   trigger="btn-wrapper"
   header="Oops..."
   message="Desculpe, isso ainda não foi implementado 😢"
-  [buttons]="alertButtons"></ion-alert>
+  [buttons]="alertButtons"></ion-alert> -->

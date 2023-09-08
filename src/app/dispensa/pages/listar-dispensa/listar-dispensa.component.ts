@@ -12,6 +12,7 @@ import { AlertController, NavController } from "@ionic/angular";
 export class ListarDispensaComponent implements OnInit {
   produtos: ProdutosResponse[] = [];
   inscricao: Subscription = Subscription.EMPTY;
+  loading: boolean = false;
 
   constructor(
     private dispensaService: DispensaService,
@@ -19,21 +20,20 @@ export class ListarDispensaComponent implements OnInit {
     private nav: NavController
   ) {}
 
+  public get hasProdutos(): boolean {
+    return this.produtos.length > 0;
+  }
+
   ngOnInit() {
+    this.loading = true;
     this.inscricao = this.dispensaService.getAllProducts().subscribe((o) => {
-      console.log(o);
       this.produtos = o;
+      this.loading = false;
     });
   }
 
   onClickAdicionarDispensa() {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-      })
-      .then((o) => o.present());
-    // this.nav.navigateForward(["tabs/dispensa/adicionar-a-dispensa"]);
+    this.nav.navigateForward(["tabs/dispensa/adicionar-produto"]);
   }
 
   onClickModalEditarProduto(id: string) {

@@ -154,6 +154,10 @@ export class AdicionarIntegranteComponent implements OnInit {
     });
   }
 
+  onClickCancelar() {
+    this.nav.navigateBack(["tabs/perfil"]);
+  }
+
   senhaValidator(form: FormGroup): ValidatorFn {
     const senha = form.get("senha");
     const senhaRepetida = form.get("senhaRepetida");

@@ -25,7 +25,6 @@ export class AdicionarDispensaComponent implements OnInit {
   inscricao: Subscription = Subscription.EMPTY;
   form!: FormGroup;
   familyId!: string;
-
   dataDeNascimento!: string;
 
   public alertButtons = ["OK"];
@@ -152,6 +151,10 @@ export class AdicionarDispensaComponent implements OnInit {
       window.localStorage.setItem("user", JSON.stringify(o));
       this.nav.navigateForward(["auth/sucesso", "criada"]);
     });
+  }
+
+  onClickCancelar() {
+    this.nav.navigateBack(["tabs/dispensa"]);
   }
 
   senhaValidator(form: FormGroup): ValidatorFn {
