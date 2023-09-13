@@ -105,6 +105,29 @@ export class ListarDispensaComponent implements OnInit {
     //   });
   }
 
+  handleRefresh(event: any) {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.loading = true;
+    this.inscricao = this.dispensaService.getAllProducts().subscribe({
+      next: (o) => {
+        this.produtos = o;
+        this.loading = false;
+        event.target.complete();
+      },
+      error: () => {
+        this.loading = false;
+        event.target.complete();
+      },
+      complete: () => {
+        this.loading = false;
+        event.target.complete();
+      },
+    });
+  }
+
   ngOnDestroy(): void {
     this.inscricao.unsubscribe();
   }

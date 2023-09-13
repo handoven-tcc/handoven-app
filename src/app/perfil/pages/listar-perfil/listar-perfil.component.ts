@@ -125,6 +125,37 @@ export class ListarPerfilComponent implements OnInit {
       });
   }
 
+  handleRefresh(event: any): void {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.loading = true;
+    const request: GetFamiliaIdRequest = new GetFamiliaIdRequest(
+      this.usuarioId,
+      this.familiaId
+    );
+
+    this.inscricaoTodosUsuariosDaFamilia = this.authService
+      .getTodosUsuariosDaFamilia(request)
+      .subscribe({
+        next: (o) => {
+          // TODO: ordenar, seu email primeiro dps os outros
+          this.emails = o.map((i) => i.email);
+          this.loading = false;
+          event.target.complete();
+        },
+        error: () => {
+          this.loading = false;
+          event.target.complete();
+        },
+        complete: () => {
+          this.loading = false;
+          event.target.complete();
+        },
+      });
+  }
+
   onClickAdicionarUsuario(): void {
     if (this.loading === true) {
       return;

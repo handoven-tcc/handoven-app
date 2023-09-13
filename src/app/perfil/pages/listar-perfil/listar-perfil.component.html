@@ -1,6 +1,9 @@
 <ion-header [translucent]="true"></ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <header>
     <div class="grid">
       <ng-container *ngIf="!usuarioLogado">

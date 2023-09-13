@@ -1,6 +1,10 @@
 <ion-header [translucent]="true"></ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <header
     class="grid justify-content-between align-items-center text-900 px-5 pb-5">
     <h1 class="col-8">Dispensa</h1>
