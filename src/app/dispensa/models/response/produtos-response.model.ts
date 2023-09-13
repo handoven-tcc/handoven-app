@@ -7,6 +7,7 @@ interface ProdutosResponse {
   cost: string;
   amount: number;
   familyId: string;
+  expiryProduct: boolean;
 }
 
 export type { ProdutosResponse };
