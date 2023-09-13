@@ -11,7 +11,10 @@
     <a
       class="col-2 flex justify-content-end"
       (click)="onClickAdicionarDispensa()">
-      <ion-icon class="text-900" name="add" size="large"></ion-icon>
+      <ion-icon
+        [ngClass]="{ 'text-900': !loading, 'text-500': loading }"
+        name="add"
+        size="large"></ion-icon>
     </a>
   </header>
 
@@ -122,9 +125,72 @@
       class="w-full text-lg"
       color="danger"
       fill="solid"
+      [disabled]="!getDisableAdicionarDispensa()"
       expand="block"
       (click)="onClickAdicionarDispensa()">
-      Adicionar a Dispensa
+      <div *ngIf="!loading">Adicionar a Dispensa</div>
+      <div
+        *ngIf="loading"
+        class="col-12 flex align-items-center justify-content-center text-900 flex-column">
+        <ion-infinite-scroll class="w-1">
+          <div class="infinite-scroll-content">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 100 100"
+              enable-background="new 0 0 100 100"
+              xml:space="preserve">
+              <circle
+                fill="none"
+                stroke="#fff"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                cx="50"
+                cy="50"
+                r="48" />
+              <line
+                fill="none"
+                stroke-linecap="round"
+                stroke="#fff"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                x1="50"
+                y1="50"
+                x2="85"
+                y2="50.5">
+                <animateTransform
+                  attributeName="transform"
+                  dur="2s"
+                  type="rotate"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite" />
+              </line>
+              <line
+                fill="none"
+                stroke-linecap="round"
+                stroke="#fff"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                x1="50"
+                y1="50"
+                x2="49.5"
+                y2="74">
+                <animateTransform
+                  attributeName="transform"
+                  dur="15s"
+                  type="rotate"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite" />
+              </line>
+            </svg>
+          </div>
+        </ion-infinite-scroll>
+      </div>
     </ion-button>
   </footer>
 </ion-content>

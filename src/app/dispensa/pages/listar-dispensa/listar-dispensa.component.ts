@@ -24,6 +24,10 @@ export class ListarDispensaComponent implements OnInit {
     return this.produtos.length > 0;
   }
 
+  public getDisableAdicionarDispensa(): boolean {
+    return !this.loading;
+  }
+
   ngOnInit(): void {
     this.loading = true;
     this.inscricao = this.dispensaService.getAllProducts().subscribe({
