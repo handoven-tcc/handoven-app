@@ -49,12 +49,7 @@ export class ListarDispensaComponent implements OnInit {
       return;
     }
 
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-      })
-      .then((o) => o.present());
+    this.alertNaoImplementado();
   }
 
   onClickModalExcluirProduto(id: string) {
@@ -87,12 +82,7 @@ export class ListarDispensaComponent implements OnInit {
       return;
     }
 
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-      })
-      .then((o) => o.present());
+    this.alertNaoImplementado();
     // const request = new DeletarProdutoRequest(id);
     // this.inscricao = this.dispensaService
     //   .deletarProdutoById(request)
@@ -126,6 +116,16 @@ export class ListarDispensaComponent implements OnInit {
         event.target.complete();
       },
     });
+  }
+
+  alertNaoImplementado(): void {
+    this.alertController
+      .create({
+        header: "Oops...",
+        message: "Desculpe, isso ainda não foi implementado 😢",
+        buttons: ["Ok"],
+      })
+      .then((o) => o.present());
   }
 
   ngOnDestroy(): void {

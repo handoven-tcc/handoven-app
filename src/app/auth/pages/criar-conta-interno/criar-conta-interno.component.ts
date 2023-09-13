@@ -11,7 +11,7 @@ import {
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
-import { NavController } from "@ionic/angular";
+import { AlertController, NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-criar-conta-interno",
@@ -93,7 +93,8 @@ export class CriarContaInternoComponent implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private nav: NavController,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private alertController: AlertController
   ) {}
 
   ngOnInit(): void {
@@ -148,6 +149,20 @@ export class CriarContaInternoComponent implements OnInit {
             });
         }
       });
+  }
+
+  onClickTirarFoto(): void {
+    this.alertNaoImplementado();
+  }
+
+  alertNaoImplementado(): void {
+    this.alertController
+      .create({
+        header: "Oops...",
+        message: "Desculpe, isso ainda não foi implementado 😢",
+        buttons: ["Ok"],
+      })
+      .then((o) => o.present());
   }
 
   senhaValidator(form: FormGroup): ValidatorFn {

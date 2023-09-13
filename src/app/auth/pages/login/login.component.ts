@@ -3,7 +3,7 @@ import { LoginRequest, UsuarioResponse } from "../../models";
 import { Subscription } from "rxjs";
 import { AuthService } from "../../services";
 import { Router } from "@angular/router";
-import { NavController } from "@ionic/angular";
+import { AlertController, NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-login",
@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private nav: NavController
+    private nav: NavController,
+    private alertController: AlertController
   ) {}
 
   ngOnInit(): void {}
@@ -48,6 +49,20 @@ export class LoginComponent implements OnInit {
 
   onClickNavigateToCriarConta(): void {
     this.nav.navigateForward(["auth/criar-conta"]);
+  }
+
+  esqueciSenha(): void {
+    this.alertNaoImplementado();
+  }
+
+  alertNaoImplementado(): void {
+    this.alertController
+      .create({
+        header: "Oops...",
+        message: "Desculpe, isso ainda não foi implementado 😢",
+        buttons: ["Ok"],
+      })
+      .then((o) => o.present());
   }
 
   ngOnDestroy(): void {

@@ -9,11 +9,7 @@ import {
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
 import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
 import { AlertController, NavController } from "@ionic/angular";
-import {
-  FamiliaRequest,
-  LoginResponse,
-  UsuarioRequest,
-} from "../../../auth/models";
+import { UsuarioRequest } from "../../../auth/models";
 import { AuthService } from "../../../auth/services";
 
 @Component({
@@ -168,6 +164,20 @@ export class AdicionarIntegranteComponent implements OnInit {
 
   onClickCancelar() {
     this.nav.navigateBack(["tabs/perfil"]);
+  }
+
+  onClickTirarFoto(): void {
+    this.alertNaoImplementado();
+  }
+
+  alertNaoImplementado(): void {
+    this.alertController
+      .create({
+        header: "Oops...",
+        message: "Desculpe, isso ainda não foi implementado 😢",
+        buttons: ["Ok"],
+      })
+      .then((o) => o.present());
   }
 
   senhaValidator(form: FormGroup): ValidatorFn {

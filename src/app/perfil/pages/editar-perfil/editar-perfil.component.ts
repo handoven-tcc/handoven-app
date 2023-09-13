@@ -15,7 +15,7 @@ import {
   LoginResponse,
   UsuarioResponse,
 } from "../../../auth/models";
-import { NavController } from "@ionic/angular";
+import { AlertController, NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-editar-perfil",
@@ -97,7 +97,8 @@ export class EditarPerfilComponent implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private nav: NavController,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private alertController: AlertController
   ) {}
 
   ngOnInit(): void {
@@ -146,6 +147,20 @@ export class EditarPerfilComponent implements OnInit {
       error: () => (this.loading = false),
       complete: () => (this.loading = false),
     });
+  }
+
+  onClickTirarFoto(): void {
+    this.alertNaoImplementado();
+  }
+
+  alertNaoImplementado(): void {
+    this.alertController
+      .create({
+        header: "Oops...",
+        message: "Desculpe, isso ainda não foi implementado 😢",
+        buttons: ["Ok"],
+      })
+      .then((o) => o.present());
   }
 
   senhaValidator(form: FormGroup): ValidatorFn {
