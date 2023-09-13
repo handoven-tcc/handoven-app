@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
 import { Observable, map, of } from "rxjs";
 import {
-  ProductRequest,
+  ProdutoRequest,
   DeletarProdutoRequest,
   GetProdutoNomeRequest,
   GetProdutoIdRequest,
@@ -36,16 +36,14 @@ export class DispensaService {
       return of([] as ProdutosResponse[]);
     }
 
-    return of(Products as ProdutosResponse[]);
-
-    // return this.http
-    //   .get(this.url, {
-    //     headers: {
-    //       "X-HandOven-User": this.usuarioId,
-    //       "X-HandOven-Family": this.familiaId,
-    //     },
-    //   })
-    //   .pipe(map((res: any) => res));
+    return this.http
+      .get(this.url, {
+        headers: {
+          "X-HandOven-User": this.usuarioId,
+          "X-HandOven-Family": this.familiaId,
+        },
+      })
+      .pipe(map((res: any) => res));
   }
 
   getProductById(request: GetProdutoIdRequest): Observable<ProdutosResponse> {
@@ -80,7 +78,7 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  postProduct(request: ProductRequest): Observable<ProdutosResponse[]> {
+  postProduct(request: ProdutoRequest): Observable<ProdutosResponse[]> {
     if (!this.authService.hasUsuario()) {
       return of([] as ProdutosResponse[]);
     }
@@ -96,7 +94,7 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  putProductById(request: ProductRequest): Observable<ProdutosResponse[]> {
+  putProductById(request: ProdutoRequest): Observable<ProdutosResponse[]> {
     if (!this.authService.hasUsuario()) {
       return of([] as ProdutosResponse[]);
     }
