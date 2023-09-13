@@ -22,6 +22,7 @@ import { AuthService } from "../../../auth/services";
   styleUrls: ["./adicionar-integrante.component.scss"],
 })
 export class AdicionarIntegranteComponent implements OnInit {
+  loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   form!: FormGroup;
   familyId!: string;
@@ -32,6 +33,10 @@ export class AdicionarIntegranteComponent implements OnInit {
 
   public getForm(): FormGroup {
     return this.form;
+  }
+
+  public getDisableAdicionarIntegrante(): boolean {
+    return this.form.valid && this.loading === false;
   }
 
   public get getNomeRequired(): any {
@@ -126,6 +131,7 @@ export class AdicionarIntegranteComponent implements OnInit {
   }
 
   onClickCriarPerfil() {
+    this.loading = true;
     if (!this.familyId) {
       this.alertController
         .create({
@@ -135,6 +141,7 @@ export class AdicionarIntegranteComponent implements OnInit {
         })
         .then((o) => o.present());
 
+      this.loading = false;
       return;
     }
 
@@ -148,10 +155,19 @@ export class AdicionarIntegranteComponent implements OnInit {
       "111111111111111111111111"
     );
 
-    this.inscricao = this.authService.criarUsuario(request).subscribe((o) => {
-      window.localStorage.setItem("user", JSON.stringify(o));
-      this.nav.navigateForward(["auth/sucesso", "criada"]);
+    this.inscricao = this.authService.criarUsuario(request).subscribe({
+      next: (o) => {
+        window.localStorage.setItem("user", JSON.stringify(o));
+        this.nav.navigateForward(["auth/sucesso", "criada"]);
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
     });
+  }
+
+  onClickCancelar() {
+    this.nav.navigateBack(["tabs/perfil"]);
   }
 
   senhaValidator(form: FormGroup): ValidatorFn {

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { DispensaComponent } from "./dispensa.component";
 import { AuthGuard } from "../auth/guard/auth.guard";
 import { ListarDispensaComponent } from "./pages/listar-dispensa/listar-dispensa.component";
+import { AdicionarDispensaComponent } from "./pages/adicionar-dispensa/adicionar-dispensa.component";
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
     component: DispensaComponent,
     children: [
       { path: "", component: ListarDispensaComponent },
-      // { path: "adicionar", component: AdicionarDispensaComponent },
+      { path: "adicionar-produto", component: AdicionarDispensaComponent },
       // { path: "editar/:dispensaId", component: EditarDispensaComponent },
     ],
     canActivate: [AuthGuard],

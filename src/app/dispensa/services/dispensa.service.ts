@@ -111,13 +111,13 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  deletarProdutoById(request: DeletarProdutoRequest): Observable<any> {
+  deletarProdutoById({ id }: DeletarProdutoRequest): Observable<any> {
     if (!this.authService.hasUsuario()) {
       return of([] as ProdutosResponse[]);
     }
 
     return this.http
-      .delete(`${this.url}/${request.id}`, {
+      .delete(`${this.url}/${id}`, {
         headers: {
           "X-HandOven-User": this.usuarioId,
           "X-HandOven-Family": this.familiaId,

@@ -24,6 +24,7 @@ import { NavController } from "@ionic/angular";
   styleUrls: ["./editar-dispensa.component.scss"],
 })
 export class EditarDispensaComponent implements OnInit {
+  loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   form!: FormGroup;
   user!: LoginResponse;
@@ -135,11 +136,15 @@ export class EditarDispensaComponent implements OnInit {
       user.id
     );
 
-    // this.loading = true;
-    this.inscricao = this.authService.editarUsuario(request).subscribe((o) => {
-      window.localStorage.setItem("user", JSON.stringify(o));
-      this.nav.navigateForward(["auth/sucesso", "editada"]);
-      // this.loading = false;
+    this.loading = true;
+    this.inscricao = this.authService.editarUsuario(request).subscribe({
+      next: (o) => {
+        window.localStorage.setItem("user", JSON.stringify(o));
+        this.nav.navigateForward(["auth/sucesso", "editada"]);
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
     });
   }
 

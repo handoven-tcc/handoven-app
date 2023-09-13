@@ -10,6 +10,7 @@ import { AlertController, NavController } from "@ionic/angular";
   styleUrls: ["./listar-dispensa.component.scss"],
 })
 export class ListarDispensaComponent implements OnInit {
+  loading: boolean = false;
   produtos: ProdutosResponse[] = [];
   inscricao: Subscription = Subscription.EMPTY;
 
@@ -19,24 +20,35 @@ export class ListarDispensaComponent implements OnInit {
     private nav: NavController
   ) {}
 
-  ngOnInit() {
-    this.inscricao = this.dispensaService.getAllProducts().subscribe((o) => {
-      console.log(o);
-      this.produtos = o;
+  public get hasProdutos(): boolean {
+    return this.produtos.length > 0;
+  }
+
+  ngOnInit(): void {
+    this.loading = true;
+    this.inscricao = this.dispensaService.getAllProducts().subscribe({
+      next: (o) => {
+        this.produtos = o;
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
     });
   }
 
-  onClickAdicionarDispensa() {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-      })
-      .then((o) => o.present());
-    // this.nav.navigateForward(["tabs/dispensa/adicionar-a-dispensa"]);
+  onClickAdicionarDispensa(): void {
+    if (this.loading == true) {
+      return;
+    }
+
+    this.nav.navigateForward(["tabs/dispensa/adicionar-produto"]);
   }
 
   onClickModalEditarProduto(id: string) {
+    if (this.loading == true) {
+      return;
+    }
+
     this.alertController
       .create({
         header: "Oops...",
@@ -46,6 +58,10 @@ export class ListarDispensaComponent implements OnInit {
   }
 
   onClickModalExcluirProduto(id: string) {
+    if (this.loading == true) {
+      return;
+    }
+
     this.alertController
       .create({
         header: "Tem certeza?",
@@ -67,6 +83,10 @@ export class ListarDispensaComponent implements OnInit {
   }
 
   excluirProduto(id: string) {
+    if (this.loading == true) {
+      return;
+    }
+
     this.alertController
       .create({
         header: "Oops...",
@@ -76,8 +96,12 @@ export class ListarDispensaComponent implements OnInit {
     // const request = new DeletarProdutoRequest(id);
     // this.inscricao = this.dispensaService
     //   .deletarProdutoById(request)
-    //   .subscribe((o) => {
-    //     console.log(o);
+    //   .subscribe({
+    //     next: (o) => {
+    //       console.log(o);
+    //     },
+    //     error: () => (this.loading = false),
+    //     complete: () => (this.loading = false),
     //   });
   }
 

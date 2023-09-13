@@ -19,6 +19,7 @@ import { NavController } from "@ionic/angular";
   styleUrls: ["./criar-conta-interno.component.scss"],
 })
 export class CriarContaInternoComponent implements OnInit {
+  loading: boolean = false;
   inscricaoFamilia: Subscription = Subscription.EMPTY;
   inscricaoUsuario: Subscription = Subscription.EMPTY;
   form!: FormGroup;
@@ -31,6 +32,10 @@ export class CriarContaInternoComponent implements OnInit {
 
   public getForm(): FormGroup {
     return this.form;
+  }
+
+  public getDisableCriarConta(): boolean {
+    return this.form.valid && this.loading === false;
   }
 
   public get getNomeRequired(): any {
@@ -91,14 +96,14 @@ export class CriarContaInternoComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.setupForm();
 
     this.nomeDaFamilia = this.activatedRoute.snapshot.params["nomeDaFamilia"];
     this.email = this.activatedRoute.snapshot.params["email"];
   }
 
-  setupForm() {
+  setupForm(): void {
     this.form = this.formBuilder.group({
       nome: ["", [Validators.minLength(3), Validators.required]],
       celular: ["", [Validators.maxLength(15), Validators.required]],
@@ -111,7 +116,7 @@ export class CriarContaInternoComponent implements OnInit {
       ?.addValidators(this.senhaValidator(this.form));
   }
 
-  onClickCriarConta() {
+  onClickCriarConta(): void {
     const requestFamilia = new FamiliaRequest(this.nomeDaFamilia);
     let requestUsuario = new UsuarioRequest(
       this.form.controls["nome"].value,
@@ -123,19 +128,23 @@ export class CriarContaInternoComponent implements OnInit {
       "111111111111111111111111"
     );
 
+    this.loading = true;
     this.inscricaoFamilia = this.authService
       .criarFamilia(requestFamilia)
       .subscribe((o) => {
         if (o) {
           requestUsuario.familyId = o.id;
-          console.log(o.id);
-          console.log(requestUsuario.familyId);
 
           this.inscricaoUsuario = this.authService
             .criarUsuario(requestUsuario)
-            .subscribe((o) => {
-              window.localStorage.setItem("user", JSON.stringify(o));
-              this.nav.navigateForward(["auth/sucesso", "criada"]);
+            .subscribe({
+              next: (o) => {
+                window.localStorage.setItem("user", JSON.stringify(o));
+                this.nav.navigateForward(["auth/sucesso", "criada"]);
+                this.loading = false;
+              },
+              error: () => (this.loading = false),
+              complete: () => (this.loading = false),
             });
         }
       });

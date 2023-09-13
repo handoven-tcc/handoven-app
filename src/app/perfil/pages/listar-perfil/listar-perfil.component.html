@@ -44,6 +44,7 @@
         <div class="col-3 flex justify-content-center align-items-center">
           <a
             class="text-sm text-right select-none editar-perfil"
+            [ngClass]="{ 'text-500': loading }"
             (click)="onClickEditarPerfil()"
             >Editar</a
           >
@@ -74,9 +75,10 @@
             id="verificar-nao-implementado"
             color="danger"
             fill="solid"
+            [disabled]="loading"
             shape="round"
             expand="block"
-            (click)="onClickVerificarEmail()">
+            (click)="onClickModalVerificarEmail()">
             <ion-label class="text-xs">Verificar</ion-label>
           </ion-button>
         </div>
@@ -98,7 +100,8 @@
       </a>
       <a
         *ngIf="usuarioLogado"
-        class="text-900 text-2xl text-right"
+        class="text-2xl text-right"
+        [ngClass]="{ 'text-900': !loading, 'text-500': loading }"
         (click)="onClickReload()">
         <ion-icon name="refresh"></ion-icon>
       </a>
@@ -208,9 +211,16 @@
       <ion-icon class="text-2xl" name="log-out-outline"></ion-icon>
       <ion-label class="text-sm select-none">Sair</ion-label>
     </a>
-    <a *ngIf="usuarioLogado && !perfilResponsavel" id="excluir-perfil-certeza">
-      <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
-      <ion-label class="text-sm select-none">Excluir Perfil</ion-label>
+    <a
+      *ngIf="usuarioLogado && !perfilResponsavel"
+      (click)="onClickModalExcluirPerfil()">
+      <ion-icon
+        class="text-2xl"
+        [ngClass]="{ 'text-500': loading }"
+        name="trash-outline"></ion-icon>
+      <ion-label class="text-sm select-none" [ngClass]="{ 'text-500': loading }"
+        >Excluir Perfil</ion-label
+      >
     </a>
     <a
       *ngIf="usuarioLogado && perfilResponsavel === true"
@@ -220,14 +230,3 @@
     </a>
   </footer>
 </ion-content>
-
-<ion-alert
-  trigger="excluir-perfil-certeza"
-  header="Tem certeza?"
-  message="Esta ação te fará excluir seu perfil permanentemente, você tem certeza disso?"
-  [buttons]="alertButtonsExcluirPerfil"></ion-alert>
-<ion-alert
-  trigger="excluir-familia-certeza"
-  header="Tem certeza?"
-  message="Esta ação te fará excluir sua familia e TODOS os integrantes dela permanentemente, você tem certeza disso?"
-  [buttons]="alertButtonsExcluirFamilia"></ion-alert>
