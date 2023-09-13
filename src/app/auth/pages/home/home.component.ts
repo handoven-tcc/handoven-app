@@ -14,17 +14,17 @@ export class HomeComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  onClickLogin() {
+  onClickLogin(): void {
     this.nav.navigateForward(["auth/login"]);
   }
 
-  onClickCriarConta() {
+  onClickCriarConta(): void {
     this.nav.navigateForward(["auth/criar-conta"]);
   }
 
-  onClickAcessarComoConvidado() {
+  onClickAcessarComoConvidado(): void {
     // this.storage.set("token", "token");
     window.localStorage.setItem("token", "token");
     this.router.navigate(["tabs/receitas"]);

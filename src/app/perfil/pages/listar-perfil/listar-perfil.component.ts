@@ -4,7 +4,6 @@ import { Subscription } from "rxjs";
 import {
   DeletarUsuarioRequest,
   EditarFamiliaRequest,
-  FamiliaRequest,
   GetFamiliaIdRequest,
   UsuarioResponse,
 } from "../../../auth/models";
@@ -24,8 +23,8 @@ export class ListarPerfilComponent implements OnInit {
 
   loading: boolean = false;
   nomeFamilia: string = "Anônima";
-  familyId!: string;
-  userId!: string;
+  familiaId!: string;
+  usuarioId!: string;
   // TODO: fazer verificação pessoa responsável da familia
   perfilResponsavel: boolean = false;
   emails: string[] = ["Você"];
@@ -33,27 +32,20 @@ export class ListarPerfilComponent implements OnInit {
 
   public alertButtons = ["OK"];
 
-  public alertButtonsExcluirPerfil = [
-    { text: "Cancel", role: "cancel", handler: () => null },
-    {
-      text: "OK",
-      role: "confirm",
-      handler: () => this.onClickExcluirUsuario(),
-    },
-  ];
   public alertButtonsExcluirFamilia = [
     { text: "Cancel", role: "cancel", handler: () => null },
     {
       text: "OK",
       role: "confirm",
-      handler: () => this.onClickExcluirFamilia(),
+      handler: () => this.excluirFamilia(),
     },
   ];
 
   public get usuarioLogado(): boolean {
-    if (this.familyId && this.userId) {
+    if (this.familiaId && this.usuarioId) {
       return true;
     }
+
     return false;
   }
 
@@ -61,106 +53,121 @@ export class ListarPerfilComponent implements OnInit {
     private authService: AuthService,
     private alertController: AlertController,
     private nav: NavController
-  ) {}
+  ) {
+    this.familiaId = this.authService.getFamiliaId();
+    this.usuarioId = this.authService.getUsuarioId();
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const user = window.localStorage.getItem("user");
     if (user) {
       this.perfil = JSON.parse(user);
     }
 
-    this.familyId = window.localStorage.getItem("X-HandOven-Family") ?? "";
-    this.userId = window.localStorage.getItem("X-HandOven-User") ?? "";
-
     const request: GetFamiliaIdRequest = new GetFamiliaIdRequest(
-      this.userId,
-      this.familyId
+      this.usuarioId,
+      this.familiaId
     );
 
     this.loading = true;
     this.inscricaoNomeFamilia = this.authService
       .getNomeFamilia(request)
-      .subscribe((res) => {
-        if (res.name) {
-          this.nomeFamilia = res.name;
-          // this.pessoaResponsavel = res.emails.filter(o => o.responsavel == true);
-          // this.emails = res.emailsIntegrantes;
-        }
-        this.loading = false;
+      .subscribe({
+        next: (res) => {
+          if (res.name) {
+            this.nomeFamilia = res.name;
+            // this.pessoaResponsavel = res.emails.filter(o => o.responsavel == true);
+            // this.emails = res.emailsIntegrantes;
+          }
+          this.loading = false;
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
       });
 
     this.loading = true;
     this.inscricaoTodosUsuariosDaFamilia = this.authService
       .getTodosUsuariosDaFamilia(request)
-      .subscribe((res) => {
-        if (res[0].email) {
-          // TODO: ordenar, seu email primeiro dps os outros
-          this.emails = res.map((i) => i.email);
-        }
-        this.loading = false;
+      .subscribe({
+        next: (res) => {
+          if (res[0].email) {
+            // TODO: ordenar, seu email primeiro dps os outros
+            this.emails = res.map((i) => i.email);
+          }
+          this.loading = false;
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
       });
   }
 
-  onClickReload() {
-    const request: GetFamiliaIdRequest = new GetFamiliaIdRequest(
-      this.userId,
-      this.familyId
-    );
-
-    this.loading = true;
-    this.inscricaoTodosUsuariosDaFamilia = this.authService
-      .getTodosUsuariosDaFamilia(request)
-      .subscribe((res) => {
-        // TODO: ordenar, seu email primeiro dps os outros
-        this.emails = res.map((i) => i.email);
-        this.loading = false;
-      });
-  }
-
-  onClickModalSair() {
-    if (!this.usuarioLogado) {
-      this.sair();
+  onClickReload(): void {
+    if (this.loading === true) {
       return;
     }
 
-    this.alertController
-      .create({
-        header: "Tem certeza?",
-        message: "Esta ação pode te fazer sair do seu perfil atual",
-        buttons: [
-          { text: "Cancel", role: "cancel", handler: () => null },
-          {
-            text: "OK",
-            role: "confirm",
-            handler: () => this.sair(),
-          },
-        ],
-      })
-      .then((o) => o.present());
+    this.loading = true;
+    const request: GetFamiliaIdRequest = new GetFamiliaIdRequest(
+      this.usuarioId,
+      this.familiaId
+    );
+
+    this.inscricaoTodosUsuariosDaFamilia = this.authService
+      .getTodosUsuariosDaFamilia(request)
+      .subscribe({
+        next: (o) => {
+          // TODO: ordenar, seu email primeiro dps os outros
+          this.emails = o.map((i) => i.email);
+          this.loading = false;
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
   }
 
-  sair() {
-    this.authService.logout();
-    window.location.reload();
+  onClickAdicionarUsuario(): void {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.nav.navigateForward(["tabs/perfil/adicionar-integrante"]);
   }
 
-  onClickExcluirUsuario() {
+  onClickEditarPerfil(): void {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.nav.navigateForward(["tabs/perfil/editar-perfil"]);
+  }
+
+  excluirUsuario(): void {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.loading = true;
     const request: DeletarUsuarioRequest = new DeletarUsuarioRequest(
-      this.userId,
-      this.familyId
+      this.usuarioId,
+      this.familiaId
     );
 
     this.inscricaoDeletarUsuario = this.authService
       .deletarUsuario(request)
-      .subscribe((o) => o);
+      .subscribe({
+        next: (o) => {
+          this.loading = false;
+          return o;
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
 
-    this.authService.logout();
-    window.location.reload();
+    this.sair();
   }
 
-  onClickExcluirFamilia() {
-    console.log("opa");
-
+  excluirFamilia(): void {
+    this.alertNaoImplementado();
     // const request: DeletarUsuarioRequest = new DeletarUsuarioRequest(
     //   this.userId,
     //   this.familyId
@@ -168,35 +175,47 @@ export class ListarPerfilComponent implements OnInit {
 
     // this.inscricaoDeleteAll = this.authService
     //   .deleteAll(request)
-    //   .subscribe((o) => o);
+    //   .subscribe({
+    //     next: (o) => {
+    //       this.loading = false;
+    //       return o;
+    //     },
+    //     error: () => (this.loading = false),
+    //     complete: () => (this.loading = false),
+    //   });
 
     // this.authService.logout();
     // window.location.reload();
   }
 
-  alertNaoImplementado() {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
+  editarFamilia(nomeFamilia: string): void {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.loading = true;
+    const request: EditarFamiliaRequest = new EditarFamiliaRequest(
+      this.familiaId,
+      nomeFamilia
+    );
+
+    this.inscricaoEditarFamilia = this.authService
+      .editarFamilia(request)
+      .subscribe({
+        next: (o) => {
+          this.perfil.familyId = o.id;
+          window.localStorage.setItem("user", JSON.stringify(this.perfil));
+          this.nomeFamilia = o.name;
+
+          this.loading = false;
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
   }
 
-  onClickAdicionarUsuario() {
-    this.nav.navigateForward(["tabs/perfil/adicionar-integrante"]);
-  }
-
-  onClickVerificarEmail() {
-    this.alertNaoImplementado();
-  }
-
-  onClickEditarPerfil() {
-    this.nav.navigateForward(["tabs/perfil/editar-perfil"]);
-  }
-
-  onClickModalEditarFamilia() {
+  //#region Modais
+  onClickModalEditarFamilia(): void {
     this.alertController
       .create({
         header: "Favor, insira o nome da familia",
@@ -225,21 +244,97 @@ export class ListarPerfilComponent implements OnInit {
       .then((o) => o.present());
   }
 
-  editarFamilia(nomeFamilia: string) {
-    const request: EditarFamiliaRequest = new EditarFamiliaRequest(
-      this.familyId,
-      nomeFamilia
-    );
+  onClickModalVerificarEmail(): void {
+    if (this.loading === true) {
+      return;
+    }
 
-    this.inscricaoEditarFamilia = this.authService
-      .editarFamilia(request)
-      .subscribe((o) => {
-        console.log(o);
-        this.perfil.familyId = o.id;
-        window.localStorage.setItem("user", JSON.stringify(this.perfil));
-        this.nomeFamilia = o.name;
-      });
+    this.alertNaoImplementado();
   }
+
+  onClickModalSair(): void {
+    if (!this.usuarioLogado) {
+      this.sair();
+      return;
+    }
+
+    this.alertController
+      .create({
+        header: "Tem certeza?",
+        message: "Esta ação pode te fazer sair do seu perfil atual",
+        buttons: [
+          { text: "Cancel", role: "cancel", handler: () => null },
+          {
+            text: "OK",
+            role: "confirm",
+            handler: () => this.sair(),
+          },
+        ],
+      })
+      .then((o) => o.present());
+  }
+
+  onClickModalExcluirPerfil(): void {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.alertController
+      .create({
+        header: "Tem certeza?",
+        message:
+          "Esta ação te fará excluir seu perfil permanentemente, você tem certeza disso?",
+        buttons: [
+          { text: "Cancel", role: "cancel", handler: () => null },
+          {
+            text: "OK",
+            role: "confirm",
+            handler: () => this.excluirUsuario(),
+          },
+        ],
+      })
+      .then((o) => o.present());
+  }
+
+  onClickModalExcluirFamilia(): void {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.alertController
+      .create({
+        header: "Tem certeza?",
+        message:
+          "Esta ação te fará excluir sua familia e TODOS os integrantes dela permanentemente, você tem certeza disso?",
+        buttons: [
+          { text: "Cancel", role: "cancel", handler: () => null },
+          {
+            text: "OK",
+            role: "confirm",
+            handler: () => this.excluirFamilia(),
+          },
+        ],
+      })
+      .then((o) => o.present());
+  }
+  //#endregion
+
+  //#region Utils
+  alertNaoImplementado(): void {
+    this.alertController
+      .create({
+        header: "Oops...",
+        message: "Desculpe, isso ainda não foi implementado 😢",
+        buttons: ["Ok"],
+      })
+      .then((o) => o.present());
+  }
+
+  sair(): void {
+    this.authService.logout();
+    window.location.reload();
+  }
+  //#endregion
 
   ngOnDestroy(): void {
     this.inscricaoTodosUsuariosDaFamilia.unsubscribe();

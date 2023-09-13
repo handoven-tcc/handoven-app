@@ -11,7 +11,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
 import { AuthService } from "../../../auth/services";
 import {
-  FamiliaRequest,
   UsuarioRequest,
   LoginResponse,
   UsuarioResponse,
@@ -24,6 +23,7 @@ import { NavController } from "@ionic/angular";
   styleUrls: ["./editar-perfil.component.scss"],
 })
 export class EditarPerfilComponent implements OnInit {
+  loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   form!: FormGroup;
   user!: LoginResponse;
@@ -36,6 +36,10 @@ export class EditarPerfilComponent implements OnInit {
 
   public getForm(): FormGroup {
     return this.form;
+  }
+
+  public getDisableEditarIntegrante(): boolean {
+    return this.form.valid && this.loading === false;
   }
 
   public get getNomeRequired(): any {
@@ -96,7 +100,7 @@ export class EditarPerfilComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.user = JSON.parse(window.localStorage.getItem("user") ?? "");
     this.setupForm(this.user);
 
@@ -105,13 +109,10 @@ export class EditarPerfilComponent implements OnInit {
     this.dataDeNascimento = this.user.birthDate;
   }
 
-  setupForm(perfilAtual: LoginResponse) {
+  setupForm({ name, cell }: LoginResponse): void {
     this.form = this.formBuilder.group({
-      nome: [perfilAtual.name, [Validators.minLength(3), Validators.required]],
-      celular: [
-        perfilAtual.cell,
-        [Validators.maxLength(15), Validators.required],
-      ],
+      nome: [name, [Validators.minLength(3), Validators.required]],
+      celular: [cell, [Validators.maxLength(15), Validators.required]],
       senha: ["", [Validators.minLength(6), Validators.required]],
     });
 
@@ -120,7 +121,8 @@ export class EditarPerfilComponent implements OnInit {
       ?.addValidators(this.senhaValidator(this.form));
   }
 
-  onClickEditarConta() {
+  onClickEditarConta(): void {
+    this.loading = true;
     const user: UsuarioResponse = JSON.parse(
       window.localStorage.getItem("user") ?? ""
     );
@@ -135,11 +137,14 @@ export class EditarPerfilComponent implements OnInit {
       user.id
     );
 
-    // this.loading = true;
-    this.inscricao = this.authService.editarUsuario(request).subscribe((o) => {
-      window.localStorage.setItem("user", JSON.stringify(o));
-      this.nav.navigateForward(["auth/sucesso", "editada"]);
-      // this.loading = false;
+    this.inscricao = this.authService.editarUsuario(request).subscribe({
+      next: (o) => {
+        window.localStorage.setItem("user", JSON.stringify(o));
+        this.nav.navigateForward(["auth/sucesso", "editada"]);
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
     });
   }
 

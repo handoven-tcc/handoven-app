@@ -11,6 +11,7 @@ import { NavController } from "@ionic/angular";
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
+  loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   email!: string;
   senha!: string;
@@ -18,8 +19,8 @@ export class LoginComponent implements OnInit {
 
   alertButtons: string[] = ["OK"];
 
-  public getDisableLogin() {
-    return this.email && this.senha ? true : false;
+  public getDisableLogin(): boolean {
+    return (this.email && this.senha ? true : false) && this.loading === false;
   }
 
   constructor(
@@ -28,17 +29,24 @@ export class LoginComponent implements OnInit {
     private nav: NavController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  onClickLogIn() {
+  onClickLogIn(): void {
+    this.loading = true;
     const request = new LoginRequest(this.email, this.senha);
-    this.inscricao = this.authService.login(request).subscribe((o) => {
-      window.localStorage.setItem("user", JSON.stringify(o));
-      this.router.navigate(["/tabs/receitas"]);
+
+    this.inscricao = this.authService.login(request).subscribe({
+      next: (o) => {
+        window.localStorage.setItem("user", JSON.stringify(o));
+        this.router.navigate(["/tabs/receitas"]);
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
     });
   }
 
-  onClickNavigateToLogin() {
+  onClickNavigateToCriarConta(): void {
     this.nav.navigateForward(["auth/criar-conta"]);
   }
 

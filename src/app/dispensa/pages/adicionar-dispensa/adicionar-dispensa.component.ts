@@ -22,6 +22,7 @@ import { AuthService } from "../../../auth/services";
   styleUrls: ["./adicionar-dispensa.component.scss"],
 })
 export class AdicionarDispensaComponent implements OnInit {
+  loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   form!: FormGroup;
   familyId!: string;
@@ -125,6 +126,7 @@ export class AdicionarDispensaComponent implements OnInit {
   }
 
   onClickCriarPerfil() {
+    this.loading = true;
     if (!this.familyId) {
       this.alertController
         .create({
@@ -134,6 +136,7 @@ export class AdicionarDispensaComponent implements OnInit {
         })
         .then((o) => o.present());
 
+      this.loading = false;
       return;
     }
 
@@ -147,9 +150,14 @@ export class AdicionarDispensaComponent implements OnInit {
       "111111111111111111111111"
     );
 
-    this.inscricao = this.authService.criarUsuario(request).subscribe((o) => {
-      window.localStorage.setItem("user", JSON.stringify(o));
-      this.nav.navigateForward(["auth/sucesso", "criada"]);
+    this.inscricao = this.authService.criarUsuario(request).subscribe({
+      next: (o) => {
+        window.localStorage.setItem("user", JSON.stringify(o));
+        this.nav.navigateForward(["auth/sucesso", "criada"]);
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
     });
   }
 
