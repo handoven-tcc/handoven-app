@@ -1,4 +1,4 @@
-interface ProdutosResponse {
+interface ProdutoResponse {
   id: string;
   name: string;
   type: string;
@@ -10,4 +10,4 @@ interface ProdutosResponse {
   expiryProduct: boolean;
 }
 
-export type { ProdutosResponse };
+export type { ProdutoResponse };
