@@ -99,9 +99,11 @@
         <ion-list *ngFor="let item of produtos">
           <ion-item>
             <div class="flex w-full justify-content-between align-items-center">
-              <ion-label class="text-900" slot="start">{{
-                item.name
-              }}</ion-label>
+              <a (click)="onClickVisualizarProduto(item)">
+                <ion-label class="text-900" slot="start">{{
+                  item.name
+                }}</ion-label>
+              </a>
               <div id="acoes" slot="end">
                 <a (click)="onClickModalEditarProduto(item.id)">
                   <ion-icon
@@ -109,7 +111,7 @@
                     class="text-2xl"
                     name="pencil-sharp"></ion-icon>
                 </a>
-                <a (click)="onClickModalExcluirProduto(item.id)">
+                <a (click)="onClickModalExcluirProduto(item)">
                   <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
                 </a>
               </div>

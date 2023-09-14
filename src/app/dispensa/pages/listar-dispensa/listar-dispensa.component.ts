@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
-import { DeletarProdutoRequest, ProdutosResponse } from "../../models";
+import { DeletarProdutoRequest, ProdutoResponse } from "../../models";
 import { DispensaService } from "../../services";
 import { AlertController, NavController } from "@ionic/angular";
 
@@ -11,7 +11,7 @@ import { AlertController, NavController } from "@ionic/angular";
 })
 export class ListarDispensaComponent implements OnInit {
   loading: boolean = false;
-  produtos: ProdutosResponse[] = [];
+  produtos: ProdutoResponse[] = [];
   inscricao: Subscription = Subscription.EMPTY;
 
   constructor(
@@ -56,7 +56,7 @@ export class ListarDispensaComponent implements OnInit {
     this.alertNaoImplementado();
   }
 
-  onClickModalExcluirProduto(id: string) {
+  onClickModalExcluirProduto(item: ProdutoResponse) {
     if (this.loading == true) {
       return;
     }
@@ -74,29 +74,54 @@ export class ListarDispensaComponent implements OnInit {
           },
           {
             text: "Ok",
-            handler: () => this.excluirProduto(id),
+            handler: () => this.excluirProduto(item),
           },
         ],
       })
       .then((o) => o.present());
   }
 
-  excluirProduto(id: string) {
+  excluirProduto(item: ProdutoResponse) {
     if (this.loading == true) {
       return;
     }
 
-    this.alertNaoImplementado();
-    // const request = new DeletarProdutoRequest(id);
-    // this.inscricao = this.dispensaService
-    //   .deletarProdutoById(request)
-    //   .subscribe({
-    //     next: (o) => {
-    //       console.log(o);
-    //     },
-    //     error: () => (this.loading = false),
-    //     complete: () => (this.loading = false),
-    //   });
+    this.loading = true;
+    const request = new DeletarProdutoRequest(item.id);
+    this.inscricao = this.dispensaService
+      .deletarProdutoById(request)
+      .subscribe({
+        next: (o) => {
+          this.alertController
+            .create({
+              header: item.name,
+              message: `O Produto foi deletado com sucesso!`,
+              buttons: ["Ok"],
+            })
+            .then((o) => o.present());
+
+          this.refresh();
+          this.loading = false;
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
+  }
+
+  refresh() {
+    if (this.loading === true) {
+      return;
+    }
+
+    this.loading = true;
+    this.inscricao = this.dispensaService.getAllProducts().subscribe({
+      next: (o) => {
+        this.produtos = o;
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
+    });
   }
 
   handleRefresh(event: any) {
@@ -120,6 +145,16 @@ export class ListarDispensaComponent implements OnInit {
         event.target.complete();
       },
     });
+  }
+
+  onClickVisualizarProduto(item: ProdutoResponse) {
+    this.alertController
+      .create({
+        header: "Ainda incompleto...",
+        message: JSON.stringify(item),
+        buttons: ["Ok"],
+      })
+      .then((o) => o.present());
   }
 
   alertNaoImplementado(): void {
