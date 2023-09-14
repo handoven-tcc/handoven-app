@@ -101,7 +101,7 @@ export class ListarPerfilComponent implements OnInit {
       });
   }
 
-  onClickReload(): void {
+  onClickRefresh(): void {
     if (this.loading === true) {
       return;
     }
