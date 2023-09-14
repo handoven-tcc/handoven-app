@@ -2,7 +2,7 @@ class ProdutoRequest {
   constructor(
     public name: string,
     public type: string,
-    public validity: Date,
+    public validity: string,
     public category: string,
     public cost: string,
     public amount: number,
