@@ -114,7 +114,7 @@
 
       <div class="px-4 mb-3 grid justify-content-betweenflex-row">
         <ion-button
-          class="col-5 mx-0 mt-3 text-lg"
+          class="col-6 mx-0 mt-3 text-lg"
           color="light"
           fill="solid"
           expand="block"
@@ -123,13 +123,13 @@
         </ion-button>
 
         <ion-button
-          class="w-full mt-3 text-lg"
+          class="col-6 w-full mt-3 text-lg"
           color="danger"
           fill="solid"
           [disabled]="!getDisableAdicionarIntegrante()"
           expand="block"
           (click)="onClickCriarPerfil()">
-          <div *ngIf="!loading">Adicionar Integrante</div>
+          <div *ngIf="!loading">Adicionar</div>
           <div
             *ngIf="loading"
             class="col-12 flex align-items-center justify-content-center text-900 flex-column">
