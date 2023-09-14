@@ -7,6 +7,7 @@ import { CascadeSelectModule } from "primeng/cascadeselect";
 import { CheckboxModule } from "primeng/checkbox";
 import { ChipsModule } from "primeng/chips";
 import { ColorPickerModule } from "primeng/colorpicker";
+import { DropdownModule } from "primeng/dropdown";
 import { InputMaskModule } from "primeng/inputmask";
 import { InputSwitchModule } from "primeng/inputswitch";
 import { InputTextModule } from "primeng/inputtext";
@@ -37,6 +38,7 @@ const importsForm = [
   CheckboxModule,
   ChipsModule,
   ColorPickerModule,
+  DropdownModule,
   InputMaskModule,
   InputSwitchModule,
   InputTextModule,
