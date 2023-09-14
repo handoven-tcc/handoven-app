@@ -7,7 +7,7 @@ import {
   DeletarProdutoRequest,
   GetProdutoNomeRequest,
   GetProdutoIdRequest,
-  ProdutosResponse,
+  ProdutoResponse,
 } from "../models";
 import { AuthService } from "../../auth/services";
 import Products from "../../../assets/mock/products.json";
@@ -31,9 +31,9 @@ export class DispensaService {
     this.usuarioId = this.authService.getUsuarioId();
   }
 
-  getAllProducts(): Observable<ProdutosResponse[]> {
+  getAllProducts(): Observable<ProdutoResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProdutosResponse[]);
+      return of([] as ProdutoResponse[]);
     }
 
     return this.http
@@ -46,9 +46,9 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  getProductById(request: GetProdutoIdRequest): Observable<ProdutosResponse> {
+  getProductById(request: GetProdutoIdRequest): Observable<ProdutoResponse> {
     if (!this.authService.hasUsuario()) {
-      return of({} as ProdutosResponse);
+      return of({} as ProdutoResponse);
     }
 
     return this.http
@@ -63,9 +63,9 @@ export class DispensaService {
 
   getProductsByName(
     request: GetProdutoNomeRequest
-  ): Observable<ProdutosResponse[]> {
+  ): Observable<ProdutoResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProdutosResponse[]);
+      return of([] as ProdutoResponse[]);
     }
 
     return this.http
@@ -78,9 +78,9 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  postProduct(request: ProdutoRequest): Observable<ProdutosResponse[]> {
+  postProduct(request: ProdutoRequest): Observable<ProdutoResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProdutosResponse[]);
+      return of([] as ProdutoResponse[]);
     }
 
     return this.http
@@ -94,9 +94,9 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  putProductById(request: ProdutoRequest): Observable<ProdutosResponse[]> {
+  putProductById(request: ProdutoRequest): Observable<ProdutoResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProdutosResponse[]);
+      return of([] as ProdutoResponse[]);
     }
 
     return this.http
@@ -111,7 +111,7 @@ export class DispensaService {
 
   deletarProdutoById({ id }: DeletarProdutoRequest): Observable<any> {
     if (!this.authService.hasUsuario()) {
-      return of([] as ProdutosResponse[]);
+      return of([] as ProdutoResponse[]);
     }
 
     return this.http
