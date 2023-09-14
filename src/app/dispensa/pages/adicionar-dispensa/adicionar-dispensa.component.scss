@@ -73,3 +73,7 @@ ion-datetime-button {
   display: flex;
   justify-content: flex-start;
 }
+
+.select-button {
+  --border-color: #ced4da !important;
+}

@@ -14,7 +14,18 @@ import {
   LoginResponse,
   UsuarioRequest,
 } from "../../../auth/models";
+import { DispensaService } from "../../services";
+import { ProdutoRequest } from "../../models";
 import { AuthService } from "../../../auth/services";
+
+export interface IButtonSelect {
+  id: number;
+  name: string;
+  code: string;
+}
+export interface IButtonSelectComAbreviacao extends IButtonSelect {
+  abbreviation: string;
+}
 
 @Component({
   selector: "app-adicionar-dispensa",
@@ -25,8 +36,15 @@ export class AdicionarDispensaComponent implements OnInit {
   loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   form!: FormGroup;
-  familyId!: string;
-  dataDeNascimento!: string;
+  familiaId!: string;
+  dataDeVencimento!: string;
+  custo!: string;
+  tipo: IButtonSelect[] = [];
+  selectedTipo: IButtonSelect | undefined;
+  categoria: IButtonSelect[] = [];
+  selectedCategoria: IButtonSelect | undefined;
+  unidadeDeMedida: IButtonSelectComAbreviacao[] = [];
+  selectedUnidadeDeMedida: IButtonSelectComAbreviacao | undefined;
 
   public alertButtons = ["OK"];
 
@@ -47,87 +65,275 @@ export class AdicionarDispensaComponent implements OnInit {
     );
   }
 
-  public get getCelularRequired(): any {
+  public get getTipoRequired(): any {
     return (
-      this.form.get("celular")?.touched &&
-      this.form.get("celular")?.errors?.["required"]
+      this.form.get("tipo")?.touched &&
+      this.form.get("tipo")?.errors?.["required"]
     );
   }
-  public get getCelularInvalid(): any {
+
+  public get getCategoriaRequired(): any {
     return (
-      this.form.get("celular")?.touched &&
-      this.form.get("celular")?.errors?.["maxLength"]
+      this.form.get("categoria")?.touched &&
+      this.form.get("categoria")?.errors?.["required"]
     );
   }
 
   public get getDataDeNascimentoInvalid(): any {
-    const idade = calculateAge(new Date(this.dataDeNascimento));
+    const idade = calculateAge(new Date(this.dataDeVencimento));
     return idade >= 18;
   }
 
-  public get getSenhaRequired(): any {
+  public get getCustoRequired(): any {
     return (
-      this.form.get("senha")?.touched &&
-      this.form.get("senha")?.errors?.["required"]
-    );
-  }
-  public get getSenhaInvalid(): any {
-    return (
-      this.form.get("senha")?.touched &&
-      this.form.get("senha")?.errors?.["minLength"]
+      this.form.get("custo")?.touched &&
+      this.form.get("custo")?.errors?.["required"]
     );
   }
 
-  public get getSenhaRepetidaInvalid(): any {
+  public get getQuantidadeRequired(): any {
     return (
-      this.form.get("senhaRepetida")?.touched &&
-      this.form.get("senhaRepetida")?.errors?.["senhaValida"]
+      this.form.get("quantidade")?.touched &&
+      this.form.get("quantidade")?.errors?.["required"]
     );
   }
 
-  public get getEmailRequired(): any {
+  public get getUnidadeDeMedidaRequired(): any {
     return (
-      this.form.get("email")?.touched &&
-      this.form.get("email")?.errors?.["required"]
+      this.form.get("unidadeDeMedida")?.touched &&
+      this.form.get("unidadeDeMedida")?.errors?.["required"]
     );
   }
 
-  public get getEmailInvalid(): any {
-    return (
-      this.form.get("email")?.touched &&
-      this.form.get("email")?.errors?.["email"]
-    );
+  public getDisableAdicionarDispensa(): boolean {
+    return this.form.valid && this.loading === false;
   }
 
   constructor(
-    private authService: AuthService,
     private formBuilder: FormBuilder,
     private nav: NavController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private authService: AuthService,
+    private dispensaService: DispensaService
   ) {}
 
   ngOnInit() {
-    this.familyId = window.localStorage.getItem("X-HandOven-Family") ?? "";
+    this.tipo = [
+      {
+        id: 1,
+        name: "Açúcar e Adoçante",
+        code: "ACUCAR_ADOCANTE",
+      },
+      {
+        id: 2,
+        name: "Condimento",
+        code: "CONDIMENTO",
+      },
+      {
+        id: 3,
+        name: "Doce",
+        code: "DOCE",
+      },
+      {
+        id: 4,
+        name: "Especiaria",
+        code: "ESPECIARIA",
+      },
+      {
+        id: 5,
+        name: "Fruta",
+        code: "FRUTA",
+      },
+      {
+        id: 6,
+        name: "Grão",
+        code: "GRAO",
+      },
+      {
+        id: 7,
+        name: "Lácteo",
+        code: "LACTEO",
+      },
+      {
+        id: 8,
+        name: "Molho",
+        code: "MOLHO",
+      },
+      {
+        id: 9,
+        name: "Noz e Semente",
+        code: "NOZ_SEMESTRE",
+      },
+      {
+        id: 10,
+        name: "Massa",
+        code: "MASSA",
+      },
+      {
+        id: 11,
+        name: "Vegetal",
+        code: "VEGETAL",
+      },
+    ];
+
+    this.categoria = [
+      {
+        id: 1,
+        name: "Grãos e Cereais",
+        code: "GRAOS",
+      },
+      {
+        id: 2,
+        name: "Proteínas",
+        code: "PROTEINAS",
+      },
+      {
+        id: 3,
+        name: "Frutas e Vegetais",
+        code: "FRUTAS_VEGETAIS",
+      },
+      {
+        id: 4,
+        name: "Laticínios e Substitutos",
+        code: "LATICINIOS",
+      },
+      {
+        id: 5,
+        name: "Temperos e Condimentos",
+        code: "CONDIMENTOS",
+      },
+      {
+        id: 6,
+        name: "Óleos e Gorduras",
+        code: "OLEOS_GORDURAS",
+      },
+      {
+        id: 7,
+        name: "Bebidas e Líquidos",
+        code: "BEBIDAS",
+      },
+      {
+        id: 8,
+        name: "Produtos de Panificação",
+        code: "PANIFICACAO",
+      },
+      {
+        id: 9,
+        name: "Conserva",
+        code: "ENLATADOS_CONSERVAS",
+      },
+      {
+        id: 10,
+        name: "Doces e Sobremesas",
+        code: "DOCES_SOBREMESAS",
+      },
+      {
+        id: 11,
+        name: "Frutos do Mar",
+        code: "FRUTOS_MAR",
+      },
+      {
+        id: 12,
+        name: "Nozes e Sementes",
+        code: "NOZES_SEMENTES",
+      },
+      {
+        id: 13,
+        name: "Ingredientes Étnicos",
+        code: "ETNICOS",
+      },
+      {
+        id: 14,
+        name: "Produtos Congelados",
+        code: "CONGELADOS",
+      },
+      {
+        id: 15,
+        name: "Ingredientes Especiais",
+        code: "ESPECIAIS",
+      },
+    ];
+
+    this.unidadeDeMedida = [
+      {
+        id: 1,
+        name: "Colher de Sopa",
+        abbreviation: "colher (sopa)",
+        code: "COLHER DE SOPA",
+      },
+      {
+        id: 2,
+        name: "Colher de Chá",
+        abbreviation: "colher (chá)",
+        code: "COLHER DE CHÁ",
+      },
+      {
+        id: 3,
+        name: "Gramas",
+        abbreviation: "g",
+        code: "GRAMAS",
+      },
+      {
+        id: 4,
+        name: "Litros",
+        abbreviation: "L",
+        code: "LITROS",
+      },
+      {
+        id: 5,
+        name: "Miligramas",
+        abbreviation: "mg",
+        code: "MILIGRAMAS",
+      },
+      {
+        id: 6,
+        name: "Mililitros",
+        abbreviation: "mL",
+        code: "MILILITROS",
+      },
+      {
+        id: 7,
+        name: "Peças",
+        abbreviation: "un",
+        code: "PEÇAS",
+      },
+      {
+        id: 8,
+        name: "Quilogramas",
+        abbreviation: "kg",
+        code: "QUILOGRAMAS",
+      },
+    ];
+
+    this.familiaId = this.authService.getFamiliaId();
     this.setupForm();
   }
 
   setupForm() {
     this.form = this.formBuilder.group({
       nome: ["", [Validators.minLength(3), Validators.required]],
-      email: ["", [Validators.email, Validators.required]],
-      celular: ["", [Validators.maxLength(15), Validators.required]],
-      senha: ["", [Validators.minLength(6), Validators.required]],
-      senhaRepetida: ["", [Validators.minLength(6), Validators.required]],
+      quantidade: ["", [Validators.required]],
+      custo: ["", [Validators.required]],
     });
-
-    this.form
-      .get("senhaRepetida")
-      ?.addValidators(this.senhaValidator(this.form));
   }
 
-  onClickCriarPerfil() {
+  compareWith(o1: any, o2: any) {
+    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  }
+
+  handleChangeTipo(event: any) {
+    this.selectedTipo = event.target.value;
+  }
+  handleChangeCategoria(event: any) {
+    this.selectedCategoria = event.target.value;
+  }
+  handleChangeUnidadeDeMedida(event: any) {
+    this.selectedUnidadeDeMedida = event.target.value;
+  }
+
+  onClickAdicionarDispensa() {
     this.loading = true;
-    if (!this.familyId) {
+    if (!this.familiaId) {
       this.alertController
         .create({
           header: "Erro",
@@ -140,20 +346,29 @@ export class AdicionarDispensaComponent implements OnInit {
       return;
     }
 
-    let request = new UsuarioRequest(
+    this.selectedCategoria;
+    const request = new ProdutoRequest(
       this.form.controls["nome"].value,
-      this.dataDeNascimento,
-      this.form.controls["celular"].value,
-      this.form.controls["email"].value,
-      this.form.controls["senha"].value,
-      this.familyId,
-      "111111111111111111111111"
+      this.selectedTipo ? this.selectedTipo.name : "",
+      this.dataDeVencimento,
+      this.selectedCategoria ? this.selectedCategoria.name : "",
+      this.form.controls["custo"].value,
+      this.form.controls["quantidade"].value,
+      this.familiaId
     );
 
-    this.inscricao = this.authService.criarUsuario(request).subscribe({
+    this.inscricao = this.dispensaService.postProduct(request).subscribe({
       next: (o) => {
-        window.localStorage.setItem("user", JSON.stringify(o));
-        this.nav.navigateForward(["auth/sucesso", "criada"]);
+        console.log(o);
+        this.alertController
+          .create({
+            header: request.name,
+            message: `O Produto foi adicionado com sucesso!`,
+            buttons: ["Ok"],
+          })
+          .then((o) => o.present());
+
+        this.nav.navigateBack(["tabs/dispensa"]);
         this.loading = false;
       },
       error: () => (this.loading = false),
@@ -161,18 +376,22 @@ export class AdicionarDispensaComponent implements OnInit {
     });
   }
 
-  onClickCancelar() {
+  onClickCancelar(): void {
     this.nav.navigateBack(["tabs/dispensa"]);
   }
 
-  senhaValidator(form: FormGroup): ValidatorFn {
-    const senha = form.get("senha");
-    const senhaRepetida = form.get("senhaRepetida");
+  onClickEscanear(): void {
+    this.alertNaoImplementado();
+  }
 
-    const validator = () =>
-      senha?.value === senhaRepetida?.value ? null : { senhaValida: true };
-
-    return validator;
+  alertNaoImplementado(): void {
+    this.alertController
+      .create({
+        header: "Oops...",
+        message: "Desculpe, isso ainda não foi implementado 😢",
+        buttons: ["Ok"],
+      })
+      .then((o) => o.present());
   }
 
   ngOnDestroy(): void {

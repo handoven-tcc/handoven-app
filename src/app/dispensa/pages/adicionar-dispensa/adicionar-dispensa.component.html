@@ -4,7 +4,7 @@
       <ion-back-button color="light"></ion-back-button>
     </ion-buttons>
     <ion-title class="text-base text-white select-none"
-      >Adicione um integrante</ion-title
+      >Adicione um Produto</ion-title
     >
   </ion-toolbar>
 </ion-header>
@@ -12,7 +12,7 @@
 <ion-content id="ion-content" [fullscreen]="true">
   <div class="bola-header"></div>
   <form class="content" [formGroup]="getForm()">
-    <button id="btn-wrapper">
+    <button id="btn-wrapper" (click)="onClickEscanear()">
       <div class="tirar-foto">
         <ion-icon color="light" name="barcode-outline"></ion-icon>
       </div>
@@ -23,12 +23,12 @@
     <div class="center-content-end">
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Nome completo</span
+          >Nome do Produto</span
         >
         <input
           class="w-full"
           type="text"
-          placeholder="Seu nome"
+          placeholder="Pêssego"
           pInputText
           formControlName="nome" />
         <small class="select-none" *ngIf="getNomeRequired"
@@ -40,81 +40,116 @@
       </div>
 
       <span class="px-4 mb-3 w-full">
-        <span class="select-none text-color font-bold block mb-2">Email</span>
-        <input
-          class="w-full"
-          type="email"
-          placeholder="E-mail"
-          pInputText
-          email
-          formControlName="email" />
-        <small *ngIf="getEmailRequired">Email é obrigatório.</small>
-        <small *ngIf="getEmailInvalid">Email é inválido.</small>
+        <span class="select-none text-color font-bold block mb-2"
+          >Tipo do Produto</span
+        >
+        <ion-select
+          name="tipo"
+          aria-label="Selecione o Tipo"
+          interface="popover"
+          color="danger"
+          fill="outline"
+          class="text-900 select-button"
+          [compareWith]="compareWith"
+          (ionChange)="handleChangeTipo($event)"
+          placeholder="Selecione o Tipo">
+          <ion-select-option *ngFor="let item of tipo" [value]="item">
+            {{ item.name }}
+          </ion-select-option>
+        </ion-select>
+        <small class="select-none" *ngIf="getTipoRequired"
+          >Tipo é obrigatório.</small
+        >
+      </span>
+
+      <span class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2"
+          >Categoria do Produto</span
+        >
+        <ion-select
+          name="categoria"
+          aria-label="Selecione o Categoria"
+          interface="popover"
+          color="danger"
+          fill="outline"
+          class="text-900 select-button"
+          [compareWith]="compareWith"
+          (ionChange)="handleChangeCategoria($event)"
+          placeholder="Selecione o Categoria">
+          <ion-select-option *ngFor="let item of categoria" [value]="item">
+            {{ item.name }}
+          </ion-select-option>
+        </ion-select>
+        <small class="select-none" *ngIf="getCategoriaRequired"
+          >Tipo é obrigatório.</small
+        >
       </span>
 
       <div class="px-4 mb-3 w-full">
-        <span class="select-none text-color font-bold block mb-2">Celular</span>
-        <p-inputMask
-          styleClass="w-full"
-          mask="(99) 99999-9999"
-          formControlName="celular"
-          placeholder="(99) 99999-9999"></p-inputMask>
-        <small class="select-none" *ngIf="getCelularRequired"
-          >Celular é obrigatório.</small
-        >
-        <small class="select-none" *ngIf="getCelularInvalid"
-          >Celular é inválido.</small
-        >
-      </div>
-
-      <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Data de nascimento</span
+          >Data de Validade</span
         >
         <ion-datetime-button datetime="datetime"></ion-datetime-button>
-        <small class="select-none" *ngIf="!getDataDeNascimentoInvalid"
-          >É preciso ter mais de 18 anos</small
-        >
       </div>
 
       <div class="px-4 mb-3 w-full">
-        <span class="select-none text-color font-bold block mb-2">Senha</span>
-        <p-password
-          class="mb-3 w-full"
+        <span class="select-none text-color font-bold block mb-2">Custo</span>
+        <p-inputNumber
           styleClass="w-full"
-          inputStyleClass="w-full"
-          placeholder="Digite sua senha"
-          [feedback]="false"
-          formControlName="senha"
-          [toggleMask]="true"></p-password>
-        <small class="select-none" *ngIf="getSenhaRequired"
-          >Senha é obrigatório.</small
-        >
-        <small class="select-none" *ngIf="getSenhaInvalid"
-          >Senha deve ter minimo 6 caracteres.</small
+          class="w-full"
+          formControlName="custo"
+          inputId="currency-br"
+          mode="currency"
+          currency="BRL"
+          locale="pt-BR">
+        </p-inputNumber>
+        <small class="select-none" *ngIf="getCustoRequired"
+          >Custo é obrigatório.</small
         >
       </div>
 
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Repetir Senha</span
+          >Quantidade</span
         >
-        <p-password
-          class="mb-3 w-full"
+        <p-inputNumber
           styleClass="w-full"
-          inputStyleClass="w-full"
-          placeholder="Digite novamente sua senha"
-          [feedback]="false"
-          formControlName="senhaRepetida"
-          [toggleMask]="true"></p-password>
-        <small class="select-none" *ngIf="getSenhaRepetidaInvalid"
-          >Senha não é igual a anterior.</small
+          class="w-full"
+          inputId="quantidade"
+          formControlName="quantidade"></p-inputNumber>
+        <small class="select-none" *ngIf="getQuantidadeRequired"
+          >Quantidade é obrigatório.</small
         >
       </div>
 
-      <div class="px-4 mb-3 grid justify-content-betweenflex-row">
+      <div class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2"
+          >Unidade de Medida</span
+        >
+        <ion-select
+          name="unidadeDeMedida"
+          aria-label="Selecione a Unidade de Medida"
+          interface="popover"
+          color="danger"
+          fill="outline"
+          class="text-900 select-button"
+          [compareWith]="compareWith"
+          (ionChange)="handleChangeUnidadeDeMedida($event)"
+          placeholder="Selecione a Unidade de Medida">
+          <ion-select-option
+            *ngFor="let item of unidadeDeMedida"
+            [value]="item">
+            {{ item.name }}
+          </ion-select-option>
+        </ion-select>
+        <small class="select-none" *ngIf="getUnidadeDeMedidaRequired"
+          >Unidade de Medida é obrigatório.</small
+        >
+      </div>
+
+      <div class="px-4 mb-3 grid justify-content-between flex-row">
         <ion-button
-          class="col-5 mx-0 mt-3 text-lg"
+          class="col-6 p-1 mx-0 mt-3 text-lg"
           color="light"
           fill="solid"
           expand="block"
@@ -123,13 +158,75 @@
         </ion-button>
 
         <ion-button
-          class="col-7 mx-0 mt-3 text-lg"
+          class="col-6 p-1 mx-0 mt-3 text-lg"
           color="danger"
           fill="solid"
-          [disabled]="!this.form.valid"
+          [disabled]="!getDisableAdicionarDispensa()"
           expand="block"
-          (click)="onClickCriarPerfil()">
-          Adicionar Produto
+          (click)="onClickAdicionarDispensa()">
+          <div *ngIf="!loading">Adicionar</div>
+          <div
+            *ngIf="loading"
+            class="col-12 flex align-items-center justify-content-center text-900 flex-column">
+            <ion-infinite-scroll class="w-1">
+              <div class="infinite-scroll-content">
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 100 100"
+                  enable-background="new 0 0 100 100"
+                  xml:space="preserve">
+                  <circle
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="4"
+                    stroke-miterlimit="10"
+                    cx="50"
+                    cy="50"
+                    r="48" />
+                  <line
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke="#fff"
+                    stroke-width="4"
+                    stroke-miterlimit="10"
+                    x1="50"
+                    y1="50"
+                    x2="85"
+                    y2="50.5">
+                    <animateTransform
+                      attributeName="transform"
+                      dur="2s"
+                      type="rotate"
+                      from="0 50 50"
+                      to="360 50 50"
+                      repeatCount="indefinite" />
+                  </line>
+                  <line
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke="#fff"
+                    stroke-width="4"
+                    stroke-miterlimit="10"
+                    x1="50"
+                    y1="50"
+                    x2="49.5"
+                    y2="74">
+                    <animateTransform
+                      attributeName="transform"
+                      dur="15s"
+                      type="rotate"
+                      from="0 50 50"
+                      to="360 50 50"
+                      repeatCount="indefinite" />
+                  </line>
+                </svg>
+              </div>
+            </ion-infinite-scroll>
+          </div>
         </ion-button>
       </div>
     </div>
@@ -143,7 +240,7 @@
       display-format="DD.MM.YYYY"
       locale="pt-BR"
       [showDefaultButtons]="true"
-      [(ngModel)]="dataDeNascimento"
+      [(ngModel)]="dataDeVencimento"
       id="datetime"></ion-datetime>
   </ng-template>
 </ion-modal>
