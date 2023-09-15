@@ -64,11 +64,13 @@ export class ListarDispensaComponent implements OnInit {
     }
 
     if (!this.authService.hasUsuario()) {
-      this.alertController.create({
-        header: "Faça Login ou Cadastre-se",
-        message:
-          "Essa função não está disponível para convidados 😢. Por favor faça login ou Cadastre-se no Handoven 😁",
-      });
+      this.alertController
+        .create({
+          header: "Faça Login ou Cadastre-se",
+          message:
+            "Essa função não está disponível para convidados. Por favor faça login ou Cadastre-se no Handoven!",
+        })
+        .then((o) => o.present());
 
       return;
     }
