@@ -347,7 +347,6 @@ export class AdicionarDispensaComponent implements OnInit {
       return;
     }
 
-    this.selectedCategoria;
     const request = new ProdutoRequest(
       this.form.controls["nome"].value,
       this.selectedTipo ? this.selectedTipo.name : "",
