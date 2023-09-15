@@ -153,7 +153,7 @@ export class AdicionarIntegranteComponent implements OnInit {
 
     this.inscricao = this.authService.criarUsuario(request).subscribe({
       next: (o) => {
-        window.localStorage.setItem("user", JSON.stringify(o));
+        window.localStorage.setItem("perfil", JSON.stringify(o));
         this.nav.navigateForward(["auth/sucesso", "criada"]);
         this.loading = false;
       },

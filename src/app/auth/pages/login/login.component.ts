@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   inscricao: Subscription = Subscription.EMPTY;
   email!: string;
   senha!: string;
-  lembrar!: string;
+  lembrar: boolean = false;
 
   alertButtons: string[] = ["OK"];
 
@@ -34,11 +34,16 @@ export class LoginComponent implements OnInit {
 
   onClickLogIn(): void {
     this.loading = true;
-    const request = new LoginRequest(this.email, this.senha);
+    const request = new LoginRequest(this.email, this.senha, this.lembrar);
 
     this.inscricao = this.authService.login(request).subscribe({
       next: (o) => {
-        window.localStorage.setItem("user", JSON.stringify(o));
+        if (this.lembrar) {
+          window.localStorage.setItem("perfil", JSON.stringify(o));
+        } else {
+          window.sessionStorage.setItem("perfil", JSON.stringify(o));
+        }
+
         this.router.navigate(["/tabs/receitas"]);
         this.loading = false;
       },

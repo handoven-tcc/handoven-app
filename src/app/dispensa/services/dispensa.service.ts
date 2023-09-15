@@ -27,8 +27,8 @@ export class DispensaService {
     private http: HttpClient,
     private authService: AuthService // private storage: StorageService,
   ) {
-    this.familiaId = this.authService.getFamiliaId();
-    this.usuarioId = this.authService.getUsuarioId();
+    this.familiaId = this.authService.getFamiliaId() ?? "";
+    this.usuarioId = this.authService.getUsuarioId() ?? "";
   }
 
   getAllProducts(): Observable<ProdutoResponse[]> {

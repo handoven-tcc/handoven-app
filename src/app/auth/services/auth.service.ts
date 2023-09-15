@@ -42,15 +42,31 @@ export class AuthService {
   }
 
   getAuthToken() {
-    return window.localStorage.getItem("token") ?? "";
+    return (
+      window.localStorage.getItem("token") ??
+      window.sessionStorage.getItem("token")
+    );
   }
 
   getFamiliaId() {
-    return window.localStorage.getItem("X-HandOven-Family") ?? "";
+    return (
+      window.localStorage.getItem("X-HandOven-Family") ??
+      window.sessionStorage.getItem("X-HandOven-Family")
+    );
   }
 
   getUsuarioId() {
-    return window.localStorage.getItem("X-HandOven-User") ?? "";
+    return (
+      window.localStorage.getItem("X-HandOven-User") ??
+      window.sessionStorage.getItem("X-HandOven-User")
+    );
+  }
+
+  getPerfil() {
+    return (
+      window.localStorage.getItem("perfil") ??
+      window.sessionStorage.getItem("perfil")
+    );
   }
 
   criarUsuario(request: UsuarioRequest): Observable<UsuarioResponse> {
@@ -136,12 +152,19 @@ export class AuthService {
       })
       .pipe(
         map((res: any) => {
-          // this.storage.set("token", "token");
-          window.localStorage.setItem("token", "token");
-          // this.storage.set("X-HandOven-Family", res.familyId);
-          window.localStorage.setItem("X-HandOven-Family", res.familyId);
-          // this.storage.set("X-HandOven-User", res.id);
-          window.localStorage.setItem("X-HandOven-User", res.id);
+          if (request.remember) {
+            // this.storage.set("token", "token");
+            window.localStorage.setItem("token", "token");
+            // this.storage.set("X-HandOven-Family", res.familyId);
+            window.localStorage.setItem("X-HandOven-Family", res.familyId);
+            // this.storage.set("X-HandOven-User", res.id);
+            window.localStorage.setItem("X-HandOven-User", res.id);
+          } else {
+            window.sessionStorage.setItem("token", "token");
+            window.sessionStorage.setItem("X-HandOven-Family", res.familyId);
+            window.sessionStorage.setItem("X-HandOven-User", res.id);
+          }
+
           return res;
         })
       );
@@ -151,6 +174,7 @@ export class AuthService {
     // this.storage.remove("X-HandOven-Family")
     // this.storage.remove("X-HandOven-User")
     window.localStorage.clear();
+    window.sessionStorage.clear();
   }
 
   criarFamilia(request: FamiliaRequest): Observable<FamiliaResponse> {

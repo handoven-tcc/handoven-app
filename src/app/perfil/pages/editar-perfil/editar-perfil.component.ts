@@ -26,7 +26,7 @@ export class EditarPerfilComponent implements OnInit {
   loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   form!: FormGroup;
-  user!: LoginResponse;
+  perfil!: LoginResponse;
 
   nomeDaFamilia!: string;
   email!: string;
@@ -102,12 +102,12 @@ export class EditarPerfilComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.user = JSON.parse(window.localStorage.getItem("user") ?? "");
-    this.setupForm(this.user);
+    this.perfil = JSON.parse(this.authService.getPerfil() ?? "");
+    this.setupForm(this.perfil);
 
     this.nomeDaFamilia = this.activatedRoute.snapshot.params["nomeDaFamilia"];
-    this.email = this.user.email;
-    this.dataDeNascimento = this.user.birthDate;
+    this.email = this.perfil.email;
+    this.dataDeNascimento = this.perfil.birthDate;
   }
 
   setupForm({ name, cell }: LoginResponse): void {
@@ -125,7 +125,7 @@ export class EditarPerfilComponent implements OnInit {
   onClickEditarConta(): void {
     this.loading = true;
     const user: UsuarioResponse = JSON.parse(
-      window.localStorage.getItem("user") ?? ""
+      this.authService.getPerfil() ?? ""
     );
 
     let request = new UsuarioRequest(
@@ -140,7 +140,7 @@ export class EditarPerfilComponent implements OnInit {
 
     this.inscricao = this.authService.editarUsuario(request).subscribe({
       next: (o) => {
-        window.localStorage.setItem("user", JSON.stringify(o));
+        window.localStorage.setItem("perfil", JSON.stringify(o));
         this.nav.navigateForward(["auth/sucesso", "editada"]);
         this.loading = false;
       },

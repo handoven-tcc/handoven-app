@@ -50,14 +50,14 @@ export class ListarPerfilComponent implements OnInit {
     private alertController: AlertController,
     private nav: NavController
   ) {
-    this.familiaId = this.authService.getFamiliaId();
-    this.usuarioId = this.authService.getUsuarioId();
+    this.familiaId = this.authService.getFamiliaId() ?? "";
+    this.usuarioId = this.authService.getUsuarioId() ?? "";
   }
 
   ngOnInit(): void {
-    const user = window.localStorage.getItem("user");
-    if (user) {
-      this.perfil = JSON.parse(user);
+    const perfil = this.authService.getPerfil();
+    if (perfil) {
+      this.perfil = JSON.parse(perfil);
     }
 
     const request: GetFamiliaIdRequest = new GetFamiliaIdRequest(
@@ -231,7 +231,7 @@ export class ListarPerfilComponent implements OnInit {
       .subscribe({
         next: (o) => {
           this.perfil.familyId = o.id;
-          window.localStorage.setItem("user", JSON.stringify(this.perfil));
+          window.localStorage.setItem("perfil", JSON.stringify(this.perfil));
           this.nomeFamilia = o.name;
 
           this.loading = false;
