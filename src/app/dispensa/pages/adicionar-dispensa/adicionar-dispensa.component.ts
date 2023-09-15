@@ -115,7 +115,9 @@ export class AdicionarDispensaComponent implements OnInit {
     private alertController: AlertController,
     private authService: AuthService,
     private dispensaService: DispensaService
-  ) {}
+  ) {
+    this.familiaId = this.authService.getFamiliaId();
+  }
 
   ngOnInit() {
     this.tipo = [
@@ -305,7 +307,6 @@ export class AdicionarDispensaComponent implements OnInit {
       },
     ];
 
-    this.familiaId = this.authService.getFamiliaId();
     this.setupForm();
   }
 
@@ -338,7 +339,7 @@ export class AdicionarDispensaComponent implements OnInit {
         .create({
           header: "Erro",
           message:
-            "Conta atual não tem familia id? Favor Saia do perfil e entre novamente...",
+            "Conta atual não tem familia? Favor Saia do perfil e entre novamente...",
         })
         .then((o) => o.present());
 
@@ -359,7 +360,6 @@ export class AdicionarDispensaComponent implements OnInit {
 
     this.inscricao = this.dispensaService.postProduct(request).subscribe({
       next: (o) => {
-        console.log(o);
         this.alertController
           .create({
             header: request.name,

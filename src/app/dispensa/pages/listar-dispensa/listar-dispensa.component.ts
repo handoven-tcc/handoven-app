@@ -3,6 +3,7 @@ import { Subscription } from "rxjs";
 import { DeletarProdutoRequest, ProdutoResponse } from "../../models";
 import { DispensaService } from "../../services";
 import { AlertController, NavController } from "@ionic/angular";
+import { AuthService } from "../../../auth/services";
 
 @Component({
   selector: "app-listar-dispensa",
@@ -15,13 +16,18 @@ export class ListarDispensaComponent implements OnInit {
   inscricao: Subscription = Subscription.EMPTY;
 
   constructor(
-    private dispensaService: DispensaService,
     private alertController: AlertController,
-    private nav: NavController
+    private nav: NavController,
+    private authService: AuthService,
+    private dispensaService: DispensaService
   ) {}
 
   public get hasProdutos(): boolean {
     return this.produtos.length > 0;
+  }
+
+  public get usuarioLogado(): boolean {
+    return this.authService.hasUsuario();
   }
 
   public getDisableAdicionarDispensa(): boolean {
@@ -29,6 +35,18 @@ export class ListarDispensaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getTodosProdutos();
+  }
+
+  ionViewWillEnter() {
+    this.getTodosProdutos();
+  }
+
+  getTodosProdutos() {
+    if (this.loading === true) {
+      return;
+    }
+
     this.loading = true;
     this.inscricao = this.dispensaService.getAllProducts().subscribe({
       next: (o) => {
@@ -42,6 +60,16 @@ export class ListarDispensaComponent implements OnInit {
 
   onClickAdicionarDispensa(): void {
     if (this.loading == true) {
+      return;
+    }
+
+    if (!this.authService.hasUsuario()) {
+      this.alertController.create({
+        header: "Faça Login ou Cadastre-se",
+        message:
+          "Essa função não está disponível para convidados 😢. Por favor faça login ou Cadastre-se no Handoven 😁",
+      });
+
       return;
     }
 
@@ -65,7 +93,7 @@ export class ListarDispensaComponent implements OnInit {
       .create({
         header: "Tem certeza?",
         message:
-          "Esta ação te fará excluir seu produto permanentemente, você tem certeza disso?",
+          "Esta ação te fará excluir seu produto permanentemente , você tem certeza disso?",
         buttons: [
           {
             text: "Cancelar",
@@ -100,28 +128,14 @@ export class ListarDispensaComponent implements OnInit {
             })
             .then((o) => o.present());
 
-          this.refresh();
           this.loading = false;
         },
         error: () => (this.loading = false),
-        complete: () => (this.loading = false),
+        complete: () => {
+          this.loading = false;
+          this.getTodosProdutos();
+        },
       });
-  }
-
-  refresh() {
-    if (this.loading === true) {
-      return;
-    }
-
-    this.loading = true;
-    this.inscricao = this.dispensaService.getAllProducts().subscribe({
-      next: (o) => {
-        this.produtos = o;
-        this.loading = false;
-      },
-      error: () => (this.loading = false),
-      complete: () => (this.loading = false),
-    });
   }
 
   handleRefresh(event: any) {

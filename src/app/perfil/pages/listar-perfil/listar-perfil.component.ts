@@ -42,11 +42,7 @@ export class ListarPerfilComponent implements OnInit {
   ];
 
   public get usuarioLogado(): boolean {
-    if (this.familiaId && this.usuarioId) {
-      return true;
-    }
-
-    return false;
+    return this.authService.hasUsuario();
   }
 
   constructor(
