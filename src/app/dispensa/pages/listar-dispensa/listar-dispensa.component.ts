@@ -69,6 +69,7 @@ export class ListarDispensaComponent implements OnInit {
           header: "Faça Login ou Cadastre-se",
           message:
             "Essa função não está disponível para convidados. Por favor faça login ou Cadastre-se no Handoven!",
+          buttons: ["OK"],
         })
         .then((o) => o.present());
 
