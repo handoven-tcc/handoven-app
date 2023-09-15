@@ -4,7 +4,7 @@
       <ion-back-button color="light"></ion-back-button>
     </ion-buttons>
     <ion-title class="text-base text-white select-none"
-      >Edite os seus dados</ion-title
+      >Edite o Produto</ion-title
     >
   </ion-toolbar>
 </ion-header>
@@ -12,23 +12,23 @@
 <ion-content id="ion-content" [fullscreen]="true">
   <div class="bola-header"></div>
   <form class="content" [formGroup]="getForm()">
-    <button id="btn-wrapper" (click)="onClickTirarFoto()">
+    <button id="btn-wrapper" (click)="onClickEscanear()">
       <div class="tirar-foto">
-        <ion-icon color="light" name="camera-outline"></ion-icon>
+        <ion-icon color="light" name="barcode-outline"></ion-icon>
       </div>
       <ion-label id="label-tirar-foto" class="select-none text-0 mt-1"
-        >Tirar foto</ion-label
+        >Escanear</ion-label
       >
     </button>
     <div class="center-content-end">
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Nome completo do responsável</span
+          >Nome do Produto</span
         >
         <input
           class="w-full"
           type="text"
-          placeholder="Seu nome"
+          placeholder="Pêssego"
           pInputText
           formControlName="nome" />
         <small class="select-none" *ngIf="getNomeRequired"
@@ -39,62 +39,200 @@
         >
       </div>
 
-      <div class="px-4 mb-3 w-full">
+      <span class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Celular do responsável</span
+          >Tipo do Produto</span
         >
-        <p-inputMask
-          styleClass="w-full"
-          mask="(99) 99999-9999"
-          formControlName="celular"
-          placeholder="(99) 99999-9999"></p-inputMask>
-        <small class="select-none" *ngIf="getCelularRequired"
-          >Celular é obrigatório.</small
+        <ion-select
+          name="tipo"
+          aria-label="Selecione o Tipo"
+          interface="popover"
+          color="danger"
+          fill="outline"
+          class="text-900 select-button"
+          [compareWith]="compareWith"
+          [selectedText]="selectedTipo"
+          (ionChange)="handleChangeTipo($event)"
+          placeholder="Selecione o Tipo">
+          <ion-select-option *ngFor="let item of tipo" [value]="item">
+            {{ item.name }}
+          </ion-select-option>
+        </ion-select>
+        <small class="select-none" *ngIf="getTipoRequired"
+          >Tipo é obrigatório.</small
         >
-        <small class="select-none" *ngIf="getCelularInvalid"
-          >Celular é inválido.</small
+      </span>
+
+      <span class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2"
+          >Categoria do Produto</span
         >
-      </div>
+        <ion-select
+          name="categoria"
+          aria-label="Selecione o Categoria"
+          interface="popover"
+          color="danger"
+          fill="outline"
+          class="text-900 select-button"
+          [compareWith]="compareWith"
+          [selectedText]="selectedCategoria"
+          (ionChange)="handleChangeCategoria($event)"
+          placeholder="Selecione o Categoria">
+          <ion-select-option *ngFor="let item of categoria" [value]="item">
+            {{ item.name }}
+          </ion-select-option>
+        </ion-select>
+        <small class="select-none" *ngIf="getCategoriaRequired"
+          >Tipo é obrigatório.</small
+        >
+      </span>
 
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Data de nascimento</span
+          >Data de Validade</span
         >
         <ion-datetime-button datetime="datetime"></ion-datetime-button>
-        <small class="select-none" *ngIf="!getDataDeNascimentoInvalid"
-          >É preciso ter mais de 18 anos</small
+      </div>
+
+      <div class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2">Custo</span>
+        <p-inputNumber
+          styleClass="w-full"
+          class="w-full"
+          formControlName="custo"
+          inputId="currency-br"
+          mode="currency"
+          currency="BRL"
+          locale="pt-BR">
+        </p-inputNumber>
+        <small class="select-none" *ngIf="getCustoRequired"
+          >Custo é obrigatório.</small
         >
       </div>
 
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Senha Atual</span
+          >Quantidade</span
         >
-        <p-password
-          class="mb-3 w-full"
+        <p-inputNumber
           styleClass="w-full"
-          inputStyleClass="w-full"
-          placeholder="Digite sua senha"
-          [feedback]="false"
-          formControlName="senha"
-          [toggleMask]="true"></p-password>
-        <small class="select-none" *ngIf="getSenhaRequired"
-          >Senha atual é obrigatório.</small
-        >
-        <small class="select-none" *ngIf="getSenhaInvalid"
-          >Senha atual deve ter minimo 6 caracteres.</small
+          class="w-full"
+          inputId="quantidade"
+          formControlName="quantidade"></p-inputNumber>
+        <small class="select-none" *ngIf="getQuantidadeRequired"
+          >Quantidade é obrigatório.</small
         >
       </div>
 
       <div class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2"
+          >Unidade de Medida</span
+        >
+        <ion-select
+          name="unidadeDeMedida"
+          aria-label="Selecione a Unidade de Medida"
+          interface="popover"
+          color="danger"
+          fill="outline"
+          class="text-900 select-button"
+          [selectedText]="selectedUnidadeDeMedida"
+          [compareWith]="compareWith"
+          (ionChange)="handleChangeUnidadeDeMedida($event)"
+          placeholder="Selecione a Unidade de Medida">
+          <ion-select-option
+            *ngFor="let item of unidadeDeMedida"
+            [value]="item">
+            {{ item.name }}
+          </ion-select-option>
+        </ion-select>
+        <small class="select-none text-500" *ngIf="!selectedUnidadeDeMedida"
+          >Qual era a unidade de medida mesmo? 🤔</small
+        >
+        <small class="select-none" *ngIf="getUnidadeDeMedidaRequired"
+          >Unidade de Medida é obrigatório.</small
+        >
+      </div>
+
+      <div class="px-4 mb-3 w-full grid justify-content-between flex-row">
         <ion-button
-          class="w-full mt-3 text-lg"
+          class="col-6 p-1 mx-0 mt-3 text-lg"
+          color="light"
+          fill="solid"
+          expand="block"
+          (click)="onClickCancelar()">
+          Cancelar
+        </ion-button>
+
+        <ion-button
+          class="col-6 p-1 mx-0 mt-3 text-lg"
           color="danger"
           fill="solid"
-          [disabled]="!this.form.valid"
+          [disabled]="!getDisableEditarDispensa()"
           expand="block"
-          (click)="onClickEditarConta()">
-          Salvar
+          (click)="onClickEditarDispensa()">
+          <div *ngIf="!loading">Salvar</div>
+          <div
+            *ngIf="loading"
+            class="col-12 flex align-items-center justify-content-center text-900 flex-column">
+            <ion-infinite-scroll style="width: 20px">
+              <div class="infinite-scroll-content">
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 100 100"
+                  enable-background="new 0 0 100 100"
+                  xml:space="preserve">
+                  <circle
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="4"
+                    stroke-miterlimit="10"
+                    cx="50"
+                    cy="50"
+                    r="48" />
+                  <line
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke="#fff"
+                    stroke-width="4"
+                    stroke-miterlimit="10"
+                    x1="50"
+                    y1="50"
+                    x2="85"
+                    y2="50.5">
+                    <animateTransform
+                      attributeName="transform"
+                      dur="2s"
+                      type="rotate"
+                      from="0 50 50"
+                      to="360 50 50"
+                      repeatCount="indefinite" />
+                  </line>
+                  <line
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke="#fff"
+                    stroke-width="4"
+                    stroke-miterlimit="10"
+                    x1="50"
+                    y1="50"
+                    x2="49.5"
+                    y2="74">
+                    <animateTransform
+                      attributeName="transform"
+                      dur="15s"
+                      type="rotate"
+                      from="0 50 50"
+                      to="360 50 50"
+                      repeatCount="indefinite" />
+                  </line>
+                </svg>
+              </div>
+            </ion-infinite-scroll>
+          </div>
         </ion-button>
       </div>
     </div>
@@ -108,7 +246,7 @@
       display-format="DD.MM.YYYY"
       locale="pt-BR"
       [showDefaultButtons]="true"
-      [(ngModel)]="dataDeNascimento"
+      [(ngModel)]="dataDeVencimento"
       id="datetime"></ion-datetime>
   </ng-template>
 </ion-modal>

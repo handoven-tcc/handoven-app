@@ -1,22 +1,22 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
-import {
-  FormBuilder,
-  FormGroup,
-  ValidatorFn,
-  Validators,
-} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
-import { ActivatedRoute, Router } from "@angular/router";
 import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
-import { AuthService } from "../../../auth/services";
-import {
-  FamiliaRequest,
-  UsuarioRequest,
-  LoginResponse,
-  UsuarioResponse,
-} from "../../../auth/models";
 import { AlertController, NavController } from "@ionic/angular";
+import { DispensaService } from "../../services";
+import { ProdutoRequest, ProdutoResponse } from "../../models";
+import { AuthService } from "../../../auth/services";
+import { ActivatedRoute } from "@angular/router";
+
+export interface IButtonSelect {
+  id: number;
+  name: string;
+  code: string;
+}
+export interface IButtonSelectComAbreviacao extends IButtonSelect {
+  abbreviation: string;
+}
 
 @Component({
   selector: "app-editar-dispensa",
@@ -26,12 +26,18 @@ import { AlertController, NavController } from "@ionic/angular";
 export class EditarDispensaComponent implements OnInit {
   loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
+  produto!: ProdutoResponse;
+  unidadeDeMedidaDoProduto!: string;
   form!: FormGroup;
-  user!: LoginResponse;
-
-  nomeDaFamilia!: string;
-  email!: string;
-  dataDeNascimento!: string;
+  familiaId!: string;
+  dataDeVencimento!: string;
+  custo!: string;
+  tipo: IButtonSelect[] = [];
+  selectedTipo: string = "";
+  categoria: IButtonSelect[] = [];
+  selectedCategoria: string = "";
+  unidadeDeMedida: IButtonSelectComAbreviacao[] = [];
+  selectedUnidadeDeMedida: string = "";
 
   public alertButtons = ["OK"];
 
@@ -52,103 +58,338 @@ export class EditarDispensaComponent implements OnInit {
     );
   }
 
-  public get getCelularRequired(): any {
+  public get getTipoRequired(): any {
     return (
-      this.form.get("celular")?.touched &&
-      this.form.get("celular")?.errors?.["required"]
+      this.form.get("tipo")?.touched &&
+      this.form.get("tipo")?.errors?.["required"]
     );
   }
-  public get getCelularInvalid(): any {
+
+  public get getCategoriaRequired(): any {
     return (
-      this.form.get("celular")?.touched &&
-      this.form.get("celular")?.errors?.["maxLength"]
+      this.form.get("categoria")?.touched &&
+      this.form.get("categoria")?.errors?.["required"]
     );
   }
 
   public get getDataDeNascimentoInvalid(): any {
-    const idade = calculateAge(new Date(this.dataDeNascimento));
+    const idade = calculateAge(new Date(this.dataDeVencimento));
     return idade >= 18;
   }
 
-  public get getSenhaRequired(): any {
+  public get getCustoRequired(): any {
     return (
-      this.form.get("senha")?.touched &&
-      this.form.get("senha")?.errors?.["required"]
-    );
-  }
-  public get getSenhaInvalid(): any {
-    return (
-      this.form.get("senha")?.touched &&
-      this.form.get("senha")?.errors?.["minLength"]
+      this.form.get("custo")?.touched &&
+      this.form.get("custo")?.errors?.["required"]
     );
   }
 
-  public get getSenhaRepetidaInvalid(): any {
+  public get getQuantidadeRequired(): any {
     return (
-      this.form.get("senhaRepetida")?.touched &&
-      this.form.get("senhaRepetida")?.errors?.["senhaValida"]
+      this.form.get("quantidade")?.touched &&
+      this.form.get("quantidade")?.errors?.["required"]
     );
+  }
+
+  public get getUnidadeDeMedidaRequired(): any {
+    return (
+      this.form.get("unidadeDeMedida")?.touched &&
+      this.form.get("unidadeDeMedida")?.errors?.["required"]
+    );
+  }
+
+  public getDisableEditarDispensa(): boolean {
+    return this.form.valid && this.loading === false;
   }
 
   constructor(
-    private authService: AuthService,
     private formBuilder: FormBuilder,
     private nav: NavController,
+    private alertController: AlertController,
     private activatedRoute: ActivatedRoute,
-    private alertController: AlertController
-  ) {}
+    private authService: AuthService,
+    private dispensaService: DispensaService
+  ) {
+    this.familiaId = this.authService.getFamiliaId() ?? "";
+  }
 
   ngOnInit() {
-    this.user = JSON.parse(window.localStorage.getItem("user") ?? "");
-    this.setupForm(this.user);
+    this.produto = JSON.parse(
+      this.activatedRoute.snapshot.params["produto"]
+    ) as any;
 
-    this.nomeDaFamilia = this.activatedRoute.snapshot.params["nomeDaFamilia"];
-    this.email = this.user.email;
-    this.dataDeNascimento = this.user.birthDate;
+    this.tipo = [
+      {
+        id: 1,
+        name: "Açúcar e Adoçante",
+        code: "ACUCAR_ADOCANTE",
+      },
+      {
+        id: 2,
+        name: "Condimento",
+        code: "CONDIMENTO",
+      },
+      {
+        id: 3,
+        name: "Doce",
+        code: "DOCE",
+      },
+      {
+        id: 4,
+        name: "Especiaria",
+        code: "ESPECIARIA",
+      },
+      {
+        id: 5,
+        name: "Fruta",
+        code: "FRUTA",
+      },
+      {
+        id: 6,
+        name: "Grão",
+        code: "GRAO",
+      },
+      {
+        id: 7,
+        name: "Lácteo",
+        code: "LACTEO",
+      },
+      {
+        id: 8,
+        name: "Molho",
+        code: "MOLHO",
+      },
+      {
+        id: 9,
+        name: "Noz e Semente",
+        code: "NOZ_SEMESTRE",
+      },
+      {
+        id: 10,
+        name: "Massa",
+        code: "MASSA",
+      },
+      {
+        id: 11,
+        name: "Vegetal",
+        code: "VEGETAL",
+      },
+    ];
+
+    this.categoria = [
+      {
+        id: 1,
+        name: "Grãos e Cereais",
+        code: "GRAOS",
+      },
+      {
+        id: 2,
+        name: "Proteínas",
+        code: "PROTEINAS",
+      },
+      {
+        id: 3,
+        name: "Frutas e Vegetais",
+        code: "FRUTAS_VEGETAIS",
+      },
+      {
+        id: 4,
+        name: "Laticínios e Substitutos",
+        code: "LATICINIOS",
+      },
+      {
+        id: 5,
+        name: "Temperos e Condimentos",
+        code: "CONDIMENTOS",
+      },
+      {
+        id: 6,
+        name: "Óleos e Gorduras",
+        code: "OLEOS_GORDURAS",
+      },
+      {
+        id: 7,
+        name: "Bebidas e Líquidos",
+        code: "BEBIDAS",
+      },
+      {
+        id: 8,
+        name: "Produtos de Panificação",
+        code: "PANIFICACAO",
+      },
+      {
+        id: 9,
+        name: "Conserva",
+        code: "ENLATADOS_CONSERVAS",
+      },
+      {
+        id: 10,
+        name: "Doces e Sobremesas",
+        code: "DOCES_SOBREMESAS",
+      },
+      {
+        id: 11,
+        name: "Frutos do Mar",
+        code: "FRUTOS_MAR",
+      },
+      {
+        id: 12,
+        name: "Nozes e Sementes",
+        code: "NOZES_SEMENTES",
+      },
+      {
+        id: 13,
+        name: "Ingredientes Étnicos",
+        code: "ETNICOS",
+      },
+      {
+        id: 14,
+        name: "Produtos Congelados",
+        code: "CONGELADOS",
+      },
+      {
+        id: 15,
+        name: "Ingredientes Especiais",
+        code: "ESPECIAIS",
+      },
+    ];
+
+    this.unidadeDeMedida = [
+      {
+        id: 1,
+        name: "Colher de Sopa",
+        abbreviation: "colher (sopa)",
+        code: "COLHER DE SOPA",
+      },
+      {
+        id: 2,
+        name: "Colher de Chá",
+        abbreviation: "colher (chá)",
+        code: "COLHER DE CHÁ",
+      },
+      {
+        id: 3,
+        name: "Gramas",
+        abbreviation: "g",
+        code: "GRAMAS",
+      },
+      {
+        id: 4,
+        name: "Litros",
+        abbreviation: "L",
+        code: "LITROS",
+      },
+      {
+        id: 5,
+        name: "Miligramas",
+        abbreviation: "mg",
+        code: "MILIGRAMAS",
+      },
+      {
+        id: 6,
+        name: "Mililitros",
+        abbreviation: "mL",
+        code: "MILILITROS",
+      },
+      {
+        id: 7,
+        name: "Peças",
+        abbreviation: "un",
+        code: "PEÇAS",
+      },
+      {
+        id: 8,
+        name: "Quilogramas",
+        abbreviation: "kg",
+        code: "QUILOGRAMAS",
+      },
+    ];
+
+    this.selectedTipo = this.produto.type;
+    this.selectedCategoria = this.produto.category;
+    // TODO: implementar unidade de medida na api
+    this.selectedUnidadeDeMedida = "";
+    this.dataDeVencimento = this.produto.validity;
+    console.log(this.selectedTipo, this.selectedCategoria);
+
+    this.setupForm(this.produto);
   }
 
-  setupForm(perfilAtual: LoginResponse) {
+  getSelectedByName(arr: IButtonSelect[], name: string): IButtonSelect {
+    return arr.find((i) => i.name == name) as IButtonSelect;
+  }
+
+  setupForm(produto: any) {
     this.form = this.formBuilder.group({
-      nome: [perfilAtual.name, [Validators.minLength(3), Validators.required]],
-      celular: [
-        perfilAtual.cell,
-        [Validators.maxLength(15), Validators.required],
-      ],
-      senha: ["", [Validators.minLength(6), Validators.required]],
+      nome: [produto.name, [Validators.minLength(3), Validators.required]],
+      quantidade: [produto.amount, [Validators.required]],
+      custo: [produto.cost, [Validators.required]],
     });
-
-    this.form
-      .get("senhaRepetida")
-      ?.addValidators(this.senhaValidator(this.form));
   }
 
-  onClickEditarConta() {
-    const user: UsuarioResponse = JSON.parse(
-      window.localStorage.getItem("user") ?? ""
-    );
+  compareWith(o1: any, o2: any) {
+    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  }
 
-    let request = new UsuarioRequest(
-      this.form.controls["nome"].value,
-      this.dataDeNascimento,
-      this.form.controls["celular"].value,
-      this.email,
-      this.form.controls["senha"].value,
-      user.familyId,
-      user.id
-    );
+  handleChangeTipo(event: any) {
+    this.selectedTipo = event.target.value.name;
+  }
+  handleChangeCategoria(event: any) {
+    this.selectedCategoria = event.target.value.name;
+  }
+  handleChangeUnidadeDeMedida(event: any) {
+    this.selectedUnidadeDeMedida = event.target.value.name;
+  }
 
+  onClickEditarDispensa() {
     this.loading = true;
-    this.inscricao = this.authService.editarUsuario(request).subscribe({
+    if (!this.familiaId) {
+      this.alertController
+        .create({
+          header: "Erro",
+          message:
+            "Conta atual não tem familia? Favor Saia do perfil e entre novamente...",
+        })
+        .then((o) => o.present());
+
+      this.loading = false;
+      return;
+    }
+
+    const request = new ProdutoRequest(
+      this.form.controls["nome"].value,
+      this.selectedTipo ? this.selectedTipo : "",
+      this.dataDeVencimento,
+      this.selectedCategoria ? this.selectedCategoria : "",
+      this.form.controls["custo"].value,
+      this.form.controls["quantidade"].value,
+      this.familiaId,
+      this.produto.id
+    );
+
+    this.inscricao = this.dispensaService.putProductById(request).subscribe({
       next: (o) => {
-        window.localStorage.setItem("user", JSON.stringify(o));
-        this.nav.navigateForward(["auth/sucesso", "editada"]);
+        this.alertController
+          .create({
+            header: request.name,
+            message: `O Produto foi editado com sucesso!`,
+            buttons: ["Ok"],
+          })
+          .then((o) => o.present());
+
+        this.nav.navigateBack(["tabs/dispensa"]);
         this.loading = false;
       },
       error: () => (this.loading = false),
       complete: () => (this.loading = false),
     });
   }
-  onClickTirarFoto(): void {
+
+  onClickCancelar(): void {
+    this.nav.navigateBack(["tabs/dispensa"]);
+  }
+
+  onClickEscanear(): void {
     this.alertNaoImplementado();
   }
 
@@ -160,16 +401,6 @@ export class EditarDispensaComponent implements OnInit {
         buttons: ["Ok"],
       })
       .then((o) => o.present());
-  }
-
-  senhaValidator(form: FormGroup): ValidatorFn {
-    const senha = form.get("senha");
-    const senhaRepetida = form.get("senhaRepetida");
-
-    const validator = () =>
-      senha?.value === senhaRepetida?.value ? null : { senhaValida: true };
-
-    return validator;
   }
 
   ngOnDestroy(): void {

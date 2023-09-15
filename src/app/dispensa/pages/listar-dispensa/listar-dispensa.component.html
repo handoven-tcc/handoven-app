@@ -100,12 +100,21 @@
           <ion-item>
             <div class="flex w-full justify-content-between align-items-center">
               <a (click)="onClickVisualizarProduto(item)">
-                <ion-label class="text-900" slot="start">{{
-                  item.name
-                }}</ion-label>
+                <span
+                  class="w-full flex align-items-center justify-content-start gap-2">
+                  <ion-label
+                    class="flex align-items-center justify-content-start gap-2"
+                    *ngIf="item.expiryProduct"
+                    ><div class="bolinha-vermelha"></div>
+                    (Vencido)</ion-label
+                  >
+                  <ion-label [ngClass]="{ 'text-900': !item.expiryProduct }">{{
+                    item.name
+                  }}</ion-label>
+                </span>
               </a>
               <div id="acoes" slot="end">
-                <a (click)="onClickModalEditarProduto(item.id)">
+                <a (click)="onClickModalEditarProduto(item)">
                   <ion-icon
                     color="warning"
                     class="text-2xl"

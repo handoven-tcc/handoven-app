@@ -116,7 +116,7 @@ export class AdicionarDispensaComponent implements OnInit {
     private authService: AuthService,
     private dispensaService: DispensaService
   ) {
-    this.familiaId = this.authService.getFamiliaId();
+    this.familiaId = this.authService.getFamiliaId() ?? "";
   }
 
   ngOnInit() {

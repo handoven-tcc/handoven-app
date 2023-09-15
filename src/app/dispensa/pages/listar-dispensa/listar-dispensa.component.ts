@@ -79,12 +79,15 @@ export class ListarDispensaComponent implements OnInit {
     this.nav.navigateForward(["tabs/dispensa/adicionar-produto"]);
   }
 
-  onClickModalEditarProduto(id: string) {
+  onClickModalEditarProduto(item: ProdutoResponse) {
     if (this.loading == true) {
       return;
     }
 
-    this.alertNaoImplementado();
+    this.nav.navigateForward([
+      "tabs/dispensa/editar-produto",
+      JSON.stringify(item),
+    ]);
   }
 
   onClickModalExcluirProduto(item: ProdutoResponse) {

@@ -4,6 +4,7 @@ import { DispensaComponent } from "./dispensa.component";
 import { AuthGuard } from "../auth/guard/auth.guard";
 import { ListarDispensaComponent } from "./pages/listar-dispensa/listar-dispensa.component";
 import { AdicionarDispensaComponent } from "./pages/adicionar-dispensa/adicionar-dispensa.component";
+import { EditarDispensaComponent } from "./pages/editar-dispensa/editar-dispensa.component";
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     children: [
       { path: "", component: ListarDispensaComponent },
       { path: "adicionar-produto", component: AdicionarDispensaComponent },
-      // { path: "editar/:dispensaId", component: EditarDispensaComponent },
+      { path: "editar-produto/:produto", component: EditarDispensaComponent },
     ],
     canActivate: [AuthGuard],
   },
