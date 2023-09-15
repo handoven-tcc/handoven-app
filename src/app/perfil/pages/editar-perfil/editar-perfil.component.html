@@ -86,9 +86,18 @@
         >
       </div>
 
-      <div class="px-4 mb-3 w-full">
+      <div class="px-4 mb-3 w-full grid justify-content-between flex-row">
         <ion-button
-          class="w-full mt-3 text-lg"
+          class="col-6 p-1 mx-0 mt-3 text-lg"
+          color="light"
+          fill="solid"
+          expand="block"
+          (click)="onClickCancelar()">
+          Cancelar
+        </ion-button>
+
+        <ion-button
+          class="col-6 p-1 mx-0 mt-3 text-lg"
           color="danger"
           fill="solid"
           [disabled]="!getDisableEditarIntegrante()"
@@ -98,7 +107,7 @@
           <div
             *ngIf="loading"
             class="col-12 flex align-items-center justify-content-center text-900 flex-column">
-            <ion-infinite-scroll class="w-1">
+            <ion-infinite-scroll style="width: 20px">
               <div class="infinite-scroll-content">
                 <svg
                   version="1.1"

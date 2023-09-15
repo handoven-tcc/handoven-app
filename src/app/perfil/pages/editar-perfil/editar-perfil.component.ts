@@ -149,6 +149,10 @@ export class EditarPerfilComponent implements OnInit {
     });
   }
 
+  onClickCancelar(): void {
+    this.nav.navigateBack(["tabs/perfil"]);
+  }
+
   onClickTirarFoto(): void {
     this.alertNaoImplementado();
   }
