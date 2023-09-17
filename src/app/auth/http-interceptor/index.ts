@@ -3,6 +3,7 @@ import { AuthInterceptor } from "./auth-interceptor";
 import { InternetInterceptor } from "./internet-interceptor";
 import { ServerInterceptor } from "./server-interceptor";
 import { ClientInterceptor } from "./client-interceptor";
+import { DEFAULT_TIMEOUT, TimeoutInterceptor } from "./timeout-interceptor";
 
 export const httpInterceptorProviders = [
   {
@@ -25,4 +26,9 @@ export const httpInterceptorProviders = [
     useClass: ClientInterceptor,
     multi: true,
   },
+  { provide: HTTP_INTERCEPTORS,
+    useClass: TimeoutInterceptor, 
+    multi: true 
+  },
+  { provide: DEFAULT_TIMEOUT, useValue: 60000 },
 ];

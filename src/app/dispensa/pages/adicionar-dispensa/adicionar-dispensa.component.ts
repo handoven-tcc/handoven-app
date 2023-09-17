@@ -17,6 +17,7 @@ import {
 import { DispensaService } from "../../services";
 import { ProdutoRequest } from "../../models";
 import { AuthService } from "../../../auth/services";
+import { BarcodeScanner } from "@awesome-cordova-plugins/barcode-scanner";
 
 export interface IButtonSelect {
   id: number;
@@ -380,7 +381,41 @@ export class AdicionarDispensaComponent implements OnInit {
   }
 
   onClickEscanear(): void {
-    this.alertNaoImplementado();
+    // BarcodeScanner.scan()
+      // .then((barcodeData) => {
+        this.dispensaService.getBarcodeInfo({
+          cancelled:false,
+          format: "EAN_13",
+          text: '7896523202204'
+        }).subscribe({
+          next: (res) => {
+            this.alertController
+              .create({
+                header: "Escaneou",
+                message: JSON.stringify(res),
+              })
+              .then((o) => o.present());
+          },
+          error: (err) => {
+            this.alertController
+              .create({
+                header: "erro! api tá uma porra :( ",
+                message: JSON.stringify(err),
+              })
+              .then((o) => o.present());
+              console.log(err);
+              
+          },
+        });
+      // })
+      // .catch((err) => {
+        // this.alertController
+          // .create({
+            // header: "Eroo!",
+            // message: JSON.stringify(err),
+          // })
+          // .then((o) => o.present());
+      // });
   }
 
   alertNaoImplementado(): void {

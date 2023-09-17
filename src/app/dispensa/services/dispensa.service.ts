@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
 import { Observable, map, of } from "rxjs";
@@ -11,6 +11,7 @@ import {
 } from "../models";
 import { AuthService } from "../../auth/services";
 import Products from "../../../assets/mock/products.json";
+import {BarcodeScanResult} from "@awesome-cordova-plugins/barcode-scanner";
 
 @Injectable({
   providedIn: "root",
@@ -123,5 +124,16 @@ export class DispensaService {
         },
       })
       .pipe(map((res: any) => res));
+  }
+
+  getBarcodeInfo(barcodeResult: BarcodeScanResult): Observable<any>{
+    if(barcodeResult.cancelled) {
+      return of();
+    }
+
+    return this.http.get(`https://barcode.monster/api/${barcodeResult.text}`, {
+      headers: new HttpHeaders({ timeout: `${60000}`}),
+      
+    }).pipe(map((res: any) => res));
   }
 }

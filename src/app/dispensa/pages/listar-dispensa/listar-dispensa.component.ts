@@ -2,8 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import { DeletarProdutoRequest, ProdutoResponse } from "../../models";
 import { DispensaService } from "../../services";
-import { AlertController, NavController } from "@ionic/angular";
+import {
+  AlertController,
+  NavController,
+  ModalController,
+  IonicSafeString,
+} from "@ionic/angular";
 import { AuthService } from "../../../auth/services";
+import { DetalhesItemDispensaComponent } from "../detalhes-item-dispensa/detalhes-item-dispensa.component";
 
 @Component({
   selector: "app-listar-dispensa",
@@ -17,6 +23,7 @@ export class ListarDispensaComponent implements OnInit {
 
   constructor(
     private alertController: AlertController,
+    private modalController: ModalController,
     private nav: NavController,
     private authService: AuthService,
     private dispensaService: DispensaService
@@ -170,9 +177,12 @@ export class ListarDispensaComponent implements OnInit {
   onClickVisualizarProduto(item: ProdutoResponse) {
     this.alertController
       .create({
-        header: "Ainda incompleto...",
-        message: JSON.stringify(item),
+        header: item.name,
+        message: new IonicSafeString(`
+        
+      `),
         buttons: ["Ok"],
+
       })
       .then((o) => o.present());
   }

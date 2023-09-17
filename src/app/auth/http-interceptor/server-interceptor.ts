@@ -29,15 +29,15 @@ export class ServerInterceptor implements HttpInterceptor {
             .then((o) => o.present());
         }
 
-        if (!error.status) {
-          this.alertController
-            .create({
-              header: "Network Error!",
-              message:
-                "Conexão com o servidor foi recusada, tente novamente mais tarde.",
-            })
-            .then((o) => o.present());
-        }
+        // if (!error.status) {
+        //   this.alertController
+        //     .create({
+        //       header: "Network Error!",
+        //       message:
+        //         "Conexão com o servidor foi recusada, tente novamente mais tarde.",
+        //     })
+        //     .then((o) => o.present());
+        // }
 
         return throwError(error);
       })
