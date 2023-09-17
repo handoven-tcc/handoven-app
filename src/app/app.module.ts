@@ -18,7 +18,9 @@ import { Network } from "@awesome-cordova-plugins/network/ngx";
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({
+      innerHTMLTemplatesEnabled: true
+    }),
     IonicStorageModule.forRoot(),
   ],
   providers: [
