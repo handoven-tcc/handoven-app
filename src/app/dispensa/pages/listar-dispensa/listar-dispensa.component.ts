@@ -180,7 +180,7 @@ export class ListarDispensaComponent implements OnInit {
         header: item.name,
         message: new IonicSafeString(`
 <div class="contem-tudo">
-
+   sla
 </div>
       `),
         buttons: ["Ok"],
