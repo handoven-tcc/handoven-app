@@ -179,7 +179,9 @@ export class ListarDispensaComponent implements OnInit {
       .create({
         header: item.name,
         message: new IonicSafeString(`
-        
+<div class="contem-tudo">
+
+</div>
       `),
         buttons: ["Ok"],
 
