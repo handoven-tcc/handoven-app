@@ -9,7 +9,6 @@ import {
   IonicSafeString,
 } from "@ionic/angular";
 import { AuthService } from "../../../auth/services";
-import { DetalhesItemDispensaComponent } from "../detalhes-item-dispensa/detalhes-item-dispensa.component";
 
 @Component({
   selector: "app-listar-dispensa",
@@ -45,12 +44,12 @@ export class ListarDispensaComponent implements OnInit {
     this.getTodosProdutos();
   }
 
-  ionViewWillEnter() {
+  ionViewWillEnter(): void{
     this.getTodosProdutos();
   }
 
-  getTodosProdutos() {
-    if (this.loading === true) {
+  getTodosProdutos(): void{
+    if (this.loading) {
       return;
     }
 
@@ -66,7 +65,7 @@ export class ListarDispensaComponent implements OnInit {
   }
 
   onClickAdicionarDispensa(): void {
-    if (this.loading == true) {
+    if (this.loading) {
       return;
     }
 
@@ -86,8 +85,8 @@ export class ListarDispensaComponent implements OnInit {
     this.nav.navigateForward(["tabs/dispensa/adicionar-produto"]);
   }
 
-  onClickModalEditarProduto(item: ProdutoResponse) {
-    if (this.loading == true) {
+  onClickModalEditarProduto(item: ProdutoResponse): void{
+    if (this.loading) {
       return;
     }
 
@@ -97,8 +96,8 @@ export class ListarDispensaComponent implements OnInit {
     ]);
   }
 
-  onClickModalExcluirProduto(item: ProdutoResponse) {
-    if (this.loading == true) {
+  onClickModalExcluirProduto(item: ProdutoResponse): void {
+    if (this.loading) {
       return;
     }
 
@@ -122,8 +121,8 @@ export class ListarDispensaComponent implements OnInit {
       .then((o) => o.present());
   }
 
-  excluirProduto(item: ProdutoResponse) {
-    if (this.loading == true) {
+  excluirProduto(item: ProdutoResponse): void{
+    if (this.loading) {
       return;
     }
 
@@ -132,7 +131,7 @@ export class ListarDispensaComponent implements OnInit {
     this.inscricao = this.dispensaService
       .deletarProdutoById(request)
       .subscribe({
-        next: (o) => {
+        next: () => {
           this.alertController
             .create({
               header: item.name,
@@ -151,8 +150,8 @@ export class ListarDispensaComponent implements OnInit {
       });
   }
 
-  handleRefresh(event: any) {
-    if (this.loading === true) {
+  handleRefresh(event: any): void {
+    if (this.loading) {
       return;
     }
 
@@ -174,27 +173,55 @@ export class ListarDispensaComponent implements OnInit {
     });
   }
 
-  onClickVisualizarProduto(item: ProdutoResponse) {
+  formatarData(value: string): string {
+    const data: Date = new Date(value);
+    const dia: number = data.getUTCDate();
+    const mes: number = data.getUTCMonth() + 1;
+    const ano: number = data.getUTCFullYear();
+
+    return `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano}`;
+  }
+
+  onClickVisualizarProduto(item: ProdutoResponse): void {
     this.alertController
       .create({
         header: item.name,
         message: new IonicSafeString(`
-<div class="contem-tudo">
-   sla ...
+<div>
+   <div class="flex align-items-center gap-2 justify-content-start pb-2">
+    <label class="text-900 text-sm px-1 border-round" style="background-color: lightblue">${item.category}</label>
+    <label class="text-900 text-sm px-1 border-round" style="background-color: bisque">${item.type}</label>
+  </div>
+
+<div class="grid">
+  <div class="col-7">
+    <div class="text-900 text-sm">Valor:</div>
+    <label class="text-900 text-xl">R$ ${item.cost.replace(".", ",")}</label>
+  </div>
+
+  <div class="col-5">
+    <div class="text-900 text-sm">Quantidade:</div>
+    <label class="text-900 text-xl">${item.amount}</label>
+  </div>
+
+  <div class="col-7">
+    <div class="text-900 text-sm">Data de Validade:</div>
+    <label
+      class="text-900 text-xl px-1 border-round"
+      ${item.expiryProduct ? "style=\"background-color: #FFCED6\"" : "style=\"background-color: #BAF6B6\""}
+    >${this.formatarData(item.validity)}</label>
+  </div>
+
+  <div class="col-5">
+    <div class="text-900 text-sm">&nbsp;</div>
+    <label class="text-red-500">${item.expiryProduct ? "Vencido" : ""}</label>
+  </div>
+</div>
+
 </div>
       `),
         buttons: ["Ok"],
 
-      })
-      .then((o) => o.present());
-  }
-
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
       })
       .then((o) => o.present());
   }
