@@ -9,7 +9,6 @@ import { ComponentsModule } from "../../../temp/src/lib/components/components.mo
 import { ListarDispensaComponent } from "./pages/listar-dispensa/listar-dispensa.component";
 import { AdicionarDispensaComponent } from "./pages/adicionar-dispensa/adicionar-dispensa.component";
 import { EditarDispensaComponent } from "./pages/editar-dispensa/editar-dispensa.component";
-import { DetalhesItemDispensaComponent } from "./pages/detalhes-item-dispensa/detalhes-item-dispensa.component";
 
 @NgModule({
   imports: [
@@ -25,7 +24,6 @@ import { DetalhesItemDispensaComponent } from "./pages/detalhes-item-dispensa/de
     ListarDispensaComponent,
     AdicionarDispensaComponent,
     EditarDispensaComponent,
-    DetalhesItemDispensaComponent,
   ],
 })
 export class DispensaPageModule {}
