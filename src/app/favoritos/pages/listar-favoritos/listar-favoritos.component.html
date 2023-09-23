@@ -93,21 +93,22 @@
 
       <ng-container *ngIf="hasProdutos">
         <ion-list *ngFor="let item of favoritos">
-          <ion-item>
-            <div class="flex w-full justify-content-between align-items-center">
-              <a (click)="onClickVisualizarFavorito(item)">
-                <span
-                  class="w-full flex align-items-center justify-content-start gap-2">
-                  <ion-label class="text-900">
-                    {{ item.name }}
-                  </ion-label>
-                </span>
+          <ion-item class="item-favoritos" >
+            <img
+              (click)="onClickVisualizarFavorito(item)"
+              class="mr-2"
+              alt="imagem da receita {{ item.name }}"
+              src="../../../../assets/mock/platesImages/receita-massa.svg"
+            />
+            <div class="h-full flex flex-column ion-align-items-start ion-justify-content-between">
+              <ion-label class="ion-text-wrap text-900">
+                {{ item.name }}
+              </ion-label>
+              <a (click)="onClickModalRemoverFavorito(item)" class="mb-3">
+                <ion-label class="text-500 text-sm">
+                  Remover dos favoritos
+                </ion-label>
               </a>
-              <div slot="end">
-                <a (click)="onClickModalRemoverFavorito(item)">
-                  <ion-icon class="text-2xl" name="trash-outline"></ion-icon>
-                </a>
-              </div>
             </div>
           </ion-item>
         </ion-list>
