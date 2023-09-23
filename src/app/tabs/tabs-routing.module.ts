@@ -26,7 +26,7 @@ const routes: Routes = [
         path: "favoritos",
         loadChildren: () =>
           import("../favoritos/favoritos.module").then(
-            (m) => m.FavoritosPageModule
+            (m) => m.FavoritosModule
           ),
       },
       {

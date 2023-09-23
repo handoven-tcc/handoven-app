@@ -1,6 +1,7 @@
 [
   {
-    "nome": "Bolo de Chocolate",
+    "name": "Bolo de Chocolate",
+    "favorited": true,
     "secao": [
       [
         {
@@ -37,7 +38,8 @@
     ]
   },
   {
-    "nome": "Salada de Frutas",
+    "name": "Salada de Frutas",
+    "favorited": false,
     "secao": [
       [
         {
@@ -70,7 +72,8 @@
     ]
   },
   {
-    "nome": "Sopa de Legumes",
+    "name": "Sopa de Legumes",
+    "favorited": false,
     "secao": [
       [
         {
@@ -110,7 +113,8 @@
     ]
   },
   {
-    "nome": "Omelete de Queijo",
+    "name": "Omelete de Queijo",
+    "favorited": false,
     "secao": [
       [
         {
@@ -145,7 +149,8 @@
     ]
   },
   {
-    "nome": "Yakisoba",
+    "name": "Yakisoba",
+    "favorited": false,
     "secao": [
       [
         {
@@ -185,7 +190,8 @@
     ]
   },
   {
-    "nome": "Feijoada",
+    "name": "Feijoada",
+    "favorited": false,
     "secao": [
       [
         {
@@ -226,7 +232,8 @@
     ]
   },
   {
-    "nome": "Risoto de Cogumelos",
+    "name": "Risoto de Cogumelos",
+    "favorited": false,
     "secao": [
       [
         {
@@ -270,7 +277,8 @@
     ]
   },
   {
-    "nome": "Frango Assado com Ervas",
+    "name": "Frango Assado com Ervas",
+    "favorited": false,
     "secao": [
       [
         {
@@ -311,7 +319,8 @@
     ]
   },
   {
-    "nome": "Espaguete à Carbonara",
+    "name": "Espaguete à Carbonara",
+    "favorited": false,
     "secao": [
       [
         {
@@ -352,7 +361,8 @@
     ]
   },
   {
-    "nome": "Guacamole",
+    "name": "Guacamole",
+    "favorited": false,
     "secao": [
       [
         {
@@ -394,7 +404,8 @@
     ]
   },
   {
-    "nome": "Lasanha de Carne",
+    "name": "Lasanha de Carne",
+    "favorited": false,
     "secao": [
       [
         {
@@ -438,7 +449,8 @@
     ]
   },
   {
-    "nome": "Salmão Grelhado com Molho de Limão",
+    "name": "Salmão Grelhado com Molho de Limão",
+    "favorited": true,
     "secao": [
       [
         {
@@ -478,7 +490,8 @@
     ]
   },
   {
-    "nome": "Pizza Margherita",
+    "name": "Pizza Margherita",
+    "favorited": false,
     "secao": [
       [
         {
@@ -520,7 +533,8 @@
     ]
   },
   {
-    "nome": "Smoothie de Banana e Morango",
+    "name": "Smoothie de Banana e Morango",
+    "favorited": false,
     "secao": [
       [
         {
@@ -556,7 +570,8 @@
     ]
   },
   {
-    "nome": "Torta de Maçã",
+    "name": "Torta de Maçã",
+    "favorited": true,
     "secao": [
       [
         {
@@ -597,7 +612,8 @@
     ]
   },
   {
-    "nome": "Coxinha de Frango",
+    "name": "Coxinha de Frango",
+    "favorited": false,
     "secao": [
       [
         {
@@ -640,7 +656,8 @@
     ]
   },
   {
-    "nome": "Empadão de Frango",
+    "name": "Empadão de Frango",
+    "favorited": false,
     "secao": [
       [
         {
@@ -682,7 +699,8 @@
     ]
   },
   {
-    "nome": "Sanduíche de Frango Grelhado",
+    "name": "Sanduíche de Frango Grelhado",
+    "favorited": false,
     "secao": [
       [
         {
@@ -724,7 +742,8 @@
     ]
   },
   {
-    "nome": "Wrap de Vegetais com Hummus",
+    "name": "Wrap de Vegetais com Hummus",
+    "favorited": false,
     "secao": [
       [
         {

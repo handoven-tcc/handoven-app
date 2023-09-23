@@ -2,9 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-favoritos",
-  templateUrl: "favoritos.page.html",
-  styleUrls: ["favoritos.page.scss"],
+  template: "<ion-router-outlet></ion-router-outlet>",
 })
-export class FavoritosPage {
+export class FavoritosComponent {
   constructor() {}
 }

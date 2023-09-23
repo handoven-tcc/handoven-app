@@ -1,11 +1,11 @@
 import { IonicModule } from "@ionic/angular";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-import { FavoritosPage } from "./favoritos.page";
-
-import { FavoritosPageRoutingModule } from "./favoritos-routing.module";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FavoritosComponent } from "./favoritos.component";
+import { FavoritosRoutingModule } from "./favoritos-routing.module";
 import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
+import { ListarFavoritosComponent } from "./pages/listar-favoritos/listar-favoritos.component";
 
 @NgModule({
   imports: [
@@ -13,8 +13,12 @@ import { ComponentsModule } from "../../../temp/src/lib/components/components.mo
     ComponentsModule,
     CommonModule,
     FormsModule,
-    FavoritosPageRoutingModule,
+    ReactiveFormsModule,
+    FavoritosRoutingModule,
   ],
-  declarations: [FavoritosPage],
+  declarations: [
+    FavoritosComponent,
+    ListarFavoritosComponent
+  ],
 })
-export class FavoritosPageModule {}
+export class FavoritosModule {}
