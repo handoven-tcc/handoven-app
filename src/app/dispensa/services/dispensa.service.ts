@@ -11,7 +11,7 @@ import {
 } from "../models";
 import { AuthService } from "../../auth/services";
 import Products from "../../../assets/mock/products.json";
-import {BarcodeScanResult} from "@awesome-cordova-plugins/barcode-scanner";
+import { BarcodeScanResult } from "@awesome-cordova-plugins/barcode-scanner";
 
 @Injectable({
   providedIn: "root",
@@ -26,7 +26,7 @@ export class DispensaService {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService // private storage: StorageService,
+    private authService: AuthService, // private storage: StorageService,
   ) {
     this.familiaId = this.authService.getFamiliaId() ?? "";
     this.usuarioId = this.authService.getUsuarioId() ?? "";
@@ -63,7 +63,7 @@ export class DispensaService {
   }
 
   getProductsByName(
-    request: GetProdutoNomeRequest
+    request: GetProdutoNomeRequest,
   ): Observable<ProdutoResponse[]> {
     if (!this.authService.hasUsuario()) {
       return of([] as ProdutoResponse[]);
@@ -126,14 +126,14 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  getBarcodeInfo(barcodeResult: BarcodeScanResult): Observable<any>{
-    if(barcodeResult.cancelled) {
+  getBarcodeInfo(barcodeResult: BarcodeScanResult): Observable<any> {
+    if (barcodeResult.cancelled) {
       return of();
     }
 
     return this.http.get(`https://barcode.monster/api/${barcodeResult.text}`, {
-      headers: new HttpHeaders({ timeout: `${60000}`}),
-      
+      headers: new HttpHeaders({ timeout: `${60000}` }),
+
     }).pipe(map((res: any) => res));
   }
 }
