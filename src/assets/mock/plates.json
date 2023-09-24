@@ -6,34 +6,34 @@
     "section": {
       "ingredients": [
         {
-          "name": "Farinha de Trigo",
-          "quantity": "2 xícaras",
-          "category":"",
-          "notes": "peneirada"
+          "ingredients_name": "Farinha de Trigo",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 7,
+          "ingredients_notes": "peneirada"
         },
         {
-          "name": "Açúcar",
-          "quantity": "1 ½ xícara",
-          "category": ""
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "1 ½ xícara",
+          "ingredients_category": 1
         },
         {
-          "name": "Cacau em Pó",
-          "quantity": "½ xícara",
-          "category": ""
+          "ingredients_name": "Cacau em Pó",
+          "ingredients_quantity": "½ xícara",
+          "ingredients_category": 4
         },
         {
-          "name": "Ovos",
-          "quantity": "4 unidades",
-          "category": "",
-          "notes": "grandes"
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 19,
+          "ingredients_notes": "grandes"
         },
         {
-          "name": "Leite",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Leite",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 180°C.",
         "2. Misture a farinha de trigo, o cacau em pó e o açúcar em uma tigela.",
         "3. Adicione os ovos e o leite à mistura seca e misture bem.",
@@ -53,34 +53,34 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa para Torta",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "pronta ou caseira"
+          "ingredients_name": "Massa para Torta",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 15,
+          "ingredients_notes": "pronta ou caseira"
         },
         {
-          "name": "Maçãs",
-          "quantity": "4 unidades",
-          "category": "",
-          "notes": "descascadas e fatiadas"
+          "ingredients_name": "Maçãs",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 8,
+          "ingredients_notes": "descascadas e fatiadas"
         },
         {
-          "name": "Açúcar",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 1
         },
         {
-          "name": "Canela em Pó",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Canela em Pó",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "1 limão",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "1 limão",
+          "ingredients_category": 8
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno conforme as instruções da massa para torta.",
         "2. Em uma tigela, misture as maçãs fatiadas com o suco de limão, o açúcar e a canela.",
         "3. Abra a massa para torta em uma forma e coloque as maçãs por cima.",
@@ -101,37 +101,37 @@
     "section": {
       "ingredients": [
         {
-          "name": "Farinha de Trigo",
-          "quantity": "1 1/2 xícara",
-          "category": ""
+          "ingredients_name": "Farinha de Trigo",
+          "ingredients_quantity": "1 1/2 xícara",
+          "ingredients_category": 7
         },
         {
-          "name": "Açúcar",
-          "quantity": "1/4 xícara",
-          "category": ""
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "1/4 xícara",
+          "ingredients_category": 1
         },
         {
-          "name": "Manteiga Gelada",
-          "quantity": "1/2 xícara (cortada em cubos)",
-          "category": ""
+          "ingredients_name": "Manteiga Gelada",
+          "ingredients_quantity": "1/2 xícara (cortada em cubos)",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal",
-          "quantity": "1 pitada",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "1 pitada",
+          "ingredients_category": 20
         },
         {
-          "name": "Ovo",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Ovo",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 19
         },
         {
-          "name": "Água Gelada",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Água Gelada",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 14
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela grande, combine a farinha de trigo, o açúcar e uma pitada de sal.",
         "2. Adicione a manteiga gelada cortada em cubos à mistura de farinha. Use um cortador de massa ou as mãos para esfarelar a manteiga na farinha até obter uma textura de migalhas grossas.",
         "3. Em uma tigela pequena, bata o ovo com uma colher de sopa de água gelada.",
@@ -157,32 +157,32 @@
     "section": {
       "ingredients": [
         {
-          "name": "Morangos Frescos",
-          "quantity": "2 xícaras (lavados e sem o cabo verde)",
-          "category": ""
+          "ingredients_name": "Morangos Frescos",
+          "ingredients_quantity": "2 xícaras (lavados e sem o cabo verde)",
+          "ingredients_category": 8
         },
         {
-          "name": "Açúcar",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 1
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 8
         },
         {
-          "name": "Creme de Leite Fresco",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Creme de Leite Fresco",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 12
         },
         {
-          "name": "Essência de Baunilha",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Essência de Baunilha",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Coloque os morangos limpos em um liquidificador e adicione o açúcar e o suco de limão. Bata até obter um purê suave.",
         "2. Em uma tigela separada, bata o creme de leite fresco até que comece a engrossar e formar picos macios.",
         "3. Adicione o purê de morango à tigela com o creme de leite batido e adicione também a essência de baunilha. Misture delicadamente até que tudo esteja bem incorporado.",
@@ -203,47 +203,47 @@
     "section": {
       "ingredients": [
         {
-          "name": "Chocolate Meio Amargo",
-          "quantity": "200g",
-          "category": ""
+          "ingredients_name": "Chocolate Meio Amargo",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 4
         },
         {
-          "name": "Ovos",
-          "quantity": "3 unidades",
-          "category": ""
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "3 unidades",
+          "ingredients_category": 19
         },
         {
-          "name": "Açúcar",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 1
         },
         {
-          "name": "Manteiga",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Extrato de Baunilha",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Extrato de Baunilha",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Sal",
-          "quantity": "Uma pitada",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "Uma pitada",
+          "ingredients_category": 20
         },
         {
-          "name": "Chantilly",
-          "quantity": "Para decorar (opcional)",
-          "category": ""
+          "ingredients_name": "Chantilly",
+          "ingredients_quantity": "Para decorar (opcional)",
+          "ingredients_category": 12
         },
         {
-          "name": "Raspas de Chocolate",
-          "quantity": "Para decorar (opcional)",
-          "category": ""
+          "ingredients_name": "Raspas de Chocolate",
+          "ingredients_quantity": "Para decorar (opcional)",
+          "ingredients_category": 4
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Derreta o chocolate meio amargo e a manteiga em banho-maria ou no micro-ondas em intervalos de 30 segundos, mexendo até obter uma mistura homogênea. Deixe esfriar um pouco.",
         "2. Separe as gemas das claras dos ovos. Reserve as claras.",
         "3. Misture as gemas com o açúcar e a baunilha, batendo bem até obter uma mistura cremosa.",
@@ -267,31 +267,31 @@
     "section": {
       "ingredients": [
         {
-          "name": "Morango",
-          "quantity": "1 xícara",
-          "category": "",
-          "notes": "cortado"
+          "ingredients_name": "Morango",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 8,
+          "ingredients_notes": "cortado"
         },
         {
-          "name": "Banana",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "cortadas"
+          "ingredients_name": "Banana",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 8,
+          "ingredients_notes": "cortadas"
         },
         {
-          "name": "Maçã",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortada"
+          "ingredients_name": "Maçã",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 8,
+          "ingredients_notes": "cortada"
         },
         {
-          "name": "Abacaxi",
-          "quantity": "1 xícara",
-          "category": "",
-          "notes": "cubos"
+          "ingredients_name": "Abacaxi",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 8,
+          "ingredients_notes": "cubos"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Lave e corte todas as frutas em pedaços.",
         "2. Misture as frutas em uma tigela grande.",
         "3. Sirva a salada de frutas gelada."
@@ -309,72 +309,72 @@
     "section": {
       "ingredients": [
         {
-          "name": "Quinoa",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Quinoa",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 11
         },
         {
-          "name": "Água",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Água",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 14
         },
         {
-          "name": "Abacate",
-          "quantity": "1 unidade (maduro, cortado em cubos)",
-          "category": ""
+          "ingredients_name": "Abacate",
+          "ingredients_quantity": "1 unidade (maduro, cortado em cubos)",
+          "ingredients_category": 8
         },
         {
-          "name": "Tomate Cereja",
-          "quantity": "1/2 xícara (cortados ao meio)",
-          "category": ""
+          "ingredients_name": "Tomate Cereja",
+          "ingredients_quantity": "1/2 xícara (cortados ao meio)",
+          "ingredients_category": 13
         },
         {
-          "name": "Pepino",
-          "quantity": "1/2 xícara (cortado em cubos)",
-          "category": ""
+          "ingredients_name": "Pepino",
+          "ingredients_quantity": "1/2 xícara (cortado em cubos)",
+          "ingredients_category": 13
         },
         {
-          "name": "Cebola Roxa",
-          "quantity": "1/4 de xícara (picada finamente)",
-          "category": ""
+          "ingredients_name": "Cebola Roxa",
+          "ingredients_quantity": "1/4 de xícara (picada finamente)",
+          "ingredients_category": 21
         },
         {
-          "name": "Coentro Fresco",
-          "quantity": "1/4 de xícara (picado)",
-          "category": ""
+          "ingredients_name": "Coentro Fresco",
+          "ingredients_quantity": "1/4 de xícara (picado)",
+          "ingredients_category": 20
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "Suco de 1 limão",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "Suco de 1 limão",
+          "ingredients_category": 8
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Chantilly",
-          "quantity": "Para decorar (opcional)",
-          "category": ""
+          "ingredients_name": "Chantilly",
+          "ingredients_quantity": "Para decorar (opcional)",
+          "ingredients_category": 12
         },
         {
-          "name": "Raspas de Chocolate",
-          "quantity": "Para decorar (opcional)",
-          "category": ""
+          "ingredients_name": "Raspas de Chocolate",
+          "ingredients_quantity": "Para decorar (opcional)",
+          "ingredients_category": 4
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Enxágue a quinoa sob água corrente em uma peneira fina.",
         "2. Em uma panela, leve a quinoa e a água para ferver. Reduza o fogo, tampe e cozinhe por cerca de 15 minutos, ou até que a quinoa esteja cozida e toda a água tenha sido absorvida. Deixe esfriar.",
         "3. Em uma tigela grande, combine a quinoa cozida, o abacate, o tomate cereja, o pepino, a cebola roxa e o coentro.",
@@ -395,62 +395,62 @@
     "section": {
       "ingredients": [
         {
-          "name": "Peitos de Frango",
-          "quantity": "2 unidades (cozidos e desfiados)",
-          "category": ""
+          "ingredients_name": "Peitos de Frango",
+          "ingredients_quantity": "2 unidades (cozidos e desfiados)",
+          "ingredients_category": 3
         },
         {
-          "name": "Mangas",
-          "quantity": "2 unidades (maduras, descascadas e cortadas em cubos)",
-          "category": ""
+          "ingredients_name": "Mangas",
+          "ingredients_quantity": "2 unidades (maduras, descascadas e cortadas em cubos)",
+          "ingredients_category": 8
         },
         {
-          "name": "Cebola Roxa",
-          "quantity": "1/2 unidade (picada)",
-          "category": ""
+          "ingredients_name": "Cebola Roxa",
+          "ingredients_quantity": "1/2 unidade (picada)",
+          "ingredients_category": 21
         },
         {
-          "name": "Pimentão Vermelho",
-          "quantity": "1 unidade (cortado em tiras finas)",
-          "category": ""
+          "ingredients_name": "Pimentão Vermelho",
+          "ingredients_quantity": "1 unidade (cortado em tiras finas)",
+          "ingredients_category": 13
         },
         {
-          "name": "Folhas de Coentro Fresco",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Folhas de Coentro Fresco",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 20
         },
         {
-          "name": "Amendoim Torrado",
-          "quantity": "1/2 xícara (picado)",
-          "category": ""
+          "ingredients_name": "Amendoim Torrado",
+          "ingredients_quantity": "1/2 xícara (picado)",
+          "ingredients_category": 11
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "Suco de 2 limões",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "Suco de 2 limões",
+          "ingredients_category": 8
         },
         {
-          "name": "Molho de Peixe",
-          "quantity": "2 colheres de sopa (opcional)",
-          "category": ""
+          "ingredients_name": "Molho de Peixe",
+          "ingredients_quantity": "2 colheres de sopa (opcional)",
+          "ingredients_category": 16
         },
         {
-          "name": "Óleo de Gergelim",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Óleo de Gergelim",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Pimenta Vermelha ou Pimenta-Caiena",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta Vermelha ou Pimenta-Caiena",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela grande, combine o frango desfiado, os cubos de manga, a cebola roxa picada, as tiras de pimentão vermelho e as folhas de coentro fresco.",
         "2. Em uma tigela pequena, faça o molho misturando o suco de limão, o molho de peixe (opcional), o óleo de gergelim, a pimenta vermelha ou pimenta-caiena e o sal. Misture bem.",
         "3. Despeje o molho sobre a salada e misture delicadamente para garantir que todos os ingredientes estejam bem revestidos.",
@@ -470,62 +470,62 @@
     "section": {
       "ingredients": [
         {
-          "name": "Camarões",
-          "quantity": "250g (grandes, limpos e cozidos)",
-          "category": ""
+          "ingredients_name": "Camarões",
+          "ingredients_quantity": "250g (grandes, limpos e cozidos)",
+          "ingredients_category": 18
         },
         {
-          "name": "Rúcula Fresca",
-          "quantity": "200g",
-          "category": ""
+          "ingredients_name": "Rúcula Fresca",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 22
         },
         {
-          "name": "Tomates-Cereja",
-          "quantity": "1 xícara (cortados ao meio)",
-          "category": ""
+          "ingredients_name": "Tomates-Cereja",
+          "ingredients_quantity": "1 xícara (cortados ao meio)",
+          "ingredients_category": 13
         },
         {
-          "name": "Abacate Maduro",
-          "quantity": "1/2 xícara (cortado em cubos)",
-          "category": ""
+          "ingredients_name": "Abacate Maduro",
+          "ingredients_quantity": "1/2 xícara (cortado em cubos)",
+          "ingredients_category": 8
         },
         {
-          "name": "Cebola Roxa",
-          "quantity": "1/4 de xícara (picada)",
-          "category": ""
+          "ingredients_name": "Cebola Roxa",
+          "ingredients_quantity": "1/4 de xícara (picada)",
+          "ingredients_category": 21
         },
         {
-          "name": "Queijo de Cabra",
-          "quantity": "1/4 de xícara (desintegrado)",
-          "category": ""
+          "ingredients_name": "Queijo de Cabra",
+          "ingredients_quantity": "1/4 de xícara (desintegrado)",
+          "ingredients_category": 12
         },
         {
-          "name": "Nozes",
-          "quantity": "1/4 de xícara (picadas)",
-          "category": ""
+          "ingredients_name": "Nozes",
+          "ingredients_quantity": "1/4 de xícara (picadas)",
+          "ingredients_category": 11
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "Suco de 1 limão",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "Suco de 1 limão",
+          "ingredients_category": 8
         },
         {
-          "name": "Azeite de Oliva Extra Virgem",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva Extra Virgem",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta-do-Reino",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta-do-Reino",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma frigideira, aqueça o azeite de oliva em fogo médio. Adicione os camarões e cozinhe por 2-3 minutos de cada lado, até que fiquem rosados e cozidos por completo. Tempere com sal e pimenta a gosto. Reserve.",
         "2. Em uma tigela grande, coloque a rúcula, os tomates-cereja, o abacate, a cebola roxa, o queijo de cabra desintegrado e as nozes picadas.",
         "3. Adicione os camarões cozidos à tigela.",
@@ -546,62 +546,62 @@
     "section": {
       "ingredients": [
         {
-          "name": "Alface Americana",
-          "quantity": "2 xícaras (lavada e rasgada)",
-          "category": ""
+          "ingredients_name": "Alface Americana",
+          "ingredients_quantity": "2 xícaras (lavada e rasgada)",
+          "ingredients_category": 22
         },
         {
-          "name": "Rúcula",
-          "quantity": "1 xícara (lavada e seca)",
-          "category": ""
+          "ingredients_name": "Rúcula",
+          "ingredients_quantity": "1 xícara (lavada e seca)",
+          "ingredients_category": 22
         },
         {
-          "name": "Tomate-Cereja",
-          "quantity": "1 xícara (cortados ao meio)",
-          "category": ""
+          "ingredients_name": "Tomate-Cereja",
+          "ingredients_quantity": "1 xícara (cortados ao meio)",
+          "ingredients_category": 13
         },
         {
-          "name": "Pepino",
-          "quantity": "1/2 xícara (em rodelas finas)",
-          "category": ""
+          "ingredients_name": "Pepino",
+          "ingredients_quantity": "1/2 xícara (em rodelas finas)",
+          "ingredients_category": 13
         },
         {
-          "name": "Cebola Roxa",
-          "quantity": "1/2 xícara (fatiada finamente)",
-          "category": ""
+          "ingredients_name": "Cebola Roxa",
+          "ingredients_quantity": "1/2 xícara (fatiada finamente)",
+          "ingredients_category": 21
         },
         {
-          "name": "Azeitonas Pretas",
-          "quantity": "1/4 de xícara (sem caroço)",
-          "category": ""
+          "ingredients_name": "Azeitonas Pretas",
+          "ingredients_quantity": "1/4 de xícara (sem caroço)",
+          "ingredients_category": 6
         },
         {
-          "name": "Queijo Feta",
-          "quantity": "1/4 de xícara (esfarelado)",
-          "category": ""
+          "ingredients_name": "Queijo Feta",
+          "ingredients_quantity": "1/4 de xícara (esfarelado)",
+          "ingredients_category": 12
         },
         {
-          "name": "Azeite de Oliva Extra Virgem",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva Extra Virgem",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Vinagre Balsâmico",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Vinagre Balsâmico",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 5
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta-do-Reino",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta-do-Reino",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela grande, combine a alface americana, a rúcula, os tomates-cereja, o pepino, a cebola roxa, as azeitonas pretas e o queijo feta.",
         "2. Em um recipiente pequeno, misture o azeite de oliva extra virgem e o vinagre balsâmico. Tempere com sal e pimenta-do-reino a gosto.",
         "3. Regue a salada com o molho preparado e misture delicadamente para que todos os ingredientes estejam bem envolvidos.",
@@ -620,37 +620,37 @@
     "section": {
       "ingredients": [
         {
-          "name": "Cenoura",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "cortadas em rodelas"
+          "ingredients_name": "Cenoura",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortadas em rodelas"
         },
         {
-          "name": "Batata",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "cortadas em cubos"
+          "ingredients_name": "Batata",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortadas em cubos"
         },
         {
-          "name": "Abobrinha",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortada em pedaços"
+          "ingredients_name": "Abobrinha",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortada em pedaços"
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada"
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, refogue a cebola e o alho no azeite até dourar.",
         "2. Adicione os legumes cortados e refogue por mais 5 minutos.",
         "3. Cubra com água, tempere com sal e pimenta a gosto.",
@@ -670,52 +670,52 @@
     "section": {
       "ingredients": [
         {
-          "name": "Abóbora",
-          "quantity": "1 unidade média, descascada e cortada em cubos",
-          "category": ""
+          "ingredients_name": "Abóbora",
+          "ingredients_quantity": "1 unidade média, descascada e cortada em cubos",
+          "ingredients_category": 8
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade grande, picada",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade grande, picada",
+          "ingredients_category": 21
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Caldo de Vegetais",
-          "quantity": "4 xícaras",
-          "category": ""
+          "ingredients_name": "Caldo de Vegetais",
+          "ingredients_quantity": "4 xícaras",
+          "ingredients_category": 16
         },
         {
-          "name": "Leite de Coco",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Leite de Coco",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Curry em Pó",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Curry em Pó",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Sal",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, aqueça o azeite de oliva em fogo médio. Adicione a cebola e o alho picados e refogue até ficarem macios e dourados.",
         "2. Adicione os cubos de abóbora à panela e refogue por mais alguns minutos, mexendo ocasionalmente.",
         "3. Acrescente o curry em pó, o sal e a pimenta à panela e misture bem para que os temperos envolvam a abóbora.",
@@ -738,52 +738,55 @@
     "section": {
       "ingredients": [
         {
-          "name": "6 tomates médios maduros, cortados em cubos",
-          "quantity": "6 unidades",
-          "category": ""
+          "ingredients_name": "Tomates médios maduros",
+          "ingredients_quantity": "6 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortados em cubos"
         },
         {
-          "name": "1 cebola média, picada",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Cebola média",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "picadas"
         },
         {
-          "name": "2 dentes de alho, picados",
-          "quantity": "2 dentes",
-          "category": ""
+          "ingredients_name": "Dentes de alho",
+          "ingredients_quantity": "2 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "2 colheres de sopa de azeite de oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "4 xícaras de caldo de vegetais",
-          "quantity": "4 xícaras",
-          "category": ""
+          "ingredients_name": "Caldo de vegetais",
+          "ingredients_quantity": "4 xícaras",
+          "ingredients_category": 16
         },
         {
-          "name": "1/2 xícara de creme de leite",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Creme de leite",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "1 colher de chá de açúcar",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 1
         },
         {
-          "name": "Sal e pimenta a gosto",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal e pimenta a gosto",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Folhas de manjericão fresco para decorar",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Folhas de manjericão fresco para decorar",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, aqueça o azeite de oliva em fogo médio. Adicione a cebola picada e o alho picado, e refogue até que fiquem macios e translúcidos.",
         "2. Adicione os cubos de tomate à panela e cozinhe por cerca de 5 minutos, mexendo ocasionalmente, até que os tomates comecem a amolecer.",
         "3. Despeje o caldo de vegetais na panela, cubra e deixe ferver. Em seguida, reduza o fogo e cozinhe por mais 15-20 minutos, até que os tomates estejam completamente desfeitos.",
@@ -805,72 +808,72 @@
     "section": {
       "ingredients": [
         {
-          "name": "Lentilhas Verdes Secas",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Lentilhas Verdes Secas",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 11
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade, picada",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade, picada",
+          "ingredients_category": 21
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Cenouras",
-          "quantity": "2 unidades, descascadas e picadas",
-          "category": ""
+          "ingredients_name": "Cenouras",
+          "ingredients_quantity": "2 unidades, descascadas e picadas",
+          "ingredients_category": 13
         },
         {
-          "name": "Talos de Aipo",
-          "quantity": "2 unidades, picados",
-          "category": ""
+          "ingredients_name": "Talos de Aipo",
+          "ingredients_quantity": "2 unidades, picados",
+          "ingredients_category": 21
         },
         {
-          "name": "Batata",
-          "quantity": "1 unidade, descascada e cortada em cubos",
-          "category": ""
+          "ingredients_name": "Batata",
+          "ingredients_quantity": "1 unidade, descascada e cortada em cubos",
+          "ingredients_category": 13
         },
         {
-          "name": "Caldo de Vegetais",
-          "quantity": "6 xícaras",
-          "category": ""
+          "ingredients_name": "Caldo de Vegetais",
+          "ingredients_quantity": "6 xícaras",
+          "ingredients_category": 16
         },
         {
-          "name": "Cominho em Pó",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Cominho em Pó",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Páprica",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Páprica",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Folha de Louro",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Folha de Louro",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 20
         },
         {
-          "name": "Sal",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "para refogar",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "para refogar",
+          "ingredients_category": 10
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, aqueça um pouco de azeite de oliva em fogo médio. Adicione a cebola, o alho, o aipo e a cenoura picados. Refogue por cerca de 5 minutos, até que os vegetais comecem a amolecer.",
         "2. Adicione as lentilhas secas à panela e misture bem com os vegetais.",
         "3. Tempere com cominho em pó, páprica, sal e pimenta. Mexa para que os temperos envolvam os ingredientes.",
@@ -889,71 +892,73 @@
   {
     "name": "Sopa de Cebola",
     "category": 3,
-    "favorited": false,
+    "favorited": true,
     "section": {
       "ingredients": [
         {
-          "name": "Cebolas médias, fatiadas finamente",
-          "quantity": "6 unidades",
-          "category": ""
+          "ingredients_name": "Cebolas médias",
+          "ingredients_quantity": "6 unidades",
+          "ingredients_category": 21,
+          "ingredients_notes": "fatiadas"
         },
         {
-          "name": "Manteiga",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Azeite de oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Dentes de alho, picados",
-          "quantity": "2 dentes",
-          "category": ""
+          "ingredients_name": "Dentes de alho",
+          "ingredients_quantity": "2 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "Farinha de trigo",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Farinha de trigo",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 7
         },
         {
-          "name": "Caldo de carne ou caldo de legumes",
-          "quantity": "4 xícaras",
-          "category": ""
+          "ingredients_name": "Caldo de carne ou caldo de legumes",
+          "ingredients_quantity": "4 xícaras",
+          "ingredients_category": 16
         },
         {
-          "name": "Vinho branco seco (opcional)",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Vinho branco seco (opcional)",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 2
         },
         {
-          "name": "Sal e pimenta a gosto",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal e pimenta a gosto",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Fatias de pão francês ou baguete",
-          "quantity": "4 fatias",
-          "category": ""
+          "ingredients_name": "Fatias de pão francês ou baguete",
+          "ingredients_quantity": "4 fatias",
+          "ingredients_category": 17
         },
         {
-          "name": "Queijo gruyère ralado",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Queijo gruyère ralado",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Queijo parmesão ralado",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Queijo parmesão ralado",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 12
         },
         {
-          "name": "Folhas de tomilho fresco para decorar (opcional)",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Folhas de tomilho fresco para decorar (opcional)",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, derreta a manteiga em conjunto com o azeite em fogo médio. Adicione as cebolas fatiadas e cozinhe, mexendo ocasionalmente, até que fiquem caramelizadas e douradas, o que pode levar cerca de 30-40 minutos.",
         "2. Adicione o alho picado e cozinhe por mais 1-2 minutos até que esteja fragrante.",
         "3. Polvilhe a farinha de trigo sobre as cebolas caramelizadas e mexa bem para incorporar.",
@@ -980,29 +985,29 @@
     "section": {
       "ingredients": [
         {
-          "name": "Ovos",
-          "quantity": "3 unidades",
-          "category": "",
-          "notes": "grandes"
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "3 unidades",
+          "ingredients_category": 19,
+          "ingredients_notes": "grandes"
         },
         {
-          "name": "Queijo",
-          "quantity": "1/2 xícara",
-          "category": "",
-          "notes": "ralado"
+          "ingredients_name": "Queijo",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12,
+          "ingredients_notes": "ralado"
         },
         {
-          "name": "Sal",
-          "quantity": "1/4 colher de chá",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "1/4 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Quebre os ovos em uma tigela e bata-os bem com um garfo.",
         "2. Aqueça uma frigideira antiaderente e despeje os ovos batidos.",
         "3. Cozinhe em fogo médio até que as bordas comecem a endurecer.",
@@ -1024,46 +1029,46 @@
     "section": {
       "ingredients": [
         {
-          "name": "Ovos",
-          "quantity": "3 unidades",
-          "category": ""
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "3 unidades",
+          "ingredients_category": 19
         },
         {
-          "name": "Folhas de espinafre fresco",
-          "quantity": "1 xícara",
-          "category": "",
-          "notes": "picadas"
+          "ingredients_name": "Folhas de espinafre fresco",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 21,
+          "ingredients_notes": "picadas"
         },
         {
-          "name": "Tomate médio",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortado em cubos"
+          "ingredients_name": "Tomate médio",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortado em cubos"
         },
         {
-          "name": "Cebola roxa",
-          "quantity": "1/4 de xícara",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Cebola roxa",
+          "ingredients_quantity": "1/4 de xícara",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada"
         },
         {
-          "name": "Sal e pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal e pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de oliva",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Queijo ralado",
-          "quantity": "",
-          "category": "",
-          "notes": "opcional, para polvilhar"
+          "ingredients_name": "Queijo ralado",
+          "ingredients_quantity": "",
+          "ingredients_category": 12,
+          "ingredients_notes": "opcional, para polvilhar"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela, bata os ovos. Tempere com sal e pimenta a gosto.",
         "2. Em uma frigideira antiaderente, aqueça o azeite de oliva em fogo médio.",
         "3. Adicione a cebola picada e refogue por alguns minutos até ficar macia.",
@@ -1089,55 +1094,55 @@
     "section": {
       "ingredients": [
         {
-          "name": "Ovos",
-          "quantity": "3 unidades",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "3 unidades",
+          "ingredients_category": 19,
+          "ingredients_notes": ""
         },
         {
-          "name": "Cogumelos frescos",
-          "quantity": "1 xícara",
-          "category": "",
-          "notes": "fatiados"
+          "ingredients_name": "Cogumelos frescos",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 9,
+          "ingredients_notes": "fatiados"
         },
         {
-          "name": "Cebola",
-          "quantity": "1/4 de xícara",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1/4 de xícara",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada"
         },
         {
-          "name": "Alho",
-          "quantity": "1 dente",
-          "category": "",
-          "notes": "picado"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "1 dente",
+          "ingredients_category": 20,
+          "ingredients_notes": "picado"
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Azeite de oliva",
-          "quantity": "1 colher de sopa",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10,
+          "ingredients_notes": ""
         },
         {
-          "name": "Salsinha fresca, picada",
-          "quantity": "",
-          "category": "",
-          "notes": "Opcional, para decorar"
+          "ingredients_name": "Salsinha fresca, picada",
+          "ingredients_quantity": "",
+          "ingredients_category": 20,
+          "ingredients_notes": "Opcional, para decorar"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela, bata os ovos. Tempere com sal e pimenta a gosto.",
         "2. Em uma frigideira antiaderente, aqueça o azeite de oliva em fogo médio.",
         "3. Adicione a cebola picada e o alho picado à frigideira e refogue por alguns minutos até ficarem macios e fragrantes.",
@@ -1161,42 +1166,42 @@
     "section": {
       "ingredients": [
         {
-          "name": "Ovos",
-          "quantity": "2 unidades",
-          "category": ""
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 19
         },
         {
-          "name": "Bacon",
-          "quantity": "2 fatias, cortadas em pedaços",
-          "category": ""
+          "ingredients_name": "Bacon",
+          "ingredients_quantity": "2 fatias, cortadas em pedaços",
+          "ingredients_category": 3
         },
         {
-          "name": "Cebola",
-          "quantity": "1/4 de cebola, picada",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1/4 de cebola, picada",
+          "ingredients_category": 21
         },
         {
-          "name": "Pimentão Vermelho",
-          "quantity": "1/4 de pimentão vermelho, picado",
-          "category": ""
+          "ingredients_name": "Pimentão Vermelho",
+          "ingredients_quantity": "1/4 de pimentão vermelho, picado",
+          "ingredients_category": 13
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Óleo de Cozinha",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Óleo de Cozinha",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela, bata os ovos e tempere com sal e pimenta a gosto.",
         "2. Em uma frigideira antiaderente, aqueça o óleo em fogo médio.",
         "3. Adicione o bacon à frigideira e frite até que fique crocante.",
@@ -1219,47 +1224,47 @@
     "section": {
       "ingredients": [
         {
-          "name": "Ovos",
-          "quantity": "3 unidades",
-          "category": ""
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "3 unidades",
+          "ingredients_category": 19
         },
         {
-          "name": "Tomate médio maduro, picado",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Tomate médio maduro, picado",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13
         },
         {
-          "name": "Folhas frescas de manjericão, picadas",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Folhas frescas de manjericão, picadas",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 20
         },
         {
-          "name": "Cebola roxa, picada",
-          "quantity": "1/4 de unidade",
-          "category": ""
+          "ingredients_name": "Cebola roxa, picada",
+          "ingredients_quantity": "1/4 de unidade",
+          "ingredients_category": 21
         },
         {
-          "name": "Queijo mussarela ralado",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Queijo mussarela ralado",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 12
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de oliva",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela, bata os ovos e tempere com sal e pimenta a gosto.",
         "2. Em uma frigideira antiaderente, aqueça o azeite em fogo médio.",
         "3. Adicione a cebola e o tomate picados e refogue até ficarem macios.",
@@ -1281,36 +1286,36 @@
     "section": {
       "ingredients": [
         {
-          "name": "Macarrão para Yakisoba",
-          "quantity": "200g",
-          "category": ""
+          "ingredients_name": "Macarrão para Yakisoba",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 15
         },
         {
-          "name": "Peito de Frango",
-          "quantity": "200g",
-          "category": "",
-          "notes": "cortado em tiras"
+          "ingredients_name": "Peito de Frango",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 3,
+          "ingredients_notes": "cortado em tiras"
         },
         {
-          "name": "Brócolis",
-          "quantity": "100g",
-          "category": "",
-          "notes": "cortado em floretes"
+          "ingredients_name": "Brócolis",
+          "ingredients_quantity": "100g",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortado em floretes"
         },
         {
-          "name": "Cenoura",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortada em tiras finas"
+          "ingredients_name": "Cenoura",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortada em tiras finas"
         },
         {
-          "name": "Pimentão Vermelho",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortado em tiras"
+          "ingredients_name": "Pimentão Vermelho",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortado em tiras"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Cozinhe o macarrão de acordo com as instruções da embalagem, escorra e reserve.",
         "2. Em uma frigideira grande, aqueça um pouco de óleo e cozinhe o frango até dourar.",
         "3. Adicione os legumes (brócolis, cenoura e pimentão) e refogue até que fiquem macios.",
@@ -1331,62 +1336,62 @@
     "section": {
       "ingredients": [
         {
-          "name": "Peito de Frango",
-          "quantity": "500g (cortado em cubos)",
-          "category": ""
+          "ingredients_name": "Peito de Frango",
+          "ingredients_quantity": "500g (cortado em cubos)",
+          "ingredients_category": 3
         },
         {
-          "name": "Óleo Vegetal",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Óleo Vegetal",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade (média, picada)",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade (média, picada)",
+          "ingredients_category": 21
         },
         {
-          "name": "Alho",
-          "quantity": "3 dentes (picados)",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "3 dentes (picados)",
+          "ingredients_category": 20
         },
         {
-          "name": "Pasta de Curry",
-          "quantity": "2 colheres de sopa (escolha o nível de picância desejado)",
-          "category": ""
+          "ingredients_name": "Pasta de Curry",
+          "ingredients_quantity": "2 colheres de sopa (escolha o nível de picância desejado)",
+          "ingredients_category": 20
         },
         {
-          "name": "Leite de Coco",
-          "quantity": "1 lata (400ml)",
-          "category": ""
+          "ingredients_name": "Leite de Coco",
+          "ingredients_quantity": "1 lata (400ml)",
+          "ingredients_category": 12
         },
         {
-          "name": "Pimentão Vermelho",
-          "quantity": "1 unidade (cortado em tiras)",
-          "category": ""
+          "ingredients_name": "Pimentão Vermelho",
+          "ingredients_quantity": "1 unidade (cortado em tiras)",
+          "ingredients_category": 13
         },
         {
-          "name": "Cenoura",
-          "quantity": "1 unidade (cortada em rodelas finas)",
-          "category": ""
+          "ingredients_name": "Cenoura",
+          "ingredients_quantity": "1 unidade (cortada em rodelas finas)",
+          "ingredients_category": 13
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Coentro Fresco",
-          "quantity": "Para decorar",
-          "category": ""
+          "ingredients_name": "Coentro Fresco",
+          "ingredients_quantity": "Para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Aqueça o óleo em uma frigideira grande em fogo médio-alto.",
         "2. Adicione a cebola picada e o alho picado e refogue até que fiquem dourados e aromáticos.",
         "3. Adicione os cubos de frango à frigideira e cozinhe até que fiquem dourados por fora.",
@@ -1409,47 +1414,47 @@
     "section": {
       "ingredients": [
         {
-          "name": "Arroz para Sushi",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Arroz para Sushi",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 11
         },
         {
-          "name": "Vinagre de Arroz",
-          "quantity": "1/4 de xícara",
-          "category": ""
+          "ingredients_name": "Vinagre de Arroz",
+          "ingredients_quantity": "1/4 de xícara",
+          "ingredients_category": 5
         },
         {
-          "name": "Folhas de Nori (Alga para Sushi)",
-          "quantity": "10 folhas",
-          "category": ""
+          "ingredients_name": "Folhas de Nori (Alga para Sushi)",
+          "ingredients_quantity": "10 folhas",
+          "ingredients_category": 20
         },
         {
-          "name": "Salmão Fresco",
-          "quantity": "200g, cortado em tiras",
-          "category": ""
+          "ingredients_name": "Salmão Fresco",
+          "ingredients_quantity": "200g, cortado em tiras",
+          "ingredients_category": 20
         },
         {
-          "name": "Pepino Japonês",
-          "quantity": "1 unidade, cortado em tiras finas",
-          "category": ""
+          "ingredients_name": "Pepino Japonês",
+          "ingredients_quantity": "1 unidade, cortado em tiras finas",
+          "ingredients_category": 13
         },
         {
-          "name": "Cenoura",
-          "quantity": "1 unidade, ralada",
-          "category": ""
+          "ingredients_name": "Cenoura",
+          "ingredients_quantity": "1 unidade, ralada",
+          "ingredients_category": 13
         },
         {
-          "name": "Wasabi",
-          "quantity": "A gosto (opcional)",
-          "category": ""
+          "ingredients_name": "Wasabi",
+          "ingredients_quantity": "A gosto (opcional)",
+          "ingredients_category": 20
         },
         {
-          "name": "Molho de Soja",
-          "quantity": "Para mergulhar",
-          "category": ""
+          "ingredients_name": "Molho de Soja",
+          "ingredients_quantity": "Para mergulhar",
+          "ingredients_category": 16
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Lave o arroz para sushi em água fria até que a água fique clara. Cozinhe o arroz de acordo com as instruções da embalagem e, depois de cozido, transfira-o para uma tigela grande.",
         "2. Aqueça o vinagre de arroz em uma panela pequena, mas não deixe ferver. Adicione o vinagre ao arroz cozido e misture bem para que o arroz absorva o vinagre. Deixe o arroz esfriar.",
         "3. Coloque uma esteira de bambu em uma superfície de trabalho limpa e coloque uma folha de nori sobre ela, com o lado rugoso voltado para cima.",
@@ -1474,52 +1479,52 @@
     "section": {
       "ingredients": [
         {
-          "name": "Salmão Fresco",
-          "quantity": "4 filés",
-          "category": ""
+          "ingredients_name": "Salmão Fresco",
+          "ingredients_quantity": "4 filés",
+          "ingredients_category": 20
         },
         {
-          "name": "Molho Teriyaki",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Molho Teriyaki",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 16
         },
         {
-          "name": "Açúcar Mascavo",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Açúcar Mascavo",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 1
         },
         {
-          "name": "Saquê",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Saquê",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 2
         },
         {
-          "name": "Mirin (Vinho de Arroz Doce)",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Mirin (Vinho de Arroz Doce)",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 2
         },
         {
-          "name": "Óleo Vegetal",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Óleo Vegetal",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Gergelim Torrado",
-          "quantity": "Para decorar (opcional)",
-          "category": ""
+          "ingredients_name": "Gergelim Torrado",
+          "ingredients_quantity": "Para decorar (opcional)",
+          "ingredients_category": 11
         },
         {
-          "name": "Cebolinha Verde Picada",
-          "quantity": "Para decorar (opcional)",
-          "category": ""
+          "ingredients_name": "Cebolinha Verde Picada",
+          "ingredients_quantity": "Para decorar (opcional)",
+          "ingredients_category": 22
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela, misture o molho teriyaki, açúcar mascavo, saquê e mirin até que o açúcar se dissolva completamente.",
         "2. Em uma frigideira grande, aqueça o óleo vegetal em fogo médio-alto.",
         "3. Adicione os filés de salmão à frigideira com a pele para baixo e cozinhe por 3-4 minutos até que a pele esteja dourada e crocante.",
@@ -1542,32 +1547,32 @@
     "section": {
       "ingredients": [
         {
-          "name": "Legumes Variados (por exemplo, cenoura, abobrinha, brócolis)",
-          "quantity": "250g, cortados em tiras",
-          "category": ""
+          "ingredients_name": "Legumes Variados (por exemplo, cenoura, abobrinha, brócolis)",
+          "ingredients_quantity": "250g, cortados em tiras",
+          "ingredients_category": 13
         },
         {
-          "name": "Farinha de Trigo",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Farinha de Trigo",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 7
         },
         {
-          "name": "Amido de Milho",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Amido de Milho",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 7
         },
         {
-          "name": "Água Gelada",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Água Gelada",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 14
         },
         {
-          "name": "Sal",
-          "quantity": "1/2 colher de chá",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "1/2 colher de chá",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Aqueça o óleo em uma panela funda até atingir 180°C. Use um termômetro de cozinha para medir a temperatura.",
         "2. Em uma tigela, misture a farinha de trigo, o amido de milho e o sal.",
         "3. Adicione a água gelada à mistura de farinha e mexa até obter uma massa homogênea.",
@@ -1589,36 +1594,36 @@
     "section": {
       "ingredients": [
         {
-          "name": "Feijão Preto",
-          "quantity": "500g",
-          "category": ""
+          "ingredients_name": "Feijão Preto",
+          "ingredients_quantity": "500g",
+          "ingredients_category": 11
         },
         {
-          "name": "Carne de Porco",
-          "quantity": "300g",
-          "category": "",
-          "notes": "cortada em pedaços"
+          "ingredients_name": "Carne de Porco",
+          "ingredients_quantity": "300g",
+          "ingredients_category": 3,
+          "ingredients_notes": "cortada em pedaços"
         },
         {
-          "name": "Linguiça Calabresa",
-          "quantity": "200g",
-          "category": "",
-          "notes": "cortada em rodelas"
+          "ingredients_name": "Linguiça Calabresa",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 3,
+          "ingredients_notes": "cortada em rodelas"
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada"
         },
         {
-          "name": "Alho",
-          "quantity": "4 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "4 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Cozinhe o feijão preto em água até ficar macio. Escorra e reserve.",
         "2. Em uma panela grande, frite a carne de porco até dourar.",
         "3. Adicione a linguiça calabresa e frite até que fique levemente dourada.",
@@ -1640,62 +1645,62 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de Lasanha",
-          "quantity": "500g",
-          "category": ""
+          "ingredients_name": "Massa de Lasanha",
+          "ingredients_quantity": "500g",
+          "ingredients_category": 15
         },
         {
-          "name": "Carne Moída",
-          "quantity": "500g",
-          "category": ""
+          "ingredients_name": "Carne Moída",
+          "ingredients_quantity": "500g",
+          "ingredients_category": 3
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade, picada",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade, picada",
+          "ingredients_category": 21
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "1 lata",
-          "category": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "1 lata",
+          "ingredients_category": 16
         },
         {
-          "name": "Queijo Muçarela",
-          "quantity": "2 xícaras, ralado",
-          "category": ""
+          "ingredients_name": "Queijo Muçarela",
+          "ingredients_quantity": "2 xícaras, ralado",
+          "ingredients_category": 12
         },
         {
-          "name": "Queijo Parmesão",
-          "quantity": "2 xícaras, ralado",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão",
+          "ingredients_quantity": "2 xícaras, ralado",
+          "ingredients_category": 12
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Orégano",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Orégano",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, aqueça o azeite e refogue a cebola e o alho até dourarem.",
         "2. Adicione a carne moída e cozinhe até que esteja completamente dourada e cozida. Tempere com sal, pimenta e orégano.",
         "3. Misture o molho de tomate à carne e deixe a mistura ferver. Reduza o fogo e cozinhe por cerca de 10 minutos.",
@@ -1717,62 +1722,62 @@
     "section": {
       "ingredients": [
         {
-          "name": "Carne (Alcatra, Filé Mignon, ou Contrafilé)",
-          "quantity": "500g, cortada em tiras finas",
-          "category": ""
+          "ingredients_name": "Carne (Alcatra, Filé Mignon, ou Contrafilé)",
+          "ingredients_quantity": "500g, cortada em tiras finas",
+          "ingredients_category": 3
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade, picada",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade, picada",
+          "ingredients_category": 21
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Manteiga",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Ketchup",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Ketchup",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 5
         },
         {
-          "name": "Mostarda",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Mostarda",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 5
         },
         {
-          "name": "Cogumelos em Conserva",
-          "quantity": "100g, fatiados (opcional)",
-          "category": ""
+          "ingredients_name": "Cogumelos em Conserva",
+          "ingredients_quantity": "100g, fatiados (opcional)",
+          "ingredients_category": 9
         },
         {
-          "name": "Creme de Leite",
-          "quantity": "1 lata",
-          "category": ""
+          "ingredients_name": "Creme de Leite",
+          "ingredients_quantity": "1 lata",
+          "ingredients_category": 12
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta-do-Reino",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta-do-Reino",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Óleo",
-          "quantity": "Para fritar",
-          "category": ""
+          "ingredients_name": "Óleo",
+          "ingredients_quantity": "Para fritar",
+          "ingredients_category": 10
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma frigideira grande, aqueça o óleo em fogo médio-alto e frite a carne em tiras até dourar. Tempere com sal e pimenta a gosto. Retire a carne da frigideira e reserve.",
         "2. Na mesma frigideira, adicione a manteiga e refogue a cebola e o alho até ficarem dourados.",
         "3. Adicione o ketchup, a mostarda e os cogumelos (se estiver usando). Cozinhe por alguns minutos.",
@@ -1793,62 +1798,62 @@
     "section": {
       "ingredients": [
         {
-          "name": "Peito de Frango",
-          "quantity": "4 filés",
-          "category": ""
+          "ingredients_name": "Peito de Frango",
+          "ingredients_quantity": "4 filés",
+          "ingredients_category": 3
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta-do-Reino",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta-do-Reino",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Farinha de Trigo",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Farinha de Trigo",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 7
         },
         {
-          "name": "Ovos",
-          "quantity": "2 unidades, batidos",
-          "category": ""
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "2 unidades, batidos",
+          "ingredients_category": 19
         },
         {
-          "name": "Farinha de Rosca",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Farinha de Rosca",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 7
         },
         {
-          "name": "Queijo Parmesão Ralado",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão Ralado",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 16
         },
         {
-          "name": "Mozzarella Ralada",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Mozzarella Ralada",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Manjericão Fresco",
-          "quantity": "Folhas para decorar",
-          "category": ""
+          "ingredients_name": "Manjericão Fresco",
+          "ingredients_quantity": "Folhas para decorar",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "Para fritar",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "Para fritar",
+          "ingredients_category": 10
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Tempere os filés de frango com sal e pimenta-do-reino a gosto.",
         "2. Passe cada filé na farinha de trigo, depois nos ovos batidos e, por fim, na mistura de farinha de rosca com queijo parmesão ralado.",
         "3. Aqueça o azeite de oliva em uma frigideira grande e frite os filés de frango em fogo médio até que fiquem dourados e cozidos por dentro. Isso deve levar cerca de 5-7 minutos de cada lado. Retire e escorra em papel toalha.",
@@ -1872,67 +1877,67 @@
     "section": {
       "ingredients": [
         {
-          "name": "Berinjela",
-          "quantity": "1 unidade, cortada em rodelas",
-          "category": ""
+          "ingredients_name": "Berinjela",
+          "ingredients_quantity": "1 unidade, cortada em rodelas",
+          "ingredients_category": 13
         },
         {
-          "name": "Abobrinha",
-          "quantity": "1 unidade, cortada em rodelas",
-          "category": ""
+          "ingredients_name": "Abobrinha",
+          "ingredients_quantity": "1 unidade, cortada em rodelas",
+          "ingredients_category": 13
         },
         {
-          "name": "Pimentão Vermelho",
-          "quantity": "1 unidade, cortado em tiras",
-          "category": ""
+          "ingredients_name": "Pimentão Vermelho",
+          "ingredients_quantity": "1 unidade, cortado em tiras",
+          "ingredients_category": 13
         },
         {
-          "name": "Pimentão Amarelo",
-          "quantity": "1 unidade, cortado em tiras",
-          "category": ""
+          "ingredients_name": "Pimentão Amarelo",
+          "ingredients_quantity": "1 unidade, cortado em tiras",
+          "ingredients_category": 13
         },
         {
-          "name": "Tomates",
-          "quantity": "2 unidades, cortados em rodelas",
-          "category": ""
+          "ingredients_name": "Tomates",
+          "ingredients_quantity": "2 unidades, cortados em rodelas",
+          "ingredients_category": 13
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade, cortada em rodelas",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade, cortada em rodelas",
+          "ingredients_category": 21
         },
         {
-          "name": "Dentes de Alho",
-          "quantity": "3 unidades, picados",
-          "category": ""
+          "ingredients_name": "Dentes de Alho",
+          "ingredients_quantity": "3 unidades, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Tomilho Seco",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Tomilho Seco",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Alecrim Seco",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Alecrim Seco",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Preaqueça o forno a 180°C.",
         "2. Em uma travessa grande, espalhe o azeite de oliva no fundo.",
         "3. Comece a montar o Ratatouille: coloque uma rodela de berinjela no centro da travessa e alterne com rodelas de abobrinha, pimentões, tomates, cebola e alho, repetindo o padrão até preencher a travessa.",
@@ -1956,36 +1961,36 @@
     "section": {
       "ingredients": [
         {
-          "name": "Arroz Arborio",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Arroz Arborio",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 11
         },
         {
-          "name": "Cogumelos Mistos",
-          "quantity": "200g",
-          "category": "",
-          "notes": "cortados em fatias"
+          "ingredients_name": "Cogumelos Mistos",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 9,
+          "ingredients_notes": "cortados em fatias"
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada"
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "Caldo de Galinha",
-          "quantity": "1 litro",
-          "category": "",
-          "notes": "quente"
+          "ingredients_name": "Caldo de Galinha",
+          "ingredients_quantity": "1 litro",
+          "ingredients_category": 16,
+          "ingredients_notes": "quente"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, refogue a cebola e o alho em um pouco de azeite até dourarem.",
         "2. Adicione os cogumelos e refogue até que fiquem macios.",
         "3. Acrescente o arroz Arborio e mexa por alguns minutos.",
@@ -2007,67 +2012,67 @@
     "section": {
       "ingredients": [
         {
-          "name": "Arroz Arbóreo",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Arroz Arbóreo",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 11
         },
         {
-          "name": "Cogumelos Funghi Secchi",
-          "quantity": "200g, picados",
-          "category": ""
+          "ingredients_name": "Cogumelos Funghi Secchi",
+          "ingredients_quantity": "200g, picados",
+          "ingredients_category": 9
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade, picada finamente",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade, picada finamente",
+          "ingredients_category": 21
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Vinho Branco Seco",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Vinho Branco Seco",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 2
         },
         {
-          "name": "Caldo de Legumes",
-          "quantity": "1,5 litros",
-          "category": ""
+          "ingredients_name": "Caldo de Legumes",
+          "ingredients_quantity": "1,5 litros",
+          "ingredients_category": 16
         },
         {
-          "name": "Manteiga",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Queijo Parmesão Ralado",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão Ralado",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Sal",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Salsinha",
-          "quantity": "para decorar",
-          "category": ""
+          "ingredients_name": "Salsinha",
+          "ingredients_quantity": "para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Comece por hidratar os cogumelos funghi secchi. Coloque-os em uma tigela com água morna e deixe de molho por cerca de 20 minutos. Depois, escorra-os, esprema o excesso de água e pique-os.",
         "2. Em uma panela grande, aqueça o azeite de oliva e 1 colher de sopa de manteiga em fogo médio. Adicione a cebola picada e o alho picado e refogue até ficarem translúcidos.",
         "3. Acrescente o arroz arbóreo à panela e mexa por cerca de 2 minutos, até que os grãos estejam revestidos com a gordura e comecem a ficar levemente dourados.",
@@ -2091,72 +2096,72 @@
     "section": {
       "ingredients": [
         {
-          "name": "Arroz Arbóreo",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Arroz Arbóreo",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 11
         },
         {
-          "name": "Cebola",
-          "quantity": "1 pequena, picada",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 pequena, picada",
+          "ingredients_category": 21
         },
         {
-          "name": "Dentes de Alho",
-          "quantity": "2, picados",
-          "category": ""
+          "ingredients_name": "Dentes de Alho",
+          "ingredients_quantity": "2, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Vinho Branco Seco",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Vinho Branco Seco",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 2
         },
         {
-          "name": "Caldo de Legumes",
-          "quantity": "4 xícaras",
-          "category": ""
+          "ingredients_name": "Caldo de Legumes",
+          "ingredients_quantity": "4 xícaras",
+          "ingredients_category": 16
         },
         {
-          "name": "Limão Siciliano (suco)",
-          "quantity": "Suco de 2 limões",
-          "category": ""
+          "ingredients_name": "Limão Siciliano (suco)",
+          "ingredients_quantity": "Suco de 2 limões",
+          "ingredients_category": 8
         },
         {
-          "name": "Limão Siciliano (raspas)",
-          "quantity": "Raspas de 1 limão",
-          "category": ""
+          "ingredients_name": "Limão Siciliano (raspas)",
+          "ingredients_quantity": "Raspas de 1 limão",
+          "ingredients_category": 8
         },
         {
-          "name": "Manteiga",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Queijo Parmesão Ralado",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão Ralado",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 12
         },
         {
-          "name": "Salsinha",
-          "quantity": "Picada para decorar",
-          "category": ""
+          "ingredients_name": "Salsinha",
+          "ingredients_quantity": "Picada para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela, aqueça o caldo de legumes e mantenha-o aquecido em fogo baixo.",
         "2. Em outra panela grande, aqueça o azeite de oliva e 1 colher de sopa de manteiga em fogo médio.",
         "3. Adicione a cebola picada e o alho picado à panela e refogue até que fiquem translúcidos.",
@@ -2181,72 +2186,72 @@
     "section": {
       "ingredients": [
         {
-          "name": "Arroz Arbóreo",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Arroz Arbóreo",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 11
         },
         {
-          "name": "Abóbora",
-          "quantity": "500g, descascada e cortada em cubos",
-          "category": ""
+          "ingredients_name": "Abóbora",
+          "ingredients_quantity": "500g, descascada e cortada em cubos",
+          "ingredients_category": 8
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade, picada finamente",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade, picada finamente",
+          "ingredients_category": 21
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Queijo Gorgonzola",
-          "quantity": "100g, esmigalhado",
-          "category": ""
+          "ingredients_name": "Queijo Gorgonzola",
+          "ingredients_quantity": "100g, esmigalhado",
+          "ingredients_category": 12
         },
         {
-          "name": "Vinho Branco Seco",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Vinho Branco Seco",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 2
         },
         {
-          "name": "Caldo de Legumes",
-          "quantity": "6 xícaras, quente",
-          "category": ""
+          "ingredients_name": "Caldo de Legumes",
+          "ingredients_quantity": "6 xícaras, quente",
+          "ingredients_category": 16
         },
         {
-          "name": "Manteiga",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Noz-Moscada",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Noz-Moscada",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 11
         },
         {
-          "name": "Salsinha Fresca",
-          "quantity": "Para decorar",
-          "category": ""
+          "ingredients_name": "Salsinha Fresca",
+          "ingredients_quantity": "Para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, aqueça o azeite de oliva e 1 colher de sopa de manteiga em fogo médio.",
         "2. Adicione a cebola picada e o alho picado à panela e refogue até que fiquem translúcidos.",
         "3. Acrescente os cubos de abóbora à panela e cozinhe por alguns minutos até que comecem a amolecer.",
@@ -2270,72 +2275,72 @@
     "section": {
       "ingredients": [
         {
-          "name": "Arroz Arbóreo",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Arroz Arbóreo",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 11
         },
         {
-          "name": "Peitos de Frango",
-          "quantity": "2 unidades, cortados em cubos",
-          "category": ""
+          "ingredients_name": "Peitos de Frango",
+          "ingredients_quantity": "2 unidades, cortados em cubos",
+          "ingredients_category": 3
         },
         {
-          "name": "Cebola",
-          "quantity": "1 média, picada finamente",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 média, picada finamente",
+          "ingredients_category": 21
         },
         {
-          "name": "Dentes de Alho",
-          "quantity": "2, picados",
-          "category": ""
+          "ingredients_name": "Dentes de Alho",
+          "ingredients_quantity": "2, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Ervilhas",
-          "quantity": "1 xícara, frescas ou congeladas",
-          "category": ""
+          "ingredients_name": "Ervilhas",
+          "ingredients_quantity": "1 xícara, frescas ou congeladas",
+          "ingredients_category": 11
         },
         {
-          "name": "Caldo de Galinha",
-          "quantity": "4 xícaras, aquecido",
-          "category": ""
+          "ingredients_name": "Caldo de Galinha",
+          "ingredients_quantity": "4 xícaras, aquecido",
+          "ingredients_category": 16
         },
         {
-          "name": "Vinho Branco Seco",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Vinho Branco Seco",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 2
         },
         {
-          "name": "Manteiga",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Queijo Parmesão Ralado",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão Ralado",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Salsinha Fresca Picada",
-          "quantity": "Para decorar",
-          "category": ""
+          "ingredients_name": "Salsinha Fresca Picada",
+          "ingredients_quantity": "Para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma frigideira grande, aqueça o azeite de oliva e 1 colher de sopa de manteiga em fogo médio-alto.",
         "2. Tempere os cubos de frango com sal e pimenta a gosto e adicione-os à frigideira. Cozinhe até que o frango esteja dourado e cozido por completo. Retire o frango da frigideira e reserve.",
         "3. Na mesma frigideira, adicione a cebola picada e o alho picado. Refogue até que fiquem translúcidos.",
@@ -2360,35 +2365,35 @@
     "section": {
       "ingredients": [
         {
-          "name": "Peito de Frango",
-          "quantity": "4 unidades",
-          "category": ""
+          "ingredients_name": "Peito de Frango",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 3
         },
         {
-          "name": "Ervas Frescas (alecrim, tomilho, salsa)",
-          "quantity": "2 colheres de sopa",
-          "category": "",
-          "notes": "picadas"
+          "ingredients_name": "Ervas Frescas (alecrim, tomilho, salsa)",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 20,
+          "ingredients_notes": "picadas"
         },
         {
-          "name": "Limão",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "suco e raspas"
+          "ingredients_name": "Limão",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 8,
+          "ingredients_notes": "suco e raspas"
         },
         {
-          "name": "Alho",
-          "quantity": "4 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "4 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela, misture as ervas picadas, o suco e as raspas de limão, o alho picado e o azeite de oliva.",
         "2. Tempere os peitos de frango com a mistura de ervas e deixe marinar por 30 minutos.",
         "3. Pré-aqueça o forno a 200°C.",
@@ -2408,57 +2413,57 @@
     "section": {
       "ingredients": [
         {
-          "name": "Frango inteiro",
-          "quantity": "1,5 kg",
-          "category": ""
+          "ingredients_name": "Frango inteiro",
+          "ingredients_quantity": "1,5 kg",
+          "ingredients_category": 3
         },
         {
-          "name": "Batatas grandes",
-          "quantity": "4 unidades, cortadas em rodelas grossas",
-          "category": ""
+          "ingredients_name": "Batatas grandes",
+          "ingredients_quantity": "4 unidades, cortadas em rodelas grossas",
+          "ingredients_category": 13
         },
         {
-          "name": "Cebolas médias",
-          "quantity": "2 unidades, cortadas em rodelas",
-          "category": ""
+          "ingredients_name": "Cebolas médias",
+          "ingredients_quantity": "2 unidades, cortadas em rodelas",
+          "ingredients_category": 21
         },
         {
-          "name": "Dentes de alho",
-          "quantity": "4 unidades, picados",
-          "category": ""
+          "ingredients_name": "Dentes de alho",
+          "ingredients_quantity": "4 unidades, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Suco de limão",
-          "quantity": "Suco de 1 limão",
-          "category": ""
+          "ingredients_name": "Suco de limão",
+          "ingredients_quantity": "Suco de 1 limão",
+          "ingredients_category": 8
         },
         {
-          "name": "Azeite de oliva",
-          "quantity": "3 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "3 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Páprica",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Páprica",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 20
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Ervas frescas (alecrim e tomilho)",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Ervas frescas (alecrim e tomilho)",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 200°C.",
         "2. Lave o frango por dentro e por fora e seque-o bem com papel toalha. Tempere o frango por dentro e por fora com sal, pimenta, o suco de limão e as ervas frescas.",
         "3. Em uma tigela pequena, misture o azeite de oliva, a páprica e o alho picado. Esfregue essa mistura sobre o frango, certificando-se de que ele esteja bem coberto.",
@@ -2481,36 +2486,36 @@
     "section": {
       "ingredients": [
         {
-          "name": "Peito de Frango",
-          "quantity": "300g",
-          "category": "",
-          "notes": "cozido e desfiado"
+          "ingredients_name": "Peito de Frango",
+          "ingredients_quantity": "300g",
+          "ingredients_category": 3,
+          "ingredients_notes": "cozido e desfiado"
         },
         {
-          "name": "Massa para Coxinha",
-          "quantity": "500g",
-          "category": "",
-          "notes": "pronta ou caseira"
+          "ingredients_name": "Massa para Coxinha",
+          "ingredients_quantity": "500g",
+          "ingredients_category": 15,
+          "ingredients_notes": "pronta ou caseira"
         },
         {
-          "name": "Caldo de Galinha",
-          "quantity": "1 tablete",
-          "category": ""
+          "ingredients_name": "Caldo de Galinha",
+          "ingredients_quantity": "1 tablete",
+          "ingredients_category": 16
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada"
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela, refogue a cebola e o alho em um pouco de azeite até dourarem.",
         "2. Adicione o peito de frango desfiado e o caldo de galinha.",
         "3. Cozinhe por alguns minutos até que o caldo de galinha se dissolva e o frango esteja bem temperado.",
@@ -2531,36 +2536,36 @@
     "section": {
       "ingredients": [
         {
-          "name": "Peito de Frango",
-          "quantity": "400g",
-          "category": "",
-          "notes": "cozido e desfiado"
+          "ingredients_name": "Peito de Frango",
+          "ingredients_quantity": "400g",
+          "ingredients_category": 3,
+          "ingredients_notes": "cozido e desfiado"
         },
         {
-          "name": "Massa de Empadão",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "pronta ou caseira"
+          "ingredients_name": "Massa de Empadão",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 15,
+          "ingredients_notes": "pronta ou caseira"
         },
         {
-          "name": "Cenoura",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "ralada"
+          "ingredients_name": "Cenoura",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "ralada"
         },
         {
-          "name": "Ervilha",
-          "quantity": "1/2 xícara",
-          "category": "",
-          "notes": "cozida"
+          "ingredients_name": "Ervilha",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 11,
+          "ingredients_notes": "cozida"
         },
         {
-          "name": "Creme de Leite",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Creme de Leite",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela, misture o frango desfiado, a cenoura ralada, a ervilha e o creme de leite.",
         "2. Abra metade da massa de empadão em uma forma e coloque o recheio por cima.",
         "3. Cubra com a outra metade da massa e faça pequenos cortes na superfície para ventilar.",
@@ -2580,35 +2585,35 @@
     "section": {
       "ingredients": [
         {
-          "name": "Peito de Frango",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "peitos de frango desossados"
+          "ingredients_name": "Peito de Frango",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 3,
+          "ingredients_notes": "peitos de frango desossados"
         },
         {
-          "name": "Pão de Hambúrguer",
-          "quantity": "4 unidades",
-          "category": ""
+          "ingredients_name": "Pão de Hambúrguer",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 17
         },
         {
-          "name": "Alface",
-          "quantity": "4 folhas",
-          "category": ""
+          "ingredients_name": "Alface",
+          "ingredients_quantity": "4 folhas",
+          "ingredients_category": 22
         },
         {
-          "name": "Tomate",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "rodelas"
+          "ingredients_name": "Tomate",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": "rodelas"
         },
         {
-          "name": "Cebola Roxa",
-          "quantity": "1/2 unidade",
-          "category": "",
-          "notes": "fatias finas"
+          "ingredients_name": "Cebola Roxa",
+          "ingredients_quantity": "1/2 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "fatias finas"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Tempere os peitos de frango com sal, pimenta, alho picado e azeite de oliva.",
         "2. Grelhe o frango em uma grelha quente até que esteja cozido por completo e com marcas de grelhado.",
         "3. Corte os peitos de frango em fatias finas.",
@@ -2629,34 +2634,34 @@
     "section": {
       "ingredients": [
         {
-          "name": "Espaguete",
-          "quantity": "200g",
-          "category": ""
+          "ingredients_name": "Espaguete",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 15
         },
         {
-          "name": "Bacon",
-          "quantity": "100g",
-          "category": "",
-          "notes": "cortado em pedaços"
+          "ingredients_name": "Bacon",
+          "ingredients_quantity": "100g",
+          "ingredients_category": 3,
+          "ingredients_notes": "cortado em pedaços"
         },
         {
-          "name": "Queijo Parmesão",
-          "quantity": "1/2 xícara",
-          "category": "",
-          "notes": "ralado"
+          "ingredients_name": "Queijo Parmesão",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12,
+          "ingredients_notes": "ralado"
         },
         {
-          "name": "Ovos",
-          "quantity": "2 unidades",
-          "category": ""
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 19
         },
         {
-          "name": "Pimenta Preta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Pimenta Preta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Cozinhe o espaguete em água salgada de acordo com as instruções da embalagem. Escorra e reserve.",
         "2. Em uma frigideira, frite o bacon até que fique crocante. Escorra o excesso de gordura.",
         "3. Em uma tigela, misture os ovos, o queijo parmesão ralado e a pimenta preta.",
@@ -2677,34 +2682,34 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa para Lasanha",
-          "quantity": "200g",
-          "category": ""
+          "ingredients_name": "Massa para Lasanha",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 15
         },
         {
-          "name": "Carne Moída",
-          "quantity": "300g",
-          "category": ""
+          "ingredients_name": "Carne Moída",
+          "ingredients_quantity": "300g",
+          "ingredients_category": 3
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada"
         },
         {
-          "name": "Alho",
-          "quantity": "3 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "3 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "500ml",
-          "category": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "500ml",
+          "ingredients_category": 16
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Cozinhe a massa para lasanha de acordo com as instruções da embalagem. Escorra e reserve.",
         "2. Em uma panela, refogue a cebola e o alho em um pouco de azeite até dourarem.",
         "3. Adicione a carne moída e cozinhe até que esteja totalmente cozida e dourada.",
@@ -2728,47 +2733,47 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de Ravioli de Espinafre e Ricota",
-          "quantity": "250g",
-          "category": ""
+          "ingredients_name": "Massa de Ravioli de Espinafre e Ricota",
+          "ingredients_quantity": "250g",
+          "ingredients_category": 15
         },
         {
-          "name": "Espinafre Fresco",
-          "quantity": "200g, picado",
-          "category": ""
+          "ingredients_name": "Espinafre Fresco",
+          "ingredients_quantity": "200g, picado",
+          "ingredients_category": 21
         },
         {
-          "name": "Ricota",
-          "quantity": "200g",
-          "category": ""
+          "ingredients_name": "Ricota",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 12
         },
         {
-          "name": "Ovo",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Ovo",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 19
         },
         {
-          "name": "Queijo Parmesão Ralado",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão Ralado",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 12
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Noz-Moscada Ralada",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Noz-Moscada Ralada",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 11
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela grande, misture a ricota, o espinafre picado e o queijo parmesão. Adicione o ovo e tempere com sal, pimenta e noz-moscada a gosto. Misture bem até obter uma massa homogênea.",
         "2. Abra a massa de ravioli sobre uma superfície enfarinhada e corte-a em quadrados de tamanho igual.",
         "3. Coloque uma pequena porção da mistura de ricota e espinafre no centro de cada quadrado de massa. Dobre a massa ao meio para cobrir o recheio e pressione as bordas para selar, formando raviolis individuais.",
@@ -2790,62 +2795,62 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de Lasanha",
-          "quantity": "250g",
-          "category": ""
+          "ingredients_name": "Massa de Lasanha",
+          "ingredients_quantity": "250g",
+          "ingredients_category": 15
         },
         {
-          "name": "Carne Moída",
-          "quantity": "500g",
-          "category": ""
+          "ingredients_name": "Carne Moída",
+          "ingredients_quantity": "500g",
+          "ingredients_category": 3
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade, picada",
-          "category": ""
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade, picada",
+          "ingredients_category": 21
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "800ml",
-          "category": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "800ml",
+          "ingredients_category": 16
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Queijo Mussarela",
-          "quantity": "400g, ralado",
-          "category": ""
+          "ingredients_name": "Queijo Mussarela",
+          "ingredients_quantity": "400g, ralado",
+          "ingredients_category": 12
         },
         {
-          "name": "Queijo Parmesão",
-          "quantity": "200g, ralado",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão",
+          "ingredients_quantity": "200g, ralado",
+          "ingredients_category": 12
         },
         {
-          "name": "Sal",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Folhas de Manjericão",
-          "quantity": "opcional, para decorar",
-          "category": ""
+          "ingredients_name": "Folhas de Manjericão",
+          "ingredients_quantity": "opcional, para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, aqueça o azeite de oliva em fogo médio. Adicione a cebola e o alho picados e refogue até ficarem dourados.",
         "2. Adicione a carne moída à panela e cozinhe até que esteja completamente dourada e cozida. Tempere com sal e pimenta a gosto.",
         "3. Despeje o molho de tomate sobre a carne moída e misture bem. Deixe o molho de tomate aquecer completamente e depois reduza o fogo. Cozinhe por cerca de 15 minutos, mexendo ocasionalmente.",
@@ -2870,48 +2875,48 @@
     "section": {
       "ingredients": [
         {
-          "name": "Fettuccine",
-          "quantity": "250g",
-          "category": ""
+          "ingredients_name": "Fettuccine",
+          "ingredients_quantity": "250g",
+          "ingredients_category": 15
         },
         {
-          "name": "Creme de Leite",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Creme de Leite",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Manteiga",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 10
         },
         {
-          "name": "Queijo Parmesão Ralado",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão Ralado",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "Sal",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Salsinha Fresca",
-          "quantity": "para decorar",
-          "category": ""
+          "ingredients_name": "Salsinha Fresca",
+          "ingredients_quantity": "para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, leve água salgada para ferver. Cozinhe o fettuccine de acordo com as instruções da embalagem até que esteja al dente. Escorra e reserve.",
         "2. Enquanto o fettuccine cozinha, em uma frigideira grande, derreta a manteiga em fogo médio. Adicione o alho picado e refogue até que fique fragrante, cerca de 1 minuto.",
         "3. Reduza o fogo para médio-baixo e adicione o creme de leite à frigideira. Mexa bem para combinar com a manteiga e o alho. Cozinhe por cerca de 2-3 minutos, mexendo ocasionalmente, até que o creme de leite esteja aquecido.",
@@ -2933,34 +2938,34 @@
     "section": {
       "ingredients": [
         {
-          "name": "Filé de Salmão",
-          "quantity": "4 unidades",
-          "category": ""
+          "ingredients_name": "Filé de Salmão",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 3
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "2 limões",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "2 limões",
+          "ingredients_category": 8
         },
         {
-          "name": "Alho",
-          "quantity": "3 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "3 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Salsa",
-          "quantity": "2 colheres de sopa",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Salsa",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 20,
+          "ingredients_notes": "picada"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Tempere os filés de salmão com suco de limão, alho picado, azeite de oliva, sal e pimenta.",
         "2. Pré-aqueça uma grelha ou frigideira antiaderente.",
         "3. Grelhe os filés de salmão por 3-4 minutos de cada lado ou até que estejam cozidos e dourados.",
@@ -2980,52 +2985,52 @@
     "section": {
       "ingredients": [
         {
-          "name": "Filés de Truta",
-          "quantity": "4 unidades",
-          "category": ""
+          "ingredients_name": "Filés de Truta",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 3
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 8
         },
         {
-          "name": "Alho Picado",
-          "quantity": "2 colheres de chá",
-          "category": ""
+          "ingredients_name": "Alho Picado",
+          "ingredients_quantity": "2 colheres de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Alecrim Fresco Picado",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Alecrim Fresco Picado",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Tomilho Fresco Picado",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Tomilho Fresco Picado",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Rodelas de Limão",
-          "quantity": "para decorar",
-          "category": ""
+          "ingredients_name": "Rodelas de Limão",
+          "ingredients_quantity": "para decorar",
+          "ingredients_category": 8
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 200°C.",
         "2. Tempere os filés de truta com sal, pimenta, suco de limão e alho picado. Deixe marinar por 15-20 minutos.",
         "3. Em uma assadeira, regue o azeite de oliva no fundo e coloque os filés de truta, com a pele para baixo.",
@@ -3048,49 +3053,49 @@
     "section": {
       "ingredients": [
         {
-          "name": "Filés de peixe (tilápia, linguado, pescada, etc.)",
-          "quantity": "4 unidades",
-          "category": "",
-          "notes": "pode ser tilápia, linguado, pescada, ou outro de sua preferência"
+          "ingredients_name": "Filés de peixe (tilápia, linguado, pescada, etc.)",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 3,
+          "ingredients_notes": "pode ser tilápia, linguado, pescada, ou outro de sua preferência"
         },
         {
-          "name": "Sal e pimenta-do-reino",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal e pimenta-do-reino",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Suco de limão",
-          "quantity": "Suco de 1 limão",
-          "category": ""
+          "ingredients_name": "Suco de limão",
+          "ingredients_quantity": "Suco de 1 limão",
+          "ingredients_category": 8
         },
         {
-          "name": "Azeite de oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Dentes de alho",
-          "quantity": "2 dentes, picados",
-          "category": ""
+          "ingredients_name": "Dentes de alho",
+          "ingredients_quantity": "2 dentes, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Alcaparras",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Alcaparras",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 5
         },
         {
-          "name": "Creme de leite",
-          "quantity": "200 ml",
-          "category": ""
+          "ingredients_name": "Creme de leite",
+          "ingredients_quantity": "200 ml",
+          "ingredients_category": 12
         },
         {
-          "name": "Salsinha picada",
-          "quantity": "",
-          "category": "",
-          "notes": "para decorar"
+          "ingredients_name": "Salsinha picada",
+          "ingredients_quantity": "",
+          "ingredients_category": 20,
+          "ingredients_notes": "para decorar"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Tempere os filés de peixe com sal, pimenta-do-reino e suco de limão. Deixe marinar por 15-20 minutos na geladeira.",
         "2. Em uma frigideira grande, aqueça o azeite de oliva em fogo médio. Adicione o alho picado e refogue por cerca de 1 minuto, até ficar fragrante.",
         "3. Adicione os filés de peixe à frigideira e cozinhe por 3-4 minutos de cada lado, ou até que estejam completamente cozidos. O tempo de cozimento pode variar de acordo com a espessura dos filés. Retire os filés da frigideira e reserve.",
@@ -3111,52 +3116,52 @@
     "section": {
       "ingredients": [
         {
-          "name": "Salmão",
-          "quantity": "4 filés de salmão",
-          "category": ""
+          "ingredients_name": "Salmão",
+          "ingredients_quantity": "4 filés de salmão",
+          "ingredients_category": 20
         },
         {
-          "name": "Mostarda Dijon",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Mostarda Dijon",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 5
         },
         {
-          "name": "Mel",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Mel",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 1
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "Suco de 1 limão",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "Suco de 1 limão",
+          "ingredients_category": 8
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes de alho, picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes de alho, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Salsinha Fresca",
-          "quantity": "Para decorar",
-          "category": ""
+          "ingredients_name": "Salsinha Fresca",
+          "ingredients_quantity": "Para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela pequena, misture a mostarda Dijon, o mel, o azeite de oliva, o suco de limão e o alho picado. Tempere com sal e pimenta a gosto. Este será o seu molho.",
         "2. Pré-aqueça o forno a 180°C.",
         "3. Tempere os filés de salmão com sal e pimenta dos dois lados.",
@@ -3181,52 +3186,52 @@
     "section": {
       "ingredients": [
         {
-          "name": "Tilápia",
-          "quantity": "4 filés (aproximadamente 150g cada)",
-          "category": ""
+          "ingredients_name": "Tilápia",
+          "ingredients_quantity": "4 filés (aproximadamente 150g cada)",
+          "ingredients_category": 3
         },
         {
-          "name": "Sal e pimenta-do-reino",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Sal e pimenta-do-reino",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Suco de limão",
-          "quantity": "Suco de 2 limões",
-          "category": ""
+          "ingredients_name": "Suco de limão",
+          "ingredients_quantity": "Suco de 2 limões",
+          "ingredients_category": 8
         },
         {
-          "name": "Manjericão fresco",
-          "quantity": "2 colheres de sopa de folhas picadas",
-          "category": ""
+          "ingredients_name": "Manjericão fresco",
+          "ingredients_quantity": "2 colheres de sopa de folhas picadas",
+          "ingredients_category": 20
         },
         {
-          "name": "Salsa fresca",
-          "quantity": "2 colheres de sopa de folhas picadas",
-          "category": ""
+          "ingredients_name": "Salsa fresca",
+          "ingredients_quantity": "2 colheres de sopa de folhas picadas",
+          "ingredients_category": 20
         },
         {
-          "name": "Cebolinha verde",
-          "quantity": "2 colheres de sopa picadas",
-          "category": ""
+          "ingredients_name": "Cebolinha verde",
+          "ingredients_quantity": "2 colheres de sopa picadas",
+          "ingredients_category": 22
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes picados",
-          "category": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Limão para decorar",
-          "quantity": "Fatias de limão (opcional)",
-          "category": ""
+          "ingredients_name": "Limão para decorar",
+          "ingredients_quantity": "Fatias de limão (opcional)",
+          "ingredients_category": 8
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça a grelha em fogo médio-alto e unte-a com azeite.",
         "2. Tempere os filés de tilápia com sal e pimenta-do-reino a gosto.",
         "3. Em uma tigela pequena, misture o azeite de oliva, o suco de limão, o manjericão, a salsa, a cebolinha verde e o alho picado.",
@@ -3247,35 +3252,35 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de Pizza",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "pronta ou caseira"
+          "ingredients_name": "Massa de Pizza",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 15,
+          "ingredients_notes": "pronta ou caseira"
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 16
         },
         {
-          "name": "Queijo Muçarela",
-          "quantity": "200g",
-          "category": "",
-          "notes": "ralado"
+          "ingredients_name": "Queijo Muçarela",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 12,
+          "ingredients_notes": "ralado"
         },
         {
-          "name": "Tomate",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "cortados em rodelas"
+          "ingredients_name": "Tomate",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortados em rodelas"
         },
         {
-          "name": "Manjericão Fresco",
-          "quantity": "folhas a gosto",
-          "category": ""
+          "ingredients_name": "Manjericão Fresco",
+          "ingredients_quantity": "folhas a gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno conforme as instruções da massa de pizza.",
         "2. Abra a massa em uma superfície enfarinhada para formar uma pizza redonda.",
         "3. Espalhe o molho de tomate sobre a massa.",
@@ -3296,47 +3301,47 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de Pizza",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Massa de Pizza",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 15
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 16
         },
         {
-          "name": "Queijo Mussarela",
-          "quantity": "1 1/2 xícaras",
-          "category": ""
+          "ingredients_name": "Queijo Mussarela",
+          "ingredients_quantity": "1 1/2 xícaras",
+          "ingredients_category": 12
         },
         {
-          "name": "Pepperoni",
-          "quantity": "1/2 xícara (em rodelas)",
-          "category": ""
+          "ingredients_name": "Pepperoni",
+          "ingredients_quantity": "1/2 xícara (em rodelas)",
+          "ingredients_category": 5
         },
         {
-          "name": "Azeitonas Pretas",
-          "quantity": "1/4 de xícara (fatiadas)",
-          "category": ""
+          "ingredients_name": "Azeitonas Pretas",
+          "ingredients_quantity": "1/4 de xícara (fatiadas)",
+          "ingredients_category": 6
         },
         {
-          "name": "Cogumelos",
-          "quantity": "1/4 de xícara (fatiados)",
-          "category": ""
+          "ingredients_name": "Cogumelos",
+          "ingredients_quantity": "1/4 de xícara (fatiados)",
+          "ingredients_category": 9
         },
         {
-          "name": "Orégano",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Orégano",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de Oliva Extra Virgem",
-          "quantity": "Para regar",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva Extra Virgem",
+          "ingredients_quantity": "Para regar",
+          "ingredients_category": 10
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 220°C (temperatura máxima).",
         "2. Abra a massa de pizza em um círculo fino em uma superfície enfarinhada.",
         "3. Transfira a massa para uma assadeira ou pedra de pizza levemente enfarinhada.",
@@ -3361,55 +3366,55 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de Pizza",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Massa de Pizza",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 15,
+          "ingredients_notes": ""
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "1 xícara",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 16,
+          "ingredients_notes": ""
         },
         {
-          "name": "Linguiça Calabresa",
-          "quantity": "200g",
-          "category": "",
-          "notes": "fatiada"
+          "ingredients_name": "Linguiça Calabresa",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 3,
+          "ingredients_notes": "fatiada"
         },
         {
-          "name": "Cebola",
-          "quantity": "1 unidade grande",
-          "category": "",
-          "notes": "cortada em rodelas finas"
+          "ingredients_name": "Cebola",
+          "ingredients_quantity": "1 unidade grande",
+          "ingredients_category": 21,
+          "ingredients_notes": "cortada em rodelas finas"
         },
         {
-          "name": "Queijo Mussarela",
-          "quantity": "2 xícaras",
-          "category": "",
-          "notes": "ralado"
+          "ingredients_name": "Queijo Mussarela",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 12,
+          "ingredients_notes": "ralado"
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "a gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 10,
+          "ingredients_notes": ""
         },
         {
-          "name": "Orégano",
-          "quantity": "a gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Orégano",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Pimenta Vermelha em Flocos",
-          "quantity": "a gosto",
-          "category": "",
-          "notes": "(opcional)"
+          "ingredients_name": "Pimenta Vermelha em Flocos",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": "(opcional)"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 220°C (temperatura máxima).",
         "2. Estenda a massa de pizza pré-cozida em uma assadeira ou pedra de pizza levemente enfarinhada.",
         "3. Espalhe o molho de tomate uniformemente sobre a massa, deixando uma borda fina para a crosta.",
@@ -3435,57 +3440,57 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de pizza",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Massa de pizza",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 15
         },
         {
-          "name": "Molho pesto",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Molho pesto",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 16
         },
         {
-          "name": "Queijo mussarela ralado",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Queijo mussarela ralado",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Frango cozido desfiado",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Frango cozido desfiado",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 3
         },
         {
-          "name": "Tomates secos picados",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Tomates secos picados",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 13
         },
         {
-          "name": "Queijo parmesão ralado",
-          "quantity": "1/4 de xícara",
-          "category": ""
+          "ingredients_name": "Queijo parmesão ralado",
+          "ingredients_quantity": "1/4 de xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Folhas de manjericão fresco",
-          "quantity": "Para decorar",
-          "category": ""
+          "ingredients_name": "Folhas de manjericão fresco",
+          "ingredients_quantity": "Para decorar",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de oliva extra virgem",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Azeite de oliva extra virgem",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 220°C (temperatura máxima). Se estiver usando uma pedra de pizza, coloque-a no forno enquanto aquece.",
         "2. Estenda a massa de pizza em uma superfície levemente enfarinhada, formando um círculo do tamanho desejado.",
         "3. Transfira a massa para uma assadeira ou pedra de pizza quente (tenha cuidado para não queimar as mãos).",
@@ -3512,56 +3517,56 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de Pizza Pré-cozida",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Massa de Pizza Pré-cozida",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 15
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 16
         },
         {
-          "name": "Camarões Grandes",
-          "quantity": "200g",
-          "category": "",
-          "notes": "descascados e limpos"
+          "ingredients_name": "Camarões Grandes",
+          "ingredients_quantity": "200g",
+          "ingredients_category": 18,
+          "ingredients_notes": "descascados e limpos"
         },
         {
-          "name": "Abacate Maduro",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortado em fatias finas"
+          "ingredients_name": "Abacate Maduro",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 8,
+          "ingredients_notes": "cortado em fatias finas"
         },
         {
-          "name": "Cebola Vermelha",
-          "quantity": "1/2 unidade",
-          "category": "",
-          "notes": "cortada em rodelas finas"
+          "ingredients_name": "Cebola Vermelha",
+          "ingredients_quantity": "1/2 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "cortada em rodelas finas"
         },
         {
-          "name": "Queijo Mussarela",
-          "quantity": "1 xícara",
-          "category": "",
-          "notes": "ralado"
+          "ingredients_name": "Queijo Mussarela",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12,
+          "ingredients_notes": "ralado"
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "Suco de 1 limão",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "Suco de 1 limão",
+          "ingredients_category": 8
         },
         {
-          "name": "Sal e Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal e Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Folhas de Coentro Fresco",
-          "quantity": "Para decorar",
-          "category": ""
+          "ingredients_name": "Folhas de Coentro Fresco",
+          "ingredients_quantity": "Para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno de acordo com as instruções da massa de pizza.",
         "2. Estenda a massa de pizza pré-cozida em uma assadeira ou pedra de pizza.",
         "3. Espalhe o molho de tomate uniformemente sobre a massa.",
@@ -3588,30 +3593,30 @@
     "section": {
       "ingredients": [
         {
-          "name": "Banana",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "maduras"
+          "ingredients_name": "Banana",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 8,
+          "ingredients_notes": "maduras"
         },
         {
-          "name": "Morangos",
-          "quantity": "1 xícara",
-          "category": "",
-          "notes": "frescos ou congelados"
+          "ingredients_name": "Morangos",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 8,
+          "ingredients_notes": "frescos ou congelados"
         },
         {
-          "name": "Iogurte Natural",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Iogurte Natural",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Mel",
-          "quantity": "2 colheres de sopa",
-          "category": "",
-          "notes": "opcional"
+          "ingredients_name": "Mel",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 1,
+          "ingredients_notes": "opcional"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Descasque as bananas e lave os morangos, removendo os talos.",
         "2. Coloque as bananas, os morangos, o iogurte e o mel (se desejar um toque doce) em um liquidificador.",
         "3. Misture até obter uma consistência suave e cremosa.",
@@ -3630,37 +3635,38 @@
     "section": {
       "ingredients": [
         {
-          "name": "Morangos frescos",
-          "quantity": "1 xícara, lavados e sem os cabos",
-          "category": ""
+          "ingredients_name": "Morangos frescos",
+          "ingredients_quantity": "1 xícara, lavados e sem os cabos",
+          "ingredients_category": 8
         },
         {
-          "name": "Limões grandes",
-          "quantity": "4 unidades",
-          "category": ""
+          "ingredients_name": "Limões grandes",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 8
         },
         {
-          "name": "Açúcar",
-          "quantity": "1/2 xícara (ajuste a gosto)",
-          "category": ""
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "1/2 xícara (ajuste a gosto)",
+          "ingredients_category": 1
         },
         {
-          "name": "Água",
-          "quantity": "4 xícaras",
-          "category": ""
+          "ingredients_name": "Água",
+          "ingredients_quantity": "4 xícaras",
+          "ingredients_category": 14
         },
         {
-          "name": "Gelo",
-          "quantity": "Gelo a gosto",
-          "category": ""
+          "ingredients_name": "Gelo",
+          "ingredients_quantity": "Gelo a gosto",
+          "ingredients_category": 0
         },
         {
-          "name": "Decoração (opcional)",
-          "quantity": "Morangos e rodelas de limão",
-          "category": ""
+          "ingredients_name": "Morangos e rodelas de limão",
+          "ingredients_quantity": "",
+          "ingredients_category": 8,
+          "ingredients_notes": "Decoração (opcional)"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Corte os morangos ao meio.",
         "2. Esprema o suco dos limões.",
         "3. Em um liquidificador, adicione os morangos cortados, o suco de limão e o açúcar. Misture até obter uma mistura homogênea.",
@@ -3683,49 +3689,49 @@
     "section": {
       "ingredients": [
         {
-          "name": "10 folhas de hortelã fresca",
-          "quantity": "10 folhas",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Hortelã Fresca",
+          "ingredients_quantity": "10 folhas",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "1/2 limão, cortado em pedaços",
-          "quantity": "1/2 limão",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Limão",
+          "ingredients_quantity": "1/2 limão",
+          "ingredients_category": 8,
+          "ingredients_notes": "cortado em pedaços"
         },
         {
-          "name": "2 colheres de chá de açúcar",
-          "quantity": "2 colheres de chá",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "2 colheres de chá",
+          "ingredients_category": 1,
+          "ingredients_notes": ""
         },
         {
-          "name": "60 ml de rum branco",
-          "quantity": "60 ml",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Rum Branco",
+          "ingredients_quantity": "60 ml",
+          "ingredients_category": 2,
+          "ingredients_notes": ""
         },
         {
-          "name": "Gelo a gosto",
-          "quantity": "Gelo a gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Gelo",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 0,
+          "ingredients_notes": ""
         },
         {
-          "name": "Água com gás",
-          "quantity": "Água com gás",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Água com Gás",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 14,
+          "ingredients_notes": ""
         },
         {
-          "name": "Fatias de limão e ramos de hortelã para decorar",
-          "quantity": "A gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Limão e Hortelã para Decorar",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 8,
+          "ingredients_notes": "fatias de limão e ramos de hortelã"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em um copo alto, adicione as folhas de hortelã e o açúcar.",
         "2. Usando um pilão ou um socador, amasse suavemente as folhas de hortelã para liberar seu aroma e sabor.",
         "3. Adicione os pedaços de limão e continue a amassar, liberando o suco do limão.",
@@ -3748,37 +3754,38 @@
     "section": {
       "ingredients": [
         {
-          "name": "Manga madura",
-          "quantity": "1 unidade, descascada e picada",
-          "category": ""
+          "ingredients_name": "Manga madura",
+          "ingredients_quantity": "1 unidade, descascada e picada",
+          "ingredients_category": 8
         },
         {
-          "name": "Leite de coco",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Leite de coco",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Iogurte natural",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Iogurte natural",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 12
         },
         {
-          "name": "Mel",
-          "quantity": "1 colher de sopa",
-          "category": "",
-          "notes": "(opcional, para adoçar)"
+          "ingredients_name": "Mel",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 1,
+          "ingredients_notes": "(opcional, para adoçar)"
         },
         {
-          "name": "Gelo",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Gelo",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 0
         },
         {
-          "name": "Fatias de manga e coco ralado",
-          "notes": "(opcional, para decorar)"
+          "ingredients_name": "Fatias de manga e coco ralado",
+          "ingredients_category": 8,
+          "ingredients_notes": "(opcional, para decorar)"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Coloque a manga picada, o leite de coco, o iogurte e o mel (se desejar mais doce) em um liquidificador.",
         "2. Adicione gelo a gosto para obter a consistência desejada.",
         "3. Cubra o liquidificador e misture até que todos os ingredientes estejam bem combinados e a mistura fique suave.",
@@ -3800,43 +3807,43 @@
     "section": {
       "ingredients": [
         {
-          "name": "Abacaxi fresco em cubos",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Abacaxi fresco em cubos",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 8
         },
         {
-          "name": "Manga madura em cubos",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Manga madura em cubos",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 8
         },
         {
-          "name": "Maracujá fresco (polpa)",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Maracujá fresco (polpa)",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 8
         },
         {
-          "name": "Suco de laranja",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Suco de laranja",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 8
         },
         {
-          "name": "Suco de limão",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Suco de limão",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 8
         },
         {
-          "name": "Xarope de açúcar",
-          "quantity": "1 colher de sopa",
-          "category": "",
-          "notes": "opcional, para adoçar"
+          "ingredients_name": "Xarope de açúcar",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 1,
+          "ingredients_notes": "opcional, para adoçar"
         },
         {
-          "name": "Gelo",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Gelo",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 0
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em um liquidificador, adicione o abacaxi, a manga, a polpa de maracujá, o suco de laranja e o suco de limão.",
         "2. Se desejar o coquetel mais doce, adicione o xarope de açúcar a gosto.",
         "3. Adicione gelo a gosto para obter a consistência desejada e tornar o coquetel bem gelado.",
@@ -3859,36 +3866,36 @@
     "section": {
       "ingredients": [
         {
-          "name": "Abacate",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "maduros"
+          "ingredients_name": "Abacate",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 8,
+          "ingredients_notes": "maduros"
         },
         {
-          "name": "Tomate",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "picado em cubos"
+          "ingredients_name": "Tomate",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "picado em cubos"
         },
         {
-          "name": "Cebola Vermelha",
-          "quantity": "1/2 unidade",
-          "category": "",
-          "notes": "picada finamente"
+          "ingredients_name": "Cebola Vermelha",
+          "ingredients_quantity": "1/2 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada finamente"
         },
         {
-          "name": "Coentro",
-          "quantity": "2 colheres de sopa",
-          "category": "",
-          "notes": "picado"
+          "ingredients_name": "Coentro",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 20,
+          "ingredients_notes": "picado"
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "1 limão",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "1 limão",
+          "ingredients_category": 8
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Corte os abacates ao meio, remova o caroço e retire a polpa.",
         "2. Em uma tigela, amasse a polpa dos abacates com um garfo.",
         "3. Adicione o tomate, a cebola vermelha, o coentro e o suco de limão.",
@@ -3908,49 +3915,49 @@
     "section": {
       "ingredients": [
         {
-          "name": "Pão Italiano ou Baguete",
-          "quantity": "4 fatias",
-          "category": "",
-          "notes": "Você pode escolher entre pão italiano ou baguete."
+          "ingredients_name": "Pão Italiano ou Baguete",
+          "ingredients_quantity": "4 fatias",
+          "ingredients_category": 17,
+          "ingredients_notes": "Você pode escolher entre pão italiano ou baguete."
         },
         {
-          "name": "Dentes de Alho",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "Descascados e usados para esfregar no pão."
+          "ingredients_name": "Dentes de Alho",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 20,
+          "ingredients_notes": "Descascados e usados para esfregar no pão."
         },
         {
-          "name": "Tomates Maduros",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "Picados."
+          "ingredients_name": "Tomates Maduros",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": "Picados."
         },
         {
-          "name": "Folhas de Manjericão Fresco",
-          "quantity": "1/4 de xícara",
-          "category": "",
-          "notes": "Picadas."
+          "ingredients_name": "Folhas de Manjericão Fresco",
+          "ingredients_quantity": "1/4 de xícara",
+          "ingredients_category": 20,
+          "ingredients_notes": "Picadas."
         },
         {
-          "name": "Azeite de Oliva Extra-Virgem",
-          "quantity": "2 colheres de sopa",
-          "category": "",
-          "notes": "Use azeite de boa qualidade."
+          "ingredients_name": "Azeite de Oliva Extra-Virgem",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10,
+          "ingredients_notes": "Use azeite de boa qualidade."
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 180°C.",
         "2. Esfregue os dentes de alho nas fatias de pão, dos dois lados, para dar sabor.",
         "3. Disponha as fatias de pão em uma assadeira e leve ao forno por cerca de 5 minutos ou até que fiquem levemente douradas.",
@@ -3972,55 +3979,55 @@
     "section": {
       "ingredients": [
         {
-          "name": "Abobrinhas",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Abobrinhas",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": ""
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10,
+          "ingredients_notes": ""
         },
         {
-          "name": "Limão",
-          "quantity": "1 unidade (suco)",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Limão",
+          "ingredients_quantity": "1 unidade (suco)",
+          "ingredients_category": 8,
+          "ingredients_notes": ""
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes picados",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes picados",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Queijo Parmesão",
-          "quantity": "2 colheres de sopa ralado",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Queijo Parmesão",
+          "ingredients_quantity": "2 colheres de sopa ralado",
+          "ingredients_category": 12,
+          "ingredients_notes": ""
         },
         {
-          "name": "Sal",
-          "quantity": "a gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Pimenta",
-          "quantity": "a gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Folhas de Manjericão",
-          "quantity": "",
-          "category": "",
-          "notes": "para decorar"
+          "ingredients_name": "Folhas de Manjericão",
+          "ingredients_quantity": "",
+          "ingredients_category": 20,
+          "ingredients_notes": "para decorar"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Lave bem as abobrinhas e corte-as em fatias finas, no sentido do comprimento, utilizando um mandolim ou uma faca afiada.",
         "2. Em uma tigela, misture o azeite de oliva, o suco de limão, o alho picado, o queijo parmesão ralado, o sal e a pimenta. Essa mistura será o molho para o carpaccio.",
         "3. Disponha as fatias de abobrinha em um prato grande, sobrepondo-as levemente.",
@@ -4041,58 +4048,60 @@
     "section": {
       "ingredients": [
         {
-          "name": "Presunto",
-          "quantity": "8 fatias finas",
-          "category": ""
+          "ingredients_name": "Presunto",
+          "ingredients_quantity": "8 fatias finas",
+          "ingredients_category": 3
         },
         {
-          "name": "Queijo Suave",
-          "quantity": "8 fatias finas",
-          "category": ""
+          "ingredients_name": "Queijo Suave",
+          "ingredients_quantity": "8 fatias finas",
+          "ingredients_category": 12
         },
         {
-          "name": "Rúcula",
-          "quantity": "1/2 xícara",
-          "category": "",
-          "notes": "lavada e seca"
+          "ingredients_name": "Rúcula",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 22,
+          "ingredients_notes": "lavada e seca"
         },
         {
-          "name": "Pimentões Vermelhos",
-          "quantity": "1/4 xícara",
-          "category": "",
-          "notes": "em tiras finas"
+          "ingredients_name": "Pimentões Vermelhos",
+          "ingredients_quantity": "1/4 xícara",
+          "ingredients_category": 13,
+          "ingredients_notes": "em tiras finas"
         },
         {
-          "name": "Azeitonas Verdes",
-          "quantity": "1/4 xícara",
-          "category": "",
-          "notes": "picadas"
+          "ingredients_name": "Azeitonas Verdes",
+          "ingredients_quantity": "1/4 xícara",
+          "ingredients_category": 6,
+          "ingredients_notes": "picadas"
         },
         {
-          "name": "Azeite de Oliva Extra Virgem",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva Extra Virgem",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Suco de Limão",
-          "quantity": "Suco de meio limão",
-          "category": ""
+          "ingredients_name": "Suco de Limão",
+          "ingredients_quantity": "Suco de meio limão",
+          "ingredients_category": 8
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Palitos de Dente"
+          "ingredients_name": "Palitos de Dente",
+          "ingredients_quantity": "O necessário",
+          "ingredients_category": 0
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma tigela pequena, misture a rúcula, os pimentões vermelhos, as azeitonas verdes, o azeite de oliva, o suco de limão, o sal e a pimenta. Reserve.",
         "2. Coloque uma fatia de presunto em uma superfície limpa e, em seguida, coloque uma fatia de queijo sobre ela.",
         "3. Adicione uma colher da mistura de rúcula, pimentões e azeitonas sobre o queijo.",
@@ -4113,45 +4122,45 @@
     "section": {
       "ingredients": [
         {
-          "name": "Aspargos",
-          "quantity": "16 unidades",
-          "category": "",
-          "notes": "partes duras removidas"
+          "ingredients_name": "Aspargos",
+          "ingredients_quantity": "16 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": "partes duras removidas"
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta-do-Reino",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta-do-Reino",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Presunto de Parma",
-          "quantity": "8 fatias finas",
-          "category": ""
+          "ingredients_name": "Presunto de Parma",
+          "ingredients_quantity": "8 fatias finas",
+          "ingredients_category": 3
         },
         {
-          "name": "Queijo Parmesão",
-          "quantity": "1/4 xícara",
-          "category": "",
-          "notes": "ralado"
+          "ingredients_name": "Queijo Parmesão",
+          "ingredients_quantity": "1/4 xícara",
+          "ingredients_category": 12,
+          "ingredients_notes": "ralado"
         },
         {
-          "name": "Raspas de Limão",
-          "quantity": "1 colher de chá",
-          "category": "",
-          "notes": "para decorar"
+          "ingredients_name": "Raspas de Limão",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 8,
+          "ingredients_notes": "para decorar"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça uma grelha ou frigideira grill em fogo médio-alto.",
         "2. Regue os aspargos com azeite de oliva e tempere com sal e pimenta.",
         "3. Grelhe os aspargos por cerca de 2-3 minutos de cada lado, até que fiquem levemente dourados e macios.",
@@ -4172,35 +4181,35 @@
     "section": {
       "ingredients": [
         {
-          "name": "Tortilhas de Trigo",
-          "quantity": "4 unidades",
-          "category": ""
+          "ingredients_name": "Tortilhas de Trigo",
+          "ingredients_quantity": "4 unidades",
+          "ingredients_category": 15
         },
         {
-          "name": "Hummus",
-          "quantity": "1 xícara",
-          "category": ""
+          "ingredients_name": "Hummus",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 16
         },
         {
-          "name": "Pepino",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "fatias finas"
+          "ingredients_name": "Pepino",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "fatias finas"
         },
         {
-          "name": "Tomate",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "rodelas"
+          "ingredients_name": "Tomate",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 13,
+          "ingredients_notes": "rodelas"
         },
         {
-          "name": "Pimentão Vermelho",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "tiras finas"
+          "ingredients_name": "Pimentão Vermelho",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "tiras finas"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Aqueça as tortilhas de trigo em uma frigideira ou no micro-ondas até ficarem levemente aquecidas.",
         "2. Espalhe uma generosa camada de hummus sobre cada tortilha.",
         "3. Coloque fatias de pepino, rodelas de tomate e tiras de pimentão vermelho sobre o hummus.",
@@ -4220,52 +4229,52 @@
     "section": {
       "ingredients": [
         {
-          "name": "Massa de pizza pré-cozida",
-          "quantity": "1 unidade",
-          "category": ""
+          "ingredients_name": "Massa de pizza pré-cozida",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 15
         },
         {
-          "name": "Abobrinha média",
-          "quantity": "1 unidade, cortada em rodelas finas",
-          "category": ""
+          "ingredients_name": "Abobrinha média",
+          "ingredients_quantity": "1 unidade, cortada em rodelas finas",
+          "ingredients_category": 13
         },
         {
-          "name": "Cebola vermelha",
-          "quantity": "1/2 unidade, fatiada",
-          "category": ""
+          "ingredients_name": "Cebola vermelha",
+          "ingredients_quantity": "1/2 unidade, fatiada",
+          "ingredients_category": 21
         },
         {
-          "name": "Queijo de cabra",
-          "quantity": "100g, em pedaços",
-          "category": ""
+          "ingredients_name": "Queijo de cabra",
+          "ingredients_quantity": "100g, em pedaços",
+          "ingredients_category": 12
         },
         {
-          "name": "Molho de tomate",
-          "quantity": "1/2 xícara",
-          "category": ""
+          "ingredients_name": "Molho de tomate",
+          "ingredients_quantity": "1/2 xícara",
+          "ingredients_category": 16
         },
         {
-          "name": "Dente de alho",
-          "quantity": "1 unidade, picado",
-          "category": ""
+          "ingredients_name": "Dente de alho",
+          "ingredients_quantity": "1 unidade, picado",
+          "ingredients_category": 20
         },
         {
-          "name": "Azeite de oliva",
-          "quantity": "2 colheres de sopa",
-          "category": ""
+          "ingredients_name": "Azeite de oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal e pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal e pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Folhas de manjericão fresco",
-          "quantity": "Para decorar",
-          "category": ""
+          "ingredients_name": "Folhas de manjericão fresco",
+          "ingredients_quantity": "Para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 220°C (temperatura máxima).",
         "2. Em uma frigideira, aqueça o azeite de oliva em fogo médio. Adicione o alho picado e refogue até ficar fragrante.",
         "3. Adicione as rodelas de abobrinha e a cebola fatiada à frigideira. Cozinhe por 3-4 minutos até que a abobrinha fique macia. Tempere com sal e pimenta a gosto.",
@@ -4289,76 +4298,80 @@
     "section": {
       "ingredients": [
         {
-          "name": "Abobrinha",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortada em fatias finas"
+          "ingredients_name": "Abobrinha",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortada em fatias finas"
         },
         {
-          "name": "Berinjela",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortada em fatias finas"
+          "ingredients_name": "Berinjela",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortada em fatias finas"
         },
         {
-          "name": "Cenoura",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "descascada e cortada em fatias finas"
+          "ingredients_name": "Cenoura",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "descascada e cortada em fatias finas"
         },
         {
-          "name": "Pimentão Vermelho",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortado em tiras finas"
+          "ingredients_name": "Pimentão Vermelho",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortado em tiras finas"
         },
         {
-          "name": "Pimentão Amarelo",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortado em tiras finas"
+          "ingredients_name": "Pimentão Amarelo",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 13,
+          "ingredients_notes": "cortado em tiras finas"
         },
         {
-          "name": "Cebola Roxa",
-          "quantity": "1 unidade",
-          "category": "",
-          "notes": "cortada em rodelas finas"
+          "ingredients_name": "Cebola Roxa",
+          "ingredients_quantity": "1 unidade",
+          "ingredients_category": 21,
+          "ingredients_notes": "cortada em rodelas finas"
         },
         {
-          "name": "Dentes de Alho",
-          "quantity": "2 unidades",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Dentes de Alho",
+          "ingredients_quantity": "2 unidades",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "Molho de Tomate",
-          "quantity": "400g",
-          "category": ""
+          "ingredients_name": "Molho de Tomate",
+          "ingredients_quantity": "400g",
+          "ingredients_category": 16
         },
         {
-          "name": "Queijo Mussarela Ralado",
-          "quantity": "250g",
-          "category": ""
+          "ingredients_name": "Queijo Mussarela Ralado",
+          "ingredients_quantity": "250g",
+          "ingredients_category": 12
         },
         {
-          "name": "Queijo Parmesão Ralado",
-          "quantity": "250g",
-          "category": ""
+          "ingredients_name": "Queijo Parmesão Ralado",
+          "ingredients_quantity": "250g",
+          "ingredients_category": 12
         },
         {
-          "name": "Azeite de Oliva"
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "",
+          "ingredients_category": 10
         },
         {
-          "name": "Sal e Pimenta",
-          "quantity": "a gosto",
-          "category": ""
+          "ingredients_name": "Sal e Pimenta",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Folhas de Manjericão Fresco",
-          "notes": "para decorar"
+          "ingredients_name": "Folhas de Manjericão Fresco",
+          "ingredients_quantity": "a gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": "para decorar"
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Pré-aqueça o forno a 180°C.",
         "2. Em uma frigideira grande, aqueça um pouco de azeite de oliva em fogo médio. Adicione o alho picado e a cebola roxa e refogue até que fiquem dourados e perfumados.",
         "3. Adicione os pimentões e a cenoura à frigideira e refogue por alguns minutos até que os legumes fiquem levemente macios.",
@@ -4385,82 +4398,82 @@
     "section": {
       "ingredients": [
         {
-          "name": "Grão-de-bico cozido",
-          "quantity": "2 xícaras",
-          "category": ""
+          "ingredients_name": "Grão-de-bico cozido",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 11
         },
         {
-          "name": "Cebola média",
-          "quantity": "1 unidade, picada",
-          "category": ""
+          "ingredients_name": "Cebola média",
+          "ingredients_quantity": "1 unidade, picada",
+          "ingredients_category": 21
         },
         {
-          "name": "Dentes de alho",
-          "quantity": "2 unidades, picados",
-          "category": ""
+          "ingredients_name": "Dentes de alho",
+          "ingredients_quantity": "2 unidades, picados",
+          "ingredients_category": 20
         },
         {
-          "name": "Óleo de coco",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Óleo de coco",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 10
         },
         {
-          "name": "Curry em pó",
-          "quantity": "1 colher de sopa",
-          "category": ""
+          "ingredients_name": "Curry em pó",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 20
         },
         {
-          "name": "Açafrão em pó",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Açafrão em pó",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Cominho em pó",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Cominho em pó",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Coentro em pó",
-          "quantity": "1 colher de chá",
-          "category": ""
+          "ingredients_name": "Coentro em pó",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Gengibre em pó",
-          "quantity": "1/2 colher de chá",
-          "category": ""
+          "ingredients_name": "Gengibre em pó",
+          "ingredients_quantity": "1/2 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Canela em pó",
-          "quantity": "1/2 colher de chá",
-          "category": ""
+          "ingredients_name": "Canela em pó",
+          "ingredients_quantity": "1/2 colher de chá",
+          "ingredients_category": 20
         },
         {
-          "name": "Tomates picados",
-          "quantity": "1 lata (400g)",
-          "category": ""
+          "ingredients_name": "Tomates picados",
+          "ingredients_quantity": "1 lata (400g)",
+          "ingredients_category": 13
         },
         {
-          "name": "Leite de coco",
-          "quantity": "1 lata (400ml)",
-          "category": ""
+          "ingredients_name": "Leite de coco",
+          "ingredients_quantity": "1 lata (400ml)",
+          "ingredients_category": 12
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20
         },
         {
-          "name": "Coentro fresco",
-          "quantity": "Para decorar",
-          "category": ""
+          "ingredients_name": "Coentro fresco",
+          "ingredients_quantity": "Para decorar",
+          "ingredients_category": 20
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Em uma panela grande, aqueça o óleo de coco em fogo médio. Adicione a cebola picada e o alho picado e refogue até que fiquem dourados e perfumados.",
         "2. Adicione todas as especiarias: curry em pó, açafrão, cominho, coentro, gengibre e canela. Mexa bem para tostar as especiarias por cerca de 1 minuto, até liberarem seus aromas.",
         "3. Despeje os tomates picados na panela e mexa. Cozinhe por alguns minutos até que os tomates comecem a se desfazer.",
@@ -4482,115 +4495,115 @@
     "section": {
       "ingredients": [
         {
-          "name": "Quinoa",
-          "quantity": "1 xícara",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Quinoa",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 11,
+          "ingredients_notes": ""
         },
         {
-          "name": "Água",
-          "quantity": "2 xícaras",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Água",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 14,
+          "ingredients_notes": ""
         },
         {
-          "name": "Feijão Preto",
-          "quantity": "1 lata (400g)",
-          "category": "",
-          "notes": "escorrido e lavado"
+          "ingredients_name": "Feijão Preto",
+          "ingredients_quantity": "1 lata (400g)",
+          "ingredients_category": 11,
+          "ingredients_notes": "escorrido e lavado"
         },
         {
-          "name": "Cebola Roxa",
-          "quantity": "1/2",
-          "category": "",
-          "notes": "picada"
+          "ingredients_name": "Cebola Roxa",
+          "ingredients_quantity": "1/2",
+          "ingredients_category": 21,
+          "ingredients_notes": "picada"
         },
         {
-          "name": "Alho",
-          "quantity": "2 dentes",
-          "category": "",
-          "notes": "picados"
+          "ingredients_name": "Alho",
+          "ingredients_quantity": "2 dentes",
+          "ingredients_category": 20,
+          "ingredients_notes": "picados"
         },
         {
-          "name": "Pimentão Vermelho",
-          "quantity": "1/2",
-          "category": "",
-          "notes": "picado"
+          "ingredients_name": "Pimentão Vermelho",
+          "ingredients_quantity": "1/2",
+          "ingredients_category": 13,
+          "ingredients_notes": "picado"
         },
         {
-          "name": "Pimentão Amarelo",
-          "quantity": "1/2",
-          "category": "",
-          "notes": "picado"
+          "ingredients_name": "Pimentão Amarelo",
+          "ingredients_quantity": "1/2",
+          "ingredients_category": 13,
+          "ingredients_notes": "picado"
         },
         {
-          "name": "Cominho em Pó",
-          "quantity": "1 colher de chá",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Cominho em Pó",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Páprica em Pó",
-          "quantity": "1 colher de chá",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Páprica em Pó",
+          "ingredients_quantity": "1 colher de chá",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Pimenta em Pó",
-          "quantity": "1/2 colher de chá",
-          "category": "",
-          "notes": "(opcional, ajuste ao seu gosto)"
+          "ingredients_name": "Pimenta em Pó",
+          "ingredients_quantity": "1/2 colher de chá",
+          "ingredients_category": 20,
+          "ingredients_notes": "(opcional, ajuste ao seu gosto)"
         },
         {
-          "name": "Sal",
-          "quantity": "A gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Sal",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Pimenta",
-          "quantity": "A gosto",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Pimenta",
+          "ingredients_quantity": "A gosto",
+          "ingredients_category": 20,
+          "ingredients_notes": ""
         },
         {
-          "name": "Azeite de Oliva",
-          "quantity": "2 colheres de sopa",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Azeite de Oliva",
+          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_category": 10,
+          "ingredients_notes": ""
         },
         {
-          "name": "Pão de Hambúrguer Integral",
-          "quantity": "Para servir",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Pão de Hambúrguer Integral",
+          "ingredients_quantity": "Para servir",
+          "ingredients_category": 17,
+          "ingredients_notes": ""
         },
         {
-          "name": "Folhas de Alface",
-          "quantity": "Para servir",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Folhas de Alface",
+          "ingredients_quantity": "Para servir",
+          "ingredients_category": 22,
+          "ingredients_notes": ""
         },
         {
-          "name": "Tomate em Rodelas",
-          "quantity": "Para servir",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Tomate em Rodelas",
+          "ingredients_quantity": "Para servir",
+          "ingredients_category": 13,
+          "ingredients_notes": ""
         },
         {
-          "name": "Cebola Roxa em Rodelas",
-          "quantity": "Para servir",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Cebola Roxa em Rodelas",
+          "ingredients_quantity": "Para servir",
+          "ingredients_category": 21,
+          "ingredients_notes": ""
         },
         {
-          "name": "Maionese Vegana",
-          "quantity": "(Opcional)",
-          "category": "",
-          "notes": ""
+          "ingredients_name": "Maionese Vegana",
+          "ingredients_quantity": "(Opcional)",
+          "ingredients_category": 5,
+          "ingredients_notes": ""
         }
       ],
-      "prepareMode": [
+      "prepare_mode": [
         "1. Lave a quinoa em água corrente e escorra.",
         "2. Em uma panela, leve a quinoa e a água para ferver. Reduza o fogo, tampe e cozinhe por cerca de 15 minutos, ou até que a quinoa esteja macia e a água tenha sido absorvida. Retire do fogo e reserve.",
         "3. Em uma frigideira grande, aqueça o azeite de oliva em fogo médio. Adicione a cebola roxa picada e refogue por alguns minutos até que fique macia e dourada.",

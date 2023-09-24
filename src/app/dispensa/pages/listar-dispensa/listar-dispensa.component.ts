@@ -9,6 +9,7 @@ import {
   IonicSafeString,
 } from "@ionic/angular";
 import { AuthService } from "../../../auth/services";
+import { ReceitaIngredienteCategoria } from "../../../receitas/models";
 
 @Component({
   selector: "app-listar-dispensa",
@@ -189,7 +190,7 @@ export class ListarDispensaComponent implements OnInit {
         message: new IonicSafeString(`
 <div>
    <div class="flex align-items-center gap-2 justify-content-start pb-2">
-    <label class="text-900 text-sm px-1 border-round" style="background-color: lightblue">${item.category}</label>
+    <label class="text-900 text-sm px-1 border-round" style="background-color: lightblue">${ReceitaIngredienteCategoria[item.category]}</label>
     <label class="text-900 text-sm px-1 border-round" style="background-color: bisque">${item.type}</label>
   </div>
 

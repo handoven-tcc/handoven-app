@@ -1,23 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
-import {
-  FormBuilder,
-  FormGroup,
-  ValidatorFn,
-  Validators,
-} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
 import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
 import { AlertController, NavController } from "@ionic/angular";
-import {
-  FamiliaRequest,
-  LoginResponse,
-  UsuarioRequest,
-} from "../../../auth/models";
 import { DispensaService } from "../../services";
 import { ProdutoRequest } from "../../models";
 import { AuthService } from "../../../auth/services";
-import { BarcodeScanner } from "@awesome-cordova-plugins/barcode-scanner";
+import { ReceitaIngredienteCategoria } from "../../../receitas/models";
 
 export interface IButtonSelect {
   id: number;
@@ -43,7 +33,7 @@ export class AdicionarDispensaComponent implements OnInit {
   tipo: IButtonSelect[] = [];
   selectedTipo: IButtonSelect | undefined;
   categoria: IButtonSelect[] = [];
-  selectedCategoria: IButtonSelect | undefined;
+  selectedCategoria: ReceitaIngredienteCategoria = ReceitaIngredienteCategoria.Outros;
   unidadeDeMedida: IButtonSelectComAbreviacao[] = [];
   selectedUnidadeDeMedida: IButtonSelectComAbreviacao | undefined;
 
@@ -107,7 +97,7 @@ export class AdicionarDispensaComponent implements OnInit {
   }
 
   public getDisableAdicionarDispensa(): boolean {
-    return this.form.valid && this.loading === false;
+    return this.form.valid && !this.loading;
   }
 
   constructor(
@@ -352,14 +342,14 @@ export class AdicionarDispensaComponent implements OnInit {
       this.form.controls["nome"].value,
       this.selectedTipo ? this.selectedTipo.name : "",
       this.dataDeVencimento,
-      this.selectedCategoria ? this.selectedCategoria.name : "",
+      this.selectedCategoria ? this.selectedCategoria : ReceitaIngredienteCategoria.Outros,
       this.form.controls["custo"].value,
       this.form.controls["quantidade"].value,
       this.familiaId
     );
 
     this.inscricao = this.dispensaService.postProduct(request).subscribe({
-      next: (o) => {
+      next: () => {
         this.alertController
           .create({
             header: request.name,

@@ -1,9 +1,11 @@
+import { ReceitaIngredienteCategoria } from "../../../receitas/models";
+
 interface ProdutoResponse {
   id: string;
   name: string;
   type: string;
   validity: string;
-  category: string;
+  category: ReceitaIngredienteCategoria;
   cost: string;
   amount: number;
   familyId: string;

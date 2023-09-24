@@ -37,14 +37,16 @@ export class DispensaService {
       return of([] as ProdutoResponse[]);
     }
 
-    return this.http
-      .get(this.url, {
-        headers: {
-          "X-HandOven-User": this.usuarioId,
-          "X-HandOven-Family": this.familiaId,
-        },
-      })
-      .pipe(map((res: any) => res));
+    return of(Products as ProdutoResponse[])
+
+    // return this.http
+    //   .get(this.url, {
+    //     headers: {
+    //       "X-HandOven-User": this.usuarioId,
+    //       "X-HandOven-Family": this.familiaId,
+    //     },
+    //   })
+    //   .pipe(map((res: any) => res));
   }
 
   getProductById(request: GetProdutoIdRequest): Observable<ProdutoResponse> {
@@ -84,15 +86,17 @@ export class DispensaService {
       return of([] as ProdutoResponse[]);
     }
 
-    return this.http
-      .post(this.url, request, {
-        headers: {
-          "X-HandOven-User": this.usuarioId,
-          "X-HandOven-Family": this.familiaId,
-          "X-handOven-Service": "false",
-        },
-      })
-      .pipe(map((res: any) => res));
+    return of([] as ProdutoResponse[]);
+
+    // return this.http
+    //   .post(this.url, request, {
+    //     headers: {
+    //       "X-HandOven-User": this.usuarioId,
+    //       "X-HandOven-Family": this.familiaId,
+    //       "X-handOven-Service": "false",
+    //     },
+    //   })
+    //   .pipe(map((res: any) => res));
   }
 
   putProductById(request: ProdutoRequest): Observable<ProdutoResponse[]> {
@@ -100,14 +104,16 @@ export class DispensaService {
       return of([] as ProdutoResponse[]);
     }
 
-    return this.http
-      .put(`${this.url}/${request.id}`, request, {
-        headers: {
-          "X-HandOven-User": this.usuarioId,
-          "X-HandOven-Family": this.familiaId,
-        },
-      })
-      .pipe(map((res: any) => res));
+    return of([] as ProdutoResponse[]);
+
+    // return this.http
+    //   .put(`${this.url}/${request.id}`, request, {
+    //     headers: {
+    //       "X-HandOven-User": this.usuarioId,
+    //       "X-HandOven-Family": this.familiaId,
+    //     },
+    //   })
+    //   .pipe(map((res: any) => res));
   }
 
   deletarProdutoById({ id }: DeletarProdutoRequest): Observable<any> {
@@ -115,15 +121,17 @@ export class DispensaService {
       return of([] as ProdutoResponse[]);
     }
 
-    return this.http
-      .delete(`${this.url}/${id}`, {
-        headers: {
-          "X-HandOven-User": this.usuarioId,
-          "X-HandOven-Family": this.familiaId,
-          "X-handOven-Service": "false",
-        },
-      })
-      .pipe(map((res: any) => res));
+    return of([] as ProdutoResponse[]);
+
+    // return this.http
+    //   .delete(`${this.url}/${id}`, {
+    //     headers: {
+    //       "X-HandOven-User": this.usuarioId,
+    //       "X-HandOven-Family": this.familiaId,
+    //       "X-handOven-Service": "false",
+    //     },
+    //   })
+    //   .pipe(map((res: any) => res));
   }
 
   getBarcodeInfo(barcodeResult: BarcodeScanResult): Observable<any> {

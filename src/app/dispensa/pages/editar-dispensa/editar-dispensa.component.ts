@@ -8,6 +8,7 @@ import { DispensaService } from "../../services";
 import { ProdutoRequest, ProdutoResponse } from "../../models";
 import { AuthService } from "../../../auth/services";
 import { ActivatedRoute } from "@angular/router";
+import { ReceitaIngredienteCategoria } from "../../../receitas/models";
 
 export interface IButtonSelect {
   id: number;
@@ -35,7 +36,7 @@ export class EditarDispensaComponent implements OnInit {
   tipo: IButtonSelect[] = [];
   selectedTipo: string = "";
   categoria: IButtonSelect[] = [];
-  selectedCategoria: string = "";
+  selectedCategoria: ReceitaIngredienteCategoria = ReceitaIngredienteCategoria.Outros;
   unidadeDeMedida: IButtonSelectComAbreviacao[] = [];
   selectedUnidadeDeMedida: string = "";
 
@@ -99,7 +100,7 @@ export class EditarDispensaComponent implements OnInit {
   }
 
   public getDisableEditarDispensa(): boolean {
-    return this.form.valid && this.loading === false;
+    return this.form.valid && !this.loading;
   }
 
   constructor(
@@ -360,7 +361,7 @@ export class EditarDispensaComponent implements OnInit {
       this.form.controls["nome"].value,
       this.selectedTipo ? this.selectedTipo : "",
       this.dataDeVencimento,
-      this.selectedCategoria ? this.selectedCategoria : "",
+      this.selectedCategoria ? this.selectedCategoria : ReceitaIngredienteCategoria.Outros,
       this.form.controls["custo"].value,
       this.form.controls["quantidade"].value,
       this.familiaId,
@@ -368,7 +369,7 @@ export class EditarDispensaComponent implements OnInit {
     );
 
     this.inscricao = this.dispensaService.putProductById(request).subscribe({
-      next: (o) => {
+      next: () => {
         this.alertController
           .create({
             header: request.name,
