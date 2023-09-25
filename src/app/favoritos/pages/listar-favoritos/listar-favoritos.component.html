@@ -1,0 +1,118 @@
+<ion-header [translucent]="true"></ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <header
+    class="grid justify-content-between align-items-center text-900 px-5 pb-5">
+    <h1 class="col-8">Favoritos</h1>
+    <a
+      class="col-2 flex justify-content-end"
+      (click)="onClickRefresh()">
+      <ion-icon
+        [ngClass]="{ 'text-900': !loading, 'text-500': loading }"
+        name="refresh"
+        size="large"></ion-icon>
+    </a>
+  </header>
+
+  <section>
+    <ng-container *ngIf="loading">
+      <div
+        class="col-12 flex align-items-center justify-content-center text-900 flex-column">
+        <ion-infinite-scroll class="w-1">
+          <div class="infinite-scroll-content">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 100 100"
+              enable-background="new 0 0 100 100"
+              xml:space="preserve">
+              <circle
+                fill="none"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                cx="50"
+                cy="50"
+                r="48" />
+              <line
+                fill="none"
+                stroke-linecap="round"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                x1="50"
+                y1="50"
+                x2="85"
+                y2="50.5">
+                <animateTransform
+                  attributeName="transform"
+                  dur="2s"
+                  type="rotate"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite" />
+              </line>
+              <line
+                fill="none"
+                stroke-linecap="round"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                x1="50"
+                y1="50"
+                x2="49.5"
+                y2="74">
+                <animateTransform
+                  attributeName="transform"
+                  dur="15s"
+                  type="rotate"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite" />
+              </line>
+            </svg>
+          </div>
+        </ion-infinite-scroll>
+        Carregando...
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!loading">
+      <ng-container *ngIf="!hasProdutos">
+        <div class="col-12 text-900">
+          <p class="text-center">Você não favoritou nenhuma receita ainda! 😢</p>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="hasProdutos">
+        <ion-list *ngFor="let item of favoritos">
+          <ion-item class="item-favoritos" >
+            <img
+              (click)="onClickVisualizarFavorito(item)"
+              class="mr-2"
+              alt="imagem da receita {{ item.name }}"
+              src="../../../../assets/mock/platesImages/receita-massa.svg"
+            />
+            <div class="h-full flex flex-column ion-align-items-start ion-justify-content-between">
+              <ion-label class="ion-text-wrap text-900">
+                {{ item.name }}
+              </ion-label>
+              <a (click)="onClickModalRemoverFavorito(item)" class="mb-3">
+                <ion-label class="text-500 text-sm">
+                  Remover dos favoritos
+                </ion-label>
+              </a>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ng-container>
+    </ng-container>
+  </section>
+</ion-content>

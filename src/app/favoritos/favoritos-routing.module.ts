@@ -1,12 +1,16 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { FavoritosPage } from "./favoritos.page";
+import { FavoritosComponent } from "./favoritos.component";
 import { AuthGuard } from "../auth/guard/auth.guard";
+import { ListarFavoritosComponent } from "./pages/listar-favoritos/listar-favoritos.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: FavoritosPage,
+    component: FavoritosComponent,
+    children: [
+      { path: "", component: ListarFavoritosComponent },
+    ],
     canActivate: [AuthGuard],
   },
 ];
@@ -15,4 +19,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class FavoritosPageRoutingModule {}
+export class FavoritosRoutingModule {
+}

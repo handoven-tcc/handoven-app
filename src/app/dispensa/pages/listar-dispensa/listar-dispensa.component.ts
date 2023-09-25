@@ -9,6 +9,7 @@ import {
   IonicSafeString,
 } from "@ionic/angular";
 import { AuthService } from "../../../auth/services";
+import { ReceitaIngredienteCategoria } from "../../../receitas/models";
 
 @Component({
   selector: "app-listar-dispensa",
@@ -182,6 +183,17 @@ export class ListarDispensaComponent implements OnInit {
     return `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano}`;
   }
 
+  formatarParaReais(valor: string): string {
+    const numero = Number(valor);
+    const valorFormatado = numero.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+      minimumFractionDigits: 2,
+    });
+
+    return valorFormatado;
+  }
+
   onClickVisualizarProduto(item: ProdutoResponse): void {
     this.alertController
       .create({
@@ -189,19 +201,19 @@ export class ListarDispensaComponent implements OnInit {
         message: new IonicSafeString(`
 <div>
    <div class="flex align-items-center gap-2 justify-content-start pb-2">
-    <label class="text-900 text-sm px-1 border-round" style="background-color: lightblue">${item.category}</label>
+    <label class="text-900 text-sm px-1 border-round" style="background-color: lightblue">${ReceitaIngredienteCategoria[item.category]}</label>
     <label class="text-900 text-sm px-1 border-round" style="background-color: bisque">${item.type}</label>
   </div>
 
 <div class="grid">
   <div class="col-7">
     <div class="text-900 text-sm">Valor:</div>
-    <label class="text-900 text-xl">R$ ${item.cost.replace(".", ",")}</label>
+    <label class="text-900 text-xl">${this.formatarParaReais(item.cost)}</label>
   </div>
 
   <div class="col-5">
     <div class="text-900 text-sm">Quantidade:</div>
-    <label class="text-900 text-xl">${item.amount}</label>
+    <label class="w-full flex justify-content-start align-items-end gap-2 text-900 text-xl">${item.amount} <small>${item.unitMeasure}</small> </label>
   </div>
 
   <div class="col-7">

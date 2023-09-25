@@ -1,32 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
-import {
-  FormBuilder,
-  FormGroup,
-  ValidatorFn,
-  Validators,
-} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
-import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
 import { AlertController, NavController } from "@ionic/angular";
-import {
-  FamiliaRequest,
-  LoginResponse,
-  UsuarioRequest,
-} from "../../../auth/models";
 import { DispensaService } from "../../services";
-import { ProdutoRequest } from "../../models";
+import { IButtonSelect, IButtonSelectComAbreviacao, ProdutoRequest } from "../../models";
 import { AuthService } from "../../../auth/services";
-import { BarcodeScanner } from "@awesome-cordova-plugins/barcode-scanner";
+import { ReceitaIngredienteCategoria } from "../../../receitas/models";
 
-export interface IButtonSelect {
-  id: number;
-  name: string;
-  code: string;
-}
-export interface IButtonSelectComAbreviacao extends IButtonSelect {
-  abbreviation: string;
-}
 
 @Component({
   selector: "app-adicionar-dispensa",
@@ -80,11 +61,6 @@ export class AdicionarDispensaComponent implements OnInit {
     );
   }
 
-  public get getDataDeNascimentoInvalid(): any {
-    const idade = calculateAge(new Date(this.dataDeVencimento));
-    return idade >= 18;
-  }
-
   public get getCustoRequired(): any {
     return (
       this.form.get("custo")?.touched &&
@@ -107,7 +83,7 @@ export class AdicionarDispensaComponent implements OnInit {
   }
 
   public getDisableAdicionarDispensa(): boolean {
-    return this.form.valid && this.loading === false;
+    return this.form.valid && !this.loading;
   }
 
   constructor(
@@ -121,193 +97,9 @@ export class AdicionarDispensaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tipo = [
-      {
-        id: 1,
-        name: "Açúcar e Adoçante",
-        code: "ACUCAR_ADOCANTE",
-      },
-      {
-        id: 2,
-        name: "Condimento",
-        code: "CONDIMENTO",
-      },
-      {
-        id: 3,
-        name: "Doce",
-        code: "DOCE",
-      },
-      {
-        id: 4,
-        name: "Especiaria",
-        code: "ESPECIARIA",
-      },
-      {
-        id: 5,
-        name: "Fruta",
-        code: "FRUTA",
-      },
-      {
-        id: 6,
-        name: "Grão",
-        code: "GRAO",
-      },
-      {
-        id: 7,
-        name: "Lácteo",
-        code: "LACTEO",
-      },
-      {
-        id: 8,
-        name: "Molho",
-        code: "MOLHO",
-      },
-      {
-        id: 9,
-        name: "Noz e Semente",
-        code: "NOZ_SEMESTRE",
-      },
-      {
-        id: 10,
-        name: "Massa",
-        code: "MASSA",
-      },
-      {
-        id: 11,
-        name: "Vegetal",
-        code: "VEGETAL",
-      },
-    ];
-
-    this.categoria = [
-      {
-        id: 1,
-        name: "Grãos e Cereais",
-        code: "GRAOS",
-      },
-      {
-        id: 2,
-        name: "Proteínas",
-        code: "PROTEINAS",
-      },
-      {
-        id: 3,
-        name: "Frutas e Vegetais",
-        code: "FRUTAS_VEGETAIS",
-      },
-      {
-        id: 4,
-        name: "Laticínios e Substitutos",
-        code: "LATICINIOS",
-      },
-      {
-        id: 5,
-        name: "Temperos e Condimentos",
-        code: "CONDIMENTOS",
-      },
-      {
-        id: 6,
-        name: "Óleos e Gorduras",
-        code: "OLEOS_GORDURAS",
-      },
-      {
-        id: 7,
-        name: "Bebidas e Líquidos",
-        code: "BEBIDAS",
-      },
-      {
-        id: 8,
-        name: "Produtos de Panificação",
-        code: "PANIFICACAO",
-      },
-      {
-        id: 9,
-        name: "Conserva",
-        code: "ENLATADOS_CONSERVAS",
-      },
-      {
-        id: 10,
-        name: "Doces e Sobremesas",
-        code: "DOCES_SOBREMESAS",
-      },
-      {
-        id: 11,
-        name: "Frutos do Mar",
-        code: "FRUTOS_MAR",
-      },
-      {
-        id: 12,
-        name: "Nozes e Sementes",
-        code: "NOZES_SEMENTES",
-      },
-      {
-        id: 13,
-        name: "Ingredientes Étnicos",
-        code: "ETNICOS",
-      },
-      {
-        id: 14,
-        name: "Produtos Congelados",
-        code: "CONGELADOS",
-      },
-      {
-        id: 15,
-        name: "Ingredientes Especiais",
-        code: "ESPECIAIS",
-      },
-    ];
-
-    this.unidadeDeMedida = [
-      {
-        id: 1,
-        name: "Colher de Sopa",
-        abbreviation: "colher (sopa)",
-        code: "COLHER DE SOPA",
-      },
-      {
-        id: 2,
-        name: "Colher de Chá",
-        abbreviation: "colher (chá)",
-        code: "COLHER DE CHÁ",
-      },
-      {
-        id: 3,
-        name: "Gramas",
-        abbreviation: "g",
-        code: "GRAMAS",
-      },
-      {
-        id: 4,
-        name: "Litros",
-        abbreviation: "L",
-        code: "LITROS",
-      },
-      {
-        id: 5,
-        name: "Miligramas",
-        abbreviation: "mg",
-        code: "MILIGRAMAS",
-      },
-      {
-        id: 6,
-        name: "Mililitros",
-        abbreviation: "mL",
-        code: "MILILITROS",
-      },
-      {
-        id: 7,
-        name: "Peças",
-        abbreviation: "un",
-        code: "PEÇAS",
-      },
-      {
-        id: 8,
-        name: "Quilogramas",
-        abbreviation: "kg",
-        code: "QUILOGRAMAS",
-      },
-    ];
-
+    this.tipo = this.dispensaService.getTipoOptions();
+    this.categoria = this.dispensaService.getCategoriaOptions();
+    this.unidadeDeMedida = this.dispensaService.getUnidadeDeMedidaOptions();
     this.setupForm();
   }
 
@@ -352,14 +144,15 @@ export class AdicionarDispensaComponent implements OnInit {
       this.form.controls["nome"].value,
       this.selectedTipo ? this.selectedTipo.name : "",
       this.dataDeVencimento,
-      this.selectedCategoria ? this.selectedCategoria.name : "",
+      this.selectedCategoria ? this.selectedCategoria.id : ReceitaIngredienteCategoria.Outros,
       this.form.controls["custo"].value,
       this.form.controls["quantidade"].value,
+      this.selectedUnidadeDeMedida ? this.selectedUnidadeDeMedida.abbreviation : "",
       this.familiaId
     );
 
     this.inscricao = this.dispensaService.postProduct(request).subscribe({
-      next: (o) => {
+      next: () => {
         this.alertController
           .create({
             header: request.name,
