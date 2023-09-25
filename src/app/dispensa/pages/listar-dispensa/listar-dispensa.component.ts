@@ -183,6 +183,17 @@ export class ListarDispensaComponent implements OnInit {
     return `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano}`;
   }
 
+  formatarParaReais(valor: string): string {
+    const numero = Number(valor);
+    const valorFormatado = numero.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+      minimumFractionDigits: 2,
+    });
+
+    return valorFormatado;
+  }
+
   onClickVisualizarProduto(item: ProdutoResponse): void {
     this.alertController
       .create({
@@ -197,12 +208,12 @@ export class ListarDispensaComponent implements OnInit {
 <div class="grid">
   <div class="col-7">
     <div class="text-900 text-sm">Valor:</div>
-    <label class="text-900 text-xl">R$ ${item.cost.replace(".", ",")}</label>
+    <label class="text-900 text-xl">${this.formatarParaReais(item.cost)}</label>
   </div>
 
   <div class="col-5">
     <div class="text-900 text-sm">Quantidade:</div>
-    <label class="text-900 text-xl">${item.amount}</label>
+    <label class="w-full flex justify-content-start align-items-end gap-2 text-900 text-xl">${item.amount} <small>${item.unitMeasure}</small> </label>
   </div>
 
   <div class="col-7">
