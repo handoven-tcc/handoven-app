@@ -8,6 +8,7 @@ class ProdutoRequest {
     public category: ReceitaIngredienteCategoria,
     public cost: string,
     public amount: number,
+    public unitMeasure: string,
     public familyId: string,
     public id?: string
   ) {}

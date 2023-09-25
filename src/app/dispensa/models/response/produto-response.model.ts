@@ -8,6 +8,7 @@ interface ProdutoResponse {
   category: ReceitaIngredienteCategoria;
   cost: string;
   amount: number;
+  unitMeasure: string;
   familyId: string;
   expiryProduct: boolean;
 }
