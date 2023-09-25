@@ -41,4 +41,19 @@ enum ReceitaIngredienteCategoria {
   Verduras
 }
 
-export {ReceitaCategoria, ReceitaIngredienteCategoria};
+enum ReceitaIngredienteUnidadeDeMedida {
+  "Colher de sopa",
+  "Colher de chá",
+  Gramas,
+  Litros,
+  Miligramas,
+  Mililitros,
+  "Peças",
+  Pitada,
+  Quilogramas,
+  "Xícaras",
+  Unidades,
+}
+
+
+export {ReceitaCategoria, ReceitaIngredienteCategoria, ReceitaIngredienteUnidadeDeMedida};

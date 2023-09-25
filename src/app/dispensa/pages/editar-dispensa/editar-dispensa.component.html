@@ -75,7 +75,7 @@
           fill="outline"
           class="text-900 select-button"
           [compareWith]="compareWith"
-          [selectedText]="selectedCategoria"
+          [selectedText]="selectedCategoria?.name"
           (ionChange)="handleChangeCategoria($event)"
           placeholder="Selecione o Categoria">
           <ion-select-option *ngFor="let item of categoria" [value]="item">
@@ -135,7 +135,7 @@
           color="danger"
           fill="outline"
           class="text-900 select-button"
-          [selectedText]="selectedUnidadeDeMedida"
+          [selectedText]="selectedUnidadeDeMedida?.name"
           [compareWith]="compareWith"
           (ionChange)="handleChangeUnidadeDeMedida($event)"
           placeholder="Selecione a Unidade de Medida">
