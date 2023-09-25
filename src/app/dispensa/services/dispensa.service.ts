@@ -37,16 +37,14 @@ export class DispensaService {
       return of([] as ProdutoResponse[]);
     }
 
-    return of(Products as ProdutoResponse[])
-
-    // return this.http
-    //   .get(this.url, {
-    //     headers: {
-    //       "X-HandOven-User": this.usuarioId,
-    //       "X-HandOven-Family": this.familiaId,
-    //     },
-    //   })
-    //   .pipe(map((res: any) => res));
+    return this.http
+      .get(`${this.url}/familyId/${this.familiaId}`, {
+        headers: {
+          "X-HandOven-User": this.usuarioId,
+          "X-HandOven-Family": this.familiaId,
+        },
+      })
+      .pipe(map((res: any) => res));
   }
 
   getProductById(request: GetProdutoIdRequest): Observable<ProdutoResponse> {
