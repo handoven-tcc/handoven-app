@@ -25,7 +25,7 @@ export class ListarFavoritosComponent implements OnInit {
   ) {
   }
 
-  public get hasProdutos(): boolean {
+  public get hasFavoritos(): boolean {
     return this.favoritos.length > 0;
   }
 
