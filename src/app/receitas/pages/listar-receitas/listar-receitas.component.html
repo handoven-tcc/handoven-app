@@ -7,13 +7,14 @@
 
   <header
     class="grid justify-content-between align-items-center text-900 px-5 pb-5">
-    <h1 class="col-8">Favoritos</h1>
+    <h1 class="col-9">Encontre sua receita favorita</h1>
     <a
       class="col-2 flex justify-content-end"
       (click)="onClickRefresh()">
       <ion-icon
-        [ngClass]="{ 'text-900': !loading, 'text-500': loading }"
-        name="refresh"
+        [ngClass]="{ '': !loading, 'text-500': loading }"
+        name="fast-food-outline"
+        color="danger"
         size="large"></ion-icon>
     </a>
   </header>
@@ -92,10 +93,14 @@
       </ng-container>
 
       <ng-container *ngIf="hasReceitas">
-        <!-- TODO: -->
+        <!-- TODO: pesquisar pelo nome da receita-->
+        <!-- TODO: listar categorias com roleta das 3 primeiras receitas mostra apenas 2-->
+        <!-- TODO: ver mais, para acessar todas as receitas daquela categoria-->
+        <!-- TODO: essas receitas que estão a mostra podem ser clicadas-->
       </ng-container>
 
     </ng-container>
   </section>
 
 </ion-content>
+
