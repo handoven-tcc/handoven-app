@@ -43,6 +43,24 @@ export class FavoritosService {
     //   .pipe(map((res: any) => res));
   }
 
+  adicionarFavorito(): Observable<never> {
+    if (!this.authService.hasUsuario()) {
+      return of();
+    }
+
+    return of()
+
+    // return this.http
+    //   .post(`${this.url}/favorits/${id}`, {
+    //     headers: {
+    //       "X-HandOven-User": this.usuarioId,
+    //       "X-HandOven-Family": this.familiaId,
+    //       "X-handOven-Service": "false",
+    //     },
+    //   })
+    //   .pipe(map((res: any) => res));
+  }
+
   removerFavorito({ id }: any): Observable<any> {
     if (!this.authService.hasUsuario()) {
       return of([] as any[]);
