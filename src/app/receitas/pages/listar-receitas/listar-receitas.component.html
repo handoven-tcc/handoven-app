@@ -1,7 +1,10 @@
 <ion-header [translucent]="true"></ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+  <ion-refresher
+    (ionRefresh)="handleRefresh($event)"
+    slot="fixed"
+  >
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
@@ -12,9 +15,8 @@
       class="col-2 flex justify-content-end"
       (click)="onClickRefresh()">
       <ion-icon
-        [ngClass]="{ '': !loading, 'text-500': loading }"
+        [ngClass]="{ 'c-red': (!loading || hasReceitas), 'text-500': (loading || !hasReceitas) }"
         name="fast-food-outline"
-        color="danger"
         size="large"></ion-icon>
     </a>
   </header>
@@ -88,7 +90,7 @@
     <ng-container *ngIf="!loading">
       <ng-container *ngIf="!hasReceitas">
         <div class="col-12 text-900">
-          <p class="text-center">Não tem nenhuma receita! 😢</p>
+          <p class="text-center">Essa função não está disponível para convidados. Por favor faça login ou Cadastre-se no Handoven!</p>
         </div>
       </ng-container>
 

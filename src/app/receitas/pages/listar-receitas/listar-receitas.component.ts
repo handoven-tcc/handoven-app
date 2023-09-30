@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../../../auth/services";
-import { filter, Subscription } from "rxjs";
+import { Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
 import { ReceitasResponse } from "../../../favoritos/models";
 import { AlertController, NavController } from "@ionic/angular";
@@ -17,7 +17,7 @@ export class ListarReceitasComponent implements OnInit {
   receitas: ReceitasResponse[] = [];
   categorias: ReceitaCategoria[] = [];
   responsiveOptions: any[] = [];
-
+  protected readonly ReceitaCategoria = ReceitaCategoria;
 
   constructor(
     private alertController: AlertController,
@@ -57,10 +57,6 @@ export class ListarReceitasComponent implements OnInit {
 
   ionViewWillEnter(): void {
     this.getTodasReceitas();
-  }
-
-  public receitaPorCategoriaCarousel(categoria: number) {
-    return this.receitas.filter(o => o.category == categoria).slice(0, 3);
   }
 
   public receitaPorCategoria(categoria: number) {
@@ -117,7 +113,8 @@ export class ListarReceitasComponent implements OnInit {
   }
 
   onClickRefresh(): void {
-    if (this.loading) {
+    console.log("desgraça");
+    if (this.loading || !this.hasReceitas) {
       return;
     }
 
@@ -159,6 +156,4 @@ export class ListarReceitasComponent implements OnInit {
   ngOnDestroy(): void {
     this.inscricao.unsubscribe();
   }
-
-  protected readonly ReceitaCategoria = ReceitaCategoria;
 }
