@@ -48,3 +48,7 @@ section {
 .item-favoritos {
   --border-style: none !important;
 }
+
+.item-favoritos.ios {
+  margin-bottom: 1rem;
+}

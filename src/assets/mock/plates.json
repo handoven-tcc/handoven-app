@@ -47,6 +47,60 @@
     }
   },
   {
+    "name": "Bolo de Cenoura",
+    "category": 1,
+    "favorited": false,
+    "section": {
+      "ingredients": [
+        {
+          "ingredients_name": "Cenouras",
+          "ingredients_quantity": "2 unidades médias (raladas)",
+          "ingredients_category": 13
+        },
+        {
+          "ingredients_name": "Ovos",
+          "ingredients_quantity": "3 unidades",
+          "ingredients_category": 20
+        },
+        {
+          "ingredients_name": "Óleo",
+          "ingredients_quantity": "1 xícara",
+          "ingredients_category": 11
+        },
+        {
+          "ingredients_name": "Açúcar",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 1
+        },
+        {
+          "ingredients_name": "Farinha de Trigo",
+          "ingredients_quantity": "2 xícaras",
+          "ingredients_category": 7
+        },
+        {
+          "ingredients_name": "Fermento em Pó",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 8
+        }
+      ],
+      "prepare_mode": [
+        "1. Pré-aqueça o forno a 180°C.",
+        "2. No liquidificador, bata as cenouras, os ovos e o óleo até obter uma mistura homogênea.",
+        "3. Em uma tigela, misture o açúcar e a farinha de trigo.",
+        "4. Adicione a mistura do liquidificador à tigela com os ingredientes secos e mexa bem.",
+        "5. Acrescente o fermento em pó e misture novamente.",
+        "6. Despeje a massa em uma forma untada.",
+        "7. Asse no forno pré-aquecido por cerca de 40 minutos ou até que um palito inserido no centro saia limpo.",
+        "8. Retire do forno e deixe esfriar.",
+        "9. Se desejar, você pode cobrir com uma cobertura de chocolate ou açúcar de confeiteiro antes de servir."
+      ],
+      "extras": [
+        "Tempo de Preparo: 60 minutos",
+        "Rendimento: 10 porções"
+      ]
+    }
+  },
+  {
     "name": "Torta de Maçã",
     "category": 1,
     "favorited": true,
@@ -257,6 +311,95 @@
       "extras": [
         "Tempo de Preparo: 30 minutos",
         "Rendimento: 4 porções"
+      ]
+    }
+  },
+  {
+    "name": "Mousse de Maracujá",
+    "category": 8,
+    "favorited": false,
+    "section": {
+      "ingredients": [
+        {
+          "ingredients_name": "Maracujás",
+          "ingredients_quantity": "2 unidades maduros",
+          "ingredients_category": 8
+        },
+        {
+          "ingredients_name": "Leite Condensado",
+          "ingredients_quantity": "1 lata (395g)",
+          "ingredients_category": 1
+        },
+        {
+          "ingredients_name": "Creme de Leite",
+          "ingredients_quantity": "1 lata (300g)",
+          "ingredients_category": 12
+        },
+        {
+          "ingredients_name": "Suco de Maracujá",
+          "ingredients_quantity": "1/2 xícara (aproximadamente 3 maracujás)",
+          "ingredients_category": 8
+        },
+        {
+          "ingredients_name": "Sementes de Maracujá",
+          "ingredients_quantity": "Para decorar (opcional)",
+          "ingredients_category": 8
+        }
+      ],
+      "prepare_mode": [
+        "1. Corte os maracujás ao meio e retire a polpa com as sementes.",
+        "2. Em uma peneira, coe a polpa dos maracujás para separar as sementes do suco. Reserve algumas sementes para decorar, se desejar.",
+        "3. No liquidificador, coloque o suco de maracujá, o leite condensado e o creme de leite.",
+        "4. Bata tudo até obter uma mistura homogênea.",
+        "5. Adicione a polpa de maracujá coada ao liquidificador e bata novamente por alguns segundos para misturar.",
+        "6. Distribua o mousse em taças individuais ou em um recipiente de sobremesa.",
+        "7. Leve à geladeira por pelo menos 2 horas para firmar.",
+        "8. Antes de servir, decore com as sementes de maracujá reservadas, se desejar."
+      ],
+      "extras": [
+        "Tempo de Preparo: 15 minutos",
+        "Tempo de Geladeira: 2 horas",
+        "Rendimento: 6 porções"
+      ]
+    }
+  },
+  {
+    "name": "Brigadeiro de Chocolate",
+    "category": 1,
+    "favorited": true,
+    "section": {
+      "ingredients": [
+        {
+          "ingredients_name": "Leite Condensado",
+          "ingredients_quantity": "1 lata (395g)",
+          "ingredients_category": 23
+        },
+        {
+          "ingredients_name": "Cacau em Pó",
+          "ingredients_quantity": "3 colheres de sopa",
+          "ingredients_category": 4
+        },
+        {
+          "ingredients_name": "Manteiga",
+          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_category": 11
+        },
+        {
+          "ingredients_name": "Chocolate Granulado",
+          "ingredients_quantity": "Para enrolar os brigadeiros",
+          "ingredients_category": 1
+        }
+      ],
+      "prepare_mode": [
+        "1. Em uma panela, coloque o leite condensado, o cacau em pó e a manteiga.",
+        "2. Leve a panela ao fogo baixo e mexa continuamente até a mistura começar a desgrudar do fundo da panela, formando uma massa consistente. Isso deve levar cerca de 10-15 minutos.",
+        "3. Desligue o fogo e deixe a mistura esfriar até que seja possível manuseá-la.",
+        "4. Com as mãos untadas com um pouco de manteiga, faça pequenas bolinhas com a massa e passe no chocolate granulado, cobrindo completamente.",
+        "5. Coloque os brigadeiros em forminhas de papel e sirva."
+      ],
+      "extras": [
+        "Tempo de Preparo: 30 minutos",
+        "Rendimento: Aproximadamente 20 brigadeiros"
       ]
     }
   },

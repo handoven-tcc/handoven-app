@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { concatMap, distinct, from, map, Observable, of, reduce, toArray } from "rxjs";
+import { concatMap, distinct, filter, from, map, Observable, of, reduce, toArray } from "rxjs";
 import { AuthService } from "../../auth/services";
 import Plates from "../../../assets/mock/plates.json";
 import { ReceitasResponse } from "../../favoritos/models";
@@ -62,5 +62,18 @@ export class ReceitasService {
     //     },
     //   })
     //   .pipe(map((res: any) => res));
+  }
+
+  getReceitaByCategoria(categoria: ReceitaCategoria): Observable<ReceitasResponse[]> {
+    if (!this.authService.hasUsuario()) {
+      return of([] as ReceitasResponse[]);
+    }
+    const receitas: ReceitasResponse[] = Plates as ReceitasResponse[];
+    return of(receitas)
+      .pipe(
+        concatMap(from),
+        filter(o => o.category == categoria),
+        toArray()
+      );
   }
 }

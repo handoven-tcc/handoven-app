@@ -3,7 +3,7 @@ import { AuthService } from "../../../auth/services";
 import { filter, Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
 import { ReceitasResponse } from "../../../favoritos/models";
-import { AlertController } from "@ionic/angular";
+import { AlertController, NavController } from "@ionic/angular";
 import { ReceitaCategoria } from "../../models";
 
 @Component({
@@ -22,6 +22,7 @@ export class ListarReceitasComponent implements OnInit {
   constructor(
     private alertController: AlertController,
     private authService: AuthService,
+    private nav: NavController,
     private receitaService: ReceitasService) {
   }
 
@@ -37,20 +38,20 @@ export class ListarReceitasComponent implements OnInit {
     this.getTodasReceitas();
     this.responsiveOptions = [
       {
-        breakpoint: '1199px',
+        breakpoint: "1199px",
         numVisible: 1,
-        numScroll: 1
+        numScroll: 1,
       },
       {
-        breakpoint: '991px',
+        breakpoint: "991px",
         numVisible: 2,
-        numScroll: 1
+        numScroll: 1,
       },
       {
-        breakpoint: '767px',
+        breakpoint: "767px",
         numVisible: 1,
-        numScroll: 1
-      }
+        numScroll: 1,
+      },
     ];
   }
 
@@ -58,8 +59,12 @@ export class ListarReceitasComponent implements OnInit {
     this.getTodasReceitas();
   }
 
+  public receitaPorCategoriaCarousel(categoria: number) {
+    return this.receitas.filter(o => o.category == categoria).slice(0, 3);
+  }
+
   public receitaPorCategoria(categoria: number) {
-    return this.receitas.filter(o=>o.category == categoria)
+    return this.receitas.filter(o => o.category == categoria).slice(0, 3);
   }
 
   getTodasReceitas(): void {
@@ -127,8 +132,11 @@ export class ListarReceitasComponent implements OnInit {
     });
   }
 
-  onClickVerMais(): void {
-    this.alertNaoImplementado()
+  onClickVerMais(item: ReceitaCategoria): void {
+    this.nav.navigateForward([
+      "tabs/receitas/ver-mais",
+      JSON.stringify(item),
+    ]);
   }
 
   alertNaoImplementado(): void {

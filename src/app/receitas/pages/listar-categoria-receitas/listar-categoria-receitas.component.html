@@ -1,15 +1,117 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Listar Receitas Interno </ion-title>
+<ion-header>
+  <ion-toolbar id="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-base text-white select-none"
+    >{{ReceitaCategoria[category]}}</ion-title
+    >
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Listar Receitas Interno</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <section>
+    <ng-container *ngIf="loading">
+      <div
+        class="col-12 flex align-items-center justify-content-center text-900 flex-column">
+        <ion-infinite-scroll class="w-1">
+          <div class="infinite-scroll-content">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 100 100"
+              enable-background="new 0 0 100 100"
+              xml:space="preserve">
+              <circle
+                fill="none"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                cx="50"
+                cy="50"
+                r="48" />
+              <line
+                fill="none"
+                stroke-linecap="round"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                x1="50"
+                y1="50"
+                x2="85"
+                y2="50.5">
+                <animateTransform
+                  attributeName="transform"
+                  dur="2s"
+                  type="rotate"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite" />
+              </line>
+              <line
+                fill="none"
+                stroke-linecap="round"
+                stroke="#000"
+                stroke-width="4"
+                stroke-miterlimit="10"
+                x1="50"
+                y1="50"
+                x2="49.5"
+                y2="74">
+                <animateTransform
+                  attributeName="transform"
+                  dur="15s"
+                  type="rotate"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite" />
+              </line>
+            </svg>
+          </div>
+        </ion-infinite-scroll>
+        Carregando...
+      </div>
+    </ng-container>
 
-  <p-button label="Submit"></p-button>
+    <ng-container *ngIf="!loading">
+      <ng-container *ngIf="!hasReceitas">
+        <div class="col-12 text-900">
+          <p class="text-center">Não existe nenhuma receita nessa categoria! 😢</p>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="hasReceitas">
+        <ion-list *ngFor="let item of receitas">
+          <ion-item class="item-receitas">
+            <img
+              (click)="onClickVisualizarReceita(item)"
+              class="mr-2"
+              alt="imagem da receita {{ item.name }}"
+              src="../../../../assets/mock/platesImages/receita-massa.svg"
+            />
+            <div class="w-full h-full flex flex-column ion-align-items-start ion-justify-content-between">
+              <ion-label class="ion-text-wrap text-900">
+                {{ item.name }}
+              </ion-label>
+              <div class="w-full mb-3 flex ion-justify-content-start ion-align-items-center">
+                <a (click)="onClickAdicionarFavorito(item)" class="flex ion-align-items-center mr-6">
+                  <ion-icon class="text-2xl" name="heart-circle-outline"></ion-icon>
+                </a>
+                <div class="flex ion-justify-content-start ion-align-items-center gap-1">
+                  <ion-icon class="text-2xl" name="time-outline"></ion-icon>
+                  <ion-label>{{tempoDePreparo(item)}}</ion-label>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ng-container>
+    </ng-container>
+  </section>
 </ion-content>

@@ -7,7 +7,7 @@ interface ReceitasResponse {
   section: {
     ingredients: IngredientesReceita[],
     prepare_mode: [],
-    extras: []
+    extras: string[]
   };
 }
 
