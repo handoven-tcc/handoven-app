@@ -6,6 +6,7 @@ import {
 } from "@ionic/angular";
 import { AuthService } from "../../../auth/services";
 import { FavoritosService } from "../../services";
+import { ReceitasResponse } from "../../models";
 
 @Component({
   selector: "app-listar-favoritos",
@@ -154,9 +155,11 @@ export class ListarFavoritosComponent implements OnInit {
   }
 
 
-  onClickVisualizarFavorito(item: any): void {
-    // TODO: Navegar para a tela de receitas
-    this.alertNaoImplementado();
+  onClickVisualizarReceita(receita: ReceitasResponse): void {
+    window.localStorage.setItem("receita", JSON.stringify(receita))
+    this.nav.navigateForward([
+      "tabs/receitas/detalhes",
+    ]);
   }
 
   alertNaoImplementado(): void {

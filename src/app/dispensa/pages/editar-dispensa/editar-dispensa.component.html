@@ -4,7 +4,8 @@
       <ion-back-button color="light"></ion-back-button>
     </ion-buttons>
     <ion-title class="text-base text-white select-none"
-      >Edite o Produto</ion-title
+    >Edite o Produto
+    </ion-title
     >
   </ion-toolbar>
 </ion-header>
@@ -17,13 +18,14 @@
         <ion-icon color="light" name="barcode-outline"></ion-icon>
       </div>
       <ion-label id="label-tirar-foto" class="select-none text-0 mt-1"
-        >Escanear</ion-label
+      >Escanear
+      </ion-label
       >
     </button>
     <div class="center-content-end">
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Nome do Produto</span
+        >Nome do Produto</span
         >
         <input
           class="w-full"
@@ -32,16 +34,16 @@
           pInputText
           formControlName="nome" />
         <small class="select-none" *ngIf="getNomeRequired"
-          >Nome é obrigatório.</small
+        >Nome é obrigatório.</small
         >
         <small class="select-none" *ngIf="getNomeInvalid"
-          >Nome é inválido.</small
+        >Nome é inválido.</small
         >
       </div>
 
       <span class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Tipo do Produto</span
+        >Tipo do Produto</span
         >
         <ion-select
           name="tipo"
@@ -59,13 +61,13 @@
           </ion-select-option>
         </ion-select>
         <small class="select-none" *ngIf="getTipoRequired"
-          >Tipo é obrigatório.</small
+        >Tipo é obrigatório.</small
         >
       </span>
 
       <span class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Categoria do Produto</span
+        >Categoria do Produto</span
         >
         <ion-select
           name="categoria"
@@ -83,13 +85,13 @@
           </ion-select-option>
         </ion-select>
         <small class="select-none" *ngIf="getCategoriaRequired"
-          >Tipo é obrigatório.</small
+        >Tipo é obrigatório.</small
         >
       </span>
 
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Data de Validade</span
+        >Data de Validade</span
         >
         <ion-datetime-button datetime="datetime"></ion-datetime-button>
       </div>
@@ -106,13 +108,13 @@
           locale="pt-BR">
         </p-inputNumber>
         <small class="select-none" *ngIf="getCustoRequired"
-          >Custo é obrigatório.</small
+        >Custo é obrigatório.</small
         >
       </div>
 
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Quantidade</span
+        >Quantidade</span
         >
         <p-inputNumber
           styleClass="w-full"
@@ -120,13 +122,13 @@
           inputId="quantidade"
           formControlName="quantidade"></p-inputNumber>
         <small class="select-none" *ngIf="getQuantidadeRequired"
-          >Quantidade é obrigatório.</small
+        >Quantidade é obrigatório.</small
         >
       </div>
 
       <div class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Unidade de Medida</span
+        >Unidade de Medida</span
         >
         <ion-select
           name="unidadeDeMedida"
@@ -146,10 +148,10 @@
           </ion-select-option>
         </ion-select>
         <small class="select-none text-500" *ngIf="!selectedUnidadeDeMedida"
-          >Qual era a unidade de medida mesmo? 🤔</small
+        >Qual era a unidade de medida mesmo? 🤔</small
         >
         <small class="select-none" *ngIf="getUnidadeDeMedidaRequired"
-          >Unidade de Medida é obrigatório.</small
+        >Unidade de Medida é obrigatório.</small
         >
       </div>
 

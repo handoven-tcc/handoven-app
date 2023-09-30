@@ -16,7 +16,10 @@ const routes: Routes = [
         path: "ver-mais/:categoria",
         component: ListarCategoriaReceitaComponent,
       },
-      { path: "detalhes/:receitaId", component: DetalhesDaReceitaComponent },
+      {
+        path: "detalhes",
+        component: DetalhesDaReceitaComponent
+      },
     ],
     canActivate: [AuthGuard],
   },
@@ -26,4 +29,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ReceitasPageRoutingModule {}
+export class ReceitasPageRoutingModule {
+}

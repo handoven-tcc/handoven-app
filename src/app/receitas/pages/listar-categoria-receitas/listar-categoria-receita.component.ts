@@ -4,7 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ReceitasResponse } from "../../../favoritos/models";
 import { ReceitasService } from "../../services";
 import { Subscription } from "rxjs";
-import { AlertController } from "@ionic/angular";
+import { AlertController, NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-listar-categoria-receitas",
@@ -20,6 +20,7 @@ export class ListarCategoriaReceitaComponent implements OnInit {
 
   constructor(
     private alertController: AlertController,
+    private nav: NavController,
     private activatedRoute: ActivatedRoute,
     private receitasService: ReceitasService,
   ) {
@@ -72,8 +73,11 @@ export class ListarCategoriaReceitaComponent implements OnInit {
     });
   }
 
-  onClickVisualizarReceita(item: ReceitasResponse): void {
-    this.alertNaoImplementado();
+  onClickVisualizarReceita(receita: ReceitasResponse): void {
+    window.localStorage.setItem("receita", JSON.stringify(receita))
+    this.nav.navigateForward([
+      "tabs/receitas/detalhes",
+    ]);
   }
 
   onClickAdicionarFavorito(item: ReceitasResponse): void {

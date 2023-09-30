@@ -97,15 +97,15 @@
         <!-- TODO: essas receitas que estão a mostra podem ser clicadas-->
 
         <div class="w-full px-4 py-2" *ngFor="let categoria of categorias">
-          <div class="flex ion-align-items-center ion-justify-content-between">
+          <a (click)="onClickVerMais(categoria)" class="flex ion-align-items-center ion-justify-content-between">
             <span class="text-900 fw-600">{{ReceitaCategoria[categoria]}}</span>
-            <span>
-              <a class="ver-mais" (click)="onClickVerMais(categoria)">Ver mais</a>
+            <span class="ver-mais">
+              Ver mais
             </span>
-          </div>
+          </a>
           <swiper-container [slidesPerView]="2">
             <swiper-slide *ngFor="let receita of receitaPorCategoria(categoria)">
-              <img class="border-round" src="https://source.unsplash.com/random/200x200/?{{ReceitaCategoria[receita.category]}}" alt="{{receita.name}}">
+              <img (click)="onClickVisualizarReceita(receita)" class="border-round" src="https://source.unsplash.com/random/200x200/?{{ReceitaCategoria[receita.category]}}" alt="{{receita.name}}">
               <!-- <div>{{receita.name}}</div> -->
             </swiper-slide>
           </swiper-container>

@@ -10,6 +10,7 @@ import { ComponentsModule } from "../../../temp/src/lib/components/components.mo
 import { ListarCategoriaReceitaComponent } from "./pages/listar-categoria-receitas/listar-categoria-receita.component";
 import { ListarReceitasComponent } from "./pages/listar-receitas/listar-receitas.component";
 import { DetalhesDaReceitaComponent } from "./pages/detalhes-da-receita/detalhes-da-receita.component";
+import { HideHeaderDirective } from './directives/hide-header.directive';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { DetalhesDaReceitaComponent } from "./pages/detalhes-da-receita/detalhes
     ListarReceitasComponent,
     ListarCategoriaReceitaComponent,
     DetalhesDaReceitaComponent,
+    HideHeaderDirective,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -1,0 +1,144 @@
+#ion-content {
+  position: fixed;
+  width: 100%;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+#btn-wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  background: transparent;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.tirar-foto {
+  width: 100px;
+  height: 90px;
+  background-color: #ffc42e;
+  border-radius: 30%;
+  z-index: 1; /* Garante que a bola fique atrás do conteúdo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+#label-tirar-foto {
+  color: white;
+}
+
+.center-content-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+.bola-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 134%;
+  height: 400px;
+  background-color: #f10027;
+  border-radius: 50%;
+  z-index: -1;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+ion-toolbar {
+  --ion-toolbar-background: transparent !important;
+}
+
+ion-datetime-button {
+  --ion-text-color: black !important;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.item-receitas {
+  --border-style: none !important;
+}
+
+.item-receitas.ios {
+  margin-bottom: 1rem;
+}
+
+section {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+a {
+  color: #f10027;
+}
+
+.header-md {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+ion-header {
+  position: fixed !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+img {
+  width: 100%;
+  height: 50%;
+}
+
+.voltar {
+  background: white;
+  border-radius: 2rem;
+  height: 2.5rem;
+}
+
+.icone-header {
+  background: white;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+ion-icon {
+  color: #f10027;
+}
+
+.extra-section {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 2rem;
+}
+
+.card-receita {
+  position: absolute;
+  top: 38%;
+  background: white;
+  border-radius: 4rem 4rem 0 0;
+  padding-bottom: 10rem;
+}

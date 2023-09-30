@@ -139,6 +139,13 @@ export class ListarReceitasComponent implements OnInit {
     ]);
   }
 
+  onClickVisualizarReceita(receita: ReceitasResponse): void {
+    window.localStorage.setItem("receita", JSON.stringify(receita))
+    this.nav.navigateForward([
+      "tabs/receitas/detalhes",
+    ]);
+  }
+
   alertNaoImplementado(): void {
     this.alertController
       .create({
