@@ -96,16 +96,17 @@
               src="../../../../assets/mock/platesImages/receita-massa.svg"
             />
             <div class="w-full h-full flex flex-column ion-align-items-start ion-justify-content-between">
-              <ion-label class="ion-text-wrap text-900">
+              <ion-label class="ion-text-wrap fw-600">
                 {{ item.name }}
               </ion-label>
               <div class="w-full mb-3 flex ion-justify-content-start ion-align-items-center">
                 <a (click)="onClickAdicionarFavorito(item)" class="flex ion-align-items-center mr-6">
-                  <ion-icon class="text-2xl" name="heart-circle-outline"></ion-icon>
+                  <ion-icon class="text-2xl" name="heart-outline"></ion-icon>
+                  <!-- TODO: caso já esteja favoritado <ion-icon class="text-2xl" name="heart"></ion-icon>-->
                 </a>
                 <div class="flex ion-justify-content-start ion-align-items-center gap-1">
                   <ion-icon class="text-2xl" name="time-outline"></ion-icon>
-                  <ion-label>{{tempoDePreparo(item)}}</ion-label>
+                  <ion-label class="text-600" >{{tempoDePreparo(item)}}</ion-label>
                 </div>
               </div>
             </div>
