@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../../../auth/services";
-import { Subscription } from "rxjs";
+import { filter, Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
 import { ReceitasResponse } from "../../../favoritos/models";
 import { AlertController } from "@ionic/angular";
+import { ReceitaCategoria } from "../../models";
 
 @Component({
   selector: "app-listar-receitas",
@@ -14,6 +15,8 @@ export class ListarReceitasComponent implements OnInit {
   loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   receitas: ReceitasResponse[] = [];
+  categorias: ReceitaCategoria[] = [];
+  responsiveOptions: any[] = [];
 
 
   constructor(
@@ -32,10 +35,31 @@ export class ListarReceitasComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTodasReceitas();
+    this.responsiveOptions = [
+      {
+        breakpoint: '1199px',
+        numVisible: 1,
+        numScroll: 1
+      },
+      {
+        breakpoint: '991px',
+        numVisible: 2,
+        numScroll: 1
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1
+      }
+    ];
   }
 
   ionViewWillEnter(): void {
     this.getTodasReceitas();
+  }
+
+  public receitaPorCategoria(categoria: number) {
+    return this.receitas.filter(o=>o.category == categoria)
   }
 
   getTodasReceitas(): void {
@@ -47,6 +71,16 @@ export class ListarReceitasComponent implements OnInit {
     this.inscricao = this.receitaService.getAllReceitas().subscribe({
       next: (o: ReceitasResponse[]): void => {
         this.receitas = o;
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
+    });
+
+    this.loading = true;
+    this.inscricao = this.receitaService.getAllCategorias().subscribe({
+      next: (o: any[]): void => {
+        this.categorias = o;
         this.loading = false;
       },
       error: () => (this.loading = false),
@@ -93,6 +127,10 @@ export class ListarReceitasComponent implements OnInit {
     });
   }
 
+  onClickVerMais(): void {
+    this.alertNaoImplementado()
+  }
+
   alertNaoImplementado(): void {
     this.alertController
       .create({
@@ -106,4 +144,6 @@ export class ListarReceitasComponent implements OnInit {
   ngOnDestroy(): void {
     this.inscricao.unsubscribe();
   }
+
+  protected readonly ReceitaCategoria = ReceitaCategoria;
 }

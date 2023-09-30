@@ -97,8 +97,22 @@
         <!-- TODO: listar categorias com roleta das 3 primeiras receitas mostra apenas 2-->
         <!-- TODO: ver mais, para acessar todas as receitas daquela categoria-->
         <!-- TODO: essas receitas que estão a mostra podem ser clicadas-->
-      </ng-container>
 
+        <div class="w-full px-4 py-2" *ngFor="let categoria of categorias">
+          <div class="flex ion-align-items-center ion-justify-content-between">
+            <span class="text-900 fw-600">{{ReceitaCategoria[categoria]}}</span>
+            <span>
+              <a class="ver-mais" (click)="onClickVerMais()">Ver mais</a>
+            </span>
+          </div>
+          <swiper-container [slidesPerView]="2">
+            <swiper-slide *ngFor="let receita of receitaPorCategoria(categoria)">
+              <img class="border-round" src="https://source.unsplash.com/random/200x200/?{{ReceitaCategoria[receita.category]}}" alt="{{receita.name}}">
+              <!-- <div>{{receita.name}}</div> -->
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </ng-container>
     </ng-container>
   </section>
 
