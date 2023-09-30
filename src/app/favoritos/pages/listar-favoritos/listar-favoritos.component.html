@@ -11,10 +11,18 @@
     <a
       class="col-2 flex justify-content-end"
       (click)="onClickRefresh()">
-      <ion-icon
-        [ngClass]="{ 'text-900': !loading, 'text-500': loading }"
-        name="refresh"
-        size="large"></ion-icon>
+      <ng-container *ngIf="!usuarioLogado">
+        <ion-icon
+          class="text-500"
+          name="refresh"
+          size="large"></ion-icon>
+      </ng-container>
+      <ng-container *ngIf="usuarioLogado">
+        <ion-icon
+          [ngClass]="{ 'text-900': !loading, 'text-500': loading }"
+          name="refresh"
+          size="large"></ion-icon>
+      </ng-container>
     </a>
   </header>
 
@@ -86,9 +94,16 @@
 
     <ng-container *ngIf="!loading">
       <ng-container *ngIf="!hasFavoritos">
-        <div class="col-12 text-900">
-          <p class="text-center">Você não favoritou nenhuma receita ainda! 😢</p>
-        </div>
+        <ng-container *ngIf="!usuarioLogado">
+          <div class="col-12 text-900">
+            <p class="text-center">Essa função não está disponível para convidados. Por favor faça login ou Cadastre-se no Handoven!</p>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="usuarioLogado">
+          <div class="col-12 text-900">
+            <p class="text-center">Você não favoritou nenhuma receita ainda! 😢</p>
+          </div>
+        </ng-container>
       </ng-container>
 
       <ng-container *ngIf="hasFavoritos">

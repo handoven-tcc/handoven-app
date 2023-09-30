@@ -116,7 +116,7 @@ export class ListarFavoritosComponent implements OnInit {
   }
 
   onClickRefresh(): void {
-    if (this.loading) {
+    if (this.loading || !this.usuarioLogado) {
       return;
     }
 
