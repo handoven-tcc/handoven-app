@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AlertController } from "@ionic/angular";
+import { SocialSharing } from "@awesome-cordova-plugins/social-sharing/ngx";
 import { Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
 import { ReceitasResponse } from "../../../favoritos/models";
@@ -17,18 +18,48 @@ export class DetalhesDaReceitaComponent implements OnInit {
   constructor(
     private receitasServices: ReceitasService,
     private alertController: AlertController,
-  ) {
-  }
+    private share: SocialSharing
+  ) {}
 
   ngOnInit(): void {
-    this.receita = JSON.parse(window.localStorage.getItem("receita") ?? "") as ReceitasResponse;
+    this.receita = JSON.parse(
+      window.localStorage.getItem("receita") ?? ""
+    ) as ReceitasResponse;
   }
 
   onClickAdicionarFavorito(): void {
     this.alertNaoImplementado();
   }
+
   onClickCompartilhar(): void {
-    this.alertNaoImplementado();
+    const mensagem: string = `
+Olha só essa receita incrível que eu achei, no aplicativo do handoven!!!
+
+${this.receita.name}
+Em apenas ${this.tempoDePreparo(this.receita)}
+Você rende ${this.rendimento(this.receita)} dessa deliciosa receita!
+
+Para mais detalhes, baixe o aplicativo ou acesse:
+    `;
+
+    this.share
+      .share(mensagem, "", "", "https://github.com/handoven-tcc")
+      .then((o) => {
+        this.alertController
+          .create({
+            header: "foi!",
+            message: JSON.stringify(o),
+          })
+          .then((o) => o.present());
+      })
+      .catch((i) => {
+        this.alertController
+          .create({
+            header: "F",
+            message: JSON.stringify(i),
+          })
+          .then((o) => o.present());
+      });
   }
 
   tempoDePreparo(receita: ReceitasResponse): string {
@@ -64,5 +95,4 @@ export class DetalhesDaReceitaComponent implements OnInit {
     window.localStorage.removeItem("receita");
     // this.receita = JSON.parse(window.localStorage.getItem("receita") ?? "") as ReceitasResponse;
   }
-
 }

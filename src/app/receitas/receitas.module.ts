@@ -2,6 +2,7 @@ import { IonicModule } from "@ionic/angular";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { SocialSharing } from "@awesome-cordova-plugins/social-sharing/ngx";
 
 import { ReceitasComponent } from "./receitas.component";
 
@@ -28,6 +29,7 @@ import { HideHeaderDirective } from './directives/hide-header.directive';
     DetalhesDaReceitaComponent,
     HideHeaderDirective,
   ],
+  providers:[SocialSharing],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ReceitasPageModule {}
