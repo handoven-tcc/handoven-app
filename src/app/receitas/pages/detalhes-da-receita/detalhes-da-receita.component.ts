@@ -45,17 +45,12 @@ Para mais detalhes, baixe o aplicativo ou acesse:
     this.share
       .share(mensagem, "", "", "https://github.com/handoven-tcc")
       .then((o) => {
-        this.alertController
-          .create({
-            header: "foi!",
-            message: JSON.stringify(o),
-          })
-          .then((o) => o.present());
+        console.log(o);
       })
       .catch((i) => {
         this.alertController
           .create({
-            header: "F",
+            header: "Alguma coisa deu errado! Tente novamente mais tarde!",
             message: JSON.stringify(i),
           })
           .then((o) => o.present());
