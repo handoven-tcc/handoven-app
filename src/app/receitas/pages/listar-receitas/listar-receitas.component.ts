@@ -2,9 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../../../auth/services";
 import { Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
-import { ReceitasResponse } from "../../../favoritos/models";
 import { AlertController, NavController } from "@ionic/angular";
-import { ReceitaCategoria } from "../../models";
+import { ReceitaCategoria, ReceitasResponse } from "../../models";
 
 @Component({
   selector: "app-listar-receitas",

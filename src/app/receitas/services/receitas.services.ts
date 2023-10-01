@@ -2,9 +2,8 @@ import { Injectable } from "@angular/core";
 import { concatMap, distinct, filter, from, map, Observable, of, reduce, toArray } from "rxjs";
 import { AuthService } from "../../auth/services";
 import Plates from "../../../assets/mock/plates.json";
-import { ReceitasResponse } from "../../favoritos/models";
 import { environment } from "../../../environments/environment";
-import { ReceitaCategoria } from "../models";
+import { ReceitaCategoria, ReceitasResponse } from "../models";
 
 @Injectable({
   providedIn: "root",

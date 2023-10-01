@@ -6,7 +6,7 @@ import {
 } from "@ionic/angular";
 import { AuthService } from "../../../auth/services";
 import { FavoritosService } from "../../services";
-import { ReceitasResponse } from "../../models";
+import {ReceitasResponse} from "../../../receitas/models";
 
 @Component({
   selector: "app-listar-favoritos",

@@ -4,7 +4,7 @@ import { environment } from "../../../environments/environment";
 import { Observable, of } from "rxjs";
 import { AuthService } from "../../auth/services";
 import Plates from "../../../assets/mock/plates.json";
-import { ReceitasResponse } from "../models";
+import {ReceitasResponse} from "../../receitas/models";
 
 @Injectable({
   providedIn: "root",

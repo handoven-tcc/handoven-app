@@ -3,8 +3,7 @@ import { AlertController } from "@ionic/angular";
 import { SocialSharing } from "@awesome-cordova-plugins/social-sharing/ngx";
 import { Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
-import { ReceitasResponse } from "../../../favoritos/models";
-import { ReceitaCategoria } from "../../models";
+import { ReceitasResponse, ReceitaCategoria } from "../../models";
 
 @Component({
   selector: "app-detalhes-da-receita",

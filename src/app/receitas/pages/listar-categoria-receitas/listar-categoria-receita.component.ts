@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ReceitaCategoria } from "../../models";
+import { ReceitaCategoria, ReceitasResponse } from "../../models";
 import { ActivatedRoute } from "@angular/router";
-import { ReceitasResponse } from "../../../favoritos/models";
 import { ReceitasService } from "../../services";
 import { Subscription } from "rxjs";
 import { AlertController, NavController } from "@ionic/angular";

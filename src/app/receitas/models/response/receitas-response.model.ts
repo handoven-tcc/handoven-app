@@ -1,4 +1,4 @@
-import { ReceitaCategoria, ReceitaIngredienteCategoria } from "../../../receitas/models";
+import { ReceitaCategoria, ReceitaIngredienteCategoria } from "..";
 
 interface ReceitasResponse {
   name: string;
