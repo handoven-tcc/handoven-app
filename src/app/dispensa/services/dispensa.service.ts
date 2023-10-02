@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
 import { Observable, map, of } from "rxjs";
@@ -12,7 +12,6 @@ import {
   IButtonSelectComAbreviacao,
 } from "../models";
 import { AuthService } from "../../auth/services";
-import { BarcodeScanResult } from "@awesome-cordova-plugins/barcode-scanner";
 import {
   ReceitaIngredienteCategoria,
   ReceitaIngredienteUnidadeDeMedida,
