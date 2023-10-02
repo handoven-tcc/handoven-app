@@ -1,1 +1,1 @@
-export * from './receitas-response.model';
+export * from "./favoritos-response.model";

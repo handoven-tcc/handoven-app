@@ -23,18 +23,21 @@
     "@angular/router": "^16.0.0",
     "@awesome-cordova-plugins/barcode-scanner": "^6.4.0",
     "@awesome-cordova-plugins/network": "^6.4.0",
+    "@awesome-cordova-plugins/social-sharing": "^6.4.0",
     "@awesome-cordova-plugins/sqlite": "^6.4.0",
     "@awesome-cordova-plugins/sqlite-porter": "^6.4.0",
     "@ionic/angular": "^7.0.0",
     "@ionic/cordova-builders": "^9.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "@starley/barcodescanner-sdk31": "^8.1.2",
+    "cordova-plugin-x-socialsharing": "^6.0.4",
     "ionicons": "^7.0.0",
     "native-run": "^1.7.2",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primeng": "^16.0.0-rc.2",
     "rxjs": "~7.8.0",
+    "swiper": "^10.3.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
@@ -62,6 +65,7 @@
     "cordova-plugin-splashscreen": "6.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-sqlite-storage": "^6.1.0",
+    "es6-promise-plugin": "^4.1.0",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -90,7 +94,8 @@
       "cordova-sqlite-storage": {},
       "uk.co.workingedge.cordova.plugin.sqliteporter": {},
       "cordova-plugin-network-information": {},
-      "phonegap-plugin-barcodescanner": {}
+      "phonegap-plugin-barcodescanner": {},
+      "cordova-plugin-x-socialsharing": {}
     },
     "platforms": [
       "android"

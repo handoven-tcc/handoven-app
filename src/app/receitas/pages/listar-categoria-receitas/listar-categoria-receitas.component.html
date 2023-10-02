@@ -1,30 +1,18 @@
-<ion-header [translucent]="true"></ion-header>
+<ion-header>
+  <ion-toolbar id="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-base text-white select-none">{{
+      ReceitaCategoria[category]
+    }}</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-refresher (ionRefresh)="handleRefresh($event)" slot="fixed">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-
-  <header
-    class="grid justify-content-between align-items-center text-900 px-5 pb-5">
-    <h1 class="col-9">Encontre sua receita favorita</h1>
-    <a class="col-2 flex justify-content-end" (click)="onClickRefresh()">
-      <ion-icon
-        [ngClass]="{
-          'c-red': !loading || hasReceitas,
-          'text-500': loading || !hasReceitas
-        }"
-        name="fast-food-outline"
-        size="large"></ion-icon>
-    </a>
-
-    <ion-searchbar
-      class="pesquisar"
-      placeholder="Pesquisar"
-      [debounce]="1000"
-      (ionInput)="handleInput($event)"></ion-searchbar>
-  </header>
-
   <section>
     <ng-container *ngIf="loading">
       <div
@@ -93,37 +81,55 @@
 
     <ng-container *ngIf="!loading">
       <ng-container *ngIf="!hasReceitas">
-        <ng-container *ngIf="!hasUsuario">
-          <div class="col-12 text-900">
-            <p class="text-center">
-              Essa função não está disponível para convidados. Por favor faça
-              login ou Cadastre-se no Handoven!
-            </p>
-          </div>
-        </ng-container>
+        <div class="col-12 text-900">
+          <p class="text-center">
+            Não existe nenhuma receita nessa categoria! 😢
+          </p>
+        </div>
       </ng-container>
 
       <ng-container *ngIf="hasReceitas">
-        <div class="w-full px-4 py-2" *ngFor="let categoria of categorias">
-          <a
-            (click)="onClickVerMais(categoria)"
-            class="flex ion-align-items-center ion-justify-content-between">
-            <span class="text-900 fw-600">{{
-              ReceitaCategoria[categoria]
-            }}</span>
-            <span class="ver-mais"> Ver mais </span>
-          </a>
-          <swiper-container [slidesPerView]="2">
-            <swiper-slide
-              *ngFor="let receita of receitaPorCategoria(categoria)">
-              <img
-                (click)="onClickVisualizarReceita(receita)"
-                class="border-round"
-                src="data:image/png;base64,{{ receita.image }}"
-                alt="imagem da receita {{ receita.name }}" />
-            </swiper-slide>
-          </swiper-container>
-        </div>
+        <ion-list *ngFor="let item of receitas">
+          <ion-item class="item-receitas">
+            <img
+              (click)="onClickVisualizarReceita(item)"
+              class="mr-2"
+              alt="imagem da receita {{ item.name }}"
+              src="data:image/png;base64,{{ item.image }}" />
+            <div
+              class="w-full h-full flex flex-column ion-align-items-start ion-justify-content-between">
+              <ion-label class="ion-text-wrap fw-600">
+                {{ item.name }}
+              </ion-label>
+              <div
+                class="w-full mb-3 flex ion-justify-content-start ion-align-items-center">
+                <a
+                  (click)="onClickAlterarFavorito(item)"
+                  class="flex ion-align-items-center mr-6">
+                  <ion-icon
+                    *ngIf="favoriteLoading"
+                    class="text-2xl"
+                    name="heart-half"></ion-icon>
+                  <ion-icon
+                    *ngIf="!favoriteLoading && !item.favorited"
+                    class="text-2xl"
+                    name="heart-outline"></ion-icon>
+                  <ion-icon
+                    *ngIf="!favoriteLoading && item.favorited"
+                    class="text-2xl"
+                    name="heart"></ion-icon>
+                </a>
+                <div
+                  class="flex ion-justify-content-start ion-align-items-center gap-1">
+                  <ion-icon class="text-2xl" name="time-outline"></ion-icon>
+                  <ion-label class="text-600">{{
+                    tempoDePreparo(item)
+                  }}</ion-label>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
       </ng-container>
     </ng-container>
   </section>

@@ -48,3 +48,12 @@ section {
 .item-favoritos {
   --border-style: none !important;
 }
+
+.item-favoritos.ios {
+  margin-bottom: 1rem;
+}
+
+img {
+  height: 7rem;
+  border-radius: 5px;
+}

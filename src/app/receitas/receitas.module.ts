@@ -1,15 +1,17 @@
 import { IonicModule } from "@ionic/angular";
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { SocialSharing } from "@awesome-cordova-plugins/social-sharing/ngx";
 
 import { ReceitasComponent } from "./receitas.component";
 
 import { ReceitasPageRoutingModule } from "./receitas-routing.module";
 import { ComponentsModule } from "../../../temp/src/lib/components/components.module";
-import { ListarReceitaInternoComponent } from "./pages/listar-receita-interno/listar-receita-interno.component";
+import { ListarCategoriaReceitaComponent } from "./pages/listar-categoria-receitas/listar-categoria-receita.component";
 import { ListarReceitasComponent } from "./pages/listar-receitas/listar-receitas.component";
 import { DetalhesDaReceitaComponent } from "./pages/detalhes-da-receita/detalhes-da-receita.component";
+import { HideHeaderDirective } from './directives/hide-header.directive';
 
 @NgModule({
   imports: [
@@ -23,8 +25,11 @@ import { DetalhesDaReceitaComponent } from "./pages/detalhes-da-receita/detalhes
   declarations: [
     ReceitasComponent,
     ListarReceitasComponent,
-    ListarReceitaInternoComponent,
+    ListarCategoriaReceitaComponent,
     DetalhesDaReceitaComponent,
+    HideHeaderDirective,
   ],
+  providers:[SocialSharing],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ReceitasPageModule {}

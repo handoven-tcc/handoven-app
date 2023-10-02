@@ -1,13 +1,15 @@
-import { ReceitaCategoria, ReceitaIngredienteCategoria } from "../../../receitas/models";
+import { ReceitaCategoria, ReceitaIngredienteCategoria } from "..";
 
 interface ReceitasResponse {
+  id?: string;
+  image?: any;
   name: string;
   favorited: boolean;
   category: ReceitaCategoria;
   section: {
     ingredients: IngredientesReceita[],
     prepare_mode: [],
-    extras: []
+    extras: string[]
   };
 }
 
