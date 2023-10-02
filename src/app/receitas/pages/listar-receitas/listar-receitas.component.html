@@ -1,21 +1,19 @@
 <ion-header [translucent]="true"></ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-refresher
-    (ionRefresh)="handleRefresh($event)"
-    slot="fixed"
-  >
+  <ion-refresher (ionRefresh)="handleRefresh($event)" slot="fixed">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
   <header
     class="grid justify-content-between align-items-center text-900 px-5 pb-5">
     <h1 class="col-9">Encontre sua receita favorita</h1>
-    <a
-      class="col-2 flex justify-content-end"
-      (click)="onClickRefresh()">
+    <a class="col-2 flex justify-content-end" (click)="onClickRefresh()">
       <ion-icon
-        [ngClass]="{ 'c-red': (!loading || hasReceitas), 'text-500': (loading || !hasReceitas) }"
+        [ngClass]="{
+          'c-red': !loading || hasReceitas,
+          'text-500': loading || !hasReceitas
+        }"
         name="fast-food-outline"
         size="large"></ion-icon>
     </a>
@@ -89,32 +87,40 @@
 
     <ng-container *ngIf="!loading">
       <ng-container *ngIf="!hasReceitas">
-        <div class="col-12 text-900">
-          <p class="text-center">Essa função não está disponível para convidados. Por favor faça login ou Cadastre-se no Handoven!</p>
-        </div>
+        <ng-container *ngIf="!hasUsuario">
+          <div class="col-12 text-900">
+            <p class="text-center">
+              Essa função não está disponível para convidados. Por favor faça
+              login ou Cadastre-se no Handoven!
+            </p>
+          </div>
+        </ng-container>
       </ng-container>
 
       <ng-container *ngIf="hasReceitas">
         <!-- TODO: pesquisar pelo nome da receita-->
-        <!-- TODO: essas receitas que estão a mostra podem ser clicadas-->
 
         <div class="w-full px-4 py-2" *ngFor="let categoria of categorias">
-          <a (click)="onClickVerMais(categoria)" class="flex ion-align-items-center ion-justify-content-between">
-            <span class="text-900 fw-600">{{ReceitaCategoria[categoria]}}</span>
-            <span class="ver-mais">
-              Ver mais
-            </span>
+          <a
+            (click)="onClickVerMais(categoria)"
+            class="flex ion-align-items-center ion-justify-content-between">
+            <span class="text-900 fw-600">{{
+              ReceitaCategoria[categoria]
+            }}</span>
+            <span class="ver-mais"> Ver mais </span>
           </a>
           <swiper-container [slidesPerView]="2">
-            <swiper-slide *ngFor="let receita of receitaPorCategoria(categoria)">
-              <img (click)="onClickVisualizarReceita(receita)" class="border-round" src="https://source.unsplash.com/random/200x200/?{{ReceitaCategoria[receita.category]}}" alt="{{receita.name}}">
-              <!-- <div>{{receita.name}}</div> -->
+            <swiper-slide
+              *ngFor="let receita of receitaPorCategoria(categoria)">
+              <img
+                (click)="onClickVisualizarReceita(receita)"
+                class="border-round"
+                src="data:image/png;base64,{{ receita.image }}"
+                alt="imagem da receita {{ receita.name }}" />
             </swiper-slide>
           </swiper-container>
         </div>
       </ng-container>
     </ng-container>
   </section>
-
 </ion-content>
-
