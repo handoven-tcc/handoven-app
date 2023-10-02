@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../../../auth/services";
-import { Subscription } from "rxjs";
-import { ReceitasService } from "../../services";
 import { AlertController, NavController } from "@ionic/angular";
+import { Subscription } from "rxjs";
+import { AuthService } from "../../../auth/services";
+import { ReceitasService } from "../../services";
 import { ReceitaCategoria, ReceitasResponse } from "../../models";
 
 @Component({
@@ -19,17 +19,16 @@ export class ListarReceitasComponent implements OnInit {
   protected readonly ReceitaCategoria = ReceitaCategoria;
 
   constructor(
-    private alertController: AlertController,
     private authService: AuthService,
     private nav: NavController,
-    private receitaService: ReceitasService) {
-  }
+    private receitaService: ReceitasService
+  ) {}
 
   public get hasReceitas(): boolean {
     return this.receitas.length > 0;
   }
 
-  public get usuarioLogado(): boolean {
+  public get hasUsuario(): boolean {
     return this.authService.hasUsuario();
   }
 
@@ -59,7 +58,7 @@ export class ListarReceitasComponent implements OnInit {
   }
 
   public receitaPorCategoria(categoria: number) {
-    return this.receitas.filter(o => o.category == categoria).slice(0, 3);
+    return this.receitas.filter((o) => o.category == categoria).slice(0, 3);
   }
 
   getTodasReceitas(): void {
@@ -112,7 +111,6 @@ export class ListarReceitasComponent implements OnInit {
   }
 
   onClickRefresh(): void {
-    console.log("desgraça");
     if (this.loading || !this.hasReceitas) {
       return;
     }
@@ -129,27 +127,12 @@ export class ListarReceitasComponent implements OnInit {
   }
 
   onClickVerMais(item: ReceitaCategoria): void {
-    this.nav.navigateForward([
-      "tabs/receitas/ver-mais",
-      JSON.stringify(item),
-    ]);
+    this.nav.navigateForward(["tabs/receitas/ver-mais", JSON.stringify(item)]);
   }
 
   onClickVisualizarReceita(receita: ReceitasResponse): void {
-    window.localStorage.setItem("receita", JSON.stringify(receita))
-    this.nav.navigateForward([
-      "tabs/receitas/detalhes",
-    ]);
-  }
-
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
+    window.localStorage.setItem("receita", JSON.stringify(receita));
+    this.nav.navigateForward(["tabs/receitas/detalhes"]);
   }
 
   ngOnDestroy(): void {
