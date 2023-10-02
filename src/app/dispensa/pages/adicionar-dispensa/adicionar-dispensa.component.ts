@@ -4,10 +4,13 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
 import { AlertController, NavController } from "@ionic/angular";
 import { DispensaService } from "../../services";
-import { IButtonSelect, IButtonSelectComAbreviacao, ProdutoRequest } from "../../models";
+import {
+  IButtonSelect,
+  IButtonSelectComAbreviacao,
+  ProdutoRequest,
+} from "../../models";
 import { AuthService } from "../../../auth/services";
 import { ReceitaIngredienteCategoria } from "../../../receitas/models";
-
 
 @Component({
   selector: "app-adicionar-dispensa",
@@ -144,10 +147,14 @@ export class AdicionarDispensaComponent implements OnInit {
       this.form.controls["nome"].value,
       this.selectedTipo ? this.selectedTipo.name : "",
       this.dataDeVencimento,
-      this.selectedCategoria ? this.selectedCategoria.id : ReceitaIngredienteCategoria.Outros,
+      this.selectedCategoria
+        ? this.selectedCategoria.id
+        : ReceitaIngredienteCategoria.Outros,
       this.form.controls["custo"].value,
       this.form.controls["quantidade"].value,
-      this.selectedUnidadeDeMedida ? this.selectedUnidadeDeMedida.abbreviation : "",
+      this.selectedUnidadeDeMedida
+        ? this.selectedUnidadeDeMedida.abbreviation
+        : "",
       this.familiaId
     );
 
@@ -171,20 +178,6 @@ export class AdicionarDispensaComponent implements OnInit {
 
   onClickCancelar(): void {
     this.nav.navigateBack(["tabs/dispensa"]);
-  }
-
-  onClickEscanear(): void {
-    this.alertNaoImplementado();
-  }
-
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
   }
 
   ngOnDestroy(): void {
