@@ -8,14 +8,9 @@
   <header
     class="grid justify-content-between align-items-center text-900 px-5 pb-5">
     <h1 class="col-8">Favoritos</h1>
-    <a
-      class="col-2 flex justify-content-end"
-      (click)="onClickRefresh()">
+    <a class="col-2 flex justify-content-end" (click)="onClickRefresh()">
       <ng-container *ngIf="!usuarioLogado">
-        <ion-icon
-          class="text-500"
-          name="refresh"
-          size="large"></ion-icon>
+        <ion-icon class="text-500" name="refresh" size="large"></ion-icon>
       </ng-container>
       <ng-container *ngIf="usuarioLogado">
         <ion-icon
@@ -96,26 +91,31 @@
       <ng-container *ngIf="!hasFavoritos">
         <ng-container *ngIf="!usuarioLogado">
           <div class="col-12 text-900">
-            <p class="text-center">Essa função não está disponível para convidados. Por favor faça login ou Cadastre-se no Handoven!</p>
+            <p class="text-center">
+              Essa função não está disponível para convidados. Por favor faça
+              login ou Cadastre-se no Handoven!
+            </p>
           </div>
         </ng-container>
         <ng-container *ngIf="usuarioLogado">
           <div class="col-12 text-900">
-            <p class="text-center">Você não favoritou nenhuma receita ainda! 😢</p>
+            <p class="text-center">
+              Você não favoritou nenhuma receita ainda! 😢
+            </p>
           </div>
         </ng-container>
       </ng-container>
 
       <ng-container *ngIf="hasFavoritos">
         <ion-list *ngFor="let item of favoritos">
-          <ion-item class="item-favoritos" >
+          <ion-item class="item-favoritos">
             <img
               (click)="onClickVisualizarReceita(item)"
               class="mr-2"
               alt="imagem da receita {{ item.name }}"
-              src="../../../../assets/mock/platesImages/receita-massa.svg"
-            />
-            <div class="h-full flex flex-column ion-align-items-start ion-justify-content-between">
+              src="data:image/png;base64,{{ item.image }}" />
+            <div
+              class="h-full flex flex-column ion-align-items-start ion-justify-content-between">
               <ion-label class="ion-text-wrap text-900">
                 {{ item.name }}
               </ion-label>

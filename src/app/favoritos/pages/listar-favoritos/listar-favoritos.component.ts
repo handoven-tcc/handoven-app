@@ -1,12 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
-import {
-  AlertController,
-  NavController,
-} from "@ionic/angular";
+import { AlertController, NavController } from "@ionic/angular";
 import { AuthService } from "../../../auth/services";
 import { FavoritosService } from "../../services";
-import {ReceitasResponse} from "../../../receitas/models";
+import { ReceitasResponse } from "../../../receitas/models";
+import { FavoritoRequest } from "../../models";
 
 @Component({
   selector: "app-listar-favoritos",
@@ -22,9 +20,8 @@ export class ListarFavoritosComponent implements OnInit {
     private alertController: AlertController,
     private nav: NavController,
     private authService: AuthService,
-    private favoritosService: FavoritosService,
-  ) {
-  }
+    private favoritosService: FavoritosService
+  ) {}
 
   public get hasFavoritos(): boolean {
     return this.favoritos.length > 0;
@@ -72,8 +69,7 @@ export class ListarFavoritosComponent implements OnInit {
           {
             text: "Cancelar",
             role: "cancel",
-            handler: () => {
-            },
+            handler: () => {},
           },
           {
             text: "Ok",
@@ -85,34 +81,30 @@ export class ListarFavoritosComponent implements OnInit {
   }
 
   removerFavorito(item: any): void {
-    this.alertNaoImplementado();
-    // if (this.loading) {
-    //   return;
-    // }
-    //
-    // this.loading = true;
-    // // const request = new DeletarProdutoRequest(item.id);
-    // const request = item.id;
-    // this.inscricao = this.favoritosService
-    //   .removerFavorito(request)
-    //   .subscribe({
-    //     next: () => {
-    //       this.alertController
-    //         .create({
-    //           header: item.name,
-    //           message: `O Produto foi deletado com sucesso!`,
-    //           buttons: ["Ok"],
-    //         })
-    //         .then((o) => o.present());
-    //
-    //       this.loading = false;
-    //     },
-    //     error: () => (this.loading = false),
-    //     complete: () => {
-    //       this.loading = false;
-    //       this.getTodosFavoritos();
-    //     },
-    //   });
+    if (this.loading) {
+      return;
+    }
+
+    this.loading = true;
+    const request = new FavoritoRequest(item.id, false);
+    this.inscricao = this.favoritosService.putFavorito(request).subscribe({
+      next: () => {
+        this.alertController
+          .create({
+            header: item.name,
+            message: `A Receita foi removida dos favoritos com sucesso!`,
+            buttons: ["Ok"],
+          })
+          .then((o) => o.present());
+
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => {
+        this.loading = false;
+        this.getTodosFavoritos();
+      },
+    });
   }
 
   onClickRefresh(): void {
@@ -154,22 +146,9 @@ export class ListarFavoritosComponent implements OnInit {
     });
   }
 
-
   onClickVisualizarReceita(receita: ReceitasResponse): void {
-    window.localStorage.setItem("receita", JSON.stringify(receita))
-    this.nav.navigateForward([
-      "tabs/receitas/detalhes",
-    ]);
-  }
-
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
+    window.localStorage.setItem("receita", JSON.stringify(receita));
+    this.nav.navigateForward(["tabs/receitas/detalhes"]);
   }
 
   ngOnDestroy(): void {
