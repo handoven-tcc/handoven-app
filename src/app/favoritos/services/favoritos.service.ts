@@ -1,10 +1,10 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
-import { Observable, of } from "rxjs";
+import { Observable, map, of } from "rxjs";
 import { AuthService } from "../../auth/services";
-import Plates from "../../../assets/mock/plates.json";
-import {ReceitasResponse} from "../../receitas/models";
+import { ReceitasResponse } from "../../receitas/models";
+import { FavoritoRequest, FavoritoResponse } from "../models";
 
 @Injectable({
   providedIn: "root",
@@ -14,7 +14,7 @@ export class FavoritosService {
   private usuarioId!: string;
 
   private get url(): string {
-    return `${environment.api}/favorits`;
+    return `${environment.api}/plates`;
   }
 
   constructor(
@@ -25,57 +25,38 @@ export class FavoritosService {
     this.usuarioId = this.authService.getUsuarioId() ?? "";
   }
 
-  getAllFavoritos(): Observable<any[]> {
+  getAllFavoritos(): Observable<ReceitasResponse[]> {
     if (!this.authService.hasUsuario()) {
-      return of([] as any[]);
+      return of([] as ReceitasResponse[]);
     }
-    const plates = Plates as ReceitasResponse[]
 
-    return of(plates.filter(o => o.favorited));
-
-    // return this.http
-    //   .get(this.url, {
-    //     headers: {
-    //       "X-HandOven-User": this.usuarioId,
-    //       "X-HandOven-Family": this.familiaId,
-    //     },
-    //   })
-    //   .pipe(map((res: any) => res));
+    return this.http
+      .post(
+        `${this.url}/favorites`,
+        { favorited: true },
+        {
+          headers: {
+            "X-HandOven-User": this.usuarioId,
+            "X-HandOven-Family": this.familiaId,
+          },
+        }
+      )
+      .pipe(map((res: any) => res));
   }
 
-  adicionarFavorito(): Observable<never> {
+  putFavorito(request: FavoritoRequest): Observable<FavoritoResponse> {
     if (!this.authService.hasUsuario()) {
-      return of();
+      return of({} as FavoritoResponse);
     }
 
-    return of()
-
-    // return this.http
-    //   .post(`${this.url}/favorits/${id}`, {
-    //     headers: {
-    //       "X-HandOven-User": this.usuarioId,
-    //       "X-HandOven-Family": this.familiaId,
-    //       "X-handOven-Service": "false",
-    //     },
-    //   })
-    //   .pipe(map((res: any) => res));
-  }
-
-  removerFavorito({ id }: any): Observable<any> {
-    if (!this.authService.hasUsuario()) {
-      return of([] as any[]);
-    }
-
-    return of([] as any[]);
-
-    // return this.http
-    //   .delete(`${this.url}/${id}`, {
-    //     headers: {
-    //       "X-HandOven-User": this.usuarioId,
-    //       "X-HandOven-Family": this.familiaId,
-    //       "X-handOven-Service": "false",
-    //     },
-    //   })
-    //   .pipe(map((res: any) => res));
+    return this.http
+      .put(`${this.url}/${request.id}/favorite`, request, {
+        headers: {
+          "X-HandOven-User": this.usuarioId,
+          "X-HandOven-Family": this.familiaId,
+          "X-handOven-Service": "false",
+        },
+      })
+      .pipe(map((res: any) => res));
   }
 }
