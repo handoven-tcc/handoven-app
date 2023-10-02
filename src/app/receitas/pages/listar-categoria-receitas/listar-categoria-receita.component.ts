@@ -4,6 +4,8 @@ import { ActivatedRoute } from "@angular/router";
 import { ReceitasService } from "../../services";
 import { Subscription } from "rxjs";
 import { AlertController, NavController } from "@ionic/angular";
+import { FavoritosService } from "../../../favoritos/services";
+import { FavoritoRequest } from "../../../favoritos/models";
 
 @Component({
   selector: "app-listar-categoria-receitas",
@@ -13,17 +15,19 @@ import { AlertController, NavController } from "@ionic/angular";
 export class ListarCategoriaReceitaComponent implements OnInit {
   protected readonly ReceitaCategoria = ReceitaCategoria;
   loading: boolean = false;
+  favoriteLoading: boolean = false;
   receitas: ReceitasResponse[] = [];
   category!: ReceitaCategoria;
   inscricao: Subscription = Subscription.EMPTY;
+  favorito: boolean = false;
 
   constructor(
     private alertController: AlertController,
     private nav: NavController,
     private activatedRoute: ActivatedRoute,
     private receitasService: ReceitasService,
-  ) {
-  }
+    private favoritosService: FavoritosService
+  ) {}
 
   public get hasReceitas(): boolean {
     return this.receitas.length > 0;
@@ -31,17 +35,22 @@ export class ListarCategoriaReceitaComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
+    this.favoriteLoading = false;
 
-    this.category = JSON.parse(this.activatedRoute.snapshot.params["categoria"]) as ReceitaCategoria;
+    this.category = JSON.parse(
+      this.activatedRoute.snapshot.params["categoria"]
+    ) as ReceitaCategoria;
 
-    this.inscricao = this.receitasService.getReceitaByCategoria(this.category).subscribe({
-      next: (o: ReceitasResponse[]): void => {
-        this.receitas = o;
-        this.loading = false;
-      },
-      error: () => (this.loading = false),
-      complete: () => (this.loading = false),
-    });
+    this.inscricao = this.receitasService
+      .getReceitasByCategoria(this.category)
+      .subscribe({
+        next: (o: ReceitasResponse[]): void => {
+          this.receitas = o;
+          this.loading = false;
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
   }
 
   public tempoDePreparo(receita: ReceitasResponse): string {
@@ -55,46 +64,72 @@ export class ListarCategoriaReceitaComponent implements OnInit {
     }
 
     this.loading = true;
-    this.inscricao = this.receitasService.getReceitaByCategoria(this.category).subscribe({
-      next: (o) => {
-        this.receitas = o;
-        this.loading = false;
-        event.target.complete();
-      },
-      error: () => {
-        this.loading = false;
-        event.target.complete();
-      },
-      complete: () => {
-        this.loading = false;
-        event.target.complete();
-      },
-    });
+    this.inscricao = this.receitasService
+      .getReceitasByCategoria(this.category)
+      .subscribe({
+        next: (o) => {
+          this.receitas = o;
+          this.loading = false;
+          event.target.complete();
+        },
+        error: () => {
+          this.loading = false;
+          event.target.complete();
+        },
+        complete: () => {
+          this.loading = false;
+          event.target.complete();
+        },
+      });
   }
 
   onClickVisualizarReceita(receita: ReceitasResponse): void {
-    window.localStorage.setItem("receita", JSON.stringify(receita))
-    this.nav.navigateForward([
-      "tabs/receitas/detalhes",
-    ]);
+    window.localStorage.setItem("receita", JSON.stringify(receita));
+    this.nav.navigateForward(["tabs/receitas/detalhes"]);
   }
 
-  onClickAdicionarFavorito(item: ReceitasResponse): void {
-    this.alertNaoImplementado();
-  }
+  onClickAlterarFavorito(item: ReceitasResponse): void {
+    if (!item.id) {
+      return;
+    }
 
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
+    const changedFavorited = !item.favorited;
+
+    if (this.favoriteLoading) {
+      return;
+    }
+
+    this.favoriteLoading = true;
+    const request = new FavoritoRequest(item.id, changedFavorited);
+    this.inscricao = this.favoritosService.putFavorito(request).subscribe({
+      next: () => {
+        this.favoriteLoading = false;
+      },
+      error: () => {
+        this.favoriteLoading = false;
+      },
+      complete: () => {
+        this.favoriteLoading = false;
+
+        this.favoriteLoading = true;
+        this.inscricao = this.receitasService.getAllReceitas().subscribe({
+          next: (o) => {
+            this.receitas = o;
+
+            this.favoriteLoading = false;
+          },
+          error: () => {
+            this.favoriteLoading = false;
+          },
+          complete: () => {
+            this.favoriteLoading = false;
+          },
+        });
+      },
+    });
   }
 
   ngOnDestroy(): void {
     this.inscricao.unsubscribe();
   }
-
 }

@@ -3,9 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button color="light"></ion-back-button>
     </ion-buttons>
-    <ion-title class="text-base text-white select-none"
-    >{{ReceitaCategoria[category]}}</ion-title
-    >
+    <ion-title class="text-base text-white select-none">{{
+      ReceitaCategoria[category]
+    }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -82,7 +82,9 @@
     <ng-container *ngIf="!loading">
       <ng-container *ngIf="!hasReceitas">
         <div class="col-12 text-900">
-          <p class="text-center">Não existe nenhuma receita nessa categoria! 😢</p>
+          <p class="text-center">
+            Não existe nenhuma receita nessa categoria! 😢
+          </p>
         </div>
       </ng-container>
 
@@ -93,20 +95,36 @@
               (click)="onClickVisualizarReceita(item)"
               class="mr-2"
               alt="imagem da receita {{ item.name }}"
-              src="../../../../assets/mock/platesImages/receita-massa.svg"
-            />
-            <div class="w-full h-full flex flex-column ion-align-items-start ion-justify-content-between">
+              src="data:image/png;base64,{{ item.image }}" />
+            <div
+              class="w-full h-full flex flex-column ion-align-items-start ion-justify-content-between">
               <ion-label class="ion-text-wrap fw-600">
                 {{ item.name }}
               </ion-label>
-              <div class="w-full mb-3 flex ion-justify-content-start ion-align-items-center">
-                <a (click)="onClickAdicionarFavorito(item)" class="flex ion-align-items-center mr-6">
-                  <ion-icon class="text-2xl" name="heart-outline"></ion-icon>
-                  <!-- TODO: caso já esteja favoritado <ion-icon class="text-2xl" name="heart"></ion-icon>-->
+              <div
+                class="w-full mb-3 flex ion-justify-content-start ion-align-items-center">
+                <a
+                  (click)="onClickAlterarFavorito(item)"
+                  class="flex ion-align-items-center mr-6">
+                  <ion-icon
+                    *ngIf="favoriteLoading"
+                    class="text-2xl"
+                    name="heart-half"></ion-icon>
+                  <ion-icon
+                    *ngIf="!favoriteLoading && !item.favorited"
+                    class="text-2xl"
+                    name="heart-outline"></ion-icon>
+                  <ion-icon
+                    *ngIf="!favoriteLoading && item.favorited"
+                    class="text-2xl"
+                    name="heart"></ion-icon>
                 </a>
-                <div class="flex ion-justify-content-start ion-align-items-center gap-1">
+                <div
+                  class="flex ion-justify-content-start ion-align-items-center gap-1">
                   <ion-icon class="text-2xl" name="time-outline"></ion-icon>
-                  <ion-label class="text-600" >{{tempoDePreparo(item)}}</ion-label>
+                  <ion-label class="text-600">{{
+                    tempoDePreparo(item)
+                  }}</ion-label>
                 </div>
               </div>
             </div>
