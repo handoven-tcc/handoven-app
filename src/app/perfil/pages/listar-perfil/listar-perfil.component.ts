@@ -271,14 +271,6 @@ export class ListarPerfilComponent implements OnInit {
       .then((o) => o.present());
   }
 
-  onClickModalVerificarEmail(): void {
-    if (this.loading === true) {
-      return;
-    }
-
-    this.alertNaoImplementado();
-  }
-
   onClickModalSair(): void {
     if (!this.usuarioLogado) {
       this.sair();

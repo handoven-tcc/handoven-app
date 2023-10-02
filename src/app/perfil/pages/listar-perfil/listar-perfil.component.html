@@ -66,24 +66,12 @@
       </ng-container>
 
       <ng-container *ngIf="usuarioLogado">
-        <div class="col-7 flex justify-content-start align-items-center gap-2">
-          <ion-icon class="text-xl text-900 w-4" name="mail-outline"></ion-icon>
+        <div class="col-12 flex justify-content-start align-items-center gap-2">
+          <ion-icon class="text-xl text-900 w-1" name="mail-outline"></ion-icon>
           <ion-label
             class="text-sm text-900 white-space-nowrap overflow-hidden text-overflow-ellipsis"
             >{{ perfil.email }}</ion-label
           >
-        </div>
-        <div class="col-5">
-          <ion-button
-            id="verificar-nao-implementado"
-            color="danger"
-            fill="solid"
-            [disabled]="loading"
-            shape="round"
-            expand="block"
-            (click)="onClickModalVerificarEmail()">
-            <ion-label class="text-xs">Verificar</ion-label>
-          </ion-button>
         </div>
       </ng-container>
     </div>
