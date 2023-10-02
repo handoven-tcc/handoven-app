@@ -124,8 +124,13 @@ export class EditarDispensaComponent implements OnInit {
     this.unidadeDeMedida = this.dispensaService.getUnidadeDeMedidaOptions();
 
     this.selectedTipo = this.produto.type;
-    this.selectedCategoria = this.dispensaService.getCategoriaOptionById(this.produto.category);
-    this.selectedUnidadeDeMedida = this.dispensaService.getUnidadeDeMedidaOptionsByAbbr(this.produto.unitMeasure)
+    this.selectedCategoria = this.dispensaService.getCategoriaOptionById(
+      this.produto.category
+    );
+    this.selectedUnidadeDeMedida =
+      this.dispensaService.getUnidadeDeMedidaOptionsByAbbr(
+        this.produto.unitMeasure
+      );
     this.dataDeVencimento = this.produto.validity;
     this.setupForm(this.produto);
   }
@@ -175,11 +180,15 @@ export class EditarDispensaComponent implements OnInit {
       this.form.controls["nome"].value,
       this.selectedTipo ? this.selectedTipo : "",
       this.dataDeVencimento,
-      this.selectedCategoria ? this.selectedCategoria.id : ReceitaIngredienteCategoria.Outros,
+      this.selectedCategoria
+        ? this.selectedCategoria.id
+        : ReceitaIngredienteCategoria.Outros,
       this.form.controls["custo"].value,
       this.form.controls["quantidade"].value,
-      this.selectedUnidadeDeMedida ? this.selectedUnidadeDeMedida.abbreviation : "",
-        this.familiaId,
+      this.selectedUnidadeDeMedida
+        ? this.selectedUnidadeDeMedida.abbreviation
+        : "",
+      this.familiaId,
       this.produto.id
     );
 
@@ -203,20 +212,6 @@ export class EditarDispensaComponent implements OnInit {
 
   onClickCancelar(): void {
     this.nav.navigateBack(["tabs/dispensa"]);
-  }
-
-  onClickEscanear(): void {
-    this.alertNaoImplementado();
-  }
-
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
   }
 
   ngOnDestroy(): void {

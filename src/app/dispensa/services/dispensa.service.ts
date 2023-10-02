@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
 import { Observable, map, of } from "rxjs";
@@ -7,11 +7,15 @@ import {
   DeletarProdutoRequest,
   GetProdutoNomeRequest,
   GetProdutoIdRequest,
-  ProdutoResponse, IButtonSelect, IButtonSelectComAbreviacao,
+  ProdutoResponse,
+  IButtonSelect,
+  IButtonSelectComAbreviacao,
 } from "../models";
 import { AuthService } from "../../auth/services";
-import { BarcodeScanResult } from "@awesome-cordova-plugins/barcode-scanner";
-import { ReceitaIngredienteCategoria, ReceitaIngredienteUnidadeDeMedida } from "../../receitas/models";
+import {
+  ReceitaIngredienteCategoria,
+  ReceitaIngredienteUnidadeDeMedida,
+} from "../../receitas/models";
 
 @Injectable({
   providedIn: "root",
@@ -29,7 +33,7 @@ export class DispensaService {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService, // private storage: StorageService,
+    private authService: AuthService // private storage: StorageService,
   ) {
     this.familiaId = this.authService.getFamiliaId() ?? "";
     this.usuarioId = this.authService.getUsuarioId() ?? "";
@@ -207,7 +211,6 @@ export class DispensaService {
         name: ReceitaIngredienteCategoria[22],
         code: ReceitaIngredienteCategoria[22],
       },
-
     ];
     this.unidadeDeMedida = [
       {
@@ -276,7 +279,6 @@ export class DispensaService {
         abbreviation: "unidades",
         code: ReceitaIngredienteUnidadeDeMedida[10],
       },
-
     ];
   }
 
@@ -311,7 +313,7 @@ export class DispensaService {
   }
 
   getProductsByName(
-    request: GetProdutoNomeRequest,
+    request: GetProdutoNomeRequest
   ): Observable<ProdutoResponse[]> {
     if (!this.authService.hasUsuario()) {
       return of([] as ProdutoResponse[]);
@@ -374,17 +376,6 @@ export class DispensaService {
       .pipe(map((res: any) => res));
   }
 
-  getBarcodeInfo(barcodeResult: BarcodeScanResult): Observable<any> {
-    if (barcodeResult.cancelled) {
-      return of();
-    }
-
-    return this.http.get(`https://barcode.monster/api/${barcodeResult.text}`, {
-      headers: new HttpHeaders({ timeout: `${60000}` }),
-
-    }).pipe(map((res: any) => res));
-  }
-
   getTipoOptions(): IButtonSelect[] {
     return this.tipo;
   }
@@ -394,13 +385,15 @@ export class DispensaService {
   }
 
   getCategoriaOptionById(id: number): IButtonSelect | undefined {
-    return this.categoria.find(o => o.id === id);
+    return this.categoria.find((o) => o.id === id);
   }
 
   getUnidadeDeMedidaOptions() {
     return this.unidadeDeMedida;
   }
-  getUnidadeDeMedidaOptionsByAbbr(abbr: string): IButtonSelectComAbreviacao | undefined {
-    return this.unidadeDeMedida.find(o => o.abbreviation === abbr);
+  getUnidadeDeMedidaOptionsByAbbr(
+    abbr: string
+  ): IButtonSelectComAbreviacao | undefined {
+    return this.unidadeDeMedida.find((o) => o.abbreviation === abbr);
   }
 }

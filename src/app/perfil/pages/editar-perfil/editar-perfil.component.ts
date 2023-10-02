@@ -153,20 +153,6 @@ export class EditarPerfilComponent implements OnInit {
     this.nav.navigateBack(["tabs/perfil"]);
   }
 
-  onClickTirarFoto(): void {
-    this.alertNaoImplementado();
-  }
-
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
-  }
-
   senhaValidator(form: FormGroup): ValidatorFn {
     const senha = form.get("senha");
     const senhaRepetida = form.get("senhaRepetida");
