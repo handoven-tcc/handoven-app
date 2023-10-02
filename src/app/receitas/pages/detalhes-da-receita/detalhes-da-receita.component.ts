@@ -4,6 +4,8 @@ import { SocialSharing } from "@awesome-cordova-plugins/social-sharing/ngx";
 import { Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
 import { ReceitasResponse, ReceitaCategoria } from "../../models";
+import { FavoritoRequest } from "../../../favoritos/models";
+import { FavoritosService } from "../../../favoritos/services";
 
 @Component({
   selector: "app-detalhes-da-receita",
@@ -11,11 +13,16 @@ import { ReceitasResponse, ReceitaCategoria } from "../../models";
   styleUrls: ["./detalhes-da-receita.component.scss"],
 })
 export class DetalhesDaReceitaComponent implements OnInit {
-  receita!: ReceitasResponse;
+  loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
+  receita!: ReceitasResponse;
+  favorito: boolean = false;
+  ios: boolean = false;
+  android: boolean = false;
 
   constructor(
-    private receitasServices: ReceitasService,
+    private receitasService: ReceitasService,
+    private favoritosService: FavoritosService,
     private alertController: AlertController,
     private share: SocialSharing
   ) {}
@@ -24,13 +31,59 @@ export class DetalhesDaReceitaComponent implements OnInit {
     this.receita = JSON.parse(
       window.localStorage.getItem("receita") ?? ""
     ) as ReceitasResponse;
+
+    this.favorito = this.receita.favorited;
   }
 
-  onClickAdicionarFavorito(): void {
-    this.alertNaoImplementado();
+  onClickAlterarFavorito(): void {
+    if (!this.receita.id) {
+      return;
+    }
+
+    const prevFavorited = this.receita.favorited;
+    const changedFavorited = !this.receita.favorited;
+    this.favorito = changedFavorited;
+
+    if (this.loading) {
+      this.favorito = prevFavorited;
+      return;
+    }
+
+    this.loading = true;
+    const request = new FavoritoRequest(this.receita.id, changedFavorited);
+    this.inscricao = this.favoritosService.putFavorito(request).subscribe({
+      next: (o) => {
+        this.favorito = changedFavorited;
+        this.loading = false;
+      },
+      error: () => {
+        this.favorito = prevFavorited;
+        this.loading = false;
+      },
+      complete: () => {
+        this.loading = false;
+
+        this.loading = true;
+        this.inscricao = this.receitasService
+          .getReceitaById(this.receita.id)
+          .subscribe({
+            next: (o) => {
+              this.receita = o;
+
+              this.loading = false;
+            },
+            error: () => (this.loading = false),
+            complete: () => (this.loading = false),
+          });
+      },
+    });
   }
 
   onClickCompartilhar(): void {
+    if (this.loading) {
+      return;
+    }
+
     const mensagem: string = `
 Olha só essa receita incrível que eu achei, no aplicativo do handoven!!!
 
@@ -66,27 +119,15 @@ Para mais detalhes, baixe o aplicativo ou acesse:
     return rendimento[1];
   }
 
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
-  }
-
   ionViewWillLeave(): void {
     window.localStorage.removeItem("receita");
-    // this.receita = JSON.parse(window.localStorage.getItem("receita") ?? "") as ReceitasResponse;
   }
+
   ionViewDidLeave(): void {
     window.localStorage.removeItem("receita");
-    // this.receita = JSON.parse(window.localStorage.getItem("receita") ?? "") as ReceitasResponse;
   }
 
   ngOnDestroy(): void {
     window.localStorage.removeItem("receita");
-    // this.receita = JSON.parse(window.localStorage.getItem("receita") ?? "") as ReceitasResponse;
   }
 }

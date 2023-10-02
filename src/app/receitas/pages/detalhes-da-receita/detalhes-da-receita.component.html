@@ -7,40 +7,47 @@
       </ion-title>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button class="icone-header" (click)="onClickAdicionarFavorito()">
-        <ion-icon class="text-3xl" name="heart-outline"></ion-icon>
-        <!--  TODO: caso já esteja favoritado <ion-icon class="text-2xl" name="heart"></ion-icon>-->
+      <ion-button class="icone-header" (click)="onClickAlterarFavorito()">
+        <ion-icon
+          *ngIf="!favorito"
+          class="text-3xl"
+          name="heart-outline"></ion-icon>
+        <ion-icon *ngIf="favorito" class="text-3xl" name="heart"></ion-icon>
       </ion-button>
       <ion-button class="icone-header" (click)="onClickCompartilhar()">
         <ion-icon class="text-3xl" name="share-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-
-
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" scrollEvents="true" appHideHeader [header]="header">
-  <!--  TODO: imagem que ocupa 40% da tela -->
-  <img src="https://source.unsplash.com/random/200x200/?{{receita.name}}" alt="{{receita.name}}">
-
-  <!--  TODO: resto da tela com titulo em baixo tempo de prepato e rendimento-->
+<ion-content
+  [fullscreen]="true"
+  scrollEvents="true"
+  appHideHeader
+  [header]="header">
+  <img
+    src="data:image/png;base64,{{ receita.image }}"
+    alt="{{ receita.name }}" />
   <div class="card-receita px-4">
-    <h1 class="text-900 pt-4">{{receita.name}}</h1>
+    <h1 class="text-900 pt-4">{{ receita.name }}</h1>
     <span class="extra-section">
       <ion-icon class="text-2xl" name="time-outline"></ion-icon>
-      <ion-label class="text-600" >{{tempoDePreparo(receita)}}</ion-label>
+      <ion-label class="text-600">{{ tempoDePreparo(receita) }}</ion-label>
     </span>
     <span class="extra-section">
       <ion-icon class="text-2xl" name="pizza-outline"></ion-icon>
-      <ion-label class="text-600" >{{rendimento(receita)}}</ion-label>
+      <ion-label class="text-600">{{ rendimento(receita) }}</ion-label>
     </span>
 
     <div>
       <h5>Lista de ingredientes</h5>
       <ul>
         <li class="text-900" *ngFor="let item of receita.section.ingredients">
-          <ion-label>{{item.ingredients_quantity}} {{item.ingredients_name}} {{item.ingredients_notes}}</ion-label>
+          <ion-label
+            >{{ item.ingredients_quantity }} {{ item.ingredients_name }}
+            {{ item.ingredients_notes }}</ion-label
+          >
         </li>
       </ul>
     </div>
@@ -48,9 +55,9 @@
     <div class="pt-2">
       <h5>Modo de preparo</h5>
 
-      <p class="text-900" *ngFor="let item of receita.section.prepare_mode">{{item}}</p>
+      <p class="text-900" *ngFor="let item of receita.section.prepare_mode">
+        {{ item }}
+      </p>
     </div>
-
   </div>
-
 </ion-content>
