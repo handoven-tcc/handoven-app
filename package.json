@@ -1,8 +1,8 @@
 {
   "name": "Handoven",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "https://github.com/handoven-tcc",
+  "homepage": "https://github.com/handoven-tcc/handoven-app/",
   "scripts": {
     "ng": "ng",
     "start": "ionic s",
@@ -83,7 +83,7 @@
     "typescript": "~5.0.2",
     "uk.co.workingedge.cordova.plugin.sqliteporter": "^1.1.2"
   },
-  "description": "An Ionic project",
+  "description": "Handoven project",
   "cordova": {
     "plugins": {
       "cordova-plugin-statusbar": {},
