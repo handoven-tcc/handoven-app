@@ -56,20 +56,6 @@ export class LoginComponent implements OnInit {
     this.nav.navigateForward(["auth/criar-conta"]);
   }
 
-  esqueciSenha(): void {
-    this.alertNaoImplementado();
-  }
-
-  alertNaoImplementado(): void {
-    this.alertController
-      .create({
-        header: "Oops...",
-        message: "Desculpe, isso ainda não foi implementado 😢",
-        buttons: ["Ok"],
-      })
-      .then((o) => o.present());
-  }
-
   ngOnDestroy(): void {
     this.inscricao.unsubscribe();
   }
