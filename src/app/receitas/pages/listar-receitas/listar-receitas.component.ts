@@ -16,6 +16,7 @@ export class ListarReceitasComponent implements OnInit {
   receitas: ReceitasResponse[] = [];
   categorias: ReceitaCategoria[] = [];
   responsiveOptions: any[] = [];
+  resultados: ReceitasResponse[] = [];
   protected readonly ReceitaCategoria = ReceitaCategoria;
 
   constructor(
@@ -58,7 +59,7 @@ export class ListarReceitasComponent implements OnInit {
   }
 
   public receitaPorCategoria(categoria: number) {
-    return this.receitas.filter((o) => o.category == categoria).slice(0, 3);
+    return this.resultados.filter((o) => o.category == categoria).slice(0, 3);
   }
 
   getTodasReceitas(): void {
@@ -70,6 +71,7 @@ export class ListarReceitasComponent implements OnInit {
     this.inscricao = this.receitaService.getAllReceitas().subscribe({
       next: (o: ReceitasResponse[]): void => {
         this.receitas = o;
+        this.resultados = this.receitas;
         this.loading = false;
       },
       error: () => (this.loading = false),
@@ -108,6 +110,13 @@ export class ListarReceitasComponent implements OnInit {
         event.target.complete();
       },
     });
+  }
+
+  handleInput(event: any) {
+    const query = event.target.value.toLowerCase();
+    this.resultados = this.receitas.filter(
+      (d) => d.name.toLowerCase().indexOf(query) > -1
+    );
   }
 
   onClickRefresh(): void {

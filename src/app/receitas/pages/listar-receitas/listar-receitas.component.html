@@ -17,6 +17,12 @@
         name="fast-food-outline"
         size="large"></ion-icon>
     </a>
+
+    <ion-searchbar
+      class="pesquisar"
+      placeholder="Pesquisar"
+      [debounce]="1000"
+      (ionInput)="handleInput($event)"></ion-searchbar>
   </header>
 
   <section>
@@ -98,8 +104,6 @@
       </ng-container>
 
       <ng-container *ngIf="hasReceitas">
-        <!-- TODO: pesquisar pelo nome da receita-->
-
         <div class="w-full px-4 py-2" *ngFor="let categoria of categorias">
           <a
             (click)="onClickVerMais(categoria)"
