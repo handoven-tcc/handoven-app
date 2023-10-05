@@ -38,30 +38,6 @@
 
       <span class="px-4 mb-3 w-full">
         <span class="select-none text-color font-bold block mb-2"
-          >Tipo do Produto</span
-        >
-        <ion-select
-          name="tipo"
-          aria-label="Selecione o Tipo"
-          interface="popover"
-          color="danger"
-          fill="outline"
-          class="text-900 select-button"
-          [compareWith]="compareWith"
-          [selectedText]="selectedTipo"
-          (ionChange)="handleChangeTipo($event)"
-          placeholder="Selecione o Tipo">
-          <ion-select-option *ngFor="let item of tipo" [value]="item">
-            {{ item.name }}
-          </ion-select-option>
-        </ion-select>
-        <small class="select-none" *ngIf="getTipoRequired"
-          >Tipo é obrigatório.</small
-        >
-      </span>
-
-      <span class="px-4 mb-3 w-full">
-        <span class="select-none text-color font-bold block mb-2"
           >Categoria do Produto</span
         >
         <ion-select
@@ -80,6 +56,30 @@
           </ion-select-option>
         </ion-select>
         <small class="select-none" *ngIf="getCategoriaRequired"
+          >Categoria é obrigatório.</small
+        >
+      </span>
+
+      <span class="px-4 mb-3 w-full">
+        <span class="select-none text-color font-bold block mb-2"
+          >Tipo do Produto</span
+        >
+        <ion-select
+          name="tipo"
+          aria-label="Selecione o Tipo"
+          interface="popover"
+          color="danger"
+          fill="outline"
+          class="text-900 select-button"
+          [compareWith]="compareWith"
+          [selectedText]="selectedTipo"
+          (ionChange)="handleChangeTipo($event)"
+          placeholder="Selecione o Tipo">
+          <ion-select-option *ngFor="let item of tipo" [value]="item">
+            {{ item.name }}
+          </ion-select-option>
+        </ion-select>
+        <small class="select-none" *ngIf="getTipoRequired"
           >Tipo é obrigatório.</small
         >
       </span>
