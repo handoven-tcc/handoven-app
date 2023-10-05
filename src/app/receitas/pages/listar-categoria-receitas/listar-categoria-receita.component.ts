@@ -88,17 +88,19 @@ export class ListarCategoriaReceitaComponent implements OnInit {
     this.nav.navigateForward(["tabs/receitas/detalhes"]);
   }
 
-  onClickAlterarFavorito(item: ReceitasResponse): void {
+  onClickAlterarFavorito(curr: any, item: ReceitasResponse): void {
     if (!item.id) {
       return;
     }
 
+    const prevFavorited = item.favorited;
     const changedFavorited = !item.favorited;
 
     if (this.favoriteLoading) {
       return;
     }
 
+    curr.target.name = "heart-half";
     this.favoriteLoading = true;
     const request = new FavoritoRequest(item.id, changedFavorited);
     this.inscricao = this.favoritosService.putFavorito(request).subscribe({
@@ -112,19 +114,21 @@ export class ListarCategoriaReceitaComponent implements OnInit {
         this.favoriteLoading = false;
 
         this.favoriteLoading = true;
-        this.inscricao = this.receitasService.getAllReceitas().subscribe({
-          next: (o) => {
-            this.receitas = o;
+        this.inscricao = this.receitasService
+          .getReceitasByCategoria(this.category)
+          .subscribe({
+            next: (o) => {
+              this.receitas = o;
 
-            this.favoriteLoading = false;
-          },
-          error: () => {
-            this.favoriteLoading = false;
-          },
-          complete: () => {
-            this.favoriteLoading = false;
-          },
-        });
+              this.favoriteLoading = false;
+            },
+            error: () => {
+              this.favoriteLoading = false;
+            },
+            complete: () => {
+              this.favoriteLoading = false;
+            },
+          });
       },
     });
   }

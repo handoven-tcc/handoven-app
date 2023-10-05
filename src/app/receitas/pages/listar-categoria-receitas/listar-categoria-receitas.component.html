@@ -104,18 +104,14 @@
               <div
                 class="w-full mb-3 flex ion-justify-content-start ion-align-items-center">
                 <a
-                  (click)="onClickAlterarFavorito(item)"
+                  (click)="onClickAlterarFavorito($event, item)"
                   class="flex ion-align-items-center mr-6">
                   <ion-icon
-                    *ngIf="favoriteLoading"
-                    class="text-2xl"
-                    name="heart-half"></ion-icon>
-                  <ion-icon
-                    *ngIf="!favoriteLoading && !item.favorited"
+                    *ngIf="!item.favorited"
                     class="text-2xl"
                     name="heart-outline"></ion-icon>
                   <ion-icon
-                    *ngIf="!favoriteLoading && item.favorited"
+                    *ngIf="item.favorited"
                     class="text-2xl"
                     name="heart"></ion-icon>
                 </a>
