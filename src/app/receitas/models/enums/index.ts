@@ -38,22 +38,26 @@ enum ReceitaIngredienteCategoria {
   "Proteína",
   Temperos,
   Vegetais,
-  Verduras
+  Verduras,
 }
 
 enum ReceitaIngredienteUnidadeDeMedida {
+  Copos,
   "Colher de sopa",
   "Colher de chá",
+  Fatias,
   Gramas,
   Litros,
   Miligramas,
   Mililitros,
-  "Peças",
   Pitada,
   Quilogramas,
   "Xícaras",
   Unidades,
 }
 
-
-export {ReceitaCategoria, ReceitaIngredienteCategoria, ReceitaIngredienteUnidadeDeMedida};
+export {
+  ReceitaCategoria,
+  ReceitaIngredienteCategoria,
+  ReceitaIngredienteUnidadeDeMedida,
+};
