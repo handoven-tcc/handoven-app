@@ -93,6 +93,17 @@ export class ListarReceitasComponent implements OnInit {
     });
   }
 
+  handleInput(event: any) {
+    const query = event.target.value.toLowerCase();
+    this.resultadosReceitas = this.receitas.filter(
+      (r) => r.name.toLowerCase().indexOf(query) > -1
+    );
+    let categorias = this.resultadosReceitas.map((o) => o.category);
+    this.resultadosCategorias = categorias.filter(
+      (n, i) => categorias.indexOf(n) === i
+    );
+  }
+
   handleRefresh(event: any): void {
     if (this.loading) {
       return;
@@ -114,17 +125,6 @@ export class ListarReceitasComponent implements OnInit {
         event.target.complete();
       },
     });
-  }
-
-  handleInput(event: any) {
-    const query = event.target.value.toLowerCase();
-    this.resultadosReceitas = this.receitas.filter(
-      (r) => r.name.toLowerCase().indexOf(query) > -1
-    );
-    let categorias = this.resultadosReceitas.map((o) => o.category);
-    this.resultadosCategorias = categorias.filter(
-      (n, i) => categorias.indexOf(n) === i
-    );
   }
 
   onClickRefresh(): void {
