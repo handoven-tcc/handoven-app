@@ -16,7 +16,8 @@ export class ListarReceitasComponent implements OnInit {
   receitas: ReceitasResponse[] = [];
   categorias: ReceitaCategoria[] = [];
   responsiveOptions: any[] = [];
-  resultados: ReceitasResponse[] = [];
+  resultadosReceitas: ReceitasResponse[] = [];
+  resultadosCategorias: ReceitaCategoria[] = [];
   protected readonly ReceitaCategoria = ReceitaCategoria;
 
   constructor(
@@ -59,7 +60,9 @@ export class ListarReceitasComponent implements OnInit {
   }
 
   public receitaPorCategoria(categoria: number) {
-    return this.resultados.filter((o) => o.category == categoria).slice(0, 3);
+    return this.resultadosReceitas
+      .filter((o) => o.category == categoria)
+      .slice(0, 3);
   }
 
   getTodasReceitas(): void {
@@ -71,7 +74,7 @@ export class ListarReceitasComponent implements OnInit {
     this.inscricao = this.receitaService.getAllReceitas().subscribe({
       next: (o: ReceitasResponse[]): void => {
         this.receitas = o;
-        this.resultados = this.receitas;
+        this.resultadosReceitas = this.receitas;
         this.loading = false;
       },
       error: () => (this.loading = false),
@@ -82,6 +85,7 @@ export class ListarReceitasComponent implements OnInit {
     this.inscricao = this.receitaService.getAllCategorias().subscribe({
       next: (o: any[]): void => {
         this.categorias = o;
+        this.resultadosCategorias = this.categorias;
         this.loading = false;
       },
       error: () => (this.loading = false),
@@ -114,8 +118,12 @@ export class ListarReceitasComponent implements OnInit {
 
   handleInput(event: any) {
     const query = event.target.value.toLowerCase();
-    this.resultados = this.receitas.filter(
-      (d) => d.name.toLowerCase().indexOf(query) > -1
+    this.resultadosReceitas = this.receitas.filter(
+      (r) => r.name.toLowerCase().indexOf(query) > -1
+    );
+    let categorias = this.resultadosReceitas.map((o) => o.category);
+    this.resultadosCategorias = categorias.filter(
+      (n, i) => categorias.indexOf(n) === i
     );
   }
 

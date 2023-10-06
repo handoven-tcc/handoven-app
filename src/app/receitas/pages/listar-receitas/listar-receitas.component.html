@@ -19,7 +19,7 @@
     </a>
 
     <ion-searchbar
-      class="pesquisar"
+      class="pesquisar receita"
       placeholder="Pesquisar"
       [debounce]="1000"
       (ionInput)="handleInput($event)"></ion-searchbar>
@@ -104,7 +104,9 @@
       </ng-container>
 
       <ng-container *ngIf="hasReceitas">
-        <div class="w-full px-4 py-2" *ngFor="let categoria of categorias">
+        <div
+          class="w-full px-4 py-2"
+          *ngFor="let categoria of resultadosCategorias">
           <a
             (click)="onClickVerMais(categoria)"
             class="flex ion-align-items-center ion-justify-content-between">
