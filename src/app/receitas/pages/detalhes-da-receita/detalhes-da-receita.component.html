@@ -45,7 +45,8 @@
       <ul>
         <li class="text-900" *ngFor="let item of receita.section.ingredients">
           <ion-label
-            >{{ item.ingredients_quantity }} {{ item.ingredients_name }}
+            >{{ formatToFraction(item.ingredients_quantity) }}
+            {{ item.ingredients_unit_measure }} {{ item.ingredients_name }}
             {{ item.ingredients_notes }}</ion-label
           >
         </li>

@@ -1,6 +1,6 @@
 [
   {
-    "name": "Bolo de Chocolate",
+    "name": "DONE-Bolo de Chocolate",
     "category": 1,
     "favorited": true,
     "section": {
@@ -40,46 +40,50 @@
         "4. Despeje a massa em uma forma untada e asse por 30-35 minutos.",
         "5. Deixe esfriar e sirva."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 8 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 8 porções"]
     }
   },
   {
-    "name": "Bolo de Cenoura",
+    "name": "DONE-Bolo de Cenoura",
     "category": 1,
     "favorited": false,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Cenouras",
-          "ingredients_quantity": "2 unidades médias (raladas)",
-          "ingredients_category": 13
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "unidades médias",
+          "ingredients_category": 13,
+          "ingredients_notes": "raladas"
         },
         {
           "ingredients_name": "Ovos",
-          "ingredients_quantity": "3 unidades",
+          "ingredients_quantity": 3,
+          "ingredients_unit_measure": "unidades",
           "ingredients_category": 20
         },
         {
           "ingredients_name": "Óleo",
-          "ingredients_quantity": "1 xícara",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": " xícara",
           "ingredients_category": 11
         },
         {
           "ingredients_name": "Açúcar",
-          "ingredients_quantity": "2 xícaras",
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "xícaras",
           "ingredients_category": 1
         },
         {
           "ingredients_name": "Farinha de Trigo",
-          "ingredients_quantity": "2 xícaras",
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "xícaras",
           "ingredients_category": 7
         },
         {
           "ingredients_name": "Fermento em Pó",
-          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "colher de sopa",
           "ingredients_category": 8
         }
       ],
@@ -94,43 +98,45 @@
         "8. Retire do forno e deixe esfriar.",
         "9. Se desejar, você pode cobrir com uma cobertura de chocolate ou açúcar de confeiteiro antes de servir."
       ],
-      "extras": [
-        "Tempo de Preparo: 60 minutos",
-        "Rendimento: 10 porções"
-      ]
+      "extras": ["Tempo de Preparo: 60 minutos", "Rendimento: 10 porções"]
     }
   },
   {
-    "name": "Torta de Maçã",
+    "name": "DONE-Torta de Maçã",
     "category": 1,
     "favorited": true,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Massa para Torta",
-          "ingredients_quantity": "1 unidade",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "unidade",
           "ingredients_category": 15,
           "ingredients_notes": "pronta ou caseira"
         },
         {
           "ingredients_name": "Maçãs",
-          "ingredients_quantity": "4 unidades",
+          "ingredients_quantity": 4,
+          "ingredients_unit_measure": "unidade",
           "ingredients_category": 8,
           "ingredients_notes": "descascadas e fatiadas"
         },
         {
           "ingredients_name": "Açúcar",
-          "ingredients_quantity": "1/2 xícara",
+          "ingredients_quantity": 1.5,
+          "ingredients_unit_measure": "xícara",
           "ingredients_category": 1
         },
         {
           "ingredients_name": "Canela em Pó",
-          "ingredients_quantity": "1 colher de chá",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "colher de chá",
           "ingredients_category": 20
         },
         {
           "ingredients_name": "Suco de Limão",
-          "ingredients_quantity": "1 limão",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "unidade",
           "ingredients_category": 8
         }
       ],
@@ -142,46 +148,50 @@
         "5. Asse no forno preaquecido a 180°C por 30-35 minutos ou até que a massa esteja dourada e as maçãs estejam macias.",
         "6. Deixe esfriar antes de servir."
       ],
-      "extras": [
-        "Tempo de Preparo: 1 hora",
-        "Rendimento: 8 porções"
-      ]
+      "extras": ["Tempo de Preparo: 1 hora", "Rendimento: 8 porções"]
     }
   },
   {
-    "name": "Torta de Morango",
+    "name": "DONE-Torta de Morango",
     "category": 1,
     "favorited": false,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Farinha de Trigo",
-          "ingredients_quantity": "1 1/2 xícara",
+          "ingredients_quantity": 1.5,
+          "ingredients_unit_measure": "xícara",
           "ingredients_category": 7
         },
         {
           "ingredients_name": "Açúcar",
-          "ingredients_quantity": "1/4 xícara",
+          "ingredients_quantity": 0.25,
+          "ingredients_unit_measure": "xícara",
           "ingredients_category": 1
         },
         {
           "ingredients_name": "Manteiga Gelada",
-          "ingredients_quantity": "1/2 xícara (cortada em cubos)",
-          "ingredients_category": 10
+          "ingredients_quantity": 0.5,
+          "ingredients_unit_measure": "xícara",
+          "ingredients_category": 10,
+          "ingredients_notes": "cortada em cubos"
         },
         {
           "ingredients_name": "Sal",
-          "ingredients_quantity": "1 pitada",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "pitada",
           "ingredients_category": 20
         },
         {
           "ingredients_name": "Ovo",
-          "ingredients_quantity": "1 unidade",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "unidade",
           "ingredients_category": 19
         },
         {
           "ingredients_name": "Água Gelada",
-          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "colher de sopa",
           "ingredients_category": 14
         }
       ],
@@ -198,41 +208,44 @@
         "10. Asse a torta no forno pré-aquecido por 35-40 minutos, ou até que a massa esteja dourada e o recheio de morango esteja borbulhante.",
         "11. Retire a torta do forno e deixe esfriar antes de servir."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
-    "name": "Sorvete de Morango Caseiro",
+    "name": "DONE-Sorvete de Morango Caseiro",
     "category": 1,
     "favorited": false,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Morangos Frescos",
-          "ingredients_quantity": "2 xícaras (lavados e sem o cabo verde)",
-          "ingredients_category": 8
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "xícara",
+          "ingredients_category": 8,
+          "ingredients_notes": "lavados e sem o cabo verde"
         },
         {
           "ingredients_name": "Açúcar",
-          "ingredients_quantity": "1 xícara",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "xícara",
           "ingredients_category": 1
         },
         {
           "ingredients_name": "Suco de Limão",
-          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "colheres de sopa",
           "ingredients_category": 8
         },
         {
           "ingredients_name": "Creme de Leite Fresco",
-          "ingredients_quantity": "2 xícaras",
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "xícara",
           "ingredients_category": 12
         },
         {
           "ingredients_name": "Essência de Baunilha",
-          "ingredients_quantity": "1 colher de chá",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "colher de chá",
           "ingredients_category": 20
         }
       ],
@@ -244,57 +257,64 @@
         "5. Após o tempo de congelamento, retire o sorvete do freezer e deixe repousar por alguns minutos antes de servir. Isso facilitará a retirada do sorvete da forma.",
         "6. Sirva o sorvete de morango caseiro em bolas ou colheradas e aproveite!"
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
-    "name": "Mousse de Chocolate",
+    "name": "DONE-Mousse de Chocolate",
     "category": 1,
     "favorited": false,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Chocolate Meio Amargo",
-          "ingredients_quantity": "200g",
+          "ingredients_quantity": 200,
+          "ingredients_unit_measure": "gramas",
           "ingredients_category": 4
         },
         {
           "ingredients_name": "Ovos",
-          "ingredients_quantity": "3 unidades",
+          "ingredients_quantity": 3,
+          "ingredients_unit_measure": "unidades",
           "ingredients_category": 19
         },
         {
           "ingredients_name": "Açúcar",
-          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "colheres de sopa",
           "ingredients_category": 1
         },
         {
           "ingredients_name": "Manteiga",
-          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "colheres de sopa",
           "ingredients_category": 10
         },
         {
           "ingredients_name": "Extrato de Baunilha",
-          "ingredients_quantity": "1 colher de chá",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "colheres de chá",
           "ingredients_category": 20
         },
         {
           "ingredients_name": "Sal",
-          "ingredients_quantity": "Uma pitada",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "pitada",
           "ingredients_category": 20
         },
         {
           "ingredients_name": "Chantilly",
-          "ingredients_quantity": "Para decorar (opcional)",
-          "ingredients_category": 12
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "unidades",
+          "ingredients_category": 12,
+          "ingredients_notes": "(opcional)"
         },
         {
           "ingredients_name": "Raspas de Chocolate",
-          "ingredients_quantity": "Para decorar (opcional)",
-          "ingredients_category": 4
+          "ingredients_quantity": 200,
+          "ingredients_unit_measure": "gramas",
+          "ingredients_category": 4,
+          "ingredients_notes": "(opcional)"
         }
       ],
       "prepare_mode": [
@@ -308,42 +328,47 @@
         "8. Leve à geladeira por pelo menos 2 horas para firmar.",
         "9. Se desejar, decore com chantilly e raspas de chocolate antes de servir."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
-    "name": "Mousse de Maracujá",
-    "category": 8,
+    "name": "DONE-Mousse de Maracujá",
+    "category": 1,
     "favorited": false,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Maracujás",
-          "ingredients_quantity": "2 unidades maduros",
-          "ingredients_category": 8
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "unidades",
+          "ingredients_category": 8,
+          "ingredients_notes": "maduros"
         },
         {
           "ingredients_name": "Leite Condensado",
-          "ingredients_quantity": "1 lata (395g)",
+          "ingredients_quantity": 395,
+          "ingredients_unit_measure": "gramas",
           "ingredients_category": 1
         },
         {
           "ingredients_name": "Creme de Leite",
-          "ingredients_quantity": "1 lata (300g)",
+          "ingredients_quantity": 300,
+          "ingredients_unit_measure": "gramas",
           "ingredients_category": 12
         },
         {
           "ingredients_name": "Suco de Maracujá",
-          "ingredients_quantity": "1/2 xícara (aproximadamente 3 maracujás)",
-          "ingredients_category": 8
+          "ingredients_quantity": 0.5,
+          "ingredients_unit_measure": "xícaras",
+          "ingredients_category": 8,
+          "ingredients_notes": "(aproximadamente 3 maracujás)"
         },
         {
           "ingredients_name": "Sementes de Maracujá",
-          "ingredients_quantity": "Para decorar (opcional)",
-          "ingredients_category": 8
+          "ingredients_quantity": 20,
+          "ingredients_unit_measure": "Para decorar",
+          "ingredients_category": 8,
+          "ingredients_notes": "(opcional)"
         }
       ],
       "prepare_mode": [
@@ -364,30 +389,35 @@
     }
   },
   {
-    "name": "Brigadeiro de Chocolate",
+    "name": "DONE-Brigadeiro de Chocolate",
     "category": 1,
     "favorited": true,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Leite Condensado",
-          "ingredients_quantity": "1 lata (395g)",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "lata",
           "ingredients_category": 23
         },
         {
           "ingredients_name": "Cacau em Pó",
-          "ingredients_quantity": "3 colheres de sopa",
+          "ingredients_quantity": 3,
+          "ingredients_unit_measure": "colheres de sopa",
           "ingredients_category": 4
         },
         {
           "ingredients_name": "Manteiga",
-          "ingredients_quantity": "1 colher de sopa",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "colher de sopa",
           "ingredients_category": 11
         },
         {
           "ingredients_name": "Chocolate Granulado",
-          "ingredients_quantity": "Para enrolar os brigadeiros",
-          "ingredients_category": 1
+          "ingredients_quantity": 0,
+          "ingredients_unit_measure": "A gosto",
+          "ingredients_category": 1,
+          "ingredients_notes": "Para enrolar os brigadeiros"
         }
       ],
       "prepare_mode": [
@@ -404,14 +434,15 @@
     }
   },
   {
-    "name": "Salada de Frutas",
+    "name": "DONE-Salada de Frutas",
     "category": 2,
     "favorited": false,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Morango",
-          "ingredients_quantity": "1 xícara",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "xícara",
           "ingredients_category": 8,
           "ingredients_notes": "cortado"
         },
@@ -429,7 +460,8 @@
         },
         {
           "ingredients_name": "Abacaxi",
-          "ingredients_quantity": "1 xícara",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "xícara",
           "ingredients_category": 8,
           "ingredients_notes": "cubos"
         }
@@ -439,82 +471,99 @@
         "2. Misture as frutas em uma tigela grande.",
         "3. Sirva a salada de frutas gelada."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 4 porções"]
     }
   },
   {
-    "name": "Salada de Quinoa com Abacate",
+    "name": "DONE-Salada de Quinoa com Abacate",
     "category": 2,
     "favorited": false,
     "section": {
       "ingredients": [
         {
           "ingredients_name": "Quinoa",
-          "ingredients_quantity": "1 xícara",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "xícaras",
           "ingredients_category": 11
         },
         {
           "ingredients_name": "Água",
-          "ingredients_quantity": "2 xícaras",
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "xícaras",
           "ingredients_category": 14
         },
         {
           "ingredients_name": "Abacate",
-          "ingredients_quantity": "1 unidade (maduro, cortado em cubos)",
-          "ingredients_category": 8
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "unidades",
+          "ingredients_category": 8,
+          "ingredients_notes": "(maduro, cortado em cubos)"
         },
         {
           "ingredients_name": "Tomate Cereja",
-          "ingredients_quantity": "1/2 xícara (cortados ao meio)",
-          "ingredients_category": 13
+          "ingredients_quantity": 0.5,
+          "ingredients_unit_measure": "xícaras",
+          "ingredients_category": 13,
+          "ingredients_notes": "(cortados ao meio)"
         },
         {
           "ingredients_name": "Pepino",
-          "ingredients_quantity": "1/2 xícara (cortado em cubos)",
-          "ingredients_category": 13
+          "ingredients_quantity": 0.5,
+          "ingredients_unit_measure": "xícaras",
+          "ingredients_category": 13,
+          "ingredients_notes": "(cortados ao cubos)"
         },
         {
           "ingredients_name": "Cebola Roxa",
-          "ingredients_quantity": "1/4 de xícara (picada finamente)",
-          "ingredients_category": 21
+          "ingredients_quantity": 0.25,
+          "ingredients_unit_measure": "xícaras",
+          "ingredients_category": 21,
+          "ingredients_notes": "(picada finamente)"
         },
         {
           "ingredients_name": "Coentro Fresco",
-          "ingredients_quantity": "1/4 de xícara (picado)",
-          "ingredients_category": 20
+          "ingredients_quantity": 0.25,
+          "ingredients_unit_measure": "xícaras",
+          "ingredients_category": 20,
+          "ingredients_notes": "(picado)"
         },
         {
           "ingredients_name": "Suco de Limão",
-          "ingredients_quantity": "Suco de 1 limão",
+          "ingredients_quantity": 1,
+          "ingredients_unit_measure": "unidades",
           "ingredients_category": 8
         },
         {
           "ingredients_name": "Azeite de Oliva",
-          "ingredients_quantity": "2 colheres de sopa",
+          "ingredients_quantity": 2,
+          "ingredients_unit_measure": "colheres de sopa",
           "ingredients_category": 10
         },
         {
           "ingredients_name": "Sal",
-          "ingredients_quantity": "A gosto",
+          "ingredients_quantity": 0,
+          "ingredients_unit_measure": "A gosto",
           "ingredients_category": 20
         },
         {
           "ingredients_name": "Pimenta",
-          "ingredients_quantity": "A gosto",
+          "ingredients_quantity": 0,
+          "ingredients_unit_measure": "A gosto",
           "ingredients_category": 20
         },
         {
           "ingredients_name": "Chantilly",
-          "ingredients_quantity": "Para decorar (opcional)",
-          "ingredients_category": 12
+          "ingredients_quantity": 0,
+          "ingredients_unit_measure": "Para decorar",
+          "ingredients_category": 12,
+          "ingredients_notes": "(opcional)"
         },
         {
           "ingredients_name": "Raspas de Chocolate",
-          "ingredients_quantity": "Para decorar (opcional)",
-          "ingredients_category": 4
+          "ingredients_quantity": 0,
+          "ingredients_unit_measure": "Para decorar",
+          "ingredients_category": 4,
+          "ingredients_notes": "(opcional)"
         }
       ],
       "prepare_mode": [
@@ -525,10 +574,7 @@
         "5. Leve a salada à geladeira por cerca de 30 minutos antes de servir para que os sabores se misturem.",
         "6. Sirva a Salada de Quinoa com Abacate como acompanhamento ou como prato principal e desfrute!"
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -600,10 +646,7 @@
         "4. Polvilhe o amendoim picado por cima da salada antes de servir.",
         "5. Sirva a Salada de Frango com Manga como prato principal ou acompanhamento e aproveite!"
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -676,10 +719,7 @@
         "5. Regue a salada com o molho de limão e azeite e misture delicadamente para que todos os ingredientes estejam bem combinados.",
         "6. Sirva a Salada Gourmet de Camarões imediatamente como entrada ou prato principal."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -750,10 +790,7 @@
         "3. Regue a salada com o molho preparado e misture delicadamente para que todos os ingredientes estejam bem envolvidos.",
         "4. Sirva a Salada Tradicional de Verão como acompanhamento ou como prato principal em um dia quente de verão."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -800,10 +837,7 @@
         "4. Cozinhe em fogo médio até que os legumes estejam macios.",
         "5. Sirva quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -868,10 +902,7 @@
         "7. Prove a sopa e ajuste o tempero, se necessário.",
         "8. Sirva a Sopa de Abóbora Cremosa quente, decorada com sementes de abóbora torradas e coentro fresco picado."
       ],
-      "extras": [
-        "Tempo de Preparo: 40 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 40 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -938,10 +969,7 @@
         "6. Continue cozinhando por mais 5 minutos, mexendo ocasionalmente, até que a sopa esteja bem aquecida.",
         "7. Sirva a Sopa de Tomate Cremosa quente, decorada com folhas de manjericão fresco."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -1026,10 +1054,7 @@
         "7. Use um liquidificador de imersão para triturar parcialmente a sopa, deixando alguns pedaços inteiros para textura.",
         "8. Sirva a Sopa de Lentilha quente, acompanhada de um fio de azeite de oliva."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 6 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 6 porções"]
     }
   },
   {
@@ -1115,10 +1140,7 @@
         "11. Leve as tigelas ao forno novamente até que o queijo derreta e borbulhe, ficando dourado e crocante.",
         "12. Decore com folhas de tomilho fresco, se desejar."
       ],
-      "extras": [
-        "Tempo de Preparo: 1 hora",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 1 hora", "Rendimento: 4 porções"]
     }
   },
   {
@@ -1159,10 +1181,7 @@
         "6. Cozinhe por mais alguns minutos até o queijo derreter.",
         "7. Tempere com sal e pimenta a gosto e sirva."
       ],
-      "extras": [
-        "Tempo de Preparo: 10 minutos",
-        "Rendimento: 1 porção"
-      ]
+      "extras": ["Tempo de Preparo: 10 minutos", "Rendimento: 1 porção"]
     }
   },
   {
@@ -1224,10 +1243,7 @@
         "10. Cozinhe por mais alguns segundos até que o queijo derreta.",
         "11. Deslize a omelete para um prato e sirva imediatamente."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 1 porção"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 1 porção"]
     }
   },
   {
@@ -1296,10 +1312,7 @@
         "8. Transfira a omelete para um prato e decore com salsinha fresca picada, se desejar.",
         "9. Sirva imediatamente."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 1 porção"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 1 porção"]
     }
   },
   {
@@ -1354,10 +1367,7 @@
         "7. Quando a omelete estiver quase completamente firme, dobre ao meio com a espátula.",
         "8. Transfira a omelete para um prato e sirva quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 10 minutos",
-        "Rendimento: 1 porção"
-      ]
+      "extras": ["Tempo de Preparo: 10 minutos", "Rendimento: 1 porção"]
     }
   },
   {
@@ -1416,10 +1426,7 @@
         "6. Cozinhe até que os ovos estejam firmes, dobrando a omelete ao meio.",
         "7. Sirva quente e aproveite!"
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 1 porção"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 1 porção"]
     }
   },
   {
@@ -1466,10 +1473,7 @@
         "5. Tempere com molho de soja a gosto e cozinhe por mais alguns minutos.",
         "6. Sirva quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 2 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 2 porções"]
     }
   },
   {
@@ -1544,10 +1548,7 @@
         "7. Tempere com sal e pimenta a gosto.",
         "8. Sirva o Frango ao Curry quente, decorado com coentro fresco picado."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -1609,10 +1610,7 @@
         "9. Com uma faca afiada, corte cada rolo em cerca de 6-8 pedaços.",
         "10. Sirva os sushis de salmão com wasabi e molho de soja para mergulhar."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -1677,10 +1675,7 @@
         "7. Transfira o salmão para pratos de servir, regue com um pouco mais de molho teriyaki da frigideira e decore com gergelim torrado e cebolinha verde picada, se desejar.",
         "8. Sirva imediatamente com arroz branco cozido a vapor ou legumes cozidos."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -1724,10 +1719,7 @@
         "6. Use uma escumadeira para remover os legumes do óleo e coloque-os em um prato forrado com papel toalha para escorrer o excesso de óleo.",
         "7. Sirva os tempurás de legumes quentes com molho de soja para mergulhar."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -1775,10 +1767,7 @@
         "6. Tempere com sal e pimenta a gosto.",
         "7. Sirva com arroz branco e couve refogada."
       ],
-      "extras": [
-        "Tempo de Preparo: 2 horas",
-        "Rendimento: 6 porções"
-      ]
+      "extras": ["Tempo de Preparo: 2 horas", "Rendimento: 6 porções"]
     }
   },
   {
@@ -2091,10 +2080,7 @@
         "8. Retire o papel alumínio e asse por mais 10 minutos para dourar levemente os legumes.",
         "9. Retire do forno e sirva o Ratatouille como acompanhamento ou prato principal."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -2142,10 +2128,7 @@
         "6. Tempere com sal e pimenta a gosto.",
         "7. Sirva quente, polvilhado com queijo parmesão ralado."
       ],
-      "extras": [
-        "Tempo de Preparo: 40 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 40 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -2226,10 +2209,7 @@
         "8. Por fim, misture o queijo parmesão ralado ao risoto até que fique bem incorporado.",
         "9. Sirva o Risoto de Funghi em pratos individuais, decorado com salsinha picada por cima."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -2316,10 +2296,7 @@
         "9. Por fim, misture o restante da manteiga e o queijo parmesão ralado ao risoto até que fiquem bem incorporados.",
         "10. Sirva o Risoto de Limão Siciliano em pratos individuais, decorado com salsinha picada por cima."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -2405,10 +2382,7 @@
         "8. Tempere com sal, pimenta e noz-moscada a gosto.",
         "9. Sirva o Risoto de Abóbora com Gorgonzola em pratos individuais, decorado com salsinha picada por cima."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -2495,10 +2469,7 @@
         "9. Tempere com sal e pimenta a gosto.",
         "10. Sirva o Risoto de Frango e Ervilhas em pratos individuais, decorado com salsinha picada por cima."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -2543,10 +2514,7 @@
         "4. Coloque os peitos de frango em uma assadeira e asse por 25-30 minutos ou até que estejam dourados e cozidos por completo.",
         "5. Sirva quente com acompanhamentos de sua escolha."
       ],
-      "extras": [
-        "Tempo de Preparo: 1 hora",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 1 hora", "Rendimento: 4 porções"]
     }
   },
   {
@@ -2616,10 +2584,7 @@
         "7. Retire o frango e as batatas do forno. Deixe o frango descansar por alguns minutos antes de cortá-lo em pedaços. Sirva o frango assado com as batatas e cebolas por cima.",
         "8. Aproveite a sua refeição!"
       ],
-      "extras": [
-        "Tempo de Preparo: 2 horas",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 2 horas", "Rendimento: 4 porções"]
     }
   },
   {
@@ -2715,10 +2680,7 @@
         "4. Asse no forno preaquecido a 180°C por 30-35 minutos ou até que a massa esteja dourada.",
         "5. Deixe esfriar um pouco antes de cortar e servir."
       ],
-      "extras": [
-        "Tempo de Preparo: 1 hora",
-        "Rendimento: 6 porções"
-      ]
+      "extras": ["Tempo de Preparo: 1 hora", "Rendimento: 6 porções"]
     }
   },
   {
@@ -2764,10 +2726,7 @@
         "5. Adicione as fatias de frango grelhado.",
         "6. Feche os sanduíches e sirva quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 sanduíches"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 sanduíches"]
     }
   },
   {
@@ -2812,10 +2771,7 @@
         "5. Retire do fogo e misture a mistura de ovos e queijo, mexendo rapidamente para que os ovos cozinhem com o calor residual.",
         "6. Sirva imediatamente, polvilhado com mais queijo parmesão e pimenta preta a gosto."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 2 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 2 porções"]
     }
   },
   {
@@ -2863,10 +2819,7 @@
         "8. Asse no forno a 180°C por 30 minutos ou até que esteja borbulhante e dourado.",
         "9. Deixe repousar por alguns minutos antes de servir."
       ],
-      "extras": [
-        "Tempo de Preparo: 1 hora",
-        "Rendimento: 6 porções"
-      ]
+      "extras": ["Tempo de Preparo: 1 hora", "Rendimento: 6 porções"]
     }
   },
   {
@@ -2925,10 +2878,7 @@
         "6. Enquanto o molho de tomate cozinha, coloque os raviolis em uma panela grande com água fervente e sal. Cozinhe-os de acordo com as instruções da embalagem ou até que eles subam à superfície da água, o que indica que estão prontos. Escorra.",
         "7. Sirva os raviolis quentes cobertos com o molho de tomate e folhas de manjericão fresco por cima. Se desejar, polvilhe mais queijo parmesão ralado antes de servir."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3005,10 +2955,7 @@
         "9. Retire do forno e deixe descansar por alguns minutos antes de cortar. Decore com folhas de manjericão fresco, se desejar.",
         "10. Sirva quente e aproveite a deliciosa lasanha à bolonhesa!"
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 6 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 6 porções"]
     }
   },
   {
@@ -3068,10 +3015,7 @@
         "6. Transfira o Fettuccine Alfredo para pratos de servir. Decore com salsinha fresca picada por cima.",
         "7. Sirva imediatamente enquanto estiver quente e desfrute deste prato de massa delicioso e reconfortante!"
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 2 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 2 porções"]
     }
   },
   {
@@ -3115,10 +3059,7 @@
         "4. Enquanto o salmão grelha, faça o molho de limão misturando o suco de limão e a salsa picada.",
         "5. Sirva os filés de salmão com o molho de limão por cima."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3183,10 +3124,7 @@
         "7. Ao servir, decore com rodelas de limão e algumas folhas de alecrim e tomilho fresco adicionais.",
         "8. Sirva os filés de truta assados com acompanhamentos de sua escolha, como arroz, vegetais ou uma salada fresca."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3246,10 +3184,7 @@
         "5. Volte os filés de peixe para a frigideira e aqueça por mais alguns minutos, para que eles absorvam o sabor do molho.",
         "6. Sirva os filés de peixe regados com o molho de alcaparras e decore com salsinha picada. Acompanhe com arroz, legumes cozidos ou uma salada de sua escolha."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3316,10 +3251,7 @@
         "9. Polvilhe com salsinha fresca picada para decorar.",
         "10. Sirva o Salmão ao Molho de Mostarda e Mel com acompanhamentos de sua escolha, como arroz, legumes ou salada."
       ],
-      "extras": [
-        "Tempo de Preparo: 25 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 25 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3382,10 +3314,7 @@
         "5. Grelhe os filés de tilápia por cerca de 3-4 minutos de cada lado, ou até que o peixe esteja cozido no centro e as bordas estejam douradas e crocantes.",
         "6. Retire os filés de tilápia da grelha e sirva imediatamente, decorados com fatias de limão, se desejar."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3431,10 +3360,7 @@
         "5. Asse no forno até que a massa esteja dourada e o queijo derretido.",
         "6. Retire do forno, cubra com folhas de manjericão fresco e sirva quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 1 pizza"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 1 pizza"]
     }
   },
   {
@@ -3496,10 +3422,7 @@
         "9. Retire a pizza do forno e regue com um fio de azeite de oliva extra virgem.",
         "10. Corte a pizza em fatias e sirva imediatamente."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 1 pizza"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 1 pizza"]
     }
   },
   {
@@ -3570,10 +3493,7 @@
         "10. Asse a pizza no forno pré-aquecido por 12-15 minutos, ou até que a massa esteja dourada e o queijo derretido e borbulhante.",
         "11. Retire a pizza do forno, corte em fatias e sirva enquanto ainda está quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 25 minutos",
-        "Rendimento: 1 pizza média"
-      ]
+      "extras": ["Tempo de Preparo: 25 minutos", "Rendimento: 1 pizza média"]
     }
   },
   {
@@ -3647,10 +3567,7 @@
         "11. Retire a pizza do forno e decore com folhas de manjericão fresco.",
         "12. Corte a pizza em fatias e sirva enquanto ainda está quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 20 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 20 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3723,10 +3640,7 @@
         "11. Retire a pizza do forno e decore com folhas de coentro fresco.",
         "12. Corte a pizza em fatias e sirva enquanto ainda está quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3765,10 +3679,7 @@
         "3. Misture até obter uma consistência suave e cremosa.",
         "4. Sirva imediatamente em copos gelados."
       ],
-      "extras": [
-        "Tempo de Preparo: 10 minutos",
-        "Rendimento: 2 porções"
-      ]
+      "extras": ["Tempo de Preparo: 10 minutos", "Rendimento: 2 porções"]
     }
   },
   {
@@ -3819,10 +3730,7 @@
         "7. Decore com fatias de limão e morangos, se desejar.",
         "8. Sirva imediatamente e aproveite!"
       ],
-      "extras": [
-        "Tempo de Preparo: 10 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 10 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -3884,10 +3792,7 @@
         "7. Decore com fatias de limão e ramos de hortelã.",
         "8. Sirva imediatamente e aproveite seu Mojito refrescante!"
       ],
-      "extras": [
-        "Tempo de Preparo: 10 minutos",
-        "Rendimento: 1 porção"
-      ]
+      "extras": ["Tempo de Preparo: 10 minutos", "Rendimento: 1 porção"]
     }
   },
   {
@@ -3937,10 +3842,7 @@
         "6. Se desejar, decore com fatias de manga e uma pitada de coco ralado.",
         "7. Sirva imediatamente e aproveite!"
       ],
-      "extras": [
-        "Tempo de Preparo: 10 minutos",
-        "Rendimento: 2 porções"
-      ]
+      "extras": ["Tempo de Preparo: 10 minutos", "Rendimento: 2 porções"]
     }
   },
   {
@@ -3996,10 +3898,7 @@
         "7. Decore com uma fatia de limão ou uma folha de hortelã, se desejar.",
         "8. Sirva imediatamente e aproveite!"
       ],
-      "extras": [
-        "Tempo de Preparo: 10 minutos",
-        "Rendimento: 2 porções"
-      ]
+      "extras": ["Tempo de Preparo: 10 minutos", "Rendimento: 2 porções"]
     }
   },
   {
@@ -4045,10 +3944,7 @@
         "4. Misture bem e tempere com sal a gosto.",
         "5. Sirva com nachos, tacos ou como acompanhamento."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -4109,10 +4005,7 @@
         "6. Espalhe a mistura de tomate e manjericão generosamente sobre as fatias de pão.",
         "7. Sirva imediatamente como aperitivo delicioso."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -4178,10 +4071,7 @@
         "5. Cubra o prato com filme plástico e leve à geladeira por pelo menos 30 minutos para que os sabores se incorporem.",
         "6. Na hora de servir, decore com folhas de manjericão fresco."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -4311,10 +4201,7 @@
         "5. Polvilhe queijo parmesão ralado sobre os aspargos enrolados no presunto.",
         "6. Decore com raspas de limão e sirva imediatamente como aperitivo."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 8 porções"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 8 porções"]
     }
   },
   {
@@ -4359,10 +4246,7 @@
         "4. Dobre as laterais das tortilhas e enrole-as como wraps.",
         "5. Corte cada wrap ao meio diagonalmente e sirva."
       ],
-      "extras": [
-        "Tempo de Preparo: 15 minutos",
-        "Rendimento: 4 wraps"
-      ]
+      "extras": ["Tempo de Preparo: 15 minutos", "Rendimento: 4 wraps"]
     }
   },
   {
@@ -4428,10 +4312,7 @@
         "8. Retire a pizza do forno e decore com folhas de manjericão fresco.",
         "9. Corte a pizza em fatias e sirva enquanto ainda está quente."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -4528,10 +4409,7 @@
         "11. Retire do forno e deixe descansar por alguns minutos antes de servir.",
         "12. Decore com folhas de manjericão fresco antes de servir."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 6 porções"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 6 porções"]
     }
   },
   {
@@ -4625,10 +4503,7 @@
         "6. Tempere com sal e pimenta a gosto.",
         "7. Sirva o curry de grão-de-bico quente, decorado com coentro fresco picado. Pode ser acompanhado de arroz branco ou pão naan."
       ],
-      "extras": [
-        "Tempo de Preparo: 30 minutos",
-        "Rendimento: 4 porções"
-      ]
+      "extras": ["Tempo de Preparo: 30 minutos", "Rendimento: 4 porções"]
     }
   },
   {
@@ -4760,10 +4635,7 @@
         "11. Monte os hambúrgueres de quinoa e feijão preto em pães integrais com folhas de alface, rodelas de tomate, rodelas de cebola roxa e maionese vegana (opcional).",
         "12. Sirva os hambúrgueres de quinoa e feijão preto com acompanhamentos de sua escolha."
       ],
-      "extras": [
-        "Tempo de Preparo: 45 minutos",
-        "Rendimento: 4 hambúrgueres"
-      ]
+      "extras": ["Tempo de Preparo: 45 minutos", "Rendimento: 4 hambúrgueres"]
     }
   }
 ]

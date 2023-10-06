@@ -10,7 +10,7 @@ import {
 } from "@angular/forms";
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
 import { ActivatedRoute, Router } from "@angular/router";
-import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
+import { CalculateAge } from "temp/src/lib/tools/utils";
 import { AlertController, NavController } from "@ionic/angular";
 
 @Component({
@@ -65,7 +65,7 @@ export class CriarContaInternoComponent implements OnInit {
   }
 
   public get getDataDeNascimentoInvalid(): any {
-    const idade = calculateAge(new Date(this.dataDeNascimento));
+    const idade = CalculateAge(new Date(this.dataDeNascimento));
     return idade >= 18;
   }
 

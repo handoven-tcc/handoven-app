@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import {
   FormBuilder,
@@ -7,8 +7,8 @@ import {
   Validators,
 } from "@angular/forms";
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
-import { ActivatedRoute, Router } from "@angular/router";
-import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
+import { ActivatedRoute } from "@angular/router";
+import { CalculateAge } from "temp/src/lib/tools/utils";
 import { AuthService } from "../../../auth/services";
 import {
   UsuarioRequest,
@@ -69,7 +69,7 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   public get getDataDeNascimentoInvalid(): any {
-    const idade = calculateAge(new Date(this.dataDeNascimento));
+    const idade = CalculateAge(new Date(this.dataDeNascimento));
     return idade >= 18;
   }
 

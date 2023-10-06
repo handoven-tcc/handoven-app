@@ -7,7 +7,7 @@ import {
   Validators,
 } from "@angular/forms";
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
-import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
+import { CalculateAge } from "temp/src/lib/tools/utils";
 import { AlertController, NavController } from "@ionic/angular";
 import { UsuarioRequest } from "../../../auth/models";
 import { AuthService } from "../../../auth/services";
@@ -62,7 +62,7 @@ export class AdicionarIntegranteComponent implements OnInit {
   }
 
   public get getDataDeNascimentoInvalid(): any {
-    const idade = calculateAge(new Date(this.dataDeNascimento));
+    const idade = CalculateAge(new Date(this.dataDeNascimento));
     return idade >= 18;
   }
 

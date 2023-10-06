@@ -3,9 +3,10 @@ import { AlertController } from "@ionic/angular";
 import { SocialSharing } from "@awesome-cordova-plugins/social-sharing/ngx";
 import { Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
-import { ReceitasResponse, ReceitaCategoria } from "../../models";
+import { ReceitasResponse } from "../../models";
 import { FavoritoRequest } from "../../../favoritos/models";
 import { FavoritosService } from "../../../favoritos/services";
+import { NumberToFractionString } from "temp/src/lib/tools/utils";
 
 @Component({
   selector: "app-detalhes-da-receita",
@@ -33,6 +34,14 @@ export class DetalhesDaReceitaComponent implements OnInit {
     ) as ReceitasResponse;
 
     this.favorito = this.receita.favorited;
+  }
+
+  formatToFraction(value: number): string {
+    if (!value) {
+      return "";
+    }
+
+    return NumberToFractionString(value) ?? "";
   }
 
   onClickAlterarFavorito(): void {

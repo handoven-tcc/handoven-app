@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 // import { StorageService } from "../../../../../temp/src/lib/tools/services/storage.service";
-import { calculateAge } from "../../../../../temp/src/lib/tools/utils";
+import { CalculateAge } from "temp/src/lib/tools/utils";
 import { AlertController, NavController } from "@ionic/angular";
 import { DispensaService } from "../../services";
 import { ProdutoRequest, ProdutoResponse } from "../../models";
@@ -74,7 +74,7 @@ export class EditarDispensaComponent implements OnInit {
   }
 
   public get getDataDeNascimentoInvalid(): any {
-    const idade = calculateAge(new Date(this.dataDeVencimento));
+    const idade = CalculateAge(new Date(this.dataDeVencimento));
     return idade >= 18;
   }
 
