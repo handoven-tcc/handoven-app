@@ -11,7 +11,6 @@ import {
   toArray,
 } from "rxjs";
 import { AuthService } from "../../auth/services";
-import Plates from "../../../assets/mock/plates.json";
 import { environment } from "../../../environments/environment";
 import { ReceitaCategoria, ReceitaRequest, ReceitasResponse } from "../models";
 import { HttpClient } from "@angular/common/http";

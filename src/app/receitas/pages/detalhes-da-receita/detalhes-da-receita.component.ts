@@ -104,7 +104,12 @@ Para mais detalhes, baixe o aplicativo ou acesse:
     `;
 
     this.share
-      .share(mensagem, "", "", "https://github.com/handoven-tcc")
+      .share(
+        mensagem,
+        "",
+        "",
+        `https://handoven-web.vercel.app/receitas/${this.receita.id}`
+      )
       .then((o) => {
         console.log(o);
       })
