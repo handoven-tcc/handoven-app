@@ -5,6 +5,7 @@ import { AuthService } from "../../../auth/services";
 import { FavoritosService } from "../../services";
 import { ReceitasResponse } from "../../../receitas/models";
 import { FavoritoRequest } from "../../models";
+import { FamiliaRequest, GetFamiliaIdRequest } from "../../../auth/models";
 
 @Component({
   selector: "app-listar-favoritos",
@@ -15,13 +16,19 @@ export class ListarFavoritosComponent implements OnInit {
   loading: boolean = false;
   favoritos: any[] = [];
   inscricao: Subscription = Subscription.EMPTY;
+  inscricaoFamily: Subscription = Subscription.EMPTY;
+  usuarioId: string = "";
+  familiaId: string = "";
 
   constructor(
     private alertController: AlertController,
     private nav: NavController,
     private authService: AuthService,
     private favoritosService: FavoritosService
-  ) {}
+  ) {
+    this.usuarioId = this.authService.getUsuarioId() ?? "";
+    this.familiaId = this.authService.getFamiliaId() ?? "";
+  }
 
   public get hasFavoritos(): boolean {
     return this.favoritos.length > 0;
@@ -44,15 +51,30 @@ export class ListarFavoritosComponent implements OnInit {
       return;
     }
 
+    const requestFamilia = new GetFamiliaIdRequest(
+      this.usuarioId,
+      this.familiaId
+    );
     this.loading = true;
-    this.inscricao = this.favoritosService.getAllFavoritos().subscribe({
-      next: (o) => {
-        this.favoritos = o;
-        this.loading = false;
-      },
-      error: () => (this.loading = false),
-      complete: () => (this.loading = false),
-    });
+    this.inscricaoFamily = this.authService
+      .getFamilia(requestFamilia)
+      .subscribe({
+        next: (o) => {
+          this.inscricao = this.favoritosService
+            .getAllFavoritos(o.plates_favorites)
+            .subscribe({
+              next: (o) => {
+                this.favoritos = o;
+                this.loading = false;
+              },
+              error: () => (this.loading = false),
+              complete: () => (this.loading = false),
+            });
+          this.loading = false;
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
   }
 
   onClickModalRemoverFavorito(item: any): void {
@@ -64,7 +86,7 @@ export class ListarFavoritosComponent implements OnInit {
       .create({
         header: "Tem certeza?",
         message:
-          "Esta ação te fará excluir seu produto permanentemente , você tem certeza disso?",
+          "Esta ação te fará remover essa receita dos favoritos, você tem certeza disso?",
         buttons: [
           {
             text: "Cancelar",
@@ -85,26 +107,39 @@ export class ListarFavoritosComponent implements OnInit {
       return;
     }
 
+    const requestFamilia = new GetFamiliaIdRequest(
+      this.usuarioId,
+      this.familiaId
+    );
     this.loading = true;
-    const request = new FavoritoRequest(item.id, false);
-    this.inscricao = this.favoritosService.putFavorito(request).subscribe({
-      next: () => {
-        this.alertController
-          .create({
-            header: item.name,
-            message: `A Receita foi removida dos favoritos com sucesso!`,
-            buttons: ["Ok"],
-          })
-          .then((o) => o.present());
+    this.inscricaoFamily = this.authService
+      .getFamilia(requestFamilia)
+      .subscribe({
+        next: (o) => {
+          this.inscricao = this.favoritosService
+            .deleteFavorito(item.id)
+            .subscribe({
+              next: () => {
+                this.alertController
+                  .create({
+                    header: item.name,
+                    message: `A Receita foi removida dos favoritos com sucesso!`,
+                    buttons: ["Ok"],
+                  })
+                  .then((o) => o.present());
 
-        this.loading = false;
-      },
-      error: () => (this.loading = false),
-      complete: () => {
-        this.loading = false;
-        this.getTodosFavoritos();
-      },
-    });
+                this.loading = false;
+              },
+              error: () => (this.loading = false),
+              complete: () => {
+                this.loading = false;
+                this.getTodosFavoritos();
+              },
+            });
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
   }
 
   onClickRefresh(): void {
@@ -112,15 +147,29 @@ export class ListarFavoritosComponent implements OnInit {
       return;
     }
 
+    const requestFamilia = new GetFamiliaIdRequest(
+      this.usuarioId,
+      this.familiaId
+    );
     this.loading = true;
-    this.inscricao = this.favoritosService.getAllFavoritos().subscribe({
-      next: (o) => {
-        this.favoritos = o;
-        this.loading = false;
-      },
-      error: () => (this.loading = false),
-      complete: () => (this.loading = false),
-    });
+    this.inscricaoFamily = this.authService
+      .getFamilia(requestFamilia)
+      .subscribe({
+        next: (o) => {
+          this.inscricao = this.favoritosService
+            .getAllFavoritos(o.plates_favorites)
+            .subscribe({
+              next: (o) => {
+                this.favoritos = o;
+                this.loading = false;
+              },
+              error: () => (this.loading = false),
+              complete: () => (this.loading = false),
+            });
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
   }
 
   handleRefresh(event: any): void {
@@ -128,22 +177,36 @@ export class ListarFavoritosComponent implements OnInit {
       return;
     }
 
+    const requestFamilia = new GetFamiliaIdRequest(
+      this.usuarioId,
+      this.familiaId
+    );
     this.loading = true;
-    this.inscricao = this.favoritosService.getAllFavoritos().subscribe({
-      next: (o) => {
-        this.favoritos = o;
-        this.loading = false;
-        event.target.complete();
-      },
-      error: () => {
-        this.loading = false;
-        event.target.complete();
-      },
-      complete: () => {
-        this.loading = false;
-        event.target.complete();
-      },
-    });
+    this.inscricaoFamily = this.authService
+      .getFamilia(requestFamilia)
+      .subscribe({
+        next: (o) => {
+          this.inscricao = this.favoritosService
+            .getAllFavoritos(o.plates_favorites)
+            .subscribe({
+              next: (o) => {
+                this.favoritos = o;
+                this.loading = false;
+                event.target.complete();
+              },
+              error: () => {
+                this.loading = false;
+                event.target.complete();
+              },
+              complete: () => {
+                this.loading = false;
+                event.target.complete();
+              },
+            });
+        },
+        error: () => (this.loading = false),
+        complete: () => (this.loading = false),
+      });
   }
 
   onClickVisualizarReceita(receita: ReceitasResponse): void {
@@ -152,6 +215,7 @@ export class ListarFavoritosComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
+    this.inscricaoFamily.unsubscribe();
     this.inscricao.unsubscribe();
   }
 }

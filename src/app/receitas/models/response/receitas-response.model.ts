@@ -4,7 +4,6 @@ interface ReceitasResponse {
   id?: string;
   image?: any;
   name: string;
-  favorited: boolean;
   category: ReceitaCategoria;
   section: {
     ingredients: IngredientesReceita[];

@@ -107,11 +107,11 @@
                   (click)="onClickAlterarFavorito($event, item)"
                   class="flex ion-align-items-center mr-6">
                   <ion-icon
-                    *ngIf="!item.favorited"
+                    *ngIf="!getItemFavorito(item)"
                     class="text-2xl"
                     name="heart-outline"></ion-icon>
                   <ion-icon
-                    *ngIf="item.favorited"
+                    *ngIf="getItemFavorito(item)"
                     class="text-2xl"
                     name="heart"></ion-icon>
                 </a>

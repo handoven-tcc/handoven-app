@@ -6,6 +6,8 @@ import { Subscription } from "rxjs";
 import { AlertController, NavController } from "@ionic/angular";
 import { FavoritosService } from "../../../favoritos/services";
 import { FavoritoRequest } from "../../../favoritos/models";
+import { AuthService } from "../../../auth/services";
+import { GetFamiliaIdRequest } from "../../../auth/models";
 
 @Component({
   selector: "app-listar-categoria-receitas",
@@ -19,12 +21,15 @@ export class ListarCategoriaReceitaComponent implements OnInit {
   receitas: ReceitasResponse[] = [];
   category!: ReceitaCategoria;
   inscricao: Subscription = Subscription.EMPTY;
+  inscricaoFavorito: Subscription = Subscription.EMPTY;
   favorito: boolean = false;
+  receitasFavoritadas: string[] = [];
 
   constructor(
     private alertController: AlertController,
     private nav: NavController,
     private activatedRoute: ActivatedRoute,
+    private authService: AuthService,
     private receitasService: ReceitasService,
     private favoritosService: FavoritosService
   ) {}
@@ -51,6 +56,30 @@ export class ListarCategoriaReceitaComponent implements OnInit {
         error: () => (this.loading = false),
         complete: () => (this.loading = false),
       });
+
+    this.favoriteLoading = true;
+    const requestFamilia = new GetFamiliaIdRequest(
+      this.authService.getUsuarioId() ?? "",
+      this.authService.getFamiliaId() ?? ""
+    );
+    this.inscricaoFavorito = this.authService
+      .getFamilia(requestFamilia)
+      .subscribe({
+        next: (o) => {
+          this.receitasFavoritadas = o.plates_favorites;
+          this.favoriteLoading = false;
+        },
+        error: (err) => {
+          this.favoriteLoading = false;
+        },
+        complete: () => {
+          this.favoriteLoading = false;
+        },
+      });
+  }
+
+  public getItemFavorito(item: ReceitasResponse): boolean {
+    return this.receitasFavoritadas.includes(item.id ?? "");
   }
 
   public tempoDePreparo(receita: ReceitasResponse): string {
@@ -81,6 +110,26 @@ export class ListarCategoriaReceitaComponent implements OnInit {
           event.target.complete();
         },
       });
+
+    this.favoriteLoading = true;
+    const requestFamilia = new GetFamiliaIdRequest(
+      this.authService.getUsuarioId() ?? "",
+      this.authService.getFamiliaId() ?? ""
+    );
+    this.inscricaoFavorito = this.authService
+      .getFamilia(requestFamilia)
+      .subscribe({
+        next: (o) => {
+          this.receitasFavoritadas = o.plates_favorites;
+          this.favoriteLoading = false;
+        },
+        error: (err) => {
+          this.favoriteLoading = false;
+        },
+        complete: () => {
+          this.favoriteLoading = false;
+        },
+      });
   }
 
   onClickVisualizarReceita(receita: ReceitasResponse): void {
@@ -93,47 +142,81 @@ export class ListarCategoriaReceitaComponent implements OnInit {
       return;
     }
 
-    const prevFavorited = item.favorited;
-    const changedFavorited = !item.favorited;
+    const changedFavorited = !this.getItemFavorito(item);
 
-    if (this.favoriteLoading) {
+    curr.target.name = "heart-half";
+
+    this.favoriteLoading = true;
+    if (!changedFavorited) {
+      this.inscricaoFavorito = this.favoritosService
+        .deleteFavorito(item.id)
+        .subscribe({
+          next: (o) => {
+            this.receitasFavoritadas = o.plates_favorites;
+            this.favoriteLoading = false;
+          },
+          error: () => {
+            this.favoriteLoading = false;
+          },
+          complete: () => {
+            this.favoriteLoading = false;
+
+            this.favoriteLoading = true;
+            this.inscricao = this.receitasService
+              .getReceitasByCategoria(this.category)
+              .subscribe({
+                next: (o) => {
+                  this.receitas = o;
+
+                  this.favoriteLoading = false;
+                },
+                error: () => {
+                  this.favoriteLoading = false;
+                },
+                complete: () => {
+                  this.favoriteLoading = false;
+                },
+              });
+          },
+        });
       return;
     }
 
-    curr.target.name = "heart-half";
-    this.favoriteLoading = true;
-    const request = new FavoritoRequest(item.id, changedFavorited);
-    this.inscricao = this.favoritosService.putFavorito(request).subscribe({
-      next: () => {
-        this.favoriteLoading = false;
-      },
-      error: () => {
-        this.favoriteLoading = false;
-      },
-      complete: () => {
-        this.favoriteLoading = false;
+    this.inscricaoFavorito = this.favoritosService
+      .putFavorito(item.id)
+      .subscribe({
+        next: (o) => {
+          this.receitasFavoritadas = o.plates_favorites;
+          this.favoriteLoading = false;
+        },
+        error: () => {
+          this.favoriteLoading = false;
+        },
+        complete: () => {
+          this.favoriteLoading = false;
 
-        this.favoriteLoading = true;
-        this.inscricao = this.receitasService
-          .getReceitasByCategoria(this.category)
-          .subscribe({
-            next: (o) => {
-              this.receitas = o;
+          this.favoriteLoading = true;
+          this.inscricao = this.receitasService
+            .getReceitasByCategoria(this.category)
+            .subscribe({
+              next: (o) => {
+                this.receitas = o;
 
-              this.favoriteLoading = false;
-            },
-            error: () => {
-              this.favoriteLoading = false;
-            },
-            complete: () => {
-              this.favoriteLoading = false;
-            },
-          });
-      },
-    });
+                this.favoriteLoading = false;
+              },
+              error: () => {
+                this.favoriteLoading = false;
+              },
+              complete: () => {
+                this.favoriteLoading = false;
+              },
+            });
+        },
+      });
   }
 
   ngOnDestroy(): void {
+    this.inscricaoFavorito.unsubscribe();
     this.inscricao.unsubscribe();
   }
 }

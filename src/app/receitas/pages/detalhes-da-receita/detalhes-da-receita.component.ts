@@ -4,9 +4,10 @@ import { SocialSharing } from "@awesome-cordova-plugins/social-sharing/ngx";
 import { Subscription } from "rxjs";
 import { ReceitasService } from "../../services";
 import { ReceitasResponse } from "../../models";
-import { FavoritoRequest } from "../../../favoritos/models";
 import { FavoritosService } from "../../../favoritos/services";
 import { NumberToFractionString } from "temp/src/lib/tools/utils";
+import { AuthService } from "../../../auth/services";
+import { GetFamiliaIdRequest } from "../../../auth/models";
 
 @Component({
   selector: "app-detalhes-da-receita",
@@ -20,8 +21,10 @@ export class DetalhesDaReceitaComponent implements OnInit {
   favorito: boolean = false;
   ios: boolean = false;
   android: boolean = false;
+  receitasFavoritadas: string[] = [];
 
   constructor(
+    private authService: AuthService,
     private receitasService: ReceitasService,
     private favoritosService: FavoritosService,
     private alertController: AlertController,
@@ -33,7 +36,26 @@ export class DetalhesDaReceitaComponent implements OnInit {
       window.localStorage.getItem("receita") ?? ""
     ) as ReceitasResponse;
 
-    this.favorito = this.receita.favorited;
+    this.loading = true;
+    const requestFamilia = new GetFamiliaIdRequest(
+      this.authService.getUsuarioId() ?? "",
+      this.authService.getFamiliaId() ?? ""
+    );
+    this.inscricao = this.authService.getFamilia(requestFamilia).subscribe({
+      next: (o) => {
+        this.receitasFavoritadas = o.plates_favorites;
+        this.favorito = this.receitasFavoritadas.includes(
+          this.receita.id ?? ""
+        );
+        this.loading = false;
+      },
+      error: (err) => {
+        this.loading = false;
+      },
+      complete: () => {
+        this.loading = false;
+      },
+    });
   }
 
   formatToFraction(value: number): string {
@@ -49,8 +71,8 @@ export class DetalhesDaReceitaComponent implements OnInit {
       return;
     }
 
-    const prevFavorited = this.receita.favorited;
-    const changedFavorited = !this.receita.favorited;
+    const prevFavorited = this.favorito;
+    const changedFavorited = !this.favorito;
     this.favorito = changedFavorited;
 
     if (this.loading) {
@@ -59,33 +81,66 @@ export class DetalhesDaReceitaComponent implements OnInit {
     }
 
     this.loading = true;
-    const request = new FavoritoRequest(this.receita.id, changedFavorited);
-    this.inscricao = this.favoritosService.putFavorito(request).subscribe({
-      next: (o) => {
-        this.favorito = changedFavorited;
-        this.loading = false;
-      },
-      error: () => {
-        this.favorito = prevFavorited;
-        this.loading = false;
-      },
-      complete: () => {
-        this.loading = false;
+    if (!changedFavorited) {
+      this.inscricao = this.favoritosService
+        .deleteFavorito(this.receita.id)
+        .subscribe({
+          next: (o: any) => {
+            this.favorito = changedFavorited;
+            this.loading = false;
+          },
+          error: () => {
+            this.favorito = prevFavorited;
+            this.loading = false;
+          },
+          complete: () => {
+            this.loading = false;
 
-        this.loading = true;
-        this.inscricao = this.receitasService
-          .getReceitaById(this.receita.id)
-          .subscribe({
-            next: (o) => {
-              this.receita = o;
+            this.loading = true;
+            this.inscricao = this.receitasService
+              .getReceitaById(this.receita.id)
+              .subscribe({
+                next: (o) => {
+                  this.receita = o;
 
-              this.loading = false;
-            },
-            error: () => (this.loading = false),
-            complete: () => (this.loading = false),
-          });
-      },
-    });
+                  this.loading = false;
+                },
+                error: () => (this.loading = false),
+                complete: () => (this.loading = false),
+              });
+          },
+        });
+      return;
+    }
+
+    this.inscricao = this.favoritosService
+      .putFavorito(this.receita.id)
+      .subscribe({
+        next: (o: any) => {
+          this.favorito = changedFavorited;
+          this.loading = false;
+        },
+        error: () => {
+          this.favorito = prevFavorited;
+          this.loading = false;
+        },
+        complete: () => {
+          this.loading = false;
+
+          this.loading = true;
+          this.inscricao = this.receitasService
+            .getReceitaById(this.receita.id)
+            .subscribe({
+              next: (o) => {
+                this.receita = o;
+
+                this.loading = false;
+              },
+              error: () => (this.loading = false),
+              complete: () => (this.loading = false),
+            });
+        },
+      });
   }
 
   onClickCompartilhar(): void {

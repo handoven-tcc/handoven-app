@@ -213,7 +213,7 @@ export class AuthService {
       );
   }
 
-  getNomeFamilia(request: GetFamiliaIdRequest): Observable<FamiliaResponse> {
+  getFamilia(request: GetFamiliaIdRequest): Observable<FamiliaResponse> {
     if (request.familiaId == "") {
       return of({} as FamiliaResponse);
     }

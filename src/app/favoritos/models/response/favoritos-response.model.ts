@@ -1,7 +1,7 @@
 interface FavoritoResponse {
-  n: number;
-  nModified: number;
-  ok: number;
+  id: string;
+  plateId: string;
+  familyId: string;
 }
 
 export { type FavoritoResponse };

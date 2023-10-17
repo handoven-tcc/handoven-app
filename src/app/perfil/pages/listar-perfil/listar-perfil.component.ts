@@ -66,20 +66,18 @@ export class ListarPerfilComponent implements OnInit {
     );
 
     this.loading = true;
-    this.inscricaoNomeFamilia = this.authService
-      .getNomeFamilia(request)
-      .subscribe({
-        next: (res) => {
-          if (res.name) {
-            this.nomeFamilia = res.name;
-            // this.pessoaResponsavel = res.emails.filter(o => o.responsavel == true);
-            // this.emails = res.emailsIntegrantes;
-          }
-          this.loading = false;
-        },
-        error: () => (this.loading = false),
-        complete: () => (this.loading = false),
-      });
+    this.inscricaoNomeFamilia = this.authService.getFamilia(request).subscribe({
+      next: (res) => {
+        if (res.name) {
+          this.nomeFamilia = res.name;
+          // this.pessoaResponsavel = res.emails.filter(o => o.responsavel == true);
+          // this.emails = res.emailsIntegrantes;
+        }
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
+    });
 
     this.loading = true;
     this.inscricaoTodosUsuariosDaFamilia = this.authService

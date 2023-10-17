@@ -1,3 +1,3 @@
 export class FavoritoRequest {
-  constructor(public id: string, public favorited: boolean) {}
+  constructor(public plateId: string, public familyId: string) {}
 }
