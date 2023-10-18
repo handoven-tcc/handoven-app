@@ -75,21 +75,24 @@ export class ListarReceitasComponent implements OnInit {
       next: (o: ReceitasResponse[]): void => {
         this.receitas = o;
         this.resultadosReceitas = this.receitas;
-        this.loading = false;
-      },
-      error: () => (this.loading = false),
-      complete: () => (this.loading = false),
-    });
 
-    this.loading = true;
-    this.inscricao = this.receitaService.getAllCategorias().subscribe({
-      next: (o: any[]): void => {
-        this.categorias = o;
-        this.resultadosCategorias = this.categorias;
         this.loading = false;
       },
       error: () => (this.loading = false),
-      complete: () => (this.loading = false),
+      complete: () => {
+        this.loading = false;
+
+        this.loading = true;
+        this.inscricao = this.receitaService.getAllCategorias().subscribe({
+          next: (o: any[]): void => {
+            this.categorias = o;
+            this.resultadosCategorias = this.categorias;
+            this.loading = false;
+          },
+          error: () => (this.loading = false),
+          complete: () => (this.loading = false),
+        });
+      },
     });
   }
 
