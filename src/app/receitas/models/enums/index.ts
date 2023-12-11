@@ -13,6 +13,7 @@ enum ReceitaCategoria {
   Bebidas = 12,
   Aperitivos = 13,
   Vegetarianas = 14,
+  Algoritmo = 15,
 }
 
 enum ReceitaIngredienteCategoria {
