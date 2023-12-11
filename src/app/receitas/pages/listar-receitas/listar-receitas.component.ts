@@ -1,9 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { AlertController, NavController } from "@ionic/angular";
+import { NavController } from "@ionic/angular";
 import { Subscription } from "rxjs";
 import { AuthService } from "../../../auth/services";
 import { ReceitasService } from "../../services";
-import { ReceitaCategoria, ReceitasResponse } from "../../models";
+import {
+  AlgoritmoResponse,
+  ReceitaCategoria,
+  ReceitasResponse,
+} from "../../models";
 
 @Component({
   selector: "app-listar-receitas",
@@ -14,6 +18,7 @@ export class ListarReceitasComponent implements OnInit {
   loading: boolean = false;
   inscricao: Subscription = Subscription.EMPTY;
   receitas: ReceitasResponse[] = [];
+  receitasAlgoritmo!: AlgoritmoResponse;
   categorias: ReceitaCategoria[] = [];
   responsiveOptions: any[] = [];
   resultadosReceitas: ReceitasResponse[] = [];
@@ -32,6 +37,10 @@ export class ListarReceitasComponent implements OnInit {
 
   public get hasUsuario(): boolean {
     return this.authService.hasUsuario();
+  }
+
+  public get hasReceitaAlgoritmo(): boolean {
+    return this.receitasAlgoritmo.available_plates.length > 0;
   }
 
   ngOnInit(): void {
@@ -53,16 +62,22 @@ export class ListarReceitasComponent implements OnInit {
         numScroll: 1,
       },
     ];
+    this.getAlgoritmo();
   }
 
   ionViewWillEnter(): void {
     this.getTodasReceitas();
+    this.getAlgoritmo();
   }
 
   public receitaPorCategoria(categoria: number) {
     return this.resultadosReceitas
       .filter((o) => o.category == categoria)
       .slice(0, 3);
+  }
+
+  public receitaAlgoritmo() {
+    return this.receitasAlgoritmo.available_plates.slice(0, 3);
   }
 
   getTodasReceitas(): void {
@@ -93,6 +108,18 @@ export class ListarReceitasComponent implements OnInit {
           complete: () => (this.loading = false),
         });
       },
+    });
+  }
+
+  getAlgoritmo(): void {
+    this.loading = true;
+    this.inscricao = this.receitaService.getAlgoritmo().subscribe({
+      next: (o: AlgoritmoResponse): void => {
+        this.receitasAlgoritmo = o;
+        this.loading = false;
+      },
+      error: () => (this.loading = false),
+      complete: () => (this.loading = false),
     });
   }
 
@@ -128,6 +155,8 @@ export class ListarReceitasComponent implements OnInit {
         event.target.complete();
       },
     });
+
+    this.getAlgoritmo();
   }
 
   onClickRefresh(): void {
@@ -144,6 +173,8 @@ export class ListarReceitasComponent implements OnInit {
       error: () => (this.loading = false),
       complete: () => (this.loading = false),
     });
+
+    this.getAlgoritmo();
   }
 
   onClickVerMais(item: ReceitaCategoria): void {
