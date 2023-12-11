@@ -46,16 +46,29 @@ export class ListarCategoriaReceitaComponent implements OnInit {
       this.activatedRoute.snapshot.params["categoria"]
     ) as ReceitaCategoria;
 
-    this.inscricao = this.receitasService
-      .getReceitasByCategoria(this.category)
-      .subscribe({
-        next: (o: ReceitasResponse[]): void => {
-          this.receitas = o;
-          this.loading = false;
-        },
-        error: () => (this.loading = false),
-        complete: () => (this.loading = false),
-      });
+    if (this.category != ReceitaCategoria.Algoritmo) {
+      this.inscricao = this.receitasService
+        .getReceitasByCategoria(this.category)
+        .subscribe({
+          next: (o: ReceitasResponse[]): void => {
+            this.receitas = o;
+            this.loading = false;
+          },
+          error: () => (this.loading = false),
+          complete: () => (this.loading = false),
+        });
+    } else {
+      this.inscricao = this.receitasService
+        .getAlgoritmoByCategoria()
+        .subscribe({
+          next: (o: any): void => {
+            this.receitas = o;
+            this.loading = false;
+          },
+          error: () => (this.loading = false),
+          complete: () => (this.loading = false),
+        });
+    }
 
     this.favoriteLoading = true;
     const requestFamilia = new GetFamiliaIdRequest(
