@@ -103,6 +103,29 @@
         </ng-container>
       </ng-container>
 
+      <ng-container *ngIf="hasReceitaAlgoritmo">
+        <div class="w-full px-4 py-2">
+          <a
+            (click)="onClickVerMais(ReceitaCategoria.Algoritmo)"
+            class="flex ion-align-items-center ion-justify-content-between">
+            <span class="text-900 fw-600">{{
+              ReceitaCategoria[ReceitaCategoria.Algoritmo]
+            }}</span>
+            <span class="ver-mais"> Ver mais </span>
+          </a>
+
+          <swiper-container [slidesPerView]="2">
+            <swiper-slide *ngFor="let receita of receitaAlgoritmo()">
+              <img
+                (click)="onClickVisualizarReceita(receita.plate)"
+                class="border-round"
+                src="data:image/png;base64,{{ receita.plate.image }}"
+                alt="imagem da receita {{ receita.plate.name }}" />
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </ng-container>
+
       <ng-container *ngIf="hasReceitas">
         <div
           class="w-full px-4 py-2"
