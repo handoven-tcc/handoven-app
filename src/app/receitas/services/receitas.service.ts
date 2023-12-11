@@ -7,12 +7,16 @@ import {
   map,
   Observable,
   of,
-  reduce,
   toArray,
 } from "rxjs";
 import { AuthService } from "../../auth/services";
 import { environment } from "../../../environments/environment";
-import { ReceitaCategoria, ReceitaRequest, ReceitasResponse } from "../models";
+import {
+  AlgoritmoResponse,
+  ReceitaCategoria,
+  ReceitaRequest,
+  ReceitasResponse,
+} from "../models";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
@@ -102,6 +106,35 @@ export class ReceitasService {
         map((res: any) => res),
         concatMap(from),
         filter((o) => o.category == categoria),
+        toArray()
+      );
+  }
+
+  getAlgoritmo(): Observable<AlgoritmoResponse> {
+    return this.http
+      .get(`${this.url}/algorithm/${this.familiaId}`, {
+        headers: {
+          "X-HandOven-User": this.usuarioId,
+          "X-handOven-Service": "false",
+          "X-HandOven-Family": this.familiaId,
+        },
+      })
+      .pipe(map((res: any) => res));
+  }
+
+  getAlgoritmoByCategoria(): Observable<any> {
+    return this.http
+      .get(`${this.url}/algorithm/${this.familiaId}`, {
+        headers: {
+          "X-HandOven-User": this.usuarioId,
+          "X-handOven-Service": "false",
+          "X-HandOven-Family": this.familiaId,
+        },
+      })
+      .pipe(
+        map((res: any) => res.available_plates),
+        concatMap(from),
+        map((res: any) => res.plate),
         toArray()
       );
   }
