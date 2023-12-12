@@ -40,7 +40,10 @@ export class ListarReceitasComponent implements OnInit {
   }
 
   public get hasReceitaAlgoritmo(): boolean {
-    return this.receitasAlgoritmo.available_plates.length > 0;
+    return (
+      this.authService.hasUsuario() &&
+      this.receitasAlgoritmo.available_plates.length > 0
+    );
   }
 
   ngOnInit(): void {
